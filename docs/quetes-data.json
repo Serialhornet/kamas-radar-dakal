@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Catalogue de départ non exhaustif, actualisation manuelle; récompenses tirées des guides et parfois variables ou anciennes. 0 signifie explicitement aucune récompense directe en kamas seulement lorsque précisé; null signifie non indiqué.",
+  "notes": "Catalogue de départ non exhaustif, actualisation manuelle; récompenses tirées des guides et parfois variables ou anciennes. 0 signifie explicitement aucune récompense directe en kamas seulement lorsque précisé; null signifie non indiqué. Les pages ciblées peuvent évoluer; vérifier les quêtes avant de se déplacer. Chasse quotidienne et archéologique : reset 7 h selon guides.",
   "sources": [
     "https://www.dofuspourlesnoobs.com/"
   ],
@@ -13,7 +13,7 @@
       "xp": null,
       "kamas": null,
       "rewards": "Almatons, 1 page de l'Almanax",
-      "note": "Offrande différente chaque jour. XP et kamas variables ; valeurs à vérifier en jeu.",
+      "note": "Offrande du jour au Bibliotemple. Récompenses variables selon le niveau et l'offrande ; vérifier la valeur en jeu.",
       "level": 20,
       "area": "Bibliotemple [-4,-24]",
       "url": "https://www.dofuspourlesnoobs.com/calendrier-de-lalmanax.html",
@@ -53,11 +53,11 @@
       "id": "chest-arch",
       "title": "Chasse au trésor archéologique",
       "period": "daily",
-      "reset": "daily",
+      "reset": "daily7",
       "xp": null,
       "kamas": null,
       "rewards": "1 Coffre de l'archéologiste",
-      "note": "Requiert la quête « Comment perdre ses plumes ». Conditions et délais de répétition à recontrôler.",
+      "note": "Quête quotidienne relançable le lendemain à 7 h ; nécessite « Comment perdre ses plumes ».",
       "level": 120,
       "area": "Malle aux Trésors [-25,-36]",
       "url": "https://www.dofuspourlesnoobs.com/chasse-au-tresor-archeologique.html",
