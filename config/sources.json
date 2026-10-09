@@ -1,0 +1,6 @@
+{
+  "server": "Dakal",
+  "queries": ["dofus kamas Dakal", "dofus brisage kamas", "dofus kamas monocompte", "dofus farm kamas"],
+  "max_results_per_query": 20,
+  "lookback_days": 30
+}
