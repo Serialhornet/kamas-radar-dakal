@@ -21,7 +21,7 @@ summary{cursor:pointer;font-weight:700;color:var(--accent)}
 blockquote{margin:7px 0;padding:9px 12px;border-left:2px solid #8da4c2;background:#263346;color:#e0e7f1}
 footer{font-size:.86rem;color:var(--muted);margin-top:30px}
 </style></head><body>
-<header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · veille YouTube officielle · fiches et retours joueurs en français</p></header>
+<header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
 <main>
 <p id="updated">Chargement de la veille…</p>
 <div class="controls">
@@ -31,7 +31,7 @@ footer{font-size:.86rem;color:var(--muted);margin-top:30px}
 </select>
 </div>
 <div id="list"></div>
-<footer>Filtrage Unity conservateur : des vidéos pertinentes peuvent être manquées si elles ne mentionnent pas Unity ou Dakal. Les titres, descriptions et commentaires publics ne permettent pas de garantir une astuce ou sa rentabilité. Aucune transcription intégrale ni collecte DoFocus automatisée.</footer>
+<footer>Songes et multicompte explicites exclus. Le filtrage Unity est conservateur : des vidéos pertinentes peuvent être manquées si elles ne mentionnent pas Unity ou Dakal. Les titres, descriptions et commentaires publics ne permettent pas de garantir une astuce ou sa rentabilité. Aucune transcription intégrale ni collecte DoFocus automatisée.</footer>
 </main>
 <script>
 let items=[];
@@ -48,7 +48,7 @@ function card(item){
     txt(value.count)+' commentaire(s) détecté(s) dans l’échantillon'+
     (value.examples||[]).map(v=>'<blockquote>'+txt(v)+'</blockquote>').join('')+'</div>';
  }).join('');
- const info=[['Catégorie',d.categorie],['Résumé fourni par la source',d.resume_source||item.description],['Méthode vérifiée',d.methode],['Prérequis',d.prerequis],['Budget',d.budget],['Rentabilité',d.rentabilite],['Langue signalée',d.langue||item.langue]].map(([k,v])=>
+ const info=[['Catégorie',d.categorie],['Compatibilité monocompte',d.compatibilite_mono],['Résumé fourni par la source',d.resume_source||item.description],['Méthode vérifiée',d.methode],['Prérequis',d.prerequis],['Budget',d.budget],['Rentabilité',d.rentabilite],['Langue signalée',d.langue||item.langue]].map(([k,v])=>
  '<div class="kv"><b>'+txt(k)+'</b>'+txt(v)+'</div>').join('');
  return '<article class="card"><div class="tags"><span class="tag">Score '+txt(item.score)+'</span><span class="tag">'+txt(d.categorie||'Astuce kamas')+'</span><span class="tag">'+(item.views==null?'Vues inconnues':Number(item.views).toLocaleString('fr-FR')+' vues')+'</span></div>'+
  '<h2>'+txt(item.title)+'</h2><small>'+txt(item.channel)+' · '+txt((item.date||'').slice(0,10))+'</small>'+
