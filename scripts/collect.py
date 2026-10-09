@@ -1,5 +1,5 @@
 """Kamas Radar: YouTube Data API v3, sans extraction de sous-titres ni de DoFocus."""
-import datetime, html, json, os, pathlib, re, urllib.parse, urllib.request
+import datetime, email.utils, html, json, os, pathlib, re, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 CFG = json.loads((ROOT / "config/sources.json").read_text(encoding="utf-8"))
@@ -58,6 +58,45 @@ def detail_for(item):
             "rentabilite":"Non calculee; donnees du marche Dakal manquantes.",
             "fiabilite":"Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
             "langue":"Non verifiee"}
+
+def community_feed_items():
+    """Only user-authorized public RSS/Atom URLs; no page scraping or DoFocus harvesting."""
+    feeds=CFG.get("rss_feeds",[])
+    found=[]
+    for feed in feeds[:8]:
+        url=feed.get("url","")
+        if not url.startswith("https://") or not feed.get("authorized",False):
+            print("Flux ignoré (URL HTTPS ou autorisation absente):",feed.get("name","?"))
+            continue
+        try:
+            req=urllib.request.Request(url,headers={"User-Agent":"KamasRadarDakal/2.2 (RSS reader)"})
+            with urllib.request.urlopen(req, timeout=20) as response:
+                body=response.read(800000)
+            root=ET.fromstring(body)
+            atom="{http://www.w3.org/2005/Atom}"
+            nodes=root.findall(".//item")+root.findall(".//"+atom+"entry")
+            for entry in nodes[:35]:
+                title=clean(entry.findtext("title") or entry.findtext(atom+"title") or "")
+                description=clean(entry.findtext("description") or entry.findtext(atom+"summary") or entry.findtext(atom+"content") or "")
+                urlpost=entry.findtext("link") or ""
+                linknode=entry.find(atom+"link")
+                if not urlpost and linknode is not None: urlpost=linknode.attrib.get("href","")
+                if not urlpost.startswith("https://") or not title:continue
+                combined=title+" "+description
+                if RETRO.search(combined) or EXCLUDE_TITLE.search(title) or EXCLUDE_DESCRIPTION.search(description):continue
+                if not UNITY.search(combined) or not KAMAS.search(combined):continue
+                rawdate=entry.findtext("pubDate") or entry.findtext(atom+"published") or entry.findtext(atom+"updated") or ""
+                try:
+                    date=email.utils.parsedate_to_datetime(rawdate).astimezone(datetime.timezone.utc).isoformat()
+                except Exception:
+                    date=rawdate if re.match(r"^\d{4}-\d\d-\d\d",rawdate) else NOW.isoformat()
+                item={"id":"rss:"+urlpost,"title":title,"description":description[:500],
+                    "channel":feed.get("name","Communauté"),"date":date,"url":urlpost,
+                    "views":None,"source":"Flux RSS public autorisé","source_type":"article","langue":"Non vérifiée"}
+                found.append(item)
+        except Exception as exc:print("Flux communautaire indisponible",feed.get("name",url),str(exc)[:180])
+    return found
+
 def main():
     if not KEY: raise SystemExit("Secret YOUTUBE_API_KEY absent.")
     after=(NOW-datetime.timedelta(days=int(CFG.get("lookback_days",30)))).isoformat().replace("+00:00","Z")
@@ -114,6 +153,13 @@ def main():
         if item["commentaires"]["signals"].get("attention",{}).get("count",0):
             item["score"]=max(0,item["score"]-8)
         item["fiche_fr"]="Resume descriptif en francais; aucune transcription verifiee."
+    for community in community_feed_items():
+        community["detail"]=detail_for(community)
+        community["detail"]["compatibilite_mono"]="À vérifier dans la publication"
+        community["monocompte"]=bool(MONO.search(community["title"]+" "+community["description"]))
+        community["commentaires"]={"status":"non_analyses","analysed":0,"signals":{},"examples":[]}
+        community["score"]=52+(12 if PREFERRED.search(community["title"]) else 0)+(10 if community["monocompte"] else 0)
+        collected[community["id"]]=community
     ordered=sorted(collected.values(),key=lambda x:x["score"],reverse=True)[:250]
     OUT.write_text(json.dumps({"server":"Dakal","updated_at":NOW.isoformat(),"items":ordered,
       "notice":"DOFUS Unity/Dakal; commentaires publics indicatifs; aucune transcription ni verification de prix."},
