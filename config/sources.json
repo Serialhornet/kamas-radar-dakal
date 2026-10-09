@@ -1,6 +1,13 @@
 {
   "server": "Dakal",
-  "queries": ["dofus kamas Dakal", "dofus brisage kamas", "dofus kamas monocompte", "dofus farm kamas"],
+  "queries": [
+    "dofus unity kamas astuce",
+    "dofus 3 kamas brisage",
+    "dofus Dakal kamas monocompte",
+    "dofus unity farm kamas"
+  ],
   "max_results_per_query": 20,
-  "lookback_days": 30
+  "max_videos_comments": 12,
+  "lookback_days": 30,
+  "rss_feeds": []
 }
