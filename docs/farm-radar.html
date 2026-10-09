@@ -49,7 +49,7 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
 </section>
 </div>
 <section class="panel"><h2>🐉 Estimer les drops d'un monstre</h2>
-<p>Simulateur de probabilité **indicative** : renseigne un taux de base vérifié dans le jeu. La prospection seule ne garantit pas un butin ; les idoles, challenges, bonus et plafonds éventuels ne sont pas inclus.</p>
+<p>Simulateur de probabilité indicative : renseigne un taux de base vérifié dans le jeu. La prospection seule ne garantit pas un butin ; les idoles, challenges, bonus et plafonds éventuels ne sont pas inclus.</p>
 <div class="three">
 <label class="field">Nom du monstre (mémo)<input id="monster" placeholder="Ex. Bouftou"></label>
 <label class="field">Prospection de ton personnage<input id="pp" type="number" min="0" step="1" value="100"></label>
@@ -89,7 +89,6 @@ function loadPrices(){
 function update(){
  const ms=elapsed();
  $('clock').textContent=formatTime(ms);
- $('target').value=session.targetMinutes||0;
  const limit=(Number(session.targetMinutes)||0)*60000;
  $('countdown').textContent=limit>0?(session.finished?'Session terminée':Math.max(0,Math.ceil((limit-ms)/1000))+' s restantes'):'Aucun minuteur actif';
  if(session.running&&limit>0&&ms>=limit){session.accumulated=limit;session.running=false;session.startedAt=null;session.finished=true;save();notifyDone()}
@@ -116,6 +115,7 @@ function start(){
 }
 function pause(){if(session.running){session.accumulated=elapsed();session.running=false;session.startedAt=null;save();update()}}
 function finish(){
+ if(session.finished)return;
  pause();session.finished=true;
  const ms=elapsed(),value=session.rows.reduce((sum,r)=>sum+(priceFor(r.id)||0)*Number(r.qty),0);
  history.push({date:new Date().toISOString(),duration:ms,value,count:session.rows.reduce((a,r)=>a+Number(r.qty),0)});history=history.slice(-30);
