@@ -31,7 +31,7 @@ footer{font-size:.86rem;color:var(--muted);margin-top:30px}
 </select>
 </div>
 <div id="list"></div>
-<footer>Songes et multicompte explicites exclus. Le filtrage Unity est conservateur : des vidéos pertinentes peuvent être manquées si elles ne mentionnent pas Unity ou Dakal. Les titres, descriptions et commentaires publics ne permettent pas de garantir une astuce ou sa rentabilité. Aucune transcription intégrale ni collecte DoFocus automatisée.</footer>
+<footer>Songes et multicompte explicites exclus. Le filtrage Unity est conservateur : des vidéos pertinentes peuvent être manquées si elles ne mentionnent pas Unity ou Dakal. Les titres, descriptions, flux RSS et commentaires publics ne permettent pas de garantir une astuce ou sa rentabilité. Aucune transcription intégrale ni collecte DoFocus automatisée.</footer>
 </main>
 <script>
 let items=[];
@@ -59,7 +59,7 @@ function card(item){
  '<h3>💬 Analyse des commentaires</h3>'+
  (cm.status==='echantillon'?'<p class="subtle">'+txt(cm.analysed)+' commentaires publics examinés. Analyse de mots-clés, sans traduction automatique.</p><div class="grid">'+signalsHtml+'</div>':
  '<p class="subtle">Commentaires non analysés ou indisponibles pour cette vidéo.</p>')+
- '<p><a href="'+txt(item.url)+'" target="_blank" rel="noopener noreferrer">Ouvrir la vidéo et ses commentaires ↗</a></p>'+
+ '<p><a href="'+txt(item.url)+'" target="_blank" rel="noopener noreferrer">Ouvrir la source originale ↗</a></p>'+
  '</details></article>';
 }
 function render(){
