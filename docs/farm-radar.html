@@ -48,24 +48,39 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
 <div class="row"><button id="refreshPrices">Relire les prix de CraftRadar</button><button class="danger" id="clearBasket">Vider la liste</button></div>
 </section>
 </div>
-<section class="panel"><h2>🐉 Estimer les drops d'un monstre</h2>
-<p>Simulateur de probabilité indicative : renseigne un taux de base vérifié dans le jeu. La prospection seule ne garantit pas un butin ; les idoles, challenges, bonus et plafonds éventuels ne sont pas inclus.</p>
+<section class="panel"><h2>🐉 Encyclopédie des monstres et drops</h2>
+<p>Recherche un monstre DOFUS 3, crée ou corrige les ressources qu'il peut laisser tomber et leurs taux de base. Les taux ajoutés ici sont <strong>manuels</strong> : ils ne sont pas fournis par l'encyclopédie des noms.</p>
+<div class="grid">
+<div>
+<label class="field">Rechercher un monstre de DOFUS Unity<input id="monster" type="search" autocomplete="off" placeholder="Ex. Bouftou, Tofu, Arakne…"></label>
+<div class="items" id="monsterMatches"></div><small id="monsterSource">Chargement de l'encyclopédie des noms…</small>
+</div>
+<div class="panel" style="margin:0;background:#131a29">
+<div class="pill" id="chosenMonster">Aucun monstre sélectionné</div>
+<p style="margin:8px 0">Les ressources et taux ci-dessous sont ton carnet personnel de drops, modifiable et conservé dans ce navigateur.</p>
+<div id="dropEntries" class="items"></div>
+<div class="grid">
+<label class="field">Ressource / objet droppé<input id="dropName" list="dropCatalogOptions" placeholder="Ex. Laine de Bouftou"></label>
+<label class="field">Taux de base (%)<input id="baseRate" type="number" min="0" max="100" step="0.01" placeholder="Ex. 5"></label>
+</div>
+<datalist id="dropCatalogOptions"></datalist>
+<div class="row" style="margin-top:12px"><button class="primary" id="saveDrop">Ajouter / modifier ce drop</button><button id="exportDrops">Exporter mes taux</button><label style="cursor:pointer" class="pill">Importer JSON<input id="importDrops" type="file" accept=".json" hidden></label></div>
+<small>Choisis une ressource dans la liste ci-dessus pour pouvoir corriger son taux, ou utilise la zone de saisie pour en ajouter une.</small>
+</div></div>
+<h3>📈 Simulation de prospection</h3>
 <div class="three">
-<label class="field">Nom du monstre (mémo)<input id="monster" placeholder="Ex. Bouftou"></label>
-<label class="field">Prospection de ton personnage<input id="pp" type="number" min="0" step="1" value="100"></label>
+<label class="field">Prospection (PP) du personnage<input id="pp" type="number" min="0" step="1" value="100"></label>
 <label class="field">Nombre de combats<input id="fights" type="number" min="1" step="1" value="100"></label>
+<label class="field">Drop à simuler<select id="simulateDrop"><option value="">Choisir une ressource enregistrée</option></select></label>
 </div>
-<div class="grid" style="margin-top:12px">
-<label class="field">Nom de la ressource droppée<input id="dropName" placeholder="Nom de l'objet"></label>
-<label class="field">Taux de base à 100 PP (%)<input id="baseRate" type="number" min="0" max="100" step="0.01" placeholder="Ex. 1"></label>
-</div>
-<div class="row" style="margin-top:13px"><button class="primary" id="calculate">Calculer la chance estimée</button></div>
+<div class="row" style="margin-top:13px"><button id="calculate" class="primary">Calculer l'estimation</button></div>
 <div class="three" style="margin-top:14px">
-<div class="metric"><small>Chance estimée / combat</small><div class="value" id="perFight">—</div></div>
+<div class="metric"><small>Probabilité estimée / combat</small><div class="value" id="perFight">—</div></div>
 <div class="metric"><small>Au moins un drop sur N combats</small><div class="value" id="atLeastOne">—</div></div>
 <div class="metric"><small>Drops attendus (modèle simple)</small><div class="value" id="expected">—</div></div>
 </div>
-<div class="note">Modèle mathématique simplifié : <code>taux × prospection / 100</code>, plafonné à 100 %. Ce n'est pas une formule officielle complète ni une simulation des mécaniques particulières des monstres DOFUS Unity. Aucun catalogue de taux n'est renseigné automatiquement sans données vérifiées.</div>
+<div class="note">Calcul <strong>indicatif, non officiel</strong> : taux de base × PP / 100 (plafond 100 %), puis essais indépendants. Les variations selon les monstres, conditions de drop, challenges, bonus et restrictions ne sont pas modélisées. Le résultat ne garantit aucun drop.</div>
+<p class="muted" style="font-size:12px">Noms de monstres : <a href="https://www.frigost.dev/API/Dofus%203.0/Data/Monsters.json" target="_blank" rel="noopener noreferrer">frigost.dev — DOFUS 3</a>. Cette source ne fournit pas les taux. Aucun drop inventé ou taux présenté comme officiel.</p>
 </section>
 </main><script>
 "use strict";
@@ -185,12 +200,95 @@ $('exportCsv').onclick=()=>{
  lines.push(['TOTAL','','','',grand].join(';'));lines.push(['Durée en secondes','','','',Math.round(elapsed()/1000)].join(';'));
  const url=URL.createObjectURL(new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='FarmRadar-bilan-Dakal.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),4000);
 };
+
+const MONSTER_URL='https://www.frigost.dev/API/Dofus%203.0/Data/Monsters.json';
+const DROP_KEY='farmRadar_personal_drops_v1';
+let monsterCatalog=[],selectedMonster=null,dropBook={};
+try{const stored=JSON.parse(localStorage.getItem(DROP_KEY));if(stored&&typeof stored==='object'&&!Array.isArray(stored))dropBook=stored}catch(e){}
+function saveDropBook(){try{localStorage.setItem(DROP_KEY,JSON.stringify(dropBook));return true}catch(e){alert('Impossible de sauvegarder tes taux dans le navigateur.');return false}}
+function monsterId(m){return String(m.id)}
+function chooseMonster(id,name){
+ selectedMonster={id:String(id),name:String(name)};
+ $('monster').value=selectedMonster.name;
+ $('monsterMatches').innerHTML='';
+ $('chosenMonster').textContent='🐉 '+selectedMonster.name+' · #'+selectedMonster.id;
+ $('dropName').value='';$('baseRate').value='';
+ renderDropBook();
+}
+function searchMonsters(){
+ const q=norm($('monster').value);if(!q||q.length<2){$('monsterMatches').textContent='Tape au moins 2 caractères pour rechercher un monstre.';return}
+ let matches=monsterCatalog.filter(m=>norm(m.name).includes(q)||m.id===q).sort((a,b)=>norm(a.name).startsWith(q)?-1:norm(b.name).startsWith(q)?1:0).slice(0,35);
+ $('monsterMatches').innerHTML=matches.map(m=>'<div class="result"><div><b>'+esc(m.name)+'</b><small>Identifiant #'+esc(m.id)+'</small></div><button data-monster="'+esc(m.id)+'">Sélectionner</button></div>').join('')||'<p>Aucun nom trouvé. Essaie une autre orthographe.</p>';
+}
+async function loadMonsters(){
+ $('monsterSource').textContent='Lecture de la liste des monstres depuis frigost.dev…';
+ try{
+  const response=await fetch(MONSTER_URL,{cache:'no-store'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const data=await response.json();
+  monsterCatalog=Object.entries(data).map(([id,v])=>({id,name:String(v?.name_fr||'')})).filter(m=>m.name).sort((a,b)=>a.name.localeCompare(b.name,'fr'));
+  $('monsterSource').textContent=monsterCatalog.length+' noms de monstres référencés (sans drops ni taux).';
+  searchMonsters();
+ }catch(err){
+  $('monsterSource').textContent='Impossible de charger les noms (connexion ou accès CORS). Tu peux importer un carnet personnel, mais la recherche nécessite la source. '+err.message;
+  monsterCatalog=Object.entries(dropBook).map(([id,v])=>({id,name:String(v.name||'#'+id)}));
+  searchMonsters();
+ }
+}
+$('monster').addEventListener('input',searchMonsters);
+$('monsterMatches').addEventListener('click',e=>{const b=e.target.closest('[data-monster]');if(!b)return;const m=monsterCatalog.find(m=>m.id===b.dataset.monster);if(m)chooseMonster(m.id,m.name)});
+function currentDrops(){return selectedMonster?(dropBook[selectedMonster.id]?.drops||[]):[]}
+function renderDropBook(){
+ const drops=currentDrops();
+ $('dropEntries').innerHTML=drops.map((d,i)=>'<div class="result"><div><b>'+esc(d.name)+'</b><small>Taux enregistré manuellement : '+fmt(d.rate)+' %</small></div><div class="row"><button data-edit-drop="'+i+'">Modifier</button><button class="danger" data-del-drop="'+i+'">×</button></div></div>').join('')||'<p class="muted">Aucun drop renseigné pour ce monstre.</p>';
+ $('simulateDrop').innerHTML='<option value="">Choisir une ressource enregistrée</option>'+drops.map((d,i)=>'<option value="'+i+'">'+esc(d.name)+' — '+fmt(d.rate)+' %</option>').join('');
+}
+$('dropEntries').addEventListener('click',e=>{
+ const edit=e.target.closest('[data-edit-drop]'),del=e.target.closest('[data-del-drop]');
+ if(edit){const d=currentDrops()[Number(edit.dataset.editDrop)];if(!d)return;$('dropName').value=d.name;$('baseRate').value=d.rate;return}
+ if(del && selectedMonster){const drops=currentDrops();drops.splice(Number(del.dataset.delDrop),1);saveDropBook();renderDropBook()}
+});
+$('saveDrop').addEventListener('click',()=>{
+ if(!selectedMonster)return alert('Sélectionne un monstre dans l’encyclopédie.');
+ const name=$('dropName').value.trim(),raw=$('baseRate').value;
+ if(!name||raw.trim()==='')return alert('Renseigne le nom de la ressource et son taux de base.');
+ const rate=Number(raw);if(!Number.isFinite(rate)||rate<0||rate>100)return alert('Le taux doit être compris entre 0 et 100 %.');
+ const record=dropBook[selectedMonster.id]||(dropBook[selectedMonster.id]={name:selectedMonster.name,drops:[]});
+ const index=record.drops.findIndex(x=>norm(x.name)===norm(name));
+ if(index>=0)record.drops[index]={name,rate,source:'manuel'};else record.drops.push({name,rate,source:'manuel'});
+ if(saveDropBook()){$('dropName').value='';$('baseRate').value='';renderDropBook()}
+});
 $('calculate').onclick=()=>{
- const base=Number($('baseRate').value),pp=Number($('pp').value),n=Number($('fights').value);
- if($('baseRate').value.trim()===''||!Number.isFinite(base)||base<0||base>100||!Number.isFinite(pp)||pp<0||!Number.isInteger(n)||n<1)return alert('Saisis un taux entre 0 et 100 %, une prospection valide et un nombre de combats entier positif.');
+ const index=$('simulateDrop').value,d=currentDrops()[Number(index)];
+ if(index===''||!d)return alert('Sélectionne un drop enregistré.');
+ const base=Number(d.rate),pp=Number($('pp').value),n=Number($('fights').value);
+ if(!Number.isFinite(base)||base<0||base>100||!Number.isFinite(pp)||pp<0||!Number.isInteger(n)||n<1)return alert('Saisis un taux, une prospection et un nombre de combats valides.');
  const p=Math.min(1,base/100*pp/100);
  $('perFight').textContent=fmt(p*100)+' %';$('atLeastOne').textContent=fmt((1-Math.pow(1-p,n))*100)+' %';$('expected').textContent=fmt(n*p);
 };
-loadPrices();renderBasket();renderHistory();loadCatalog();update();
+$('exportDrops').onclick=()=>{
+ const exportText=JSON.stringify({format:'farmRadar-drops-v1',date:new Date().toISOString(),monsters:dropBook},null,2);
+ const u=URL.createObjectURL(new Blob([exportText],{type:'application/json'})),a=document.createElement('a');
+ a.href=u;a.download='FarmRadar-monstres-et-taux.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),4000);
+};
+$('importDrops').addEventListener('change',async e=>{
+ const f=e.target.files?.[0];if(!f)return;
+ try{
+  const parsed=JSON.parse(await f.text());
+  if(parsed?.format!=='farmRadar-drops-v1'||!parsed.monsters||typeof parsed.monsters!=='object')throw Error('Format incompatible');
+  const next={...dropBook};
+  for(const [id,entry] of Object.entries(parsed.monsters)){
+    if(!/^\d+$/.test(id)||!entry||typeof entry.name!=='string'||!Array.isArray(entry.drops))continue;
+    const drops=entry.drops.filter(x=>typeof x.name==='string'&&Number.isFinite(Number(x.rate))&&Number(x.rate)>=0&&Number(x.rate)<=100).slice(0,300).map(x=>({name:x.name.slice(0,200),rate:Number(x.rate),source:'import manuel'}));
+    next[id]={name:entry.name.slice(0,200),drops};
+  }
+  dropBook=next;
+  if(saveDropBook()){alert('Carnet de drops importé.');renderDropBook()}
+ }catch(err){alert('Import impossible : '+err.message)}
+ e.target.value='';
+});
+function fillDropNames(){const list=$('dropCatalogOptions');list.innerHTML=catalog.filter(x=>x.category==='resources').slice(0,8000).map(x=>'<option value="'+esc(x.name)+'"></option>').join('')}
+
+loadPrices();renderBasket();renderHistory();loadCatalog().then(fillDropNames);loadMonsters();update();
 timer=setInterval(update,1000);
 </script></body></html>
