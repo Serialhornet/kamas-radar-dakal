@@ -1,28 +1,30 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-09T17:47:33.011964+00:00",
+  "updated_at": "2026-10-09T17:55:01.076842+00:00",
   "items": [
     {
-      "id": "MaivYYJSUKY",
-      "title": "Objectif: GROS BACKFLIPS en Songe ! #dofus #kamas #dofusunity #farmdofus #dofusguide #farmkamas #exo",
-      "description": "Préparation d'un stuff full Gneu pour mon Sacri Feu Objectif : SPEEDRUN les Songes et envoyer des gros dégâts ! #Dofus ...",
-      "channel": "ZEK LBERD",
-      "date": "2026-09-30T22:04:01Z",
-      "url": "https://www.youtube.com/watch?v=MaivYYJSUKY",
-      "views": 170,
+      "id": "f9OWtSXEoxc",
+      "title": "FARMER les PLAINES HERBEUSES avec l'ECAFLIP dans Dofus 3",
+      "description": "Extrait de ma série ECAFLIP DO CRIT lvl 130 à 160 en monocompte sur Dofus 3. La vidéo complète ...",
+      "channel": "Capitemflam",
+      "date": "2026-10-08T15:00:22Z",
+      "url": "https://www.youtube.com/watch?v=f9OWtSXEoxc",
+      "views": 521,
       "source": "YouTube officiel",
       "source_type": "video",
       "langue": "fr",
       "detail": {
         "categorie": "Farm / drop",
-        "resume_source": "Préparation d'un stuff full Gneu pour mon Sacri Feu Objectif : SPEEDRUN les Songes et envoyer des gros dégâts ! #Dofus ...",
+        "resume_source": "Extrait de ma série ECAFLIP DO CRIT lvl 130 à 160 en monocompte sur Dofus 3. La vidéo complète ...",
         "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
         "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
         "budget": "Inconnu; verifier les prix sur Dakal.",
         "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
         "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr"
+        "langue": "fr",
+        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
       },
+      "monocompte": true,
       "commentaires": {
         "status": "echantillon",
         "analysed": 0,
@@ -43,95 +45,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 76.6,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "9ubxMOzz1d0",
-      "title": "DOFUS UNITY : FAIRE DES MILLIONS DE KAMAS EN DEBUT DE JEU SUR INCARNAM EPISODE 3",
-      "description": "ABONNE-TOI, OBJECTIF 1000 ABONNES*********** Si vous avez des retours constructifs à faire, n'hésitez pas, ça m'aide ...",
-      "channel": "Cokinho",
-      "date": "2026-10-03T09:00:08Z",
-      "url": "https://www.youtube.com/watch?v=9ubxMOzz1d0",
-      "views": 210,
-      "source": "YouTube officiel",
-      "source_type": "video",
-      "langue": "fr",
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "ABONNE-TOI, OBJECTIF 1000 ABONNES*********** Si vous avez des retours constructifs à faire, n'hésitez pas, ça m'aide ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr"
-      },
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 65.2,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "LUkTlFdEhPw",
-      "title": "CETTE ZONE NIVEAU 30 EST SUPER RENTABLE A FARMER SUR DOFUS UNITY",
-      "description": "",
-      "channel": "Kamas pour les noob",
-      "date": "2026-09-21T15:45:26Z",
-      "url": "https://www.youtube.com/watch?v=LUkTlFdEhPw",
-      "views": 4350,
-      "source": "YouTube officiel",
-      "source_type": "video",
-      "langue": "fr",
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Description absente.",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr"
-      },
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 58.5,
+      "score": 108.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -153,8 +67,10 @@
         "budget": "Inconnu; verifier les prix sur Dakal.",
         "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
         "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr"
+        "langue": "fr",
+        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
       },
+      "monocompte": true,
       "commentaires": {
         "status": "echantillon",
         "analysed": 0,
@@ -175,74 +91,32 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 58.0,
+      "score": 90.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
-      "id": "zSQacA1AEYg",
-      "title": "CETTE ASTUCE KAMAS NIVEAU 80 VA SUREMENT ME RENDRE RICHE SUR DOFUS UNITY",
-      "description": "",
-      "channel": "Kamas pour les noob",
-      "date": "2026-09-22T15:45:14Z",
-      "url": "https://www.youtube.com/watch?v=zSQacA1AEYg",
-      "views": 1181,
-      "source": "YouTube officiel",
-      "source_type": "video",
-      "langue": "fr",
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Description absente.",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr"
-      },
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 1,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 48.2,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "RATCxwso0vI",
-      "title": "Faire ses PREMIERS KAMAS à Incarnam | Dofus Unity ! #shorts",
-      "description": "Voici un moyen de commencer à faire ses premiers Kamas à Incarnam dès les premiers niveaux ! Voir le Guide Complet ...",
+      "id": "sCxUSGKvlAk",
+      "title": "Les 3 Meilleures Zones de Farm en Monocompte — Édition Incarnam | Dofus Unity",
+      "description": "Quels sont les meilleurs spots de farm d'Incarnam ? On passe en revue les 3 meilleures zones pour accumuler ressources et ...",
       "channel": "Spotlight-q8d ● Dofus",
-      "date": "2026-09-21T09:00:11Z",
-      "url": "https://www.youtube.com/watch?v=RATCxwso0vI",
-      "views": 54,
+      "date": "2026-09-18T12:30:35Z",
+      "url": "https://www.youtube.com/watch?v=sCxUSGKvlAk",
+      "views": 222,
       "source": "YouTube officiel",
       "source_type": "video",
       "langue": "fr",
       "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Voici un moyen de commencer à faire ses premiers Kamas à Incarnam dès les premiers niveaux ! Voir le Guide Complet ...",
+        "categorie": "Farm / drop",
+        "resume_source": "Quels sont les meilleurs spots de farm d'Incarnam ? On passe en revue les 3 meilleures zones pour accumuler ressources et ...",
         "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
         "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
         "budget": "Inconnu; verifier les prix sur Dakal.",
         "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
         "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr"
+        "langue": "fr",
+        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
       },
+      "monocompte": true,
       "commentaires": {
         "status": "echantillon",
         "analysed": 0,
@@ -263,99 +137,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 47.4,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "3lJ4YAh2lYA",
-      "title": "🔥 Los mejores SETS para RUSHEAR Kamas 💰 (3.7) #dofus",
-      "description": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
-      "channel": "Undefaul 26  (Unity)  ",
-      "date": "2026-09-24T07:00:10Z",
-      "url": "https://www.youtube.com/watch?v=3lJ4YAh2lYA",
-      "views": 5261,
-      "source": "YouTube officiel",
-      "source_type": "video",
-      "langue": "es",
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es"
-      },
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 8,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 1,
-            "examples": [
-              "Que es el \"Rush de kamas\" ?? 😂😂"
-            ]
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 46.6,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "RMBAYvR4DKU",
-      "title": "Hacer KAMAS ahora sera mas FACIL - Buff ocra 3.7 #dofus",
-      "description": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
-      "channel": "Undefaul 26  (Unity)  ",
-      "date": "2026-09-18T15:29:46Z",
-      "url": "https://www.youtube.com/watch?v=RMBAYvR4DKU",
-      "views": 6900,
-      "source": "YouTube officiel",
-      "source_type": "video",
-      "langue": "es",
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es"
-      },
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 9,
-        "signals": {
-          "attention": {
-            "count": 1,
-            "examples": [
-              "Nerf ocra*"
-            ]
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 28.5,
+      "score": 89.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
