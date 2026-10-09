@@ -61,8 +61,12 @@ footer{padding-top:20px;border-top:1px solid #233640}
 #craftFrame{background:#0b101a}
 @media(max-width:620px){.app-tab{padding:10px 8px;font-size:13px}.controls{flex-direction:column;align-items:stretch}.controls input{width:100%}.card{padding:16px}header{padding-top:24px}}
 
+#tab-recolte[aria-selected="true"]{background:#48321f;border:1px solid #a97844;color:#ffca86}
+#panel-recolte{height:calc(100dvh - 65px);min-height:550px;width:100%;overflow:hidden}
+#recolteFrame{display:block;width:100%;height:100%;border:0;background:#0d111b}
+@media(max-width:620px){#panel-recolte{height:calc(100dvh - 62px);min-height:450px}.app-tab{padding:9px 7px;font-size:12px}}
 </style></head><body>
-<nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
+<nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button><button class="app-tab" type="button" id="tab-recolte" role="tab" aria-selected="false" aria-controls="panel-recolte">🧭 RécolteRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
 <main>
 <p id="updated">Chargement de la veille…</p>
 <div class="controls">
@@ -75,28 +79,35 @@ footer{padding-top:20px;border-top:1px solid #233640}
 <footer>Songes et multicompte explicites exclus. Le filtrage Unity est conservateur : des vidéos pertinentes peuvent être manquées si elles ne mentionnent pas Unity ou Dakal. Les titres, descriptions, flux RSS et commentaires publics ne permettent pas de garantir une astuce ou sa rentabilité. Aucune transcription intégrale ni collecte DoFocus automatisée.</footer>
 </main></section>
 <section id="panel-craft" class="tab-panel" role="tabpanel" aria-labelledby="tab-craft" hidden><iframe id="craftFrame" title="CraftRadar — catalogue et prix HDV" loading="lazy" src="about:blank"></iframe></section>
+<section id="panel-recolte" class="tab-panel" role="tabpanel" aria-labelledby="tab-recolte" hidden><iframe id="recolteFrame" title="RécolteRadar — circuits de métiers" loading="lazy" src="about:blank"></iframe></section>
 <script>
 let items=[];
 let craftFrameLoaded=false;
+let recolteFrameLoaded=false;
 function openTab(name,updateHash=true){
  const craft=name==='craft';
- document.getElementById('panel-kamas').hidden=craft;
+ const recolte=name==='recolte';
+ document.getElementById('panel-kamas').hidden=craft||recolte;
  document.getElementById('panel-craft').hidden=!craft;
- document.getElementById('tab-kamas').setAttribute('aria-selected',String(!craft));
+ document.getElementById('panel-recolte').hidden=!recolte;
+ document.getElementById('tab-recolte').setAttribute('aria-selected',String(recolte));
+ document.getElementById('tab-kamas').setAttribute('aria-selected',String(!craft&&!recolte));
  document.getElementById('tab-craft').setAttribute('aria-selected',String(craft));
  if(craft&&!craftFrameLoaded){
   document.getElementById('craftFrame').src='./craft-radar.html';
   craftFrameLoaded=true;
  }
+ if(recolte&&!recolteFrameLoaded){document.getElementById('recolteFrame').src='./recolte-radar.html';recolteFrameLoaded=true;}
  if(updateHash){
-  const next=craft?'#craft-radar':'#kamas-radar';
+  const next=recolte?'#recolte-radar':craft?'#craft-radar':'#kamas-radar';
   if(window.location.hash!==next)window.history.replaceState(null,'',next);
  }
 }
 document.getElementById('tab-kamas').addEventListener('click',()=>openTab('kamas'));
 document.getElementById('tab-craft').addEventListener('click',()=>openTab('craft'));
-window.addEventListener('hashchange',()=>openTab(window.location.hash==='#craft-radar'?'craft':'kamas',false));
-openTab(window.location.hash==='#craft-radar'?'craft':'kamas',false);
+document.getElementById('tab-recolte').addEventListener('click',()=>openTab('recolte'));
+window.addEventListener('hashchange',()=>openTab(window.location.hash==='#recolte-radar'?'recolte':window.location.hash==='#craft-radar'?'craft':'kamas',false));
+openTab(window.location.hash==='#recolte-radar'?'recolte':window.location.hash==='#craft-radar'?'craft':'kamas',false);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const txt=s=>esc(s??'Non précisé');
 function card(item){
