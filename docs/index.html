@@ -1,1 +1,80 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kamas Radar Dakal</title><style>body{font:16px system-ui;background:#111827;color:#f4f6fb;margin:0}header,main{max-width:1000px;margin:auto;padding:25px}header{border-bottom:1px solid #334155}h1{color:#c4f69a}input,select{padding:12px;border-radius:8px;background:#263247;color:white;border:1px solid #475569}input{width:min(95%,420px)}.card{background:#1e293b;padding:18px;margin:14px 0;border:1px solid #334155;border-radius:12px}a{color:#c4f69a}small,p{color:#cbd5e1}.tag{color:#c4f69a}h3{margin-bottom:4px}</style></head><body><header><h1>🪙 Kamas Radar — Dakal</h1><p>Veille automatique gratuite : vidéos DOFUS, astuces kamas, brisage et métiers.</p></header><main><p id="update">Chargement…</p><input id="q" placeholder="Filtrer les pistes…" aria-label="Filtrer les pistes"><select id="sort"><option value="score">Priorité</option><option value="date">Plus récentes</option><option value="views">Moins de vues</option></select><div id="list"></div><small>Scores indicatifs uniquement. Les méthodes et prix doivent être vérifiés sur Dakal. Aucune donnée DoFocus n'est extraite automatiquement.</small></main><script>let rows=[];const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function render(){let q=document.getElementById('q').value.toLowerCase();let mode=document.getElementById('sort').value;let a=rows.filter(x=>(x.title+' '+x.description+' '+x.channel).toLowerCase().includes(q));a.sort((x,y)=>mode==='date'?String(y.date).localeCompare(String(x.date)):mode==='views'?(x.views??Infinity)-(y.views??Infinity):y.score-x.score);document.getElementById('list').innerHTML=a.length?a.map(x=>`<article class="card"><span class="tag">Priorité ${esc(x.score)} · ${x.views==null?'Vues inconnues':Number(x.views).toLocaleString('fr-FR')+' vues'}</span><h3>${esc(x.title)}</h3><small>${esc(x.channel)} · ${esc((x.date||'').slice(0,10))}</small><p>${esc(x.description)}</p><p>${esc(x.fiche_fr)}</p><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Voir la vidéo ↗</a></article>`).join(''):'<p>Aucune piste pour le moment. Lance le workflow GitHub Actions.</p>'}document.getElementById('q').oninput=render;document.getElementById('sort').onchange=render;fetch('data.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{rows=d.items||[];document.getElementById('update').textContent=rows.length+' pistes · Dernière collecte : '+(d.updated_at?new Date(d.updated_at).toLocaleString('fr-FR'):'pas encore lancée');render()}).catch(()=>document.getElementById('update').textContent='Erreur de chargement de data.json');</script></body></html>
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kamas Radar — Dakal</title>
+<style>
+:root{color-scheme:dark;--bg:#0e1420;--panel:#1c2738;--line:#38465c;--text:#f5f7fc;--muted:#b9c5d4;--accent:#b5f283}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--text);margin:0;font:16px/1.55 system-ui,sans-serif}
+header{background:#172133;border-bottom:1px solid var(--line);padding:26px max(16px,calc((100% - 1050px)/2))}
+header h1{margin:0;color:var(--accent)}header p{margin-bottom:0;color:var(--muted)}
+main{max-width:1050px;margin:auto;padding:22px 16px 60px}input,select{background:#131d2b;color:var(--text);border:1px solid var(--line);padding:12px;border-radius:10px;font:inherit}
+input{width:min(100%,470px)}.controls{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:15px;padding:18px;margin:14px 0}
+.card h2{margin:6px 0;font-size:1.15rem}.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border:1px solid #56734e;border-radius:99px;color:var(--accent);font-size:.78rem;padding:3px 9px}
+small,.subtle{color:var(--muted)}.description{white-space:pre-wrap;color:#dce4ee}a{color:var(--accent)}
+button{cursor:pointer;background:#304259;color:var(--text);border:1px solid #68805c;border-radius:9px;padding:9px 13px;font:inherit}
+details{margin-top:15px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:700;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:14px 0}
+.kv{border:1px solid var(--line);border-radius:10px;padding:12px;background:#172133}.kv b{display:block}
+.warning{border-left:3px solid #e3be72;padding:8px 12px;background:#302c27;color:#f3e1b7}
+blockquote{margin:7px 0;padding:9px 12px;border-left:2px solid #8da4c2;background:#263346;color:#e0e7f1}
+footer{font-size:.86rem;color:var(--muted);margin-top:30px}
+</style></head><body>
+<header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · veille YouTube officielle · fiches et retours joueurs en français</p></header>
+<main>
+<p id="updated">Chargement de la veille…</p>
+<div class="controls">
+<input id="q" type="search" placeholder="Rechercher une astuce…">
+<select id="sort" aria-label="Trier">
+<option value="score">Priorité</option><option value="date">Plus récentes</option><option value="views">Moins de vues</option>
+</select>
+</div>
+<div id="list"></div>
+<footer>Filtrage Unity conservateur : des vidéos pertinentes peuvent être manquées si elles ne mentionnent pas Unity ou Dakal. Les titres, descriptions et commentaires publics ne permettent pas de garantir une astuce ou sa rentabilité. Aucune transcription intégrale ni collecte DoFocus automatisée.</footer>
+</main>
+<script>
+let items=[];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const txt=s=>esc(s??'Non précisé');
+function card(item){
+ const d=item.detail||{};
+ const cm=item.commentaires||{};
+ const signals=cm.signals||{};
+ const signalsHtml=['attention','prix','confirmation'].map(key=>{
+  const value=signals[key]||{count:0,examples:[]};
+  const labels={attention:'⚠️ Alertes / nerfs / contestations',prix:'💰 Prix / marché',confirmation:'✅ Retours positifs'};
+  return '<div class="kv"><b>'+labels[key]+'</b>'+
+    txt(value.count)+' commentaire(s) détecté(s) dans l’échantillon'+
+    (value.examples||[]).map(v=>'<blockquote>'+txt(v)+'</blockquote>').join('')+'</div>';
+ }).join('');
+ const info=[['Catégorie',d.categorie],['Résumé fourni par la source',d.resume_source||item.description],['Méthode vérifiée',d.methode],['Prérequis',d.prerequis],['Budget',d.budget],['Rentabilité',d.rentabilite],['Langue signalée',d.langue||item.langue]].map(([k,v])=>
+ '<div class="kv"><b>'+txt(k)+'</b>'+txt(v)+'</div>').join('');
+ return '<article class="card"><div class="tags"><span class="tag">Score '+txt(item.score)+'</span><span class="tag">'+txt(d.categorie||'Astuce kamas')+'</span><span class="tag">'+(item.views==null?'Vues inconnues':Number(item.views).toLocaleString('fr-FR')+' vues')+'</span></div>'+
+ '<h2>'+txt(item.title)+'</h2><small>'+txt(item.channel)+' · '+txt((item.date||'').slice(0,10))+'</small>'+
+ '<p class="description">'+txt(item.description||'Description indisponible.')+'</p>'+
+ '<details><summary>📖 Ouvrir la fiche détaillée</summary>'+
+ '<div class="warning">Informations tirées des métadonnées, pas d’une transcription de la vidéo. Ne pas considérer les retours comme des preuves.</div>'+
+ '<div class="grid">'+info+'</div>'+
+ '<h3>💬 Analyse des commentaires</h3>'+
+ (cm.status==='echantillon'?'<p class="subtle">'+txt(cm.analysed)+' commentaires publics examinés. Analyse de mots-clés, sans traduction automatique.</p><div class="grid">'+signalsHtml+'</div>':
+ '<p class="subtle">Commentaires non analysés ou indisponibles pour cette vidéo.</p>')+
+ '<p><a href="'+txt(item.url)+'" target="_blank" rel="noopener noreferrer">Ouvrir la vidéo et ses commentaires ↗</a></p>'+
+ '</details></article>';
+}
+function render(){
+ const q=document.getElementById('q').value.toLocaleLowerCase('fr');
+ const sort=document.getElementById('sort').value;
+ const result=items.filter(x=>((x.title||'')+' '+(x.description||'')+' '+(x.channel||'')).toLocaleLowerCase('fr').includes(q));
+ result.sort((a,b)=>sort==='date'?String(b.date||'').localeCompare(String(a.date||'')):sort==='views'?(a.views??Infinity)-(b.views??Infinity):(b.score||0)-(a.score||0));
+ document.getElementById('list').innerHTML=result.length?result.map(card).join(''):'<div class="card">Aucune piste Unity/Dakal trouvée pour cette recherche. Les résultats arriveront à la prochaine collecte.</div>';
+}
+document.getElementById('q').addEventListener('input',render);
+document.getElementById('sort').addEventListener('change',render);
+fetch('./data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
+ items=d.items||[];
+ const date=d.updated_at?new Date(d.updated_at).toLocaleString('fr-FR',{timeZone:'Europe/Paris'}):'Aucune collecte';
+ document.getElementById('updated').textContent=items.length+' pistes · Dernière collecte : '+date;
+ render();
+}).catch(()=>document.getElementById('updated').textContent='Impossible de charger data.json : vérifier GitHub Pages.');
+</script></body></html>
