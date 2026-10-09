@@ -1,10 +1,12 @@
 {
   "server": "Dakal",
   "queries": [
-    "dofus unity kamas astuce",
-    "dofus 3 kamas brisage",
-    "dofus Dakal kamas monocompte",
-    "dofus unity farm kamas"
+    "dofus unity monocompte kamas brisage",
+    "dofus 3 monocompte craft kamas",
+    "dofus Dakal astuce kamas solo",
+    "dofus unity lurk kamas",
+    "dofus 3 farm zone monocompte",
+    "dofus unity achat revente kamas"
   ],
   "max_results_per_query": 20,
   "max_videos_comments": 12,
