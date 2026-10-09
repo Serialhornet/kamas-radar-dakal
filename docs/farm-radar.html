@@ -75,6 +75,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr').trim();
 const PRICE_KEY='craftRadar_live_v2', SESSION_KEY='farmRadar_session_v1', HISTORY_KEY='farmRadar_history_v1';
 const NEW_SESSION=()=>({startedAt:null,accumulated:0,running:false,targetMinutes:30,finished:false,rows:[]});
+const priceChannel=typeof BroadcastChannel==='function'?new BroadcastChannel('radar-dakal-prices'):null;
 let session=NEW_SESSION(),history=[],catalog=[],itemsMap=new Map(),prices={},priceServer='Dakal',timer=null,hasCatalog=false,hasWarned=false;
 try{const v=JSON.parse(localStorage.getItem(SESSION_KEY));if(v&&Array.isArray(v.rows))session={...NEW_SESSION(),...v};const hist=JSON.parse(localStorage.getItem(HISTORY_KEY));if(Array.isArray(hist))history=hist.slice(-30)}catch(e){}
 function save(){try{localStorage.setItem(SESSION_KEY,JSON.stringify(session))}catch(e){$('status').textContent='Sauvegarde locale indisponible. Évite de fermer cet onglet pendant le farm.'}}
@@ -97,6 +98,7 @@ function savePrice(id,raw){
   else data.prices.Dakal[id]={value:Number(value),at:new Date().toISOString()};
   localStorage.setItem(PRICE_KEY,JSON.stringify(data));
   prices=data.prices.Dakal;
+  priceChannel?.postMessage({source:'farm',server:'Dakal'});
   return true;
  }catch(e){alert('Impossible d’enregistrer ce prix dans ce navigateur.');return false}
 }
@@ -176,6 +178,7 @@ $('clearBasket').onclick=()=>{if(confirm('Retirer toutes les ressources de cette
 $('refreshPrices').onclick=()=>{loadPrices();renderBasket()};
 $('sync').onclick=loadCatalog;
 window.addEventListener('storage',e=>{if(e.key===PRICE_KEY){loadPrices();renderBasket()}});
+priceChannel?.addEventListener('message',e=>{if(e.data?.source==='craft'){loadPrices();renderBasket()}});
 $('exportCsv').onclick=()=>{
  const lines=['Objet;ID;Quantité;Prix unitaire en kamas;Valeur en kamas'];
  let grand=0;for(const r of session.rows){let p=priceFor(r.id);if(p!==null)grand+=r.qty*p;lines.push([r.name.replace(/;/g,','),r.id,r.qty,p??'',p===null?'':p*r.qty].join(';'))}
