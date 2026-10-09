@@ -10,9 +10,9 @@ NOW = datetime.datetime.now(datetime.timezone.utc)
 RETRO = re.compile(r"\b(?:dofus\s*retro|retro\s*dofus|dofus\s*touch|boune|dofus\s*1[.,]29|dofus\s*2[.,]\d+)\b", re.I)
 UNITY = re.compile(r"\b(?:dofus\s*(?:unity|3(?:[.,]\d+)?|3d)|unity\s*dofus|dakal(?:\s*\d+)?|monocompte\s+dakal)\b", re.I)
 # Exclure les methodes aleatoires ou necessitant une equipe multicompte.
-EXCLUDE_TITLE = re.compile(r"\\b(?:songes?|dreams?\\s+infinis?|infinit[eé]\\s+dreams?|multicompte|multi[- ]comptes?|multi[- ]account|team\\s+(?:de\\s+)?(?:4|5|6|8)|team\\s+(?:cr[aâ]|sadi|enu|panda)|8\\s+(?:personnages|comptes|persos)|PL\\s+songes?)\\b", re.I)
-EXCLUDE_DESCRIPTION = re.compile(r"\\b(?:songes?\\s+infinis?|farm\\s+songes?|team\\s+de\\s+8|en\\s+multicompte|multi[- ]comptes?)\\b", re.I)
-MONO = re.compile(r"\\b(?:monocompte|mono[- ]compte|single[- ]account|solo|dakal|pionnier)\\b", re.I)
+EXCLUDE_TITLE = re.compile(r"\b(?:songes?|dreams?\s+infinis?|infinit[eé]\s+dreams?|multicompte|multi[- ]comptes?|multi[- ]account|team\s+(?:de\s+)?(?:4|5|6|8)|team\s+(?:cr[aâ]|sadi|enu|panda)|8\s+(?:personnages|comptes|persos)|PL\s+songes?)\b", re.I)
+EXCLUDE_DESCRIPTION = re.compile(r"\b(?:songes?\s+infinis?|farm\s+songes?|team\s+de\s+8|en\s+multicompte|multi[- ]comptes?)\b", re.I)
+MONO = re.compile(r"\b(?:monocompte|mono[- ]compte|single[- ]account|solo|dakal|pionnier)\b", re.I)
 PREFERRED = re.compile(r"lurk|brisage|bris(er|[ée])|runes?|craft|fabrication|m[ée]tier|r[ée]colte|achat[- ]revente|commerce|flipping|farm|drop|ressources?|zone", re.I)
 KAMAS = re.compile(r"kamas?|brisage|briser|runes?|craft|farm|m[ée]tier|rentabilit[ée]|astuce|ganar|ganhar|making money", re.I)
 SIGNALS = {
@@ -20,7 +20,9 @@ SIGNALS = {
  "prix": re.compile(r"\b(?:prix|hdv|hotel\s+de\s+vente|march[ée]|co[uû]t|kamas?|precio|pre[cç]o)\b", re.I),
  "confirmation": re.compile(r"\b(?:merci|test[ée]|fonctionne|rentable|valide|works|funciona|obrigad[oa]|gracias)\b", re.I)
 }
-CATEGORY = [(r"lurk","Lurk / marché"),\n            (r"achat[- ]revente|commerce|flipping","Commerce / revente"),\n            (r"brisage|briser|runes?","Brisage / runes"),
+CATEGORY = [(r"lurk","Lurk / marché"),
+            (r"achat[- ]revente|commerce|flipping","Commerce / revente"),
+            (r"brisage|briser|runes?","Brisage / runes"),
             (r"craft|m[ée]tier|fabrication|recette","Craft / métiers"),
             (r"farm|drop|zone|combat","Farm / drop")]
 def clean(x):
@@ -95,7 +97,8 @@ def main():
     top_limit=min(12,int(CFG.get("max_videos_comments",12)))
     recent=sorted(collected.values(),key=lambda x:x.get("date",""),reverse=True)
     for idx,item in enumerate(recent):
-        item["detail"]=detail_for(item)\n        title=item["title"]\n        item["monocompte"]=bool(MONO.search(title+" "+item["description"]))\n        item["detail"]["compatibilite_mono"]="Mention monocompte / solo / Dakal dans la source" if item["monocompte"] else "A verifier : pas de mention explicite du monocompte"
+        item["detail"]=detail_for(item)
+        title=item["title"]\n        item["monocompte"]=bool(MONO.search(title+" "+item["description"]))\n        item["detail"]["compatibilite_mono"]="Mention monocompte / solo / Dakal dans la source" if item["monocompte"] else "A verifier : pas de mention explicite du monocompte"
         item["detail"]["langue"]=item.get("langue","Non verifiee")
         item["commentaires"]=comments_for(item["id"]) if idx<top_limit else {
           "status":"non_analyses","analysed":0,"signals":{},"examples":[]}
@@ -103,7 +106,9 @@ def main():
         except Exception:age=30
         count=item.get("views")
         item["score"]=round(max(0,50-age*1.5)+(25 if count is None else max(0,25-count/1000))+
-                 (15 if item["detail"]["categorie"]!="Astuces kamas" else 0)+\n                 (18 if MONO.search(title) else 7 if item["monocompte"] else 0)+\n                 (14 if PREFERRED.search(title) else 5 if PREFERRED.search(item["description"]) else 0),1)
+                 (15 if item["detail"]["categorie"]!="Astuces kamas" else 0)+
+                 (18 if MONO.search(title) else 7 if item["monocompte"] else 0)+
+                 (14 if PREFERRED.search(title) else 5 if PREFERRED.search(item["description"]) else 0),1)
         if item["commentaires"]["signals"].get("attention",{}).get("count",0):
             item["score"]=max(0,item["score"]-8)
         item["fiche_fr"]="Resume descriptif en francais; aucune transcription verifiee."
