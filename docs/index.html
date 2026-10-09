@@ -97,7 +97,7 @@ function openTab(name,updateHash=true){
   document.getElementById('craftFrame').src='./craft-radar.html';
   craftFrameLoaded=true;
  }
- if(recolte&&!recolteFrameLoaded){document.getElementById('recolteFrame').src='./recolte-radar.html';recolteFrameLoaded=true;}
+ if(recolte&&!recolteFrameLoaded){document.getElementById('recolteFrame').src='./recolte-radar.html?v=zaaps-20261009';recolteFrameLoaded=true;}
  if(updateHash){
   const next=recolte?'#recolte-radar':craft?'#craft-radar':'#kamas-radar';
   if(window.location.hash!==next)window.history.replaceState(null,'',next);
