@@ -38,7 +38,7 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
 </div>
 <div class="grid">
 <section class="panel"><h2>🔎 Ajouter une ressource ou un objet</h2>
-<p>Recherche dans le catalogue partagé avec CraftRadar. Sélectionne un objet exact, puis saisis la quantité récoltée.</p>
+<p>Recherche dans le catalogue partagé avec CraftRadar. Sélectionne un objet exact, puis saisis la quantité récoltée. Tu peux aussi modifier son prix unitaire en kamas dans le bilan : il sera partagé avec CraftRadar.</p>
 <div class="row"><label class="field" style="flex:1;min-width:180px">Nom ou ID de l'objet<input id="search" type="search" placeholder="Ex. Chanvre, fer, laine, #1234"></label><button id="sync" style="align-self:end">Actualiser le catalogue</button></div>
 <div id="matches" class="items catalog"></div>
 <p class="muted" style="font-size:12px">Pour ajouter un objet absent, synchronise d'abord le catalogue dans CraftRadar. Ses prix sont lus pour le serveur Dakal.</p>
@@ -85,6 +85,20 @@ function loadPrices(){
  try{const data=JSON.parse(localStorage.getItem(PRICE_KEY))||{};prices=data.prices?.Dakal||{};priceServer='Dakal';$('status').textContent='Prix partagés avec CraftRadar · serveur Dakal · '+Object.keys(prices).length+' objets tarifés. Les objets sans prix sont exclus du total connu.'}
  catch(e){prices={};$('status').textContent='Aucun prix CraftRadar disponible dans ce navigateur. Saisis des prix dans l’onglet CraftRadar puis reviens.'}
  update();
+}
+function savePrice(id,raw){
+ const value=String(raw??'').trim();
+ if(value!==''&&(!Number.isFinite(Number(value))||Number(value)<0))return false;
+ try{
+  const data=JSON.parse(localStorage.getItem(PRICE_KEY))||{};
+  if(!data.prices||typeof data.prices!=='object')data.prices={};
+  if(!data.prices.Dakal||typeof data.prices.Dakal!=='object')data.prices.Dakal={};
+  if(value==='')delete data.prices.Dakal[id];
+  else data.prices.Dakal[id]={value:Number(value),at:new Date().toISOString()};
+  localStorage.setItem(PRICE_KEY,JSON.stringify(data));
+  prices=data.prices.Dakal;
+  return true;
+ }catch(e){alert('Impossible d’enregistrer ce prix dans ce navigateur.');return false}
 }
 function update(){
  const ms=elapsed();
@@ -154,9 +168,9 @@ $('matches').addEventListener('click',e=>{let btn=e.target.closest('[data-add]')
 function renderBasket(){
  if(!session.rows.length){$('basket').innerHTML='<p class="muted">Aucune ressource ajoutée.</p>';return}
  $('basket').innerHTML='<table><thead><tr><th>Objet</th><th>Quantité</th><th>Prix unitaire</th><th>Total</th><th></th></tr></thead><tbody>'+
- session.rows.map(r=>{let p=priceFor(r.id);return '<tr><td><b>'+esc(r.name)+'</b><br><small>#'+r.id+'</small></td><td><input type="number" min="0" step="1" data-qty="'+r.id+'" value="'+Math.max(0,Number(r.qty)||0)+'"></td><td>'+(p===null?'<span class="warn">Non renseigné</span>':fmt(p)+' kamas')+'</td><td>'+(p===null?'—':fmt(p*r.qty)+' kamas')+'</td><td><button class="danger" data-remove="'+r.id+'">×</button></td></tr>'}).join('')+'</tbody></table>';
+ session.rows.map(r=>{let p=priceFor(r.id);return '<tr><td><b>'+esc(r.name)+'</b><br><small>#'+r.id+'</small></td><td><input type="number" min="0" step="1" data-qty="'+r.id+'" value="'+Math.max(0,Number(r.qty)||0)+'"></td><td><input type="number" min="0" step="any" aria-label="Prix unitaire en kamas" placeholder="Prix en kamas" data-price="'+r.id+'" value="'+(p===null?'':p)+'"><small>kamas / unité</small></td><td>'+(p===null?'—':fmt(p*r.qty)+' kamas')+'</td><td><button class="danger" data-remove="'+r.id+'">×</button></td></tr>'}).join('')+'</tbody></table>';
 }
-$('basket').addEventListener('change',e=>{if(e.target.matches('[data-qty]')){let r=session.rows.find(x=>x.id===Number(e.target.dataset.qty));if(r){r.qty=Math.max(0,Math.floor(Number(e.target.value)||0));save();renderBasket();update()}}});
+$('basket').addEventListener('change',e=>{if(e.target.matches('[data-qty]')){let r=session.rows.find(x=>x.id===Number(e.target.dataset.qty));if(r){r.qty=Math.max(0,Math.floor(Number(e.target.value)||0));save();renderBasket();update()}}else if(e.target.matches('[data-price]')){let id=Number(e.target.dataset.price);if(savePrice(id,e.target.value)){renderBasket();update()}else alert('Prix invalide.')}});
 $('basket').addEventListener('click',e=>{let b=e.target.closest('[data-remove]');if(!b)return;session.rows=session.rows.filter(x=>x.id!==Number(b.dataset.remove));save();renderBasket();update()});
 $('clearBasket').onclick=()=>{if(confirm('Retirer toutes les ressources de cette session ?')){session.rows=[];save();renderBasket();update()}};
 $('refreshPrices').onclick=()=>{loadPrices();renderBasket()};
