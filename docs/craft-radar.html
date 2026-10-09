@@ -91,7 +91,8 @@ let settings=structuredClone(defaults);try{let old=JSON.parse(localStorage.getIt
 let items=[],itemMap=new Map(),recipes=new Map(),byIngredient=new Map(),recipeRows=[],catalogSource='',catalogMeta={},dataComplete=false,activeId=null,lastResults=[],isLoading=false;
 const displayCategory=cat=>CATS[cat]||cat;
 function toast(s){const t=$('toast');t.textContent=s;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),5000)}
-function persistSettings(){try{localStorage.setItem(KEY,JSON.stringify(settings));return true}catch(e){toast('Impossible de sauvegarder les prix localement. Utilise une sauvegarde JSON.');return false}}
+const priceChannel=typeof BroadcastChannel==='function'?new BroadcastChannel('radar-dakal-prices'):null;
+function persistSettings(){try{localStorage.setItem(KEY,JSON.stringify(settings));priceChannel?.postMessage({source:'craft',server:settings.server});return true}catch(e){toast('Impossible de sauvegarder les prix localement. Utilise une sauvegarde JSON.');return false}}
 function serverPrices(){return settings.prices[settings.server]||(settings.prices[settings.server]={})}
 function getPrice(id){const p=serverPrices()[Number(id)];return p&&Number.isFinite(Number(p.value))&&Number(p.value)>=0?Number(p.value):null}
 function setPrice(id,val,lot=1){let raw=String(val??'').trim().replace(/\s/g,'').replace(',','.'),d=serverPrices();if(raw===''){if(!Object.prototype.hasOwnProperty.call(d,id))return true;delete d[id]}else{const p=Number(raw),q=Number(lot);if(!Number.isFinite(p)||p<0||!Number.isFinite(q)||q<=0){toast('Prix invalide');return false}if(getPrice(id)===p/q)return true;d[id]={value:p/q,at:now()}}persistSettings();renderAll();return true}
@@ -411,4 +412,11 @@ $('ocrSave').addEventListener('click',()=>{
  if(setPrice(id,raw,lot))toast('Prix ajouté après vérification.');
 });
 
+priceChannel?.addEventListener('message',event=>{
+ if(event.data?.source!=='farm'||event.data?.server!=='Dakal')return;
+ try{
+  const incoming=JSON.parse(localStorage.getItem(KEY));
+  if(incoming?.prices?.Dakal){settings.prices.Dakal=incoming.prices.Dakal;renderAll();}
+ }catch(err){}
+});
 init();</script></body></html>
