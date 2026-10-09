@@ -8,6 +8,15 @@
 <div class="topline">Parcours de récolte · DOFUS Unity</div><h1>🧭 RécolteRadar</h1><p>Des trajets calculés pour Bûcheron, Pêcheur, Mineur, Paysan et Alchimiste, classés par tranche de niveau. Tu peux aussi conserver tes propres captures de circuits.</p>
 <div class="notice"><strong>Parcours expérimentaux :</strong> les positions viennent de la base communautaire DofusJobs, qui renvoie notamment à dofus-map. L'algorithme privilégie densité et proximité, mais ne vérifie pas les obstacles, transitions particulières, agressions, concurrence ni respawn. Les routes ne sont pas validées sur Dakal.</div>
 <section class="panel"><div class="toolbar"><label class="field">Métier<select id="job"><option>Bûcheron</option><option>Pêcheur</option><option>Mineur</option><option>Paysan</option><option>Alchimiste</option></select></label><label class="field">Niveau<select id="level"><option value="1-39">1–39</option><option value="40-79">40–79</option><option value="80-119">80–119</option><option value="120-159">120–159</option><option value="160-199">160–199</option><option value="200">200</option></select></label><label class="field">Ressource ciblée<input id="filter" placeholder="Ex. Frêne, blé, fer…" type="search"></label></div></section>
+<section class="panel" id="zaapTopBox" style="border:2px solid #e9aa55;background:linear-gradient(120deg,#49321b,#231e1a);box-shadow:0 10px 35px #0004">
+ <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+ <div><div style="color:#ffd394;font-weight:850;font-size:13px;letter-spacing:.7px">🚩 ZAAP DE DÉPART — RECOMMANDATION</div>
+ <div id="zaapTopName" style="font-size:clamp(21px,3vw,28px);font-weight:850;margin-top:3px;color:#fff1d6">Chargement des coordonnées…</div>
+ <div id="zaapTopDetails" style="font-size:14px;color:#f9cd94;margin-top:4px">Sélectionne un métier et une tranche de niveau.</div></div>
+ <div style="font-size:11px;background:#30271f;color:#eebc83;border-radius:8px;padding:8px 12px">Interface v3 · Zaaps visibles</div>
+ </div>
+ <div style="color:#ccb99c;font-size:12px;margin-top:8px">Zaap le plus proche géométriquement du départ. Accès réel et obstacles non vérifiés.</div>
+</section>
 <div class="layout">
 <div><section class="panel"><h2>Choisir un parcours</h2><div class="route-list" id="routes"></div></section><section class="panel"><h3>Sources cartographiques</h3><p><a target="_blank" rel="noopener noreferrer" href="https://dofus-map.com/">dofus-map.com ↗</a></p><p><a target="_blank" rel="noopener noreferrer" href="https://dofusdb.fr/tools/map">DofusDB ↗</a></p><p><a target="_blank" rel="noopener noreferrer" href="https://github.com/wApMorty/DofusJobs">DofusJobs — code MIT ↗</a></p></section></div>
 <div><section class="panel"><div class="row" style="justify-content:space-between"><h2 id="routeTitle">Choisis un parcours</h2><span class="badge" id="routeStats">—</span></div><p id="routeDescription"></p><div class="zaap-panel" id="zaapPanel" aria-live="polite"><div class="zaap-kicker">🚩 Zaap conseillé pour le départ</div><div id="zaapName" class="zaap-name">Sélectionne une route</div><div id="zaapCoords" class="zaap-coords"></div><div id="zaapCaution" class="zaap-caution"></div></div>
@@ -39,10 +48,12 @@ function renderRoutes(){const j=$('job').value,l=$('level').value,q=$('filter').
  for(const b of $('routes').querySelectorAll('[data-route]'))b.addEventListener('click',()=>{selected=candidates[Number(b.dataset.route)];renderRoutes();renderSelected()});
  renderSelected();
 }
-function renderSelected(){if(!selected){$('zaapPanel').style.display='none';$('routeTitle').textContent='Aucun parcours';$('routeStats').textContent='—';$('path').setAttribute('points','');$('stops').replaceChildren();$('resources').replaceChildren();return}
+function renderSelected(){if(!selected){$('zaapTopName').textContent='Zaap indisponible';$('zaapTopDetails').textContent='Aucun trajet chargé pour ces filtres.';$('zaapPanel').style.display='none';$('routeTitle').textContent='Aucun parcours';$('routeStats').textContent='—';$('path').setAttribute('points','');$('stops').replaceChildren();$('resources').replaceChildren();return}
  const r=selected;
  $('zaapPanel').style.display='';
  const zaap=r.nearest_zaap;
+ $('zaapTopName').textContent=zaap?zaap.name:'Zaap non déterminé';
+ $('zaapTopDetails').textContent=zaap?'Coordonnées ['+zaap.coords.join(', ')+'] · Départ ['+r.start.join(', ')+'] · '+zaap.map_distance+' maps théoriques':'Ce trajet ne contient pas encore de données de Zaap.';
  if(zaap){
    $('zaapName').textContent=zaap.name;
    $('zaapCoords').textContent='Zaap ['+zaap.coords.join(', ')+'] · départ ['+r.start.join(', ')+'] · écart théorique '+zaap.map_distance+' maps';
@@ -68,6 +79,6 @@ document.addEventListener('paste',e=>{if(e.target.closest('input,textarea,select
 $('savePhotos').addEventListener('click',async()=>{if(!db)return alert('Le stockage local est indisponible');if(!queued.length)return alert('Ajoute une capture');const tx=db.transaction('photos','readwrite');for(const f of queued)tx.objectStore('photos').put({id:Date.now()+'-'+Math.random(),key:key(),name:f.name||'Capture collée',file:f});tx.oncomplete=()=>{queued=[];$('uploads').value='';renderGallery()};});
 $('close').onclick=()=>$('lightbox').close();
 ['job','level','filter'].forEach(n=>$(n).addEventListener('change',renderRoutes));$('filter').addEventListener('input',renderRoutes);
-fetch('./recolte-routes.json?v=zaaps-20261009',{cache:'no-store'}).then(r=>r.json()).then(d=>{routes=d.routes||[];renderRoutes()}).catch(()=>{$('routes').textContent='Impossible de charger les parcours.'});
+fetch('./recolte-routes.json?v=zaaps-ui-v3',{cache:'no-store'}).then(r=>r.json()).then(d=>{routes=d.routes||[];renderRoutes()}).catch(()=>{$('routes').textContent='Impossible de charger les parcours.'});
 openDB().then(x=>{db=x;renderGallery()}).catch(e=>{$('imageInfo').textContent='Stockage désactivé : '+e.message});
 </script></body></html>
