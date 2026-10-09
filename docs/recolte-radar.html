@@ -34,7 +34,7 @@ function showMap(route){const pts=route.path||[],stops=route.stops||[];const xs=
  for(const stop of stops){const x=tx(stop.coords[0]),y=ty(stop.coords[1]);$('mapPoints').append(node('circle',{cx:x,cy:y,r:12,fill:'#f5b76c',stroke:'#332618','stroke-width':2}),node('text',{x,y:y+4,'text-anchor':'middle',fill:'#251c13','font-size':'12','font-weight':'800'},String(stop.index)));}
 }
 function renderRoutes(){const j=$('job').value,l=$('level').value,q=$('filter').value.toLocaleLowerCase('fr');const candidates=routes.filter(x=>x.job===j&&x.range===l&&(!q||x.resourceNames.some(n=>n.toLocaleLowerCase('fr').includes(q))));
- $('routes').innerHTML=candidates.map((r,i)=>'<button type="button" class="route-btn '+(r===selected?'active':'')+'" data-route="'+i+'">'+escapeHTML(r.job)+' · niv. '+escapeHTML(r.range)+'<small>'+r.stops.length+' arrêts riches · '+r.totalScreens+' passages de maps estimés</small></button>').join('')||'<p>Aucune route proposée pour ce filtre.</p>';
+ $('routes').innerHTML=candidates.map((r,i)=>'<button type="button" class="route-btn '+(r===selected?'active':'')+'" data-route="'+i+'">'+escapeHTML(r.job)+' · niv. '+escapeHTML(r.range)+'<small>'+r.stops.length+' arrêts riches · '+r.totalScreens+' passages de maps estimés</small><small style="color:#ffd18f;font-weight:700">🚩 Zaap : '+escapeHTML(r.nearest_zaap?.name||'Non déterminé')+' '+(r.nearest_zaap?'['+r.nearest_zaap.coords.join(', ')+']':'')+'</small></button>').join('')||'<p>Aucune route proposée pour ce filtre.</p>';
  selected=candidates.includes(selected)?selected:(candidates[0]||null);
  for(const b of $('routes').querySelectorAll('[data-route]'))b.addEventListener('click',()=>{selected=candidates[Number(b.dataset.route)];renderRoutes();renderSelected()});
  renderSelected();
@@ -68,6 +68,6 @@ document.addEventListener('paste',e=>{if(e.target.closest('input,textarea,select
 $('savePhotos').addEventListener('click',async()=>{if(!db)return alert('Le stockage local est indisponible');if(!queued.length)return alert('Ajoute une capture');const tx=db.transaction('photos','readwrite');for(const f of queued)tx.objectStore('photos').put({id:Date.now()+'-'+Math.random(),key:key(),name:f.name||'Capture collée',file:f});tx.oncomplete=()=>{queued=[];$('uploads').value='';renderGallery()};});
 $('close').onclick=()=>$('lightbox').close();
 ['job','level','filter'].forEach(n=>$(n).addEventListener('change',renderRoutes));$('filter').addEventListener('input',renderRoutes);
-fetch('./recolte-routes.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{routes=d.routes||[];renderRoutes()}).catch(()=>{$('routes').textContent='Impossible de charger les parcours.'});
+fetch('./recolte-routes.json?v=zaaps-20261009',{cache:'no-store'}).then(r=>r.json()).then(d=>{routes=d.routes||[];renderRoutes()}).catch(()=>{$('routes').textContent='Impossible de charger les parcours.'});
 openDB().then(x=>{db=x;renderGallery()}).catch(e=>{$('imageInfo').textContent='Stockage désactivé : '+e.message});
 </script></body></html>
