@@ -17,7 +17,7 @@
  <img id="ocrPreviewImage" alt="Aperçu de la capture HDV collée" style="display:none;max-width:100%;max-height:240px;object-fit:contain;border-radius:8px;margin:10px auto">
  <div id="ocrPasteInfo" class="caption">Aucune capture collée</div>
 </div>
-<div class="field"><label>Ou sélectionner un fichier image</label><input id="ocrFile" type="file" accept="image/png,image/jpeg,image/webp" class="input"></div><button id="ocrGo" class="btn primary" style="margin:10px 0">Analyser la capture</button><div id="ocrStatus" class="caption"></div><div id="ocrReview" class="hidden"><div class="field"><label>Texte détecté : vérifie/corrige</label><textarea id="ocrText" class="area"></textarea></div>
+<div class="field"><label>Ou sélectionner un fichier image</label><input id="ocrFile" type="file" accept="image/png,image/jpeg,image/webp" class="input"></div><button id="ocrGo" class="btn primary" style="margin:10px 0">Analyser la capture</button><div id="ocrStatus" class="caption"></div><div id="ocrReview" class="hidden"><textarea id="ocrText" hidden aria-hidden="true" tabindex="-1"></textarea>
 <style>
 .hdv-avg{display:grid;grid-template-columns:minmax(170px,1fr) minmax(180px,1fr);gap:14px;align-items:center;background:#132a36;border:1px solid #507d82;border-radius:13px;padding:14px;margin:14px 0}
 .hdv-avg label,.hdv-lot label{display:block;color:#bed1e3;font-size:12px;font-weight:750;margin-bottom:7px}
