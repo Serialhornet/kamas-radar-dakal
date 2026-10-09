@@ -1,0 +1,179 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FarmRadar — Dakal</title>
+<style>
+:root{color-scheme:dark;--bg:#0c101a;--panel:#171e2e;--line:#35405a;--muted:#aeb5c7;--text:#f5f2fc;--violet:#b29cff;--soft:#22213b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 65% 0,#28203d,transparent 46%),var(--bg);font:15px/1.55 Inter,ui-sans-serif,system-ui,sans-serif;color:var(--text)}main{max-width:1220px;margin:auto;padding:27px 22px 70px}
+h1{font-size:clamp(28px,3.6vw,40px);margin:4px 0;letter-spacing:-1px}h2{font-size:19px;margin:0 0 10px}h3{font-size:16px;margin:14px 0 8px}p{color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--violet);font-weight:850}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:17px;padding:19px;margin:17px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#c4bdd5;font-weight:700}
+input,select{background:#101724;border:1px solid #46516a;border-radius:10px;color:#f7f5ff;padding:10px 12px;font:inherit;min-width:0;width:100%}input:focus,select:focus{outline:2px solid #b29cff66}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid #65538b;background:#332b4d;color:#e8dcff;padding:9px 13px}button:hover{background:#473a64}
+button.primary{background:var(--violet);color:#211932;font-weight:800}button.danger{background:#3e2533;color:#ffc7d5;border-color:#794151}
+button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.muted,small{color:var(--muted)}
+.display{font-size:clamp(35px,6vw,64px);font-weight:850;letter-spacing:-2px;font-variant-numeric:tabular-nums;color:#e0d6ff;line-height:1.2;margin:12px 0}
+.metric{background:#101a28;border:1px solid #38415d;border-radius:14px;padding:14px}.metric .value{font-size:clamp(17px,2.2vw,27px);font-weight:850;font-variant-numeric:tabular-nums}.metric small{display:block;margin:4px 0}
+.result{display:flex;gap:7px;align-items:center;justify-content:space-between;background:#111927;border:1px solid #37425d;border-radius:10px;padding:10px;margin:7px 0}
+.result b{display:block}.result small{display:block}.result button{padding:6px 9px}.items{max-height:285px;overflow-y:auto;margin-top:10px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:600px}th{text-align:left;color:#aaa7bd;background:#20253a;font-size:12px;padding:10px}td{border-top:1px solid #32394e;padding:10px}td input{max-width:150px}td:last-child{text-align:right}
+.note{background:#26203a;border:1px solid #594a80;padding:13px;border-radius:11px;margin:13px 0;color:#dcd0f3}
+.success{color:#9df0c6}.warn{color:#ffcf9f}.pill{display:inline-block;border:1px solid #62518b;color:#cfbfff;background:#312844;border-radius:99px;padding:4px 10px;font-size:12px}.catalog{min-height:80px}
+@media(max-width:800px){main{padding:18px 12px}.grid,.three{grid-template-columns:1fr}}
+</style></head><body><main>
+<div class="eyebrow">DOFUS Unity · monocompte · Dakal</div><h1>⏱️ FarmRadar</h1>
+<p>Chronomètre de farm, inventaire récolté et valeur en kamas, avec les <strong>prix HDV partagés avec CraftRadar</strong> sur cet appareil.</p>
+<div class="note" id="status">Les prix proviennent de CraftRadar, serveur Dakal. Aucune estimation n'est inventée pour un objet sans prix.</div>
+<div class="grid">
+<section class="panel"><h2>⏱️ Session de farm</h2>
+<div class="display" id="clock" role="timer">00:00:00</div>
+<div class="row"><button class="primary" id="start">Démarrer</button><button id="pause">Pause</button><button id="finish">Terminer la session</button><button class="danger" id="reset">Réinitialiser</button></div>
+<h3>Minuteur facultatif</h3><div class="row"><label class="field">Durée cible (minutes)<input id="target" type="number" min="0" step="1" value="30" style="width:140px"></label><span id="countdown" class="pill">Aucun minuteur actif</span></div>
+<p class="muted" style="font-size:13px">Le chrono continue de compter si tu changes d'onglet ou recharges la page. Quand le temps est écoulé, le minuteur s'arrête automatiquement. Le navigateur peut bloquer les notifications sonores.</p>
+</section>
+<section class="panel"><h2>💰 Bilan de récolte</h2>
+<div class="three">
+<div class="metric"><small>Valeur connue</small><div id="total" class="value">0</div><small>kamas</small></div>
+<div class="metric"><small>Gain / heure</small><div id="hourly" class="value">—</div><small>kamas / h</small></div>
+<div class="metric"><small>Objets enregistrés</small><div id="quantity" class="value">0</div><small>unités</small></div>
+</div>
+<p id="missing" class="warn" style="font-size:13px"></p><div class="row"><button id="exportCsv">Exporter le bilan CSV</button><span id="sessionState" class="pill">Prêt</span></div>
+<div id="history" class="muted" style="margin-top:12px;font-size:13px"></div>
+</section>
+</div>
+<div class="grid">
+<section class="panel"><h2>🔎 Ajouter une ressource ou un objet</h2>
+<p>Recherche dans le catalogue partagé avec CraftRadar. Sélectionne un objet exact, puis saisis la quantité récoltée.</p>
+<div class="row"><label class="field" style="flex:1;min-width:180px">Nom ou ID de l'objet<input id="search" type="search" placeholder="Ex. Chanvre, fer, laine, #1234"></label><button id="sync" style="align-self:end">Actualiser le catalogue</button></div>
+<div id="matches" class="items catalog"></div>
+<p class="muted" style="font-size:12px">Pour ajouter un objet absent, synchronise d'abord le catalogue dans CraftRadar. Ses prix sont lus pour le serveur Dakal.</p>
+</section>
+<section class="panel"><h2>🎒 Ressources récoltées</h2>
+<div id="basket" class="tablewrap"><p class="muted">Aucune ressource pour le moment.</p></div>
+<div class="row"><button id="refreshPrices">Relire les prix de CraftRadar</button><button class="danger" id="clearBasket">Vider la liste</button></div>
+</section>
+</div>
+<section class="panel"><h2>🐉 Estimer les drops d'un monstre</h2>
+<p>Simulateur de probabilité **indicative** : renseigne un taux de base vérifié dans le jeu. La prospection seule ne garantit pas un butin ; les idoles, challenges, bonus et plafonds éventuels ne sont pas inclus.</p>
+<div class="three">
+<label class="field">Nom du monstre (mémo)<input id="monster" placeholder="Ex. Bouftou"></label>
+<label class="field">Prospection de ton personnage<input id="pp" type="number" min="0" step="1" value="100"></label>
+<label class="field">Nombre de combats<input id="fights" type="number" min="1" step="1" value="100"></label>
+</div>
+<div class="grid" style="margin-top:12px">
+<label class="field">Nom de la ressource droppée<input id="dropName" placeholder="Nom de l'objet"></label>
+<label class="field">Taux de base à 100 PP (%)<input id="baseRate" type="number" min="0" max="100" step="0.01" placeholder="Ex. 1"></label>
+</div>
+<div class="row" style="margin-top:13px"><button class="primary" id="calculate">Calculer la chance estimée</button></div>
+<div class="three" style="margin-top:14px">
+<div class="metric"><small>Chance estimée / combat</small><div class="value" id="perFight">—</div></div>
+<div class="metric"><small>Au moins un drop sur N combats</small><div class="value" id="atLeastOne">—</div></div>
+<div class="metric"><small>Drops attendus (modèle simple)</small><div class="value" id="expected">—</div></div>
+</div>
+<div class="note">Modèle mathématique simplifié : <code>taux × prospection / 100</code>, plafonné à 100 %. Ce n'est pas une formule officielle complète ni une simulation des mécaniques particulières des monstres DOFUS Unity. Aucun catalogue de taux n'est renseigné automatiquement sans données vérifiées.</div>
+</section>
+</main><script>
+"use strict";
+const $=id=>document.getElementById(id);
+const fmt=n=>Number(n).toLocaleString('fr-FR',{maximumFractionDigits:2});
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr').trim();
+const PRICE_KEY='craftRadar_live_v2', SESSION_KEY='farmRadar_session_v1', HISTORY_KEY='farmRadar_history_v1';
+const NEW_SESSION=()=>({startedAt:null,accumulated:0,running:false,targetMinutes:30,finished:false,rows:[]});
+let session=NEW_SESSION(),history=[],catalog=[],itemsMap=new Map(),prices={},priceServer='Dakal',timer=null,hasCatalog=false,hasWarned=false;
+try{const v=JSON.parse(localStorage.getItem(SESSION_KEY));if(v&&Array.isArray(v.rows))session={...NEW_SESSION(),...v};const hist=JSON.parse(localStorage.getItem(HISTORY_KEY));if(Array.isArray(hist))history=hist.slice(-30)}catch(e){}
+function save(){try{localStorage.setItem(SESSION_KEY,JSON.stringify(session))}catch(e){$('status').textContent='Sauvegarde locale indisponible. Évite de fermer cet onglet pendant le farm.'}}
+function elapsed(){return Math.max(0,Number(session.accumulated)||0)+(session.running&&session.startedAt?Math.max(0,Date.now()-Number(session.startedAt)):0)}
+function formatTime(ms){const s=Math.floor(Math.max(0,ms)/1000);return [Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':')}
+function priceFor(id){const p=prices[id];return p&&Number.isFinite(Number(p.value))&&Number(p.value)>=0?Number(p.value):null}
+function loadPrices(){
+ try{const data=JSON.parse(localStorage.getItem(PRICE_KEY))||{};prices=data.prices?.Dakal||{};priceServer='Dakal';$('status').textContent='Prix partagés avec CraftRadar · serveur Dakal · '+Object.keys(prices).length+' objets tarifés. Les objets sans prix sont exclus du total connu.'}
+ catch(e){prices={};$('status').textContent='Aucun prix CraftRadar disponible dans ce navigateur. Saisis des prix dans l’onglet CraftRadar puis reviens.'}
+ update();
+}
+function update(){
+ const ms=elapsed();
+ $('clock').textContent=formatTime(ms);
+ $('target').value=session.targetMinutes||0;
+ const limit=(Number(session.targetMinutes)||0)*60000;
+ $('countdown').textContent=limit>0?(session.finished?'Session terminée':Math.max(0,Math.ceil((limit-ms)/1000))+' s restantes'):'Aucun minuteur actif';
+ if(session.running&&limit>0&&ms>=limit){session.accumulated=limit;session.running=false;session.startedAt=null;session.finished=true;save();notifyDone()}
+ $('start').disabled=session.running;
+ $('pause').disabled=!session.running;
+ $('sessionState').textContent=session.finished?'Terminée':session.running?'En cours':'En pause / prête';
+ const rows=session.rows.filter(r=>Number(r.qty)>0);
+ const value=rows.reduce((sum,r)=>{const p=priceFor(r.id);return sum+(p===null?0:p*Number(r.qty))},0);
+ const quantity=rows.reduce((sum,r)=>sum+Number(r.qty),0),missing=rows.filter(r=>priceFor(r.id)===null);
+ $('total').textContent=fmt(value);
+ $('hourly').textContent=ms>1000?fmt(value*3600000/ms):'—';
+ $('quantity').textContent=fmt(quantity);
+ $('missing').textContent=missing.length?missing.length+' objet(s) sans prix Dakal : leur valeur n’est pas comptée.':''; 
+}
+function notifyDone(){
+ $('sessionState').textContent='Minuteur terminé !';
+ if(navigator.vibrate)navigator.vibrate([150,100,150]);
+ alert('⏱️ FarmRadar : temps écoulé ! Pense à noter les ressources récoltées.');
+}
+function start(){
+ if(session.running)return;
+ if(session.finished){session.finished=false;if(session.targetMinutes>0&&session.accumulated>=session.targetMinutes*60000)session.accumulated=0}
+ session.startedAt=Date.now();session.running=true;save();update();
+}
+function pause(){if(session.running){session.accumulated=elapsed();session.running=false;session.startedAt=null;save();update()}}
+function finish(){
+ pause();session.finished=true;
+ const ms=elapsed(),value=session.rows.reduce((sum,r)=>sum+(priceFor(r.id)||0)*Number(r.qty),0);
+ history.push({date:new Date().toISOString(),duration:ms,value,count:session.rows.reduce((a,r)=>a+Number(r.qty),0)});history=history.slice(-30);
+ try{localStorage.setItem(HISTORY_KEY,JSON.stringify(history))}catch(e){}
+ save();update();renderHistory();
+}
+function reset(){if(!confirm('Réinitialiser le chrono et la liste de ressources ? Les bilans déjà terminés restent dans l’historique.'))return;session=NEW_SESSION();save();renderBasket();update()}
+function renderHistory(){let last=history.slice(-5).reverse();$('history').textContent=last.length?'Derniers bilans : '+last.map(x=>new Date(x.date).toLocaleDateString('fr-FR')+' · '+formatTime(x.duration)+' · '+fmt(x.value)+' kamas').join(' | '):'Aucune session terminée.'}
+$('start').onclick=start;$('pause').onclick=pause;$('finish').onclick=finish;$('reset').onclick=reset;
+$('target').value=session.targetMinutes||0;
+$('target').addEventListener('change',e=>{session.targetMinutes=Math.max(0,Math.floor(Number(e.target.value)||0));save();update()});
+function dbOpen(){return new Promise((resolve,reject)=>{const req=indexedDB.open('CraftRadar_Catalogue_3',1);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains('cache'))req.result.createObjectStore('cache')}})}
+async function loadCatalog(){
+ $('matches').textContent='Chargement du catalogue CraftRadar…';
+ try{
+  const db=await dbOpen();
+  const result=await new Promise((resolve,reject)=>{const q=db.transaction('cache','readonly').objectStore('cache').get('catalogue');q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)});
+  db.close();
+  const raw=result?.items||[];
+  catalog=raw.map(x=>({id:Number(x.ankama_id??x.id),name:String(x.name||''),category:String(x.category||x.type||'Objet'),level:Number(x.level)||0})).filter(x=>Number.isSafeInteger(x.id)&&x.id>0&&x.name);
+  itemsMap=new Map(catalog.map(it=>[it.id,it]));hasCatalog=!!catalog.length;
+  $('matches').textContent=hasCatalog?'Catalogue chargé : '+catalog.length+' objets. Cherche un objet par son nom.':'Catalogue absent : ouvre CraftRadar et clique sur « Synchroniser DOFUS ».';
+  renderSearch();renderBasket();
+ }catch(err){$('matches').textContent='Catalogue indisponible : ouvre CraftRadar pour synchroniser les objets, puis clique sur Actualiser. '+err.message}
+}
+function renderSearch(){
+ const q=norm($('search').value).replace(/^#/,'');
+ if(!q||q.length<2){$('matches').textContent=hasCatalog?'Tape au moins 2 caractères pour rechercher une ressource.':'Charge d’abord le catalogue depuis CraftRadar.';return}
+ const results=catalog.filter(it=>norm(it.name).includes(q)||String(it.id)===q).sort((a,b)=>{
+  let x=norm(a.name),y=norm(b.name);return (x===q?-1:x.startsWith(q)?0:1)-(y===q?-1:y.startsWith(q)?0:1)||x.localeCompare(y,'fr')
+ }).slice(0,25);
+ $('matches').innerHTML=results.map(it=>'<div class="result"><div><b>'+esc(it.name)+'</b><small>'+esc(it.category)+' · niv. '+it.level+' · #'+it.id+'</small></div><button data-add="'+it.id+'">+ Ajouter</button></div>').join('')||'<p class="muted">Aucun objet trouvé. Essaie un autre nom.</p>';
+}
+$('search').addEventListener('input',renderSearch);
+$('matches').addEventListener('click',e=>{let btn=e.target.closest('[data-add]');if(!btn)return;let id=Number(btn.dataset.add),it=itemsMap.get(id);if(!it)return;let row=session.rows.find(x=>x.id===id);if(row)row.qty+=1;else session.rows.push({id,name:it.name,qty:1});save();renderBasket();update()});
+function renderBasket(){
+ if(!session.rows.length){$('basket').innerHTML='<p class="muted">Aucune ressource ajoutée.</p>';return}
+ $('basket').innerHTML='<table><thead><tr><th>Objet</th><th>Quantité</th><th>Prix unitaire</th><th>Total</th><th></th></tr></thead><tbody>'+
+ session.rows.map(r=>{let p=priceFor(r.id);return '<tr><td><b>'+esc(r.name)+'</b><br><small>#'+r.id+'</small></td><td><input type="number" min="0" step="1" data-qty="'+r.id+'" value="'+Math.max(0,Number(r.qty)||0)+'"></td><td>'+(p===null?'<span class="warn">Non renseigné</span>':fmt(p)+' kamas')+'</td><td>'+(p===null?'—':fmt(p*r.qty)+' kamas')+'</td><td><button class="danger" data-remove="'+r.id+'">×</button></td></tr>'}).join('')+'</tbody></table>';
+}
+$('basket').addEventListener('change',e=>{if(e.target.matches('[data-qty]')){let r=session.rows.find(x=>x.id===Number(e.target.dataset.qty));if(r){r.qty=Math.max(0,Math.floor(Number(e.target.value)||0));save();renderBasket();update()}}});
+$('basket').addEventListener('click',e=>{let b=e.target.closest('[data-remove]');if(!b)return;session.rows=session.rows.filter(x=>x.id!==Number(b.dataset.remove));save();renderBasket();update()});
+$('clearBasket').onclick=()=>{if(confirm('Retirer toutes les ressources de cette session ?')){session.rows=[];save();renderBasket();update()}};
+$('refreshPrices').onclick=()=>{loadPrices();renderBasket()};
+$('sync').onclick=loadCatalog;
+window.addEventListener('storage',e=>{if(e.key===PRICE_KEY){loadPrices();renderBasket()}});
+$('exportCsv').onclick=()=>{
+ const lines=['Objet;ID;Quantité;Prix unitaire en kamas;Valeur en kamas'];
+ let grand=0;for(const r of session.rows){let p=priceFor(r.id);if(p!==null)grand+=r.qty*p;lines.push([r.name.replace(/;/g,','),r.id,r.qty,p??'',p===null?'':p*r.qty].join(';'))}
+ lines.push(['TOTAL','','','',grand].join(';'));lines.push(['Durée en secondes','','','',Math.round(elapsed()/1000)].join(';'));
+ const url=URL.createObjectURL(new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='FarmRadar-bilan-Dakal.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),4000);
+};
+$('calculate').onclick=()=>{
+ const base=Number($('baseRate').value),pp=Number($('pp').value),n=Number($('fights').value);
+ if($('baseRate').value.trim()===''||!Number.isFinite(base)||base<0||base>100||!Number.isFinite(pp)||pp<0||!Number.isInteger(n)||n<1)return alert('Saisis un taux entre 0 et 100 %, une prospection valide et un nombre de combats entier positif.');
+ const p=Math.min(1,base/100*pp/100);
+ $('perFight').textContent=fmt(p*100)+' %';$('atLeastOne').textContent=fmt((1-Math.pow(1-p,n))*100)+' %';$('expected').textContent=fmt(n*p);
+};
+loadPrices();renderBasket();renderHistory();loadCatalog();update();
+timer=setInterval(update,1000);
+</script></body></html>
