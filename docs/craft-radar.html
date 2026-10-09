@@ -97,11 +97,25 @@ async function ocrLoad(){
  await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js';s.onload=resolve;s.onerror=()=>reject(Error('Chargement OCR impossible'));document.head.appendChild(s)});
 }
 function ocrMatch(){
- const lines=$('ocrText').value.split(/\r?\n/).map(s=>norm(s)).filter(Boolean);
- const matches=items.filter(it=>norm(it.name).length>=4&&lines.some(line=>line.includes(norm(it.name)))).sort((a,b)=>b.name.length-a.name.length).slice(0,20);
+ const rawLines=$('ocrText').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+ const matches=items.filter(it=>norm(it.name).length>=4&&rawLines.some(line=>norm(line).includes(norm(it.name)))).sort((a,b)=>b.name.length-a.name.length).slice(0,20);
  $('ocrItem').innerHTML='<option value="">Choisir un objet (non automatique)</option>'+matches.map(it=>'<option value="'+it.id+'">'+escapeHTML(it.name)+' (#'+it.id+')</option>').join('');
- if(matches.length===1)$('ocrItem').value=matches[0].id;
- $('ocrStatus').textContent='Reconnaissance terminée. '+matches.length+' correspondance(s) possibles. Vérifie le prix sur la capture.';
+ $('ocrPrice').value='';
+ if(matches.length===1){
+   const item=matches[0];
+   $('ocrItem').value=String(item.id);
+   // Ne proposer un prix que si un seul nombre monétaire plausible suit le nom sur sa ligne.
+   const line=rawLines.find(s=>norm(s).includes(norm(item.name)))||'';
+   const pos=norm(line).indexOf(norm(item.name));
+   const after=line.slice(Math.max(0,pos+item.name.length));
+   const tokens=[...after.matchAll(/(?:^|\s)(\d{1,3}(?:[ .]\d{3})+|\d{4,10})\s*(?:kamas|k)?(?=\s|$)/gi)].map(m=>m[1].replace(/[ .]/g,''));
+   if(tokens.length===1 && Number(tokens[0])>0){
+     $('ocrPrice').value=tokens[0];
+     $('ocrStatus').textContent='Prix proposé automatiquement, à vérifier avec le nom et le lot avant validation.';
+     return;
+   }
+ }
+ $('ocrStatus').textContent='Reconnaissance terminée. '+matches.length+' correspondance(s) possibles. Entre ou corrige le prix d’après la capture.';
 }
 $('ocrText').addEventListener('input',ocrMatch);
 $('ocrGo').addEventListener('click',async()=>{
