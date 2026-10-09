@@ -98,7 +98,9 @@ def main():
     recent=sorted(collected.values(),key=lambda x:x.get("date",""),reverse=True)
     for idx,item in enumerate(recent):
         item["detail"]=detail_for(item)
-        title=item["title"]\n        item["monocompte"]=bool(MONO.search(title+" "+item["description"]))\n        item["detail"]["compatibilite_mono"]="Mention monocompte / solo / Dakal dans la source" if item["monocompte"] else "A verifier : pas de mention explicite du monocompte"
+        title=item["title"]
+        item["monocompte"]=bool(MONO.search(title+" "+item["description"]))
+        item["detail"]["compatibilite_mono"]="Mention monocompte / solo / Dakal dans la source" if item["monocompte"] else "A verifier : pas de mention explicite du monocompte"
         item["detail"]["langue"]=item.get("langue","Non verifiee")
         item["commentaires"]=comments_for(item["id"]) if idx<top_limit else {
           "status":"non_analyses","analysed":0,"signals":{},"examples":[]}
