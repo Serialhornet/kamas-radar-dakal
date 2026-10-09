@@ -11,7 +11,7 @@
 <section class="page active" id="page-radar"><div class="cards"><div class="stat"><span>Objets référencés</span><strong id="sItems">0</strong><em>Catalogue chargé</em></div><div class="stat"><span>Recettes disponibles</span><strong id="sRecipes">0</strong><em>Fabrications identifiées</em></div><div class="stat"><span>Crafts calculables</span><strong id="sCalculable">0</strong><em>Prix complets</em></div><div class="stat"><span>Crafts rentables</span><strong class="positive" id="sProfitable">0</strong><em>Après taxe configurée</em></div></div><div class="panel"><div class="panelhead"><div><h2>◈ Classement des crafts rentables</h2><small>Le bénéfice ne s'affiche que si tous les prix sont connus</small></div><div class="mini-actions"><label class="tiny"><input type="checkbox" id="onlyProfit" checked> Rentables seulement</label><button class="btn smol" id="exportResults">Exporter CSV</button></div></div><div class="filterset"><div class="field"><label>Rechercher un craft</label><input class="input" id="radarQuery" placeholder="Coiffe, anneau, potion..."></div><div class="field"><label>Catégorie</label><select class="select" id="radarCategory"></select></div><div class="field"><label>Trier par</label><select class="select" id="radarSort"><option value="profit">Bénéfice net ↓</option><option value="roi">ROI ↓</option><option value="level">Niveau ↑</option><option value="name">Nom A → Z</option></select></div><div class="field"><label>Niveau max.</label><input class="input" type="number" id="radarLevel" min="0" max="300" value="300"></div></div><div class="tablewrap"><table class="table"><thead><tr><th>Objet fabriqué</th><th>Type</th><th class="num">Ressources</th><th class="num">Vente</th><th class="num">Bénéfice net</th><th class="num">ROI</th><th></th></tr></thead><tbody id="radarBody"></tbody></table></div><div class="empty" id="radarEmpty">Aucun craft calculable. Ouvre une recette, puis renseigne les prix de ses ingrédients et celui de l'objet vendu.</div><div class="bottom" id="radarTotal">0 résultat</div></div></section>
 <section class="page" id="page-objects"><div class="panel"><div class="panelhead"><div><h2>▦ Catalogue de tous les objets</h2><small>Chaque ressource affiche toutes les recettes dans lesquelles elle intervient</small></div><span class="pill" id="itemsPill">0 objet</span></div><div class="filterset"><div class="field"><label>Nom ou identifiant</label><input class="input" id="objectQuery" placeholder="Fer, Orme, Bouftou, #1234..."></div><div class="field"><label>Catégorie</label><select class="select" id="objectCategory"></select></div><div class="field"><label>Usage</label><select class="select" id="objectUse"><option value="">Tous les objets</option><option value="ingredient">Utilisés dans au moins un craft</option><option value="crafted">Possèdent une recette</option><option value="unpriced">Prix non renseigné</option></select></div><div class="field"><label>Affichage</label><select class="select" id="objectSort"><option value="name">Nom A → Z</option><option value="uses">Plus utilisés d'abord</option><option value="level">Niveau ↓</option></select></div></div><div class="tablewrap"><table class="table"><thead><tr><th>Objet / ressource</th><th>Catégorie</th><th class="num">Niv.</th><th class="num">Entre dans</th><th>Fabriquable</th><th class="num">Prix HDV</th><th></th></tr></thead><tbody id="objectBody"></tbody></table></div><div class="bottom" id="objectTotal">0 résultat</div></div></section>
 <section class="page" id="page-recipes"><div class="panel"><div class="panelhead"><div><h2>⚒ Catalogue de toutes les recettes</h2><small>Recherche aussi un ingrédient pour identifier ce qu'il permet de fabriquer</small></div><span class="pill" id="recipesPill">0 recette</span></div><div class="filterset"><div class="field"><label>Objet fabriqué ou ingrédient</label><input class="input" id="recipeQuery" placeholder="Par ex. : Fer, Frêne, Gelée..."></div><div class="field"><label>Type d'objet</label><select class="select" id="recipeCategory"></select></div><div class="field"><label>État des prix</label><select class="select" id="recipeStatus"><option value="">Toutes</option><option value="ready">Calcul possible</option><option value="missing">Prix manquants</option></select></div><div class="field"><label>Tri</label><select class="select" id="recipeSort"><option value="level">Niveau ↑</option><option value="name">Nom A → Z</option><option value="missing">Prix les plus complets</option></select></div></div><div class="tablewrap"><table class="table"><thead><tr><th>Objet final</th><th>Type</th><th class="num">Niv.</th><th class="num">Ingrédients</th><th>Prix connus</th><th>Calcul</th><th></th></tr></thead><tbody id="recipeBody"></tbody></table></div><div class="bottom" id="recipeTotal">0 résultat</div></div></section>
-<section class="page" id="page-prices"><div class="twocol"><div class="panel"><div class="panelhead"><div><h2>◉ Relevé de prix du serveur</h2><small id="pricesHeader">Aucune valeur présumée</small></div></div><div class="pane"><div class="field"><label>Rechercher un objet, même non craftable</label><input class="input" id="priceQuery" placeholder="Nom de l'objet ou #ID"></div><p class="caption">Si le prix affiché à l'HDV concerne un lot de 10 ou 100, choisis cette quantité : le prix unitaire sera calculé automatiquement.</p><div class="pricesline tiny muted"><span>Objet</span><span>Lot</span><span>Prix du lot (K)</span><span>Prix unitaire</span></div><div id="priceBody"></div><div class="list-more" id="priceTotal"></div></div></div><div class="panel"><div class="panelhead"><h2>Importer / exporter les prix</h2></div><div class="pane"><p class="caption">Colle des lignes <code>Nom;Prix unitaire</code> ou <code>ID;Prix unitaire</code>. Les noms ambigus sont ignorés ; aucun prix n'est ajouté par défaut.</p><textarea id="bulkPrices" class="area" placeholder="ID;Prix unitaire&#10;1234;2500"></textarea><div class="mini-actions" style="margin-top:12px"><button class="btn primary" id="importText">Importer</button><label class="btn">Importer CSV<input type="file" id="importCsv" accept=".csv,.txt" hidden></label><button class="btn" id="exportPrices">Exporter CSV</button></div><div class="divider"></div><div class="panel" style="margin:0"><div class="panelhead"><h2>📷 Capture HDV : reconnaître un prix</h2></div><div class="pane"><p class="caption">OCR local expérimental. Les images restent dans ton navigateur. Vérifie manuellement le nom, le lot et le prix avant enregistrement.</p><input id="ocrFile" type="file" accept="image/png,image/jpeg,image/webp" class="input"><button id="ocrGo" class="btn primary" style="margin:10px 0">Analyser la capture</button><div id="ocrStatus" class="caption"></div><div id="ocrReview" class="hidden"><div class="field"><label>Texte détecté : vérifie/corrige</label><textarea id="ocrText" class="area"></textarea></div><div class="field"><label>Objet identifié</label><select id="ocrItem" class="select"></select></div><div class="row" style="margin-top:10px"><div class="field"><label>Prix du lot (kamas)</label><input id="ocrPrice" class="input" type="number" min="0" placeholder="Prix à confirmer"></div><div class="field"><label>Lot</label><select id="ocrLot" class="select"><option value="1">×1</option><option value="10">×10</option><option value="100">×100</option></select></div></div><button id="ocrSave" class="btn primary" style="margin-top:10px">Confirmer et enregistrer</button></div></div></div><div class="divider"></div><div class="stat"><span>Objets avec un prix sur ce serveur</span><strong id="pricesCount">0</strong><em>Prix actualisés manuellement</em></div><p class="caption">Les prix sont enregistrés uniquement sur cet appareil, séparément pour chaque serveur, et peuvent être effacés à tout moment.</p><div id="priceRecent"></div></div></div></div></section>
+<section class="page" id="page-prices"><div class="twocol"><div class="panel"><div class="panelhead"><div><h2>◉ Relevé de prix du serveur</h2><small id="pricesHeader">Aucune valeur présumée</small></div></div><div class="pane"><div class="field"><label>Rechercher un objet, même non craftable</label><input class="input" id="priceQuery" placeholder="Nom de l'objet ou #ID"></div><p class="caption">Si le prix affiché à l'HDV concerne un lot de 10 ou 100, choisis cette quantité : le prix unitaire sera calculé automatiquement.</p><div class="pricesline tiny muted"><span>Objet</span><span>Lot</span><span>Prix du lot (K)</span><span>Prix unitaire</span></div><div id="priceBody"></div><div class="list-more" id="priceTotal"></div></div></div><div class="panel"><div class="panelhead"><h2>Importer / exporter les prix</h2></div><div class="pane"><p class="caption">Colle des lignes <code>Nom;Prix unitaire</code> ou <code>ID;Prix unitaire</code>. Les noms ambigus sont ignorés ; aucun prix n'est ajouté par défaut.</p><textarea id="bulkPrices" class="area" placeholder="ID;Prix unitaire&#10;1234;2500"></textarea><div class="mini-actions" style="margin-top:12px"><button class="btn primary" id="importText">Importer</button><label class="btn">Importer CSV<input type="file" id="importCsv" accept=".csv,.txt" hidden></label><button class="btn" id="exportPrices">Exporter CSV</button></div><div class="divider"></div><div class="panel" style="margin:0"><div class="panelhead"><h2>📷 Capture HDV : reconnaître un prix</h2></div><div class="pane"><p class="caption">OCR local expérimental. Les images restent dans ton navigateur. Vérifie manuellement le nom, le lot et le prix avant enregistrement.</p><input id="ocrFile" type="file" accept="image/png,image/jpeg,image/webp" class="input"><button id="ocrGo" class="btn primary" style="margin:10px 0">Analyser la capture</button><div id="ocrStatus" class="caption"></div><div id="ocrReview" class="hidden"><div class="field"><label>Texte détecté : vérifie/corrige</label><textarea id="ocrText" class="area"></textarea></div><div id="ocrLotsPanel" class="box hidden" style="margin:12px 0"><b>Prix repérés dans les trois lignes HDV</b><p class="caption">Vérifie et corrige chaque prix : le « prix moyen » n'est jamais utilisé. Clique sur le lot souhaité pour préparer son import.</p><div class="row"><div class="field"><label>Lot ×1</label><input id="ocrPrice1" class="input" type="number" min="0" placeholder="À vérifier"></div><div class="field"><label>Lot ×10</label><input id="ocrPrice10" class="input" type="number" min="0" placeholder="À vérifier"></div><div class="field"><label>Lot ×100</label><input id="ocrPrice100" class="input" type="number" min="0" placeholder="À vérifier"></div></div><p class="caption">Une seule référence de prix unitaire est enregistrée par ressource : sélectionne le lot réellement utilisé.</p><div class="mini-actions"><button id="ocrPick1" class="btn smol">Choisir ×1</button><button id="ocrPick10" class="btn smol">Choisir ×10</button><button id="ocrPick100" class="btn smol">Choisir ×100</button></div></div><div class="field"><label>Objet identifié</label><select id="ocrItem" class="select"></select></div><div class="row" style="margin-top:10px"><div class="field"><label>Prix du lot (kamas)</label><input id="ocrPrice" class="input" type="number" min="0" placeholder="Prix à confirmer"></div><div class="field"><label>Lot</label><select id="ocrLot" class="select"><option value="1">×1</option><option value="10">×10</option><option value="100">×100</option></select></div></div><button id="ocrSave" class="btn primary" style="margin-top:10px">Confirmer et enregistrer</button></div></div></div><div class="divider"></div><div class="stat"><span>Objets avec un prix sur ce serveur</span><strong id="pricesCount">0</strong><em>Prix actualisés manuellement</em></div><p class="caption">Les prix sont enregistrés uniquement sur cet appareil, séparément pour chaque serveur, et peuvent être effacés à tout moment.</p><div id="priceRecent"></div></div></div></div></section>
 <section class="page" id="page-settings"><div class="twocol"><div class="panel"><div class="panelhead"><h2>Paramètres économiques</h2></div><div class="pane"><div class="field"><label>Taxe HDV estimée (%)</label><input class="input" type="number" step="0.1" id="taxInput" min="0" max="30"></div><p class="caption">Paramètre modifiable ; ce n'est pas une affirmation sur la taxe réelle appliquée sur ton serveur. Le coût de craft suppose que toutes les ressources sont valorisées au prix du marché.</p><div class="divider"></div><div class="field"><label>Ajouter un autre serveur</label><div class="row"><input class="input" id="otherServer" style="flex:1" placeholder="Nom du serveur"><button class="btn" id="addServer">Ajouter</button></div></div><div class="divider"></div><div class="mini-actions"><button class="btn" id="backupAll">Sauvegarde complète JSON</button><label class="btn">Restaurer une sauvegarde<input type="file" id="restoreAll" accept=".json" hidden></label></div></div></div><div class="panel"><div class="panelhead"><h2>Catalogue et fiabilité</h2></div><div class="pane"><p><b>Objets et recettes :</b> <a href="https://docs.dofusdu.de/" target="_blank" rel="noopener">DofusDude</a>, base communautaire DOFUS 3 (équipements, ressources, consommables, objets de quête et cosmétiques).</p><p><b>Version :</b> <span id="metaVersion">Non synchronisée</span></p><p><b>Prix :</b> aucun flux HDV automatique validé. Toutes les valeurs restent vides jusqu'à saisie ou import.</p><p><b>Métiers :</b> la source ne publie pas de correspondance fiable par recette ; classement par type d'objet pour éviter une attribution inventée.</p><div class="divider"></div><div class="mini-actions"><button class="btn primary" id="syncSecondary">↻ Mettre à jour les objets</button><button class="btn" id="exportCatalog">Exporter catalogue JSON</button><label class="btn">Importer catalogue JSON<input id="importCatalog" type="file" accept=".json" hidden></label></div><p class="caption" id="cacheStatus">Le catalogue complet sera conservé localement après synchronisation, sous réserve des capacités de stockage du navigateur.</p></div></div></div></section>
 </main></div>
 <div class="modalback" id="modalBack"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalhead"><div class="detail-name"><img id="modalImage" class="itemavatar" alt="" style="display:none"><div><div class="eyebrow">FICHE OBJET & CRAFTS ASSOCIÉS</div><h2 id="modalTitle">Objet</h2><div class="caption" id="modalSub"></div></div></div><button class="close" id="modalClose" aria-label="Fermer">×</button></div><div class="divider"></div><div class="row between"><div class="field" style="flex:1"><label>Prix HDV unitaire de cet objet (Kamas)</label><input class="input" id="detailPrice" type="number" min="0" step="any" placeholder="Prix inconnu"></div><div class="field" style="width:130px"><label>Lot affiché</label><select class="select" id="detailLot"><option value="1">× 1</option><option value="10">× 10</option><option value="100">× 100</option></select></div></div><p class="caption" id="detailPriceNote">Les prix manquants restent vides. Saisis le prix du lot sélectionné.</p><div class="divider"></div><div id="craftedSection"><div class="row between"><h3 style="margin:0">Sa recette de fabrication</h3><span class="detail-badge">Dofus 3</span></div><div class="caption" style="margin-top:7px">Modifie le prix unitaire d'une ressource ; la rentabilité se recalcule aussitôt.</div><div class="editgrid caption muted"><span>Ingrédient</span><span>Quantité</span><span>Prix / unité</span><span>Coût</span></div><div id="detailIngredients"></div><div id="detailEvaluation" style="margin-top:12px"></div><div class="divider"></div></div><div><div class="row between"><h3 style="margin:0">Crafts permis par cet objet</h3><span class="detail-badge" id="usedCount">0 recette</span></div><p class="caption">Liste des fabrications nécessitant cet objet comme ingrédient. Clique sur une recette pour voir tous ses composants.</p><div id="usedRecipes"></div></div><div class="divider"></div><div class="mini-actions"><button class="btn primary" id="modalDone">Fermer</button><span class="caption">Enregistrement automatique des prix.</span></div></div></div><div id="toast" role="status"></div>
@@ -97,37 +97,91 @@ async function ocrLoad(){
  await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js';s.onload=resolve;s.onerror=()=>reject(Error('Chargement OCR impossible'));document.head.appendChild(s)});
 }
 function ocrMatch(){
- const rawLines=$('ocrText').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
- const matches=items.filter(it=>norm(it.name).length>=4&&rawLines.some(line=>norm(line).includes(norm(it.name)))).sort((a,b)=>b.name.length-a.name.length).slice(0,20);
- $('ocrItem').innerHTML='<option value="">Choisir un objet (non automatique)</option>'+matches.map(it=>'<option value="'+it.id+'">'+escapeHTML(it.name)+' (#'+it.id+')</option>').join('');
- $('ocrPrice').value='';
- if(matches.length===1){
-   const item=matches[0];
-   $('ocrItem').value=String(item.id);
-   // Ne proposer un prix que si un seul nombre monétaire plausible suit le nom sur sa ligne.
-   const line=rawLines.find(s=>norm(s).includes(norm(item.name)))||'';
-   const pos=norm(line).indexOf(norm(item.name));
-   const after=line.slice(Math.max(0,pos+item.name.length));
-   const tokens=[...after.matchAll(/(?:^|\s)(\d{1,3}(?:[ .]\d{3})+|\d{4,10})\s*(?:kamas|k)?(?=\s|$)/gi)].map(m=>m[1].replace(/[ .]/g,''));
-   if(tokens.length===1 && Number(tokens[0])>0){
-     $('ocrPrice').value=tokens[0];
-     $('ocrStatus').textContent='Prix proposé automatiquement, à vérifier avec le nom et le lot avant validation.';
-     return;
-   }
+ const lines=$('ocrText').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+ const matched=items.filter(it=>norm(it.name).length>=4&&lines.some(line=>norm(line).includes(norm(it.name))))
+  .sort((a,b)=>b.name.length-a.name.length).slice(0,20);
+ const select=$('ocrItem'),previous=select.value;
+ select.innerHTML='<option value="">Choisir une ressource</option>'+matched.map(it=>'<option value="'+it.id+'">'+escapeHTML(it.name)+' (#'+it.id+')</option>').join('');
+ if(matched.some(it=>String(it.id)===previous))select.value=previous;
+ else if(matched.length===1)select.value=String(matched[0].id);
+ else select.value='';
+ $('ocrStatus').textContent='Texte extrait : '+matched.length+' nom(s) identifié(s). Vérifie les prix dans le tableau des lots.';
+}
+function hdvCrop(source,rect,scale=3){
+ const c=document.createElement('canvas');
+ const x=Math.max(0,Math.round(rect[0]*source.width));
+ const y=Math.max(0,Math.round(rect[1]*source.height));
+ const w=Math.min(source.width-x,Math.round(rect[2]*source.width));
+ const ht=Math.min(source.height-y,Math.round(rect[3]*source.height));
+ c.width=Math.max(1,w*scale);c.height=Math.max(1,ht*scale);
+ const context=c.getContext('2d',{willReadFrequently:true});
+ context.imageSmoothingEnabled=false;
+ context.drawImage(source,x,y,w,ht,0,0,c.width,c.height);
+ // OCR plus robuste sur la petite police blanche DOFUS : contraste + grossissement.
+ const data=context.getImageData(0,0,c.width,c.height);
+ for(let p=0;p<data.data.length;p+=4){
+   const r=data.data[p],g=data.data[p+1],b=data.data[p+2];
+   const bright=Math.max(r,g,b);
+   const white=(bright>155&&Math.min(r,g,b)>100)?255:0;
+   data.data[p]=data.data[p+1]=data.data[p+2]=white;data.data[p+3]=255;
  }
- $('ocrStatus').textContent='Reconnaissance terminée. '+matches.length+' correspondance(s) possibles. Entre ou corrige le prix d’après la capture.';
+ context.putImageData(data,0,0);
+ return c;
+}
+function hdvReadNumber(text){
+ const t=String(text||'').replace(/\u00a0/g,' ').replace(/[€₭]/g,' ');
+ // Les crops contiennent uniquement la colonne du prix, jamais prix moyen ni lot.
+ const groups=[...t.matchAll(/\d[\d .\u202f]*/g)]
+   .map(m=>m[0].replace(/[^\d]/g,'')).filter(x=>x.length>0&&x.length<=9);
+ return groups.length===1?groups[0]:'';
+}
+async function hdvRecognizeLots(worker,file){
+ const source=await new Promise((resolve,reject)=>{
+  const img=new Image(),url=URL.createObjectURL(file);
+  img.onload=()=>{URL.revokeObjectURL(url);resolve(img)};
+  img.onerror=()=>{URL.revokeObjectURL(url);reject(Error('Capture illisible'))};
+  img.src=url;
+ });
+ const bounds=[[0.56,0.59,0.17,0.094],[0.56,0.71,0.17,0.094],[0.56,0.83,0.17,0.094]];
+ // Positions relatives connues pour la fenêtre d'hôtel des ventes DOFUS du modèle fourni.
+ // Si la capture contient des bordures ou une interface différente, laisser corriger manuellement.
+ const found=[];
+ for(const rect of bounds){
+   const canvas=hdvCrop(source,rect,4);
+   const data=await worker.recognize(canvas,{}, {text: "0"});
+   found.push(hdvReadNumber(data.data.text));
+ }
+ return found;
+}
+for(const lot of [1,10,100]){
+ $('ocrPick'+lot).addEventListener('click',()=>{
+   $('ocrLot').value=String(lot);
+   $('ocrPrice').value=$('ocrPrice'+lot).value;
+   $('ocrStatus').textContent='Lot ×'+lot+' sélectionné. Vérifie le prix et confirme explicitement.';
+ });
 }
 $('ocrText').addEventListener('input',ocrMatch);
 $('ocrGo').addEventListener('click',async()=>{
- const file=$('ocrFile').files?.[0];if(!file||!file.type.startsWith('image/'))return toast('Choisis une capture PNG/JPG.');
- $('ocrGo').disabled=true;$('ocrStatus').textContent='Lecture en cours…';
+ const file=$('ocrFile').files?.[0];
+ if(!file||!file.type.startsWith('image/'))return toast('Choisis une capture HDV PNG ou JPG.');
+ $('ocrGo').disabled=true;$('ocrStatus').textContent='Lecture de la capture…';
+ $('ocrLotsPanel').classList.add('hidden');
+ for(const lot of [1,10,100])$('ocrPrice'+lot).value='';
  try{
   await ocrLoad();
   const worker=await Tesseract.createWorker('fra');
   try{
-   const result=await worker.recognize(file);
-   $('ocrText').value=result.data.text||'';
-   $('ocrReview').classList.remove('hidden');$('ocrPrice').value='';$('ocrLot').value='1';ocrMatch();
+   // Lecture des noms en mode page, puis lecture indépendante des 3 lignes de prix.
+   const whole=await worker.recognize(file);
+   $('ocrText').value=whole.data.text||'';
+   $('ocrReview').classList.remove('hidden');
+   $('ocrPrice').value='';$('ocrLot').value='1';
+   ocrMatch();
+   $('ocrStatus').textContent='Noms extraits. Lecture ciblée des trois lignes de prix…';
+   const prices=await hdvRecognizeLots(worker,file);
+   [1,10,100].forEach((lot,i)=>{$('ocrPrice'+lot).value=prices[i]});
+   $('ocrLotsPanel').classList.remove('hidden');
+   $('ocrStatus').textContent='Prix proposés : '+prices.filter(Boolean).length+'/3. Vérifie impérativement les trois montants ; le prix moyen est ignoré.';
   }finally{await worker.terminate()}
  }catch(err){$('ocrStatus').textContent='Erreur OCR : '+err.message}
  finally{$('ocrGo').disabled=false}
