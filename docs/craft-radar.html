@@ -39,7 +39,16 @@
 <section class="hdv-lot" id="ocrSection1"><h3>Lot de 1</h3><label for="ocrPrice1">Prix du lot</label><div class="hdv-amount"><input id="ocrPrice1" class="input" type="number" min="0" step="1" placeholder="Non renseigné"><span class="hdv-unit">kamas</span></div><div class="hdv-unit-price" id="ocrUnit1">Prix par ressource : —</div><button type="button" class="btn" id="ocrPick1">Choisir ce lot</button></section><section class="hdv-lot" id="ocrSection10"><h3>Lot de 10</h3><label for="ocrPrice10">Prix du lot</label><div class="hdv-amount"><input id="ocrPrice10" class="input" type="number" min="0" step="1" placeholder="Non renseigné"><span class="hdv-unit">kamas</span></div><div class="hdv-unit-price" id="ocrUnit10">Prix par ressource : —</div><button type="button" class="btn" id="ocrPick10">Choisir ce lot</button></section><section class="hdv-lot" id="ocrSection100"><h3>Lot de 100</h3><label for="ocrPrice100">Prix du lot</label><div class="hdv-amount"><input id="ocrPrice100" class="input" type="number" min="0" step="1" placeholder="Non renseigné"><span class="hdv-unit">kamas</span></div><div class="hdv-unit-price" id="ocrUnit100">Prix par ressource : —</div><button type="button" class="btn" id="ocrPick100">Choisir ce lot</button></section><section class="hdv-lot" id="ocrSection1000"><h3>Lot de 1 000</h3><label for="ocrPrice1000">Prix du lot</label><div class="hdv-amount"><input id="ocrPrice1000" class="input" type="number" min="0" step="1" placeholder="Non renseigné"><span class="hdv-unit">kamas</span></div><div class="hdv-unit-price" id="ocrUnit1000">Prix par ressource : —</div><button type="button" class="btn" id="ocrPick1000">Choisir ce lot</button></section>
 </div>
 <div class="hdv-validation"><strong>✅ Lot choisi pour le calcul</strong><p class="caption" id="ocrSelectedSummary">Aucun lot sélectionné.</p><p class="caption">Tu peux modifier le montant ici également. Seul le lot sélectionné sera enregistré comme prix de référence pour les crafts.</p></div>
-</div><div class="field"><label>Objet identifié</label><select id="ocrItem" class="select"></select></div><div class="row" style="margin-top:10px"><div class="field" style="flex:1"><label>Montant confirmé</label><div class="hdv-amount"><input id="ocrPrice" class="input" type="number" min="0" step="1" placeholder="Choisir un lot plus haut"><span class="hdv-unit">kamas</span></div></div><div class="field" style="width:150px"><label>Lot sélectionné</label><select id="ocrLot" class="select"><option value="1">×1</option><option value="10">×10</option><option value="100">×100</option><option value="1000">×1 000</option></select></div></div><button id="ocrSave" class="btn primary" style="margin-top:10px">Confirmer et enregistrer</button></div></div></div><div class="divider"></div><div class="stat"><span>Objets avec un prix sur ce serveur</span><strong id="pricesCount">0</strong><em>Prix actualisés manuellement</em></div><p class="caption">Les prix sont enregistrés uniquement sur cet appareil, séparément pour chaque serveur, et peuvent être effacés à tout moment.</p><div id="priceRecent"></div></div></div></div></section>
+</div><div class="box" style="margin:16px 0;border-color:#54756c">
+  <h3 style="margin:0 0 6px">🔎 Vérifier ou corriger l'objet / la ressource</h3>
+  <p class="caption" style="margin:0 0 11px">Tu peux remplacer la détection OCR par une recherche dans tout le catalogue : ressources, équipements, consommables et crafts. Vérifie bien le nom et l'ID avant de valider.</p>
+  <div class="field"><label for="ocrSearchItem">Rechercher un nom ou un identifiant d'objet</label>
+    <input id="ocrSearchItem" class="input" type="search" autocomplete="off" placeholder="Ex. : Aluminite, Chanvre, coiffe, #1234…">
+  </div>
+  <div id="ocrSearchResults" class="stack" role="listbox" aria-label="Résultats du catalogue" style="max-height:255px;overflow-y:auto;margin-top:10px"></div>
+  <div class="field" style="margin-top:12px"><label for="ocrItem">Objet choisi pour l'enregistrement</label><select id="ocrItem" class="select"><option value="">Aucun objet sélectionné</option></select></div>
+  <div id="ocrSelectedItem" class="notification" style="margin:10px 0 0">Aucun objet sélectionné. Utilise la recherche pour choisir le bon.</div>
+</div><div class="row" style="margin-top:10px"><div class="field" style="flex:1"><label>Montant confirmé</label><div class="hdv-amount"><input id="ocrPrice" class="input" type="number" min="0" step="1" placeholder="Choisir un lot plus haut"><span class="hdv-unit">kamas</span></div></div><div class="field" style="width:150px"><label>Lot sélectionné</label><select id="ocrLot" class="select"><option value="1">×1</option><option value="10">×10</option><option value="100">×100</option><option value="1000">×1 000</option></select></div></div><button id="ocrSave" class="btn primary" style="margin-top:10px">Confirmer et enregistrer</button></div></div></div><div class="divider"></div><div class="stat"><span>Objets avec un prix sur ce serveur</span><strong id="pricesCount">0</strong><em>Prix actualisés manuellement</em></div><p class="caption">Les prix sont enregistrés uniquement sur cet appareil, séparément pour chaque serveur, et peuvent être effacés à tout moment.</p><div id="priceRecent"></div></div></div></div></section>
 <section class="page" id="page-settings"><div class="twocol"><div class="panel"><div class="panelhead"><h2>Paramètres économiques</h2></div><div class="pane"><div class="field"><label>Taxe HDV estimée (%)</label><input class="input" type="number" step="0.1" id="taxInput" min="0" max="30"></div><p class="caption">Paramètre modifiable ; ce n'est pas une affirmation sur la taxe réelle appliquée sur ton serveur. Le coût de craft suppose que toutes les ressources sont valorisées au prix du marché.</p><div class="divider"></div><div class="field"><label>Ajouter un autre serveur</label><div class="row"><input class="input" id="otherServer" style="flex:1" placeholder="Nom du serveur"><button class="btn" id="addServer">Ajouter</button></div></div><div class="divider"></div><div class="mini-actions"><button class="btn" id="backupAll">Sauvegarde complète JSON</button><label class="btn">Restaurer une sauvegarde<input type="file" id="restoreAll" accept=".json" hidden></label></div></div></div><div class="panel"><div class="panelhead"><h2>Catalogue et fiabilité</h2></div><div class="pane"><p><b>Objets et recettes :</b> <a href="https://docs.dofusdu.de/" target="_blank" rel="noopener">DofusDude</a>, base communautaire DOFUS 3 (équipements, ressources, consommables, objets de quête et cosmétiques).</p><p><b>Version :</b> <span id="metaVersion">Non synchronisée</span></p><p><b>Prix :</b> aucun flux HDV automatique validé. Toutes les valeurs restent vides jusqu'à saisie ou import.</p><p><b>Métiers :</b> la source ne publie pas de correspondance fiable par recette ; classement par type d'objet pour éviter une attribution inventée.</p><div class="divider"></div><div class="mini-actions"><button class="btn primary" id="syncSecondary">↻ Mettre à jour les objets</button><button class="btn" id="exportCatalog">Exporter catalogue JSON</button><label class="btn">Importer catalogue JSON<input id="importCatalog" type="file" accept=".json" hidden></label></div><p class="caption" id="cacheStatus">Le catalogue complet sera conservé localement après synchronisation, sous réserve des capacités de stockage du navigateur.</p></div></div></div></section>
 </main></div>
 <div class="modalback" id="modalBack"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modalhead"><div class="detail-name"><img id="modalImage" class="itemavatar" alt="" style="display:none"><div><div class="eyebrow">FICHE OBJET & CRAFTS ASSOCIÉS</div><h2 id="modalTitle">Objet</h2><div class="caption" id="modalSub"></div></div></div><button class="close" id="modalClose" aria-label="Fermer">×</button></div><div class="divider"></div><div class="row between"><div class="field" style="flex:1"><label>Prix HDV unitaire de cet objet (Kamas)</label><input class="input" id="detailPrice" type="number" min="0" step="any" placeholder="Prix inconnu"></div><div class="field" style="width:130px"><label>Lot affiché</label><select class="select" id="detailLot"><option value="1">× 1</option><option value="10">× 10</option><option value="100">× 100</option></select></div></div><p class="caption" id="detailPriceNote">Les prix manquants restent vides. Saisis le prix du lot sélectionné.</p><div class="divider"></div><div id="craftedSection"><div class="row between"><h3 style="margin:0">Sa recette de fabrication</h3><span class="detail-badge">Dofus 3</span></div><div class="caption" style="margin-top:7px">Modifie le prix unitaire d'une ressource ; la rentabilité se recalcule aussitôt.</div><div class="editgrid caption muted"><span>Ingrédient</span><span>Quantité</span><span>Prix / unité</span><span>Coût</span></div><div id="detailIngredients"></div><div id="detailEvaluation" style="margin-top:12px"></div><div class="divider"></div></div><div><div class="row between"><h3 style="margin:0">Crafts permis par cet objet</h3><span class="detail-badge" id="usedCount">0 recette</span></div><p class="caption">Liste des fabrications nécessitant cet objet comme ingrédient. Clique sur une recette pour voir tous ses composants.</p><div id="usedRecipes"></div></div><div class="divider"></div><div class="mini-actions"><button class="btn primary" id="modalDone">Fermer</button><span class="caption">Enregistrement automatique des prix.</span></div></div></div><div id="toast" role="status"></div>
@@ -124,6 +133,11 @@ $('importCatalog').addEventListener('change',async e=>{try{const o=JSON.parse(aw
 let ocrClipboardFile=null;
 let ocrPreviewUrl=null;
 function ocrSetImage(file,source){
+ ocrManualItemId=null;
+ $('ocrSearchItem').value='';
+ $('ocrSearchResults').innerHTML='';
+ $('ocrItem').innerHTML='<option value="">Aucun objet sélectionné</option>';
+ $('ocrSelectedItem').textContent='Aucun objet sélectionné pour cette capture.';
  if(!file || !file.type.startsWith('image/')){toast('Capture non reconnue : copie une image PNG/JPG.');return;}
  if(ocrPreviewUrl)URL.revokeObjectURL(ocrPreviewUrl);
  ocrClipboardFile=file;
@@ -168,17 +182,89 @@ async function ocrLoad(){
  if(window.Tesseract)return;
  await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js';s.onload=resolve;s.onerror=()=>reject(Error('Chargement OCR impossible'));document.head.appendChild(s)});
 }
-function ocrMatch(){
- const lines=$('ocrText').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
- const matched=items.filter(it=>norm(it.name).length>=4&&lines.some(line=>norm(line).includes(norm(it.name))))
-  .sort((a,b)=>b.name.length-a.name.length).slice(0,20);
- const select=$('ocrItem'),previous=select.value;
- select.innerHTML='<option value="">Choisir une ressource</option>'+matched.map(it=>'<option value="'+it.id+'">'+escapeHTML(it.name)+' (#'+it.id+')</option>').join('');
- if(matched.some(it=>String(it.id)===previous))select.value=previous;
- else if(matched.length===1)select.value=String(matched[0].id);
- else select.value='';
- $('ocrStatus').textContent='Texte extrait : '+matched.length+' nom(s) identifié(s). Vérifie les prix dans le tableau des lots.';
+/* Identification d'objet : la sélection humaine a priorité sur l'OCR. */
+let ocrManualItemId=null;
+let ocrDetectedIds=[];
+function ocrItemLabel(it){
+ return it.name+' · '+(CATS[it.category]||it.type||'Objet')+' · niv. '+it.level+' · #'+it.id;
 }
+function ocrSetItem(id,manual=false){
+ const it=itemMap.get(Number(id));
+ if(!it){$('ocrItem').value='';$('ocrSelectedItem').textContent='Aucun objet sélectionné.';return}
+ if(manual)ocrManualItemId=it.id;
+ const select=$('ocrItem');
+ if(![...select.options].some(o=>o.value===String(it.id))){
+   const option=new Option(ocrItemLabel(it),String(it.id));
+   select.add(option);
+ }
+ select.value=String(it.id);
+ $('ocrSelectedItem').textContent='✓ Objet sélectionné : '+ocrItemLabel(it)+(manual?' (corrigé manuellement)':' (proposition OCR à vérifier)');
+}
+function ocrSearchCatalog(){
+ const query=norm($('ocrSearchItem').value).replace(/^#/,'').trim();
+ const box=$('ocrSearchResults');
+ if(!query){
+   box.innerHTML='<div class="caption">Tape au moins 2 caractères pour retrouver un objet ou son identifiant.</div>';
+   return;
+ }
+ if(!items.length){
+   box.innerHTML='<div class="caption">Catalogue non chargé : clique sur « Synchroniser DOFUS » pour rechercher les objets.</div>';
+   return;
+ }
+ if(query.length<2 && !/^\d+$/.test(query)){
+   box.innerHTML='<div class="caption">Tape au moins 2 caractères.</div>';
+   return;
+ }
+ const matches=items.filter(it=>{
+   const name=norm(it.name);
+   return name.includes(query)||String(it.id)===query;
+ }).sort((a,b)=>{
+   const an=norm(a.name),bn=norm(b.name);
+   const av=String(a.id)===query?-10:an===query?-9:an.startsWith(query)?-3:0;
+   const bv=String(b.id)===query?-10:bn===query?-9:bn.startsWith(query)?-3:0;
+   return av-bv||an.localeCompare(bn,'fr');
+ }).slice(0,35);
+ if(!matches.length){
+   box.innerHTML='<div class="caption">Aucun résultat. Essaie un autre nom ou synchronise le catalogue.</div>';
+   return;
+ }
+ box.innerHTML=matches.map(it=>'<button type="button" class="rowbutton" role="option" data-ocr-select="'+it.id+'" style="width:100%;text-align:left;padding:10px 12px">'+
+   escapeHTML(it.name)+' <small> · '+escapeHTML(CATS[it.category]||it.type||'Objet')+' · niv. '+it.level+' · #'+it.id+'</small></button>').join('');
+}
+function ocrMatch(){
+ const lines=$('ocrText').value.split(/\r?\n/).map(line=>norm(line)).filter(Boolean);
+ const matched=items.filter(it=>norm(it.name).length>=4&&lines.some(line=>line.includes(norm(it.name))))
+   .sort((a,b)=>b.name.length-a.name.length).slice(0,20);
+ ocrDetectedIds=matched.map(it=>it.id);
+ const select=$('ocrItem'),previous=Number(select.value)||null;
+ select.innerHTML='<option value="">Choisir un objet</option>'+
+   matched.map(it=>'<option value="'+it.id+'">'+escapeHTML(ocrItemLabel(it))+'</option>').join('');
+ if(ocrManualItemId && itemMap.has(ocrManualItemId)){
+   ocrSetItem(ocrManualItemId,true);
+ }else if(previous && itemMap.has(previous)){
+   ocrSetItem(previous,false);
+ }else if(matched.length===1){
+   ocrSetItem(matched[0].id,false);
+ }else{
+   $('ocrSelectedItem').textContent=matched.length?'Plusieurs objets possibles : vérifie la sélection ou utilise la recherche.':'Nom non reconnu : utilise la recherche pour sélectionner la bonne ressource.';
+ }
+ $('ocrStatus').textContent='Reconnaissance terminée : '+matched.length+' suggestion(s). Tu peux corriger l’objet en le recherchant.';
+ ocrSearchCatalog();
+}
+$('ocrSearchItem').addEventListener('input',ocrSearchCatalog);
+$('ocrSearchResults').addEventListener('click',event=>{
+ const button=event.target.closest('[data-ocr-select]');
+ if(!button)return;
+ ocrSetItem(Number(button.dataset.ocrSelect),true);
+ $('ocrSearchItem').value=itemMap.get(Number(button.dataset.ocrSelect))?.name||'';
+ ocrSearchCatalog();
+});
+$('ocrItem').addEventListener('change',event=>{
+ const id=Number(event.target.value);
+ if(id&&itemMap.has(id))ocrSetItem(id,true);
+ else{$('ocrSelectedItem').textContent='Aucun objet sélectionné.';ocrManualItemId=null;}
+});
+
 function hdvCrop(source,rect,scale=3){
  const c=document.createElement('canvas');
  const x=Math.max(0,Math.round(rect[0]*source.width));
@@ -287,7 +373,7 @@ $('ocrGo').addEventListener('click',async()=>{
 });
 $('ocrSave').addEventListener('click',()=>{
  const id=Number($('ocrItem').value), raw=$('ocrPrice').value,lot=Number($('ocrLot').value);
- if(!itemMap.has(id))return toast('Sélectionne un objet reconnu dans le catalogue. Si absent, saisis le prix via Prix HDV.');
+ if(!itemMap.has(id))return toast('Sélectionne une ressource dans la recherche avant de sauvegarder le prix.');
  if(!raw.trim()||!Number.isFinite(Number(raw))||Number(raw)<0)return toast('Entre un prix HDV valide.');
  if(!confirm('Enregistrer '+Number(raw).toLocaleString('fr-FR')+' kamas pour '+itemMap.get(id).name+' (lot ×'+lot+') sur '+settings.server+' ?'))return;
  if(setPrice(id,raw,lot))toast('Prix ajouté après vérification.');
