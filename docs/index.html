@@ -171,6 +171,31 @@ function render(){
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('sort').addEventListener('change',render);
 document.getElementById('sourceFilter').addEventListener('change',render);
+
+document.getElementById('communitySave').addEventListener('click',()=>{
+ const input=document.getElementById('communityUrl').value.trim();
+ const title=document.getElementById('communityTitle').value.trim();
+ const description=document.getElementById('communityDescription').value.trim();
+ const status=document.getElementById('communityStatus');
+ let url;try{url=new URL(input)}catch(e){}
+ if(!url||url.protocol!=='https:'||url.username||url.password||!title){status.textContent='Indique un lien HTTPS valide et un titre.';return}
+ if(communityLinks.some(x=>x.url===url.href)){status.textContent='Ce lien est déjà enregistré.';return}
+ const host=url.hostname.toLowerCase();
+ const platform=host==='tiktok.com'||host.endsWith('.tiktok.com')?'tiktok':host==='youtu.be'||host==='youtube.com'||host.endsWith('.youtube.com')?'youtube':'site';
+ const item={id:'local:'+Date.now(),title:title.slice(0,170),description:description.slice(0,800),channel:'Ajout personnel',date:new Date().toISOString(),url:url.href,views:null,score:55,source_platform:platform,source_format:platform==='tiktok'?'courte':platform==='site'?'article':url.pathname.startsWith('/shorts/')?'short':'video',monocompte:/monocompte|solo|dakal/i.test(title+' '+description),detail:{categorie:'Astuce ajoutée',resume_source:description||'Résumé non renseigné',methode:'À consulter dans la source',prerequis:'Non vérifiés',budget:'Non calculé',rentabilite:'Non calculée',fiabilite:'Lien personnel non analysé'},commentaires:{status:'non_analyses',signals:{}}};
+ communityLinks.unshift(item);
+ try{localStorage.setItem(PERSONAL_LINK_KEY,JSON.stringify(communityLinks));status.textContent='Lien enregistré sur cet appareil.'}
+ catch(e){status.textContent='Stockage saturé : lien disponible jusqu’à la fermeture de la page.'}
+ document.getElementById('communityUrl').value='';document.getElementById('communityTitle').value='';document.getElementById('communityDescription').value='';
+ render();
+});
+document.getElementById('communityExport').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify({format:'kamas-radar-liens-v1',items:communityLinks},null,2)],{type:'application/json'});
+ const objectURL=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=objectURL;a.download='KamasRadar-liens-personnels.json';a.click();
+ setTimeout(()=>URL.revokeObjectURL(objectURL),3000);
+});
+
 fetch('./data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
  items=d.items||[];
  const date=d.updated_at?new Date(d.updated_at).toLocaleString('fr-FR',{timeZone:'Europe/Paris'}):'Aucune collecte';
