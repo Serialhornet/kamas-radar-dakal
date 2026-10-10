@@ -1,4 +1,26 @@
 {
   "instructions": "Liens TikTok et articles saisis volontairement et publiables. Pas de scraping TikTok. Les utilisateurs peuvent aussi ajouter leurs liens privés depuis le site.",
-  "items": []
+  "items": [
+    {
+      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1wdd2ez/routine_kamas/",
+      "title": "Routine kamas",
+      "description": "Discussion communautaire sur DOFUS Unity : quêtes quotidiennes, craft, forgemagie, revente et élevage. Gains évoqués par les joueurs non vérifiés sur Dakal.",
+      "author": "Reddit · r/DOFUS_FRANCE",
+      "date": "2026-09-11T00:00:00Z"
+    },
+    {
+      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1w139ph/je_viens_de_me_faire_de_11_millions_de_k_en/",
+      "title": "Je viens de me faire + de 11 millions de k en brisage",
+      "description": "Témoignage DOFUS Unity sur du brisage d'équipement avec gros coefficient. Les prix et coefficients montrés ne garantissent aucune rentabilité sur Dakal.",
+      "author": "Reddit · r/DOFUS_FRANCE",
+      "date": "2026-08-28T00:00:00Z"
+    },
+    {
+      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1vx9j8d/astuces_xp_et_kamas/",
+      "title": "Astuces XP et Kamas",
+      "description": "Discussion de farm en solo DOFUS Unity : métiers Mineur et Chasseur, drops de ressources et captures de boss. Conseils communautaires à tester selon le serveur.",
+      "author": "Reddit · r/DOFUS_FRANCE",
+      "date": "2026-08-24T00:00:00Z"
+    }
+  ]
 }
