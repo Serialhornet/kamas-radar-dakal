@@ -82,7 +82,7 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 </section>
 <section class="panel"><h2>5 · Préparer un accouplement</h2>
 <p>Les deux parents doivent être <b>féconds</b>, de la même espèce, de sexes opposés, et placés dans l'étable. Ils deviennent stériles après l'accouplement et le bébé naît immédiatement.</p>
-<div class="three"><label class="field">Parent A<select id="parentA"></select></label><label class="field">Parent B<select id="parentB"></select></label><label class="field">Bonus Optimakina<select id="makina"><option value="0">Aucune</option><option value="20">Optimakina compatible · +20 points (3.7)</option></select></label></div>
+<div class="three"><label class="field">Parent A<select id="parentA"></select></label><label class="field">Parent B<select id="parentB"></select></label><label class="field">Bonus Optimakina<select id="makina"><option value="0">Aucune</option><option value="10">Optimakina compatible · +10 points</option></select></label></div>
 <div id="breedingPlan" class="note">Ajoute deux montures pour préparer ton accouplement.</div>
 <p><small>La probabilité exacte de chaque couleur dépend de la généalogie ; elle apparaît dans l'interface d'accouplement DOFUS. L'outil peut indiquer les prérequis et la borne théorique de génération cible, mais n'invente pas la distribution des croisements.</small></p>
 </section>
@@ -109,12 +109,12 @@ function n(id){return Number($(id).value)}
 function loadMountFields(x){for(const id of ['mountName','species','variant','sex','level','xp','goal','targetLevel','fertility','trait','serenite','endurance','maturite','amour']){if(x?.[id]!==undefined)$(id).value=x[id]}}
 function mountFromFields(){const m={};for(const id of ['mountName','species','variant','sex','level','xp','goal','targetLevel','fertility','trait','serenite','endurance','maturite','amour'])m[id]=$(id).value;for(const id of ['level','xp','targetLevel','serenite','endurance','maturite','amour'])m[id]=n(id);return m}
 function renderMountList(){const list=$('mountList');list.innerHTML='<option value="">Nouvelle monture</option>'+state.mounts.map(x=>'<option value="'+esc(x.id)+'">'+esc(x.mountName||x.species+' '+x.variant)+' ('+esc(x.species)+')</option>').join('');list.value=activeMount||'';for(const id of ['parentA','parentB']){$(id).innerHTML='<option value="">Choisir une monture</option>'+state.mounts.map(m=>'<option value="'+esc(m.id)+'">'+esc(m.mountName||m.species+' '+m.variant)+'</option>').join('')}}
-$('mountList').onchange=()=>{activeMount=$('mountList').value||null;const x=state.mounts.find(m=>m.id===activeMount);if(x)loadMountFields(x);plan()};
+$('mountList').onchange=()=>{activeMount=$('mountList').value||null;const x=state.mounts.find(m=>m.id===activeMount);if(x)loadMountFields(x);plan();renderBreeding()};
 $('saveMount').onclick=()=>{const x=mountFromFields();if(!x.mountName.trim())return alert('Donne un nom à cette monture.');if(!x.variant.trim())return alert('Précise la variété/couleur (nom libre possible).');if(x.serenite< -5000||x.serenite>5000||['endurance','maturite','amour'].some(k=>x[k]<0||x[k]>20000))return alert('Une jauge est hors limites.');
  if(activeMount){const i=state.mounts.findIndex(m=>m.id===activeMount);if(i>=0)state.mounts[i]={...x,id:activeMount}}
  else{activeMount='mount-'+Date.now();state.mounts.push({...x,id:activeMount})}
- persist();renderMountList();plan();};
-$('deleteMount').onclick=()=>{if(!activeMount||!confirm('Supprimer cette monture du suivi ?'))return;state.mounts=state.mounts.filter(m=>m.id!==activeMount);activeMount=null;$('mountList').value='';persist();renderMountList();plan()};
+ persist();renderMountList();plan();renderBreeding();};
+$('deleteMount').onclick=()=>{if(!activeMount||!confirm('Supprimer cette monture du suivi ?'))return;state.mounts=state.mounts.filter(m=>m.id!==activeMount);activeMount=null;$('mountList').value='';persist();renderMountList();plan();renderBreeding()};
 const colors={'caresseur':'#bd98ed','baffeur':'#ba8de7','foudroyeur':'#f3d36f','abreuvoir':'#6cbff3','dragofesse':'#f17791','mangeoire':'#e5d9b8'};
 function gaugeTier(v){if(v>180000)return 3;if(v>140000)return 2;if(v>80000)return 1;return 0}
 function depletedTime(v,threshold=0){let seconds=0;let level=Math.max(0,Math.min(200000,Number(v)||0));for(let steps=0;steps<5&&level>threshold;steps++){const tier=gaugeTier(level);const lower=Math.max(threshold,tier?CAPS[tier-1]:0);seconds+=Math.max(0,level-lower)/SPEED[tier]*10;level=lower}return seconds}
