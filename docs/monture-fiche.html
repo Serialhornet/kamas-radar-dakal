@@ -10,8 +10,7 @@ const BASE='https://api.dofusdu.de/dofus3/v1/fr/mounts';
 const familyGuide='https://dofuselevage.fr/tools/reproduction/'+site+'/genealogie';
 $('family').textContent=family;$('title').textContent=name||'Monture inconnue';
 $('links').innerHTML='<a class="btn" href="'+familyGuide+'" target="_blank" rel="noopener noreferrer">🧬 Voir la généalogie sur DofusÉlevage ↗</a><a class="btn" href="./elevage-radar.html" target="_blank" rel="noopener noreferrer">🐣 Retour à ÉlevageRadar ↗</a>';
-function imageUrl(obj){if(!obj||typeof obj!=='object')return null;for(const key of ['hd','high','medium','large','sd','small','icon']){const v=obj[key];if(typeof v==='string'&&v.startsWith('https://'))return v}return Object.values(obj).find(v=>typeof v==='string'&&v.startsWith('https://'))||null}
-function familyMatch(x){const f=String(typeof x.family==='string'?x.family:x.family?.name||'').toLowerCase();if(f)return f.includes(site);return norm(x.name).includes(norm(name))||true}
+function imageUrl(obj){if(!obj||typeof obj!=='object')return null;for(const key of ['hd','hq','high','medium','large','sd','small','icon']){const v=obj[key];if(typeof v==='string'&&v.startsWith('https://'))return v}return Object.values(obj).find(v=>typeof v==='string'&&v.startsWith('https://'))||null}
 function renderEffects(effects){
  if(!Array.isArray(effects)||!effects.length){$('effects').innerHTML='<p>Les statistiques détaillées ne sont pas renseignées dans cette source pour cette monture.</p>';return}
  $('effects').replaceChildren();
@@ -28,7 +27,7 @@ async function load(){
  try{
   const res=await fetch(BASE+'/all');if(!res.ok)throw Error('Service indisponible ('+res.status+')');
   const data=await res.json(),items=Array.isArray(data)?data:Array.isArray(data.items)?data.items:Array.isArray(data.mounts)?data.mounts:Array.isArray(data.results)?data.results:Array.isArray(data.data)?data.data:[];
-  const same=items.filter(x=>norm(x.name)===norm(name));const match=same.find(x=>{const f=String(x.family?.name||x.family_name||x.family||'').toLowerCase();return f.includes(site)})||same[0];
+  const same=items.filter(x=>norm(x.name)===norm(name));const match=same.find(x=>{const f=String(x.family?.name||x.family_name||x.family||'').toLowerCase();return f.includes(site)})||same.find(x=>!x.family);
   if(!match){$('status').textContent='Aucune fiche exacte trouvée dans DofusDude pour cette variété. Utilise le lien de généalogie ci-dessous.';$('visual').textContent='Image non disponible';$('effects').textContent='Effets indisponibles dans cette source.';return}
   $('status').textContent='Monture trouvée dans la base DofusDude.';
   $('title').textContent=match.name||name;
