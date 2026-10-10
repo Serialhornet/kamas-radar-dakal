@@ -117,7 +117,7 @@ function setPrice(id,val,lot=1){
   const p=Number(raw),q=Number(lot);
   if(!Number.isFinite(p)||p<0||!Number.isFinite(q)||q<=0){toast('Prix invalide');return false}
   const value=p/q;
-  if(getPrice(id)===value)return true;
+  // Une saisie confirmée rafraîchit aussi la date, même si le montant est inchangé.
   if(cloudActive()&&!Number.isSafeInteger(value)){toast('Le prix unitaire partagé doit être un entier en kamas.');return false}
   d[id]={value,at:now()};
   if(cloudActive())void pushSharedPrice(id,value);
