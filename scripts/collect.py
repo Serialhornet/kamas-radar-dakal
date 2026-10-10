@@ -132,11 +132,11 @@ def main():
                 info=v.get("snippet",{})
                 item["langue"]=info.get("defaultAudioLanguage") or info.get("defaultLanguage") or "Non verifiee"
                 duration=v.get("contentDetails",{}).get("duration","")
-                dm=re.fullmatch(r"P(?:\\d+D)?T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+)S)?",duration)
+                dm=re.fullmatch(r"P(?:\d+D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?",duration)
                 seconds=(int(dm.group(1) or 0)*3600+int(dm.group(2) or 0)*60+int(dm.group(3) or 0)) if dm else None
                 item["duration_seconds"]=seconds
                 item["source_platform"]="youtube"
-                short_tag=bool(re.search(r"(?:#shorts?\\b|\\bshorts?\\b)",item["title"]+" "+item["description"],re.I))
+                short_tag=bool(re.search(r"(?:#shorts?\b|\bshorts?\b)",item["title"]+" "+item["description"],re.I))
                 item["source_format"]="short" if short_tag and seconds is not None and seconds<=180 else "court" if seconds is not None and seconds<=180 else "video"
                 if item["source_format"]=="short":item["url"]="https://www.youtube.com/shorts/"+item["id"]
         except Exception as exc:print("Statistiques indisponibles",str(exc)[:200])
@@ -162,7 +162,8 @@ def main():
                  (14 if PREFERRED.search(title) else 5 if PREFERRED.search(item["description"]) else 0),1)
         if item["commentaires"]["signals"].get("attention",{}).get("count",0):
             item["score"]=max(0,item["score"]-8)
-        item["fiche_fr"]="Resume descriptif en francais; aucune transcription verifiee."\n        if item.get("source_format") in ("short","court"):item["score"]+=9
+        item["fiche_fr"]="Resume descriptif en francais; aucune transcription verifiee."
+        if item.get("source_format") in ("short","court"):item["score"]+=9
     for community in community_feed_items():
         community["detail"]=detail_for(community)
         community["detail"]["compatibilite_mono"]="À vérifier dans la publication"
