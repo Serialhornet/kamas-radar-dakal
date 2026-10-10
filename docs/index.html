@@ -246,12 +246,22 @@ async function checkCommunityAccess(){
   if(top)top.textContent='👤 Profil : '+profile.pseudo+(profile.role==='admin'?' 👑':'')+' · Données communes Dakal';
   return;
  }
- if(required)document.getElementById('lockReason').textContent='Connecte-toi avec ton adresse e-mail et ton mot de passe.';
+ let session=null;
+ try{const result=await window.RadarCommunity?.client?.auth.getSession();session=result?.data?.session}catch(e){}
+ if(session){
+  document.documentElement.classList.add('community-locked');
+  lock.hidden=false;
+  document.getElementById('lockReason').textContent='Compte suspendu, banni ou profil indisponible. Contacte un administrateur si nécessaire.';
+ }else if(required){
+  document.getElementById('lockReason').textContent='Connecte-toi avec ton adresse e-mail et ton mot de passe.';
+ }else{
+  document.documentElement.classList.remove('community-locked');lock.hidden=true;
+ }
 }
 checkCommunityAccess();
 async function updatePresence(){try{await window.RadarCommunity?.heartbeat()}catch(e){}}
 void updatePresence();
-setInterval(()=>{if(!document.hidden)void updatePresence()},45000);
+setInterval(()=>{if(!document.hidden){void updatePresence();void checkCommunityAccess()}},45000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){void updatePresence();void checkCommunityAccess()}});
 
 function render(){
