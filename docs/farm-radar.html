@@ -111,7 +111,7 @@ try{const v=JSON.parse(localStorage.getItem(SESSION_KEY));if(v&&Array.isArray(v.
 function save(){try{localStorage.setItem(SESSION_KEY,JSON.stringify(session))}catch(e){$('status').textContent='Sauvegarde locale indisponible. Évite de fermer cet onglet pendant le farm.'}}
 function elapsed(){return Math.max(0,Number(session.accumulated)||0)+(session.running&&session.startedAt?Math.max(0,Date.now()-Number(session.startedAt)):0)}
 function formatTime(ms){const s=Math.floor(Math.max(0,ms)/1000);return [Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':')}
-function priceFor(id){const p=prices[id];return p&&Number.isFinite(Number(p.value))&&Number(p.value)>=0?Number(p.value):null}
+function priceFor(id){const p=window.RadarPriceSync?.get(id)||prices[id];return p&&Number.isFinite(Number(p.value))&&Number(p.value)>=0?Number(p.value):null}
 function loadPrices(){
  try{const data=JSON.parse(localStorage.getItem(PRICE_KEY))||{};prices=data.prices?.Dakal||{};priceServer='Dakal';$('status').textContent='Prix partagés avec CraftRadar · serveur Dakal · '+Object.keys(prices).length+' objets tarifés. Les objets sans prix sont exclus du total connu.'}
  catch(e){prices={};$('status').textContent='Aucun prix CraftRadar disponible dans ce navigateur. Saisis des prix dans l’onglet CraftRadar puis reviens.'}
@@ -129,6 +129,7 @@ function savePrice(id,raw){
   localStorage.setItem(PRICE_KEY,JSON.stringify(data));
   prices=data.prices.Dakal;
   priceChannel?.postMessage({source:'farm',server:'Dakal'});
+  if(value!==''&&Number.isSafeInteger(Number(value)))void window.RadarPriceSync?.save(Number(id),Number(value));
   return true;
  }catch(e){alert('Impossible d’enregistrer ce prix dans ce navigateur.');return false}
 }
@@ -278,10 +279,12 @@ function renderBasket(){
 $('basket').addEventListener('change',e=>{if(e.target.matches('[data-qty]')){let r=session.rows.find(x=>x.id===Number(e.target.dataset.qty));if(r){r.qty=Math.max(0,Math.floor(Number(e.target.value)||0));save();renderBasket();update()}}else if(e.target.matches('[data-price]')){let id=Number(e.target.dataset.price);if(savePrice(id,e.target.value)){renderBasket();update()}else alert('Prix invalide.')}});
 $('basket').addEventListener('click',e=>{let b=e.target.closest('[data-remove]');if(!b)return;session.rows=session.rows.filter(x=>x.id!==Number(b.dataset.remove));save();renderBasket();update()});
 $('clearBasket').onclick=()=>{if(confirm('Retirer toutes les ressources de cette session ?')){session.rows=[];save();renderBasket();update()}};
-$('refreshPrices').onclick=()=>{loadPrices();renderBasket()};
+$('refreshPrices').onclick=()=>{loadPrices();renderBasket();void window.RadarPriceSync?.refresh()};
 $('sync').onclick=loadCatalog;
 window.addEventListener('storage',e=>{if(e.key===PRICE_KEY){loadPrices();renderBasket()}});
 priceChannel?.addEventListener('message',e=>{if(e.data?.source==='craft'){loadPrices();renderBasket()}});
+window.RadarPriceSync?.onChange(()=>{update();renderBasket();$('status').textContent=window.RadarPriceSync.active?'☁ Prix communautaires Dakal synchronisés · '+window.RadarPriceSync.count+' objets.':'📱 Prix locaux CraftRadar conservés.'});
+void window.RadarPriceSync?.refresh();
 $('exportCsv').onclick=()=>{
  const lines=['Objet;ID;Quantité;Prix unitaire en kamas;Valeur en kamas'];
  let grand=0;for(const r of session.rows){let p=priceFor(r.id);if(p!==null)grand+=r.qty*p;lines.push([r.name.replace(/;/g,','),r.id,r.qty,p??'',p===null?'':p*r.qty].join(';'))}
