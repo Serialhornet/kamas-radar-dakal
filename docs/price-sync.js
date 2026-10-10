@@ -17,6 +17,8 @@
     if(!user){active=false;records.clear();lastError="Connexion communautaire nécessaire";emit();return false}
     const prices=await client.getPrices();
     const people=await client.client.from('radar_profiles').select('id,pseudo');
+    if(!people.error){authors.clear();for(const person of people.data||[])authors.set(person.id,person.pseudo)}
+    authors.set(user.id,user.pseudo);
     records.clear();
     for(const p of prices)records.set(Number(p.item_id),{value:Number(p.unit_price),at:p.updated_at,by:p.updated_by});
     active=true;lastError="";lastRefresh=Date.now();emit();return true;
