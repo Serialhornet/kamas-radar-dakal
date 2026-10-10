@@ -28,7 +28,7 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 </div>
 <div class="three" style="margin-top:12px">
 <label class="field">Espèce<select id="species"><option>Dragodinde</option><option>Muldo</option><option>Volkorne</option></select></label>
-<label class="field">Variété / couleur (recherche ou saisie)<input id="variant" list="variants" placeholder="Ex. Ébène et Pourpre"><datalist id="variants"></datalist></label>
+<label class="field">Variété / couleur (recherche ou saisie)<input id="variant" list="variants" placeholder="Ex. Ébène et Pourpre"><datalist id="variants"></datalist><small id="variantStatus">Chargement des variétés du catalogue…</small></label>
 <label class="field">Sexe<select id="sex"><option value="F">Femelle</option><option value="M">Mâle</option></select></label>
 <label class="field">Niveau actuel<input id="level" type="number" min="1" max="200" value="1"></label>
 <label class="field">XP totale de la monture<input id="xp" type="number" min="0" max="867582" value="0"></label>
@@ -94,7 +94,7 @@ const KEY='elevageRadar_v1',CRAFT_KEY='craftRadar_live_v2',DB='CraftRadar_Catalo
 const GAUGES=[{id:'caresseur',name:'Caresseur',target:'Sérénité +'}, {id:'baffeur',name:'Baffeur',target:'Sérénité −'}, {id:'foudroyeur',name:'Foudroyeur',target:'Endurance'}, {id:'abreuvoir',name:'Abreuvoir',target:'Maturité'}, {id:'dragofesse',name:'Dragofesse',target:'Amour'}, {id:'mangeoire',name:'Expérience de monture',target:'XP'}];
 const CAPS=[80000,140000,180000,200000],SPEED=[10,20,30,40],FUELS=['Extrait','Philtre','Potion','Élixir'],SIZES=[2000,4000,6000,8000,10000],FLATXP={100:172668,200:867582};
 const empty=()=>({mounts:[],pen:{name:'Enclos Dakal',count:1,fuels:Object.fromEntries(GAUGES.map(x=>[x.id,{value:0,active:false}]))},watch:null,custom:{},choice:null});
-let state=empty(),activeMount=null,items=[],itemById=new Map(),priceState={},selectedItem=null,lastUpdate=0;
+let state=empty(),mountCatalog=[],activeMount=null,items=[],itemById=new Map(),priceState={},selectedItem=null,lastUpdate=0;
 try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&typeof x==='object'){state={...empty(),...x};state.pen={...empty().pen,...x.pen,fuels:{...empty().pen.fuels,...x.pen?.fuels}}}}catch(e){}
 const channel=typeof BroadcastChannel==='function'?new BroadcastChannel(CHANNEL):null;
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch(e){$('watchStatus').textContent='Enregistrement local indisponible.';return false}}
@@ -104,7 +104,36 @@ function writePrice(id,value){if(!id||!Number.isFinite(value)||value<0)return fa
 function recipeCost(item){if(!item||!Array.isArray(item.recipe)||!item.recipe.length)return null;let sum=0;for(const p of item.recipe){const id=Number(Array.isArray(p)?p[0]:p.item_ankama_id??p.id),qty=Number(Array.isArray(p)?p[1]:p.quantity);const price=itemPrice(id);if(price===null||qty<=0||!Number.isFinite(qty))return null;sum+=price*qty}return sum}
 async function readCatalog(){try{const db=await new Promise((res,rej)=>{const q=indexedDB.open(DB,1);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error);q.onupgradeneeded=()=>q.result.createObjectStore('cache')});
  const data=await new Promise((res,rej)=>{const q=db.transaction('cache','readonly').objectStore('cache').get('catalogue');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});db.close();items=(data?.items||[]).map(x=>({id:Number(x.id??x.ankama_id),name:String(x.name||''),recipe:x.recipe||[],category:x.category||'unknown',level:x.level||0})).filter(x=>x.id>0&&x.name);itemById=new Map(items.map(x=>[x.id,x]));$('costChoice').textContent=items.length+' objets du catalogue CraftRadar accessibles. La recherche inclut les carburants 3.7 présents dans les données.';refreshVariants();findItems()}catch(e){$('costChoice').textContent='Catalogue CraftRadar absent. Ouvre CraftRadar > Synchroniser DOFUS ; sinon utilise les prix manuels.'}}
-function refreshVariants(){const options=items.filter(x=>/dragodinde|muldo|volkorne/i.test(x.name)).slice(0,1100);$('variants').innerHTML=options.map(x=>'<option value="'+esc(x.name)+'"></option>').join('')}
+async function refreshVariants(){
+ const matchSpec=(name)=>{
+  const x=norm(name);return x.includes('dragodinde')?'Dragodinde':x.includes('muldo')?'Muldo':x.includes('volkorne')?'Volkorne':null;
+ };
+ try{
+  const response=await fetch('https://api.dofusdu.de/dofus3/v1/fr/mounts/all',{cache:'force-cache'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const data=await response.json();
+  const records=Array.isArray(data)?data:Array.isArray(data.mounts)?data.mounts:Array.isArray(data.results)?data.results:Array.isArray(data.data)?data.data:[];
+  mountCatalog=records.map(m=>{
+    const name=String(typeof m.name==='string'?m.name:m.name?.fr||m.name?.name||'');
+    const id=Number(m.ankama_id??m.id);
+    const family=String(m.family?.name||m.family_name||m.family||'');
+    return {id,name,family,species:matchSpec(name+' '+family)};
+  }).filter(m=>m.name&&m.species);
+  if(!mountCatalog.length)throw Error('Réponse reçue sans noms de monture reconnus');
+  $('variantStatus').textContent=mountCatalog.length+' montures du catalogue DofusDude chargées.';
+ }catch(e){
+  mountCatalog=items.filter(x=>/dragodinde|muldo|volkorne/i.test(x.name)).map(x=>({name:x.name,id:x.id,species:matchSpec(x.name)}));
+  $('variantStatus').textContent='Catalogue dédié indisponible ; '+mountCatalog.length+' noms issus des objets CraftRadar. Saisie libre possible.';
+ }
+ displayVariants();
+}
+function displayVariants(){
+ const species=$('species').value;
+ const choices=[...new Set(mountCatalog.filter(m=>m.species===species).map(m=>m.name))].sort((a,b)=>a.localeCompare(b,'fr'));
+ $('variants').innerHTML=choices.map(name=>'<option value="'+esc(name)+'"></option>').join('');
+}
+$('species').addEventListener('change',displayVariants);
+
 function n(id){return Number($(id).value)}
 function loadMountFields(x){for(const id of ['mountName','species','variant','sex','level','xp','goal','targetLevel','fertility','trait','serenite','endurance','maturite','amour']){if(x?.[id]!==undefined)$(id).value=x[id]}}
 function mountFromFields(){const m={};for(const id of ['mountName','species','variant','sex','level','xp','goal','targetLevel','fertility','trait','serenite','endurance','maturite','amour'])m[id]=$(id).value;for(const id of ['level','xp','targetLevel','serenite','endurance','maturite','amour'])m[id]=n(id);return m}
@@ -119,7 +148,7 @@ const colors={'caresseur':'#bd98ed','baffeur':'#ba8de7','foudroyeur':'#f3d36f','
 function gaugeTier(v){if(v>180000)return 3;if(v>140000)return 2;if(v>80000)return 1;return 0}
 function depletedTime(v,threshold=0){let seconds=0;let level=Math.max(0,Math.min(200000,Number(v)||0));for(let steps=0;steps<5&&level>threshold;steps++){const tier=gaugeTier(level);const lower=Math.max(threshold,tier?CAPS[tier-1]:0);seconds+=Math.max(0,level-lower)/SPEED[tier]*10;level=lower}return seconds}
 function displayDuration(sec){if(!Number.isFinite(sec))return '—';let n=Math.max(0,Math.ceil(sec));let h=Math.floor(n/3600),m=Math.ceil(n%3600/60);return h?h+' h '+m+' min':m+' min'}
-function currentGauge(g){const old=state.pen.fuels[g]||{value:0,active:false};if(!state.watch?.startedAt||!old.active)return Number(old.value)||0;const elapsed=Math.max(0,(Date.now()-state.watch.startedAt)/1000);let remain=Math.max(0,Number(old.value)||0),time=elapsed;for(let i=0;i<8&&remain>0&&time>0;i++){const tier=gaugeTier(remain),lower=tier?CAPS[tier-1]:0,speed=SPEED[tier]/10,duration=(remain-lower)/speed;if(time<duration)return remain-time*speed;remain=lower;time-=duration}return remain}
+function currentGauge(g){const old=state.pen.fuels[g]||{value:0,active:false};if(!state.watch?.startedAt||!old.active||Number(state.pen.count)<=0)return Number(old.value)||0;const elapsed=Math.max(0,(Date.now()-state.watch.startedAt)/1000);let remain=Math.max(0,Number(old.value)||0),time=elapsed;for(let i=0;i<8&&remain>0&&time>0;i++){const tier=gaugeTier(remain),lower=tier?CAPS[tier-1]:0,speed=SPEED[tier]/10,duration=(remain-lower)/speed;if(time<duration)return remain-time*speed;remain=lower;time-=duration}return remain}
 function showFuels(){const container=$('fuels');container.innerHTML=GAUGES.map(g=>{const item=state.pen.fuels[g.id],value=currentGauge(g.id);return '<div class="fuel '+(item.active?'active':'')+'"><h3 style="color:'+colors[g.id]+'">'+esc(g.name)+'</h3><small>'+esc(g.target)+'</small><label class="field">Carburant actuel / 200 000<input type="number" min="0" max="200000" step="10" data-gauge="'+g.id+'" value="'+Math.round(value)+'"></label><label style="display:flex;gap:7px;align-items:center"><input type="checkbox" data-active="'+g.id+'" '+(item.active?'checked':'')+'> Active</label><small>Palier '+(gaugeTier(value)+1)+' · avant palier inférieur : '+displayDuration(depletedTime(value,gaugeTier(value)?CAPS[gaugeTier(value)-1]:0))+'</small></div>'}).join('')}
 $('fuels').addEventListener('change',e=>{let g=e.target.dataset.gauge,a=e.target.dataset.active;if(g){if(state.watch)stopWatch(false);state.pen.fuels[g].value=Math.max(0,Math.min(200000,Number(e.target.value)||0))}
  if(a){const selected=GAUGES.filter(x=>state.pen.fuels[x.id].active).length;const flag=e.target.checked;if(flag&&selected>=2){e.target.checked=false;return alert('Deux jauges actives maximum.')}if(flag&&((a==='caresseur'&&state.pen.fuels.baffeur.active)||(a==='baffeur'&&state.pen.fuels.caresseur.active))){e.target.checked=false;return alert('Baffeur et Caresseur ne peuvent pas fonctionner ensemble.')}state.pen.fuels[a].active=flag}
