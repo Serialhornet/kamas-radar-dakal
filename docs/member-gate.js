@@ -3,7 +3,7 @@
 // Les données sensibles sont protégées par Supabase RLS.
 (async () => {
   const login = new URL("./connexion-admin.html", location.href).href;
-  const toLogin = () => { if (window.top !== window.self) window.top.location.replace(login); else toLogin(); };
+  const toLogin = () => { if (window.top !== window.self) window.top.location.replace(login); else window.location.replace(login); };
   try {
     const community = window.RadarCommunity;
     if (!community?.ready) throw Error("Service de connexion indisponible");
