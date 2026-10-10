@@ -94,7 +94,19 @@ function toast(s){const t=$('toast');t.textContent=s;t.classList.add('on');clear
 const priceChannel=typeof BroadcastChannel==='function'?new BroadcastChannel('radar-dakal-prices'):null;
 function persistSettings(){try{localStorage.setItem(KEY,JSON.stringify(settings));priceChannel?.postMessage({source:'craft',server:settings.server});return true}catch(e){toast('Impossible de sauvegarder les prix localement. Utilise une sauvegarde JSON.');return false}}
 function serverPrices(){return settings.prices[settings.server]||(settings.prices[settings.server]={})}
-function getPrice(id){const p=serverPrices()[Number(id)];return p&&Number.isFinite(Number(p.value))&&Number(p.value)>=0?Number(p.value):null}
+const sharedPrices=new Map(),sharedNames=new Map();let sharedMember=null,sharedLoaded=false;
+const cloudActive=()=>settings.server==='Dakal'&&Boolean(sharedMember)&&sharedLoaded;
+function priceEntry(id){return cloudActive()&&sharedPrices.has(Number(id))?sharedPrices.get(Number(id)):serverPrices()[Number(id)]}
+function getPrice(id){const p=priceEntry(id);return p&&Number.isFinite(Number(p.value))&&Number(p.value)>=0?Number(p.value):null}
+function priceInfo(id){
+ const p=priceEntry(id);if(!p)return '<small class="caption">Prix non renseigné</small>';
+ const dt=p.at&&Number.isFinite(Date.parse(p.at))?new Date(p.at).toLocaleString('fr-FR',{dateStyle:'short',timeStyle:'short'}):'Date inconnue';
+ const age=p.at?(Date.now()-Date.parse(p.at))/86400000:99;
+ const label=age<=1?'Récent':age<=3?'À vérifier':'Ancien';
+ const color=age<=1?'#9effb4':age<=3?'#ffd08a':'#ff9aa7';
+ const who=p.by?sharedNames.get(p.by)||'Membre Radar':'Prix local';
+ return '<div class="caption">'+escapeHTML(dt)+' · '+escapeHTML(who)+' · <b style="color:'+color+'">'+label+'</b></div>';
+}
 function setPrice(id,val,lot=1){let raw=String(val??'').trim().replace(/\s/g,'').replace(',','.'),d=serverPrices();if(raw===''){if(!Object.prototype.hasOwnProperty.call(d,id))return true;delete d[id]}else{const p=Number(raw),q=Number(lot);if(!Number.isFinite(p)||p<0||!Number.isFinite(q)||q<=0){toast('Prix invalide');return false}if(getPrice(id)===p/q)return true;d[id]={value:p/q,at:now()}}persistSettings();renderAll();return true}
 function validImage(url){return typeof url==='string'&&/^https:\/\//.test(url)?url:''}
 function itemIcon(it){const src=validImage(it?.icon);return src?`<img class="itemavatar" loading="lazy" src="${escapeHTML(src)}" alt="">`:'<span class="itemavatar" style="display:grid;place-items:center">◇</span>'}
