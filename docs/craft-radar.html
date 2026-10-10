@@ -447,15 +447,15 @@ $('ocrGo').addEventListener('click',async()=>{
    $('ocrReview').classList.remove('hidden');
    $('ocrPrice').value='';$('ocrLot').value='1';
    ocrMatch();
-   $('ocrStatus').textContent='Noms extraits. Lecture ciblée des trois lignes de prix…';
-   const prices=await hdvRecognizeLots(worker,file);
-   [1,10,100].forEach((lot,i)=>{$('ocrPrice'+lot).value=prices[i]});
-   $('ocrPrice1000').value='';
+   $('ocrStatus').textContent='Noms extraits. Lecture des lots ×1, ×10, ×100, ×1 000 et du prix moyen…';
+   const result=await hdvRecognizeLots(worker,file);
+   for(const lot of [1,10,100,1000])$('ocrPrice'+lot).value=result.values[lot]||'';
    const avgMatch=($('ocrText').value||'').match(/prix\s*moyen\s*[:：]?\s*(\d[\d\s.]{0,11})/i);
-   if(avgMatch) $('ocrAverage').value=avgMatch[1].replace(/[^\d]/g,'');
+   $('ocrAverage').value=result.average||(avgMatch?avgMatch[1].replace(/[^\d]/g,''):'');
    hdvRefreshUnits();
    $('ocrLotsPanel').classList.remove('hidden');
-   $('ocrStatus').textContent='Prix proposés : '+prices.filter(Boolean).length+'/3. Lot ×1 000 à renseigner si présent. Le prix moyen est affiché à part et reste modifiable.';
+   const count=Object.values(result.values).filter(Boolean).length;
+   $('ocrStatus').textContent='Prix proposés : '+count+'/4 lots. Prix moyen séparé'+(result.checks.length?' · '+result.checks.join(', '):'')+'. Vérifie les valeurs avant enregistrement.';
   }finally{await worker.terminate()}
  }catch(err){$('ocrStatus').textContent='Erreur OCR : '+err.message}
  finally{$('ocrGo').disabled=false}
