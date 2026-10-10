@@ -73,17 +73,17 @@ footer{padding-top:20px;border-top:1px solid #233640}
 #panel-quete{height:calc(100dvh - 65px);min-height:550px;width:100%;overflow:hidden}
 #queteFrame{display:block;width:100%;height:100%;border:0;background:#0d111b}
 @media(max-width:720px){#panel-quete{height:calc(100dvh - 164px);min-height:450px}}
-</style></head><body>
+.add-source{background:#14252a;border:1px solid #305851;border-radius:15px;padding:16px;margin:20px 0}.add-source label{display:grid;gap:5px;margin:10px 0;color:#afc8c7}.add-source input,.add-source textarea{background:#0e1924;border:1px solid #335152;color:#eef8f3;border-radius:10px;padding:10px;width:100%;font:inherit}.add-source summary{cursor:pointer;font-weight:750;color:#7ce4ba}.row-add{display:flex;gap:10px;flex-wrap:wrap}.source-pill{background:#254039;color:#92ead2;border:1px solid #39635b;border-radius:8px;padding:3px 8px;font-size:12px}#sourceFilter{min-width:160px}@media(max-width:640px){#sourceFilter{width:100%}}</style></head><body>
 <nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button><button class="app-tab" type="button" id="tab-recolte" role="tab" aria-selected="false" aria-controls="panel-recolte">🧭 RécolteRadar</button><button class="app-tab" type="button" id="tab-farm" role="tab" aria-selected="false" aria-controls="panel-farm">⏱️ FarmRadar</button><button class="app-tab" type="button" id="tab-quete" role="tab" aria-selected="false" aria-controls="panel-quete">📜 QuêteRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
 <main>
 <p id="updated">Chargement de la veille…</p>
 <div class="controls">
 <input id="q" type="search" placeholder="Rechercher une astuce…">
-<select id="sort" aria-label="Trier">
+<select id="sourceFilter" aria-label="Source"><option value="all">Toutes les sources</option><option value="youtube">YouTube</option><option value="shorts">YouTube Shorts et courtes</option><option value="tiktok">TikTok</option><option value="site">Sites / communautés</option></select><select id="sort" aria-label="Trier">
 <option value="score">Priorité</option><option value="date">Plus récentes</option><option value="views">Moins de vues</option>
 </select>
 </div>
-<div id="list"></div>
+<details class="add-source"><summary>➕ Ajouter une astuce TikTok, YouTube ou un article</summary><p>Colle un lien et décris brièvement l'astuce. Il restera privé et enregistré dans ce navigateur.</p><label>Lien HTTPS<input id="communityUrl" type="url" placeholder="https://www.tiktok.com/@.../video/..."></label><label>Titre<input id="communityTitle" placeholder="Ex. Brisage kamas Unity"></label><label>Résumé<textarea id="communityDescription" rows="3" placeholder="Ce que contient l'astuce..."></textarea></label><div class="row-add"><button id="communitySave">Enregistrer le lien</button><button id="communityExport">Exporter mes liens</button></div><p id="communityStatus" aria-live="polite"></p></details><div id="list"></div>
 <footer>Songes et multicompte explicites exclus. Le filtrage Unity est conservateur : des vidéos pertinentes peuvent être manquées si elles ne mentionnent pas Unity ou Dakal. Les titres, descriptions, flux RSS et commentaires publics ne permettent pas de garantir une astuce ou sa rentabilité. Aucune transcription intégrale ni collecte DoFocus automatisée.</footer>
 </main></section>
 <section id="panel-craft" class="tab-panel" role="tabpanel" aria-labelledby="tab-craft" hidden><iframe id="craftFrame" title="CraftRadar — catalogue et prix HDV" loading="lazy" src="about:blank"></iframe></section>
@@ -91,7 +91,7 @@ footer{padding-top:20px;border-top:1px solid #233640}
 <section id="panel-farm" class="tab-panel" role="tabpanel" aria-labelledby="tab-farm" hidden><iframe id="farmFrame" title="FarmRadar — chronomètre et bilan de farm" loading="lazy" src="about:blank"></iframe></section>
 <section id="panel-quete" class="tab-panel" role="tabpanel" aria-labelledby="tab-quete" hidden><iframe id="queteFrame" title="QuêteRadar — suivi quotidien et hebdomadaire" loading="lazy" src="about:blank"></iframe></section>
 <script>
-let items=[];
+let items=[];let communityLinks=[];const PERSONAL_LINK_KEY='kamasRadar_personal_links_v1';try{const saved=JSON.parse(localStorage.getItem(PERSONAL_LINK_KEY));if(Array.isArray(saved))communityLinks=saved}catch(e){}
 let craftFrameLoaded=false;
 let recolteFrameLoaded=false;
 let farmFrameLoaded=false;
@@ -132,6 +132,9 @@ window.addEventListener('hashchange',()=>openTab(window.location.hash==='#quete-
 openTab(window.location.hash==='#quete-radar'?'quete':window.location.hash==='#farm-radar'?'farm':window.location.hash==='#recolte-radar'?'recolte':window.location.hash==='#craft-radar'?'craft':'kamas',false);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const txt=s=>esc(s??'Non précisé');
+function platformOf(item){if(item.source_platform)return item.source_platform;const u=String(item.url||'');return u.includes('tiktok.com')?'tiktok':u.includes('youtube.com')||u.includes('youtu.be')?'youtube':'site'}
+function kindOf(item){if(item.source_format)return item.source_format;return String(item.url||'').includes('/shorts/')?'short':'video'}
+function sourceLabel(item){const p=platformOf(item),k=kindOf(item);return p==='tiktok'?'TikTok':p==='site'?'Site / communauté':k==='short'?'YouTube Short':k==='court'?'Vidéo courte ≤ 3 min':'YouTube'}
 function card(item){
  const d=item.detail||{};
  const cm=item.commentaires||{};
@@ -145,7 +148,7 @@ function card(item){
  }).join('');
  const info=[['Catégorie',d.categorie],['Compatibilité monocompte',d.compatibilite_mono],['Résumé fourni par la source',d.resume_source||item.description],['Méthode vérifiée',d.methode],['Prérequis',d.prerequis],['Budget',d.budget],['Rentabilité',d.rentabilite],['Langue signalée',d.langue||item.langue]].map(([k,v])=>
  '<div class="kv"><b>'+txt(k)+'</b>'+txt(v)+'</div>').join('');
- return '<article class="card"><div class="tags"><span class="tag">Score '+txt(item.score)+'</span><span class="tag">'+txt(d.categorie||'Astuce kamas')+'</span><span class="tag">'+(item.views==null?'Vues inconnues':Number(item.views).toLocaleString('fr-FR')+' vues')+'</span></div>'+
+ return '<article class="card"><div class="tags"><span class="source-pill">'+esc(sourceLabel(item))+'</span><span class="tag">Score '+txt(item.score)+'</span><span class="tag">'+txt(d.categorie||'Astuce kamas')+'</span><span class="tag">'+(item.views==null?'Vues inconnues':Number(item.views).toLocaleString('fr-FR')+' vues')+'</span></div>'+
  '<h2>'+txt(item.title)+'</h2><small>'+txt(item.channel)+' · '+txt((item.date||'').slice(0,10))+'</small>'+
  '<p class="description">'+txt(item.description||'Description indisponible.')+'</p>'+
  '<details><summary>📖 Ouvrir la fiche détaillée</summary>'+
@@ -160,12 +163,14 @@ function card(item){
 function render(){
  const q=document.getElementById('q').value.toLocaleLowerCase('fr');
  const sort=document.getElementById('sort').value;
- const result=items.filter(x=>((x.title||'')+' '+(x.description||'')+' '+(x.channel||'')).toLocaleLowerCase('fr').includes(q));
+ const source=document.getElementById('sourceFilter').value;
+ const result=[...communityLinks,...items].filter(x=>source==='all'||source==='shorts'&&(platformOf(x)==='youtube'&&['short','court'].includes(kindOf(x)))||platformOf(x)===source).filter(x=>((x.title||'')+' '+(x.description||'')+' '+(x.channel||'')).toLocaleLowerCase('fr').includes(q));
  result.sort((a,b)=>sort==='date'?String(b.date||'').localeCompare(String(a.date||'')):sort==='views'?(a.views??Infinity)-(b.views??Infinity):(b.score||0)-(a.score||0));
  document.getElementById('list').innerHTML=result.length?result.map(card).join(''):'<div class="card">Aucune piste Unity/Dakal trouvée pour cette recherche. Les résultats arriveront à la prochaine collecte.</div>';
 }
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('sort').addEventListener('change',render);
+document.getElementById('sourceFilter').addEventListener('change',render);
 fetch('./data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
  items=d.items||[];
  const date=d.updated_at?new Date(d.updated_at).toLocaleString('fr-FR',{timeZone:'Europe/Paris'}):'Aucune collecte';
