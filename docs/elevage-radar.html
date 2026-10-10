@@ -278,7 +278,7 @@ const CROSS_SOURCES={
 let crossingData={Dragodinde:[],Muldo:[],Volkorne:[]},crossByName=new Map(),crosses=[];
 function crossName(name){return norm(name).replace(/\s+/g,' ').trim()}
 function mountDetailURL(name,species){return './monture-fiche.html?espece='+encodeURIComponent(species||$('crossSpecies').value)+'&nom='+encodeURIComponent(name)}
-function nameLink(name,species){return '<a class="mount-name-link" target="_blank" rel="noopener noreferrer" href="'+esc(mountDetailURL(name,species))+'">'+esc(name)+' ↗</a>'}
+function nameLink(name,species){return '<a class="mount-name-link" target="_top" href="'+esc(mountDetailURL(name,species))+'">'+esc(name)+' ↗</a>'}
 
 function optionsOf(x){if(!x)return [];return Array.isArray(x.options)?x.options:(Array.isArray(x.parents)?[x.parents]:[])}
 function crossStatus(x){
