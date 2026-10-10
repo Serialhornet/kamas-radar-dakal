@@ -14,6 +14,10 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
 .result b{display:block}.result small{display:block}.result button{padding:6px 9px}.items{max-height:285px;overflow-y:auto;margin-top:10px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:600px}th{text-align:left;color:#aaa7bd;background:#20253a;font-size:12px;padding:10px}td{border-top:1px solid #32394e;padding:10px}td input{max-width:150px}td:last-child{text-align:right}
 .note{background:#26203a;border:1px solid #594a80;padding:13px;border-radius:11px;margin:13px 0;color:#dcd0f3}
 .success{color:#9df0c6}.warn{color:#ffcf9f}.pill{display:inline-block;border:1px solid #62518b;color:#cfbfff;background:#312844;border-radius:99px;padding:4px 10px;font-size:12px}.catalog{min-height:80px}
+.farm-sound-panel{margin-top:16px;padding:14px;border:1px solid #65538b;background:#231e37;border-radius:13px}
+.farm-sound-controls{display:flex;gap:11px;align-items:end;flex-wrap:wrap;margin-top:12px}
+.farm-volume{flex:1;min-width:180px;max-width:360px}.farm-volume input{padding:0;border:none;background:transparent;accent-color:#b29cff;cursor:pointer;height:27px}
+#farmSoundMessage{display:block;margin-top:9px}.farm-sound-panel .pill{font-size:11px}
 @media(max-width:800px){main{padding:18px 12px}.grid,.three{grid-template-columns:1fr}}
 </style></head><body><main>
 <div class="eyebrow">DOFUS Unity · monocompte · Dakal</div><h1>⏱️ FarmRadar</h1>
@@ -24,6 +28,17 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
 <div class="display" id="clock" role="timer">00:00:00</div>
 <div class="row"><button class="primary" id="start">Démarrer</button><button id="pause">Pause</button><button id="finish">Terminer la session</button><button class="danger" id="reset">Réinitialiser</button></div>
 <h3>Minuteur facultatif</h3><div class="row"><label class="field">Durée cible (minutes)<input id="target" type="number" min="0" step="1" value="30" style="width:140px"></label><span id="countdown" class="pill">Aucun minuteur actif</span></div>
+<div class="farm-sound-panel">
+ <div class="row" style="justify-content:space-between"><strong>🔔 Alerte sonore FarmRadar</strong><span class="pill" id="farmSoundState">Prête à activer</span></div>
+ <div class="farm-sound-controls">
+  <button id="testFarmSound" type="button" class="primary">🔊 Tester le son</button>
+  <button id="toggleFarmMute" type="button">🔇 Couper le son</button>
+  <label class="field farm-volume" for="farmVolume">Volume : <strong id="farmVolumeValue">70 %</strong>
+   <input id="farmVolume" type="range" min="0" max="100" step="5" value="70" aria-label="Volume de l'alerte sonore FarmRadar">
+  </label>
+ </div>
+ <small id="farmSoundMessage">Deux bips graves et distincts du carillon d'ÉlevageRadar. Volume mémorisé ; la première utilisation peut nécessiter un clic.</small>
+ </div>
 <p class="muted" style="font-size:13px">Le chrono continue de compter si tu changes d'onglet ou recharges la page. Quand le temps est écoulé, le minuteur s'arrête automatiquement. Le navigateur peut bloquer les notifications sonores.</p>
 </section>
 <section class="panel"><h2>💰 Bilan de récolte</h2>
@@ -134,10 +149,82 @@ function update(){
  $('quantity').textContent=fmt(quantity);
  $('missing').textContent=missing.length?missing.length+' objet(s) sans prix Dakal : leur valeur n’est pas comptée.':''; 
 }
+
+/* Audio FarmRadar : double bip carré grave, différent du carillon aigu de l'élevage. */
+const FARM_VOLUME_KEY='farmRadar_alarm_volume_v1',FARM_MUTE_KEY='farmRadar_alarm_muted_v1';
+let farmAudio=null,farmMuted=false,farmVolume=70;
+try{
+ const v=localStorage.getItem(FARM_VOLUME_KEY);
+ if(v!==null && Number.isFinite(Number(v)))farmVolume=Math.max(0,Math.min(100,Number(v)));
+ farmMuted=localStorage.getItem(FARM_MUTE_KEY)==='yes';
+}catch(e){}
+$('farmVolume').value=String(farmVolume);
+function updateSoundUI(message=''){
+ $('farmVolumeValue').textContent=farmVolume+' %';
+ $('toggleFarmMute').textContent=farmMuted?'🔊 Réactiver le son':'🔇 Couper le son';
+ $('farmSoundState').textContent=farmMuted||farmVolume===0?'Muet':farmAudio?.state==='running'?'Son activé':'Clique pour activer';
+ if(message)$('farmSoundMessage').textContent=message;
+}
+async function unlockFarmAudio(){
+ const Ctx=window.AudioContext||window.webkitAudioContext;
+ if(!Ctx){updateSoundUI('Ton navigateur ne prend pas en charge les alertes audio.');return false}
+ try{
+  farmAudio=farmAudio||new Ctx();
+  if(farmAudio.state==='suspended')await farmAudio.resume();
+  updateSoundUI();
+  return farmAudio.state==='running';
+ }catch(e){
+  updateSoundUI('Audio non autorisé : vérifie les permissions du site.');
+  return false;
+ }
+}
+function beepFarm(){
+ if(farmMuted||farmVolume===0||!farmAudio||farmAudio.state!=='running')return false;
+ const start=farmAudio.currentTime+0.015;
+ // 70% = audible sans saturation ; le niveau suit directement le curseur.
+ const amplitude=Math.min(.22,Math.max(.0001,farmVolume/100*.22));
+ for(const [i,hz] of [440,370,440].entries()){
+  const t=start+i*.25;
+  const osc=farmAudio.createOscillator(),gain=farmAudio.createGain();
+  osc.type='square';osc.frequency.setValueAtTime(hz,t);
+  gain.gain.setValueAtTime(.0001,t);
+  gain.gain.exponentialRampToValueAtTime(amplitude,t+.012);
+  gain.gain.setValueAtTime(amplitude,t+.13);
+  gain.gain.exponentialRampToValueAtTime(.0001,t+.19);
+  osc.connect(gain);gain.connect(farmAudio.destination);
+  osc.start(t);osc.stop(t+.205);
+ }
+ return true;
+}
+$('testFarmSound').addEventListener('click',async()=>{
+ const ok=await unlockFarmAudio();
+ if(!ok)return;
+ if(farmMuted){updateSoundUI('Le son est coupé. Clique sur « Réactiver le son » pour entendre le test.');return}
+ if(farmVolume===0){updateSoundUI('Monte le volume au-dessus de 0 % pour écouter le test.');return}
+ beepFarm();updateSoundUI('Test : trois bips de farm distincts du carillon d’élevage.');
+});
+$('toggleFarmMute').addEventListener('click',async()=>{
+ farmMuted=!farmMuted;
+ try{localStorage.setItem(FARM_MUTE_KEY,farmMuted?'yes':'no')}catch(e){}
+ if(!farmMuted)await unlockFarmAudio();
+ updateSoundUI(farmMuted?'Son de FarmRadar coupé.':'Son de FarmRadar réactivé.');
+});
+$('farmVolume').addEventListener('input',e=>{
+ farmVolume=Math.max(0,Math.min(100,Number(e.target.value)||0));
+ try{localStorage.setItem(FARM_VOLUME_KEY,String(farmVolume))}catch(e){}
+ updateSoundUI();
+});
+updateSoundUI();
+/* Le clic sur Démarrer autorise l'audio pour l'alerte de fin, lorsqu'il est permis. */
+$('start').addEventListener('click',()=>{if(!farmMuted && farmVolume>0)unlockFarmAudio()});
+
 function notifyDone(){
  $('sessionState').textContent='Minuteur terminé !';
+ const played=beepFarm();
  if(navigator.vibrate)navigator.vibrate([150,100,150]);
- alert('⏱️ FarmRadar : temps écoulé ! Pense à noter les ressources récoltées.');
+ $('farmSoundMessage').textContent=played?'⏱️ Minuteur terminé ! Trois bips ont été joués.':'⏱️ Minuteur terminé ! Son désactivé ou bloqué par le navigateur.';
+ // Laisser au carillon le temps de se terminer avant un éventuel dialogue bloquant.
+ setTimeout(()=>alert('⏱️ FarmRadar : temps écoulé ! Pense à noter les ressources récoltées.'),1000);
 }
 function start(){
  if(session.running)return;
