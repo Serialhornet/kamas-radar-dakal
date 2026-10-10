@@ -29,6 +29,13 @@ async function changePassword(password){
  const {error}=await client.auth.updateUser({password});
  if(error)throw Error(error.message||"Changement impossible");
 }
+async function heartbeat(){
+ if(!client||document.hidden)return false;
+ const {data:{session}}=await client.auth.getSession();
+ if(!session?.access_token)return false;
+ const {error}=await client.rpc("radar_heartbeat");
+ return !error;
+}
 async function logout(){await client?.auth.signOut();member=null}
 async function admin(action,params={}){
  const p=await current();if(p?.role!=="admin")throw Error("Accès administrateur refusé");
@@ -86,5 +93,5 @@ async function saveState(tool,state){
  const {error}=await client.from("radar_personal_state").upsert({user_id:p.id,tool,state,updated_at:new Date().toISOString()},{onConflict:"user_id,tool"});
  if(error)throw error;
 }
-window.RadarCommunity={ready,client,current,login,changePassword,logout,admin,getPrices,savePrice,getVotes,vote,getComments,comment,getState,saveState,get member(){return member}};
+window.RadarCommunity={ready,client,current,login,changePassword,heartbeat,logout,admin,getPrices,savePrice,getVotes,vote,getComments,comment,getState,saveState,get member(){return member}};
 })();
