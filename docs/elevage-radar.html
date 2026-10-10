@@ -181,7 +181,7 @@ $('fuels').addEventListener('change',e=>{let g=e.target.dataset.gauge,a=e.target
 function stopWatch(show=true){if(state.watch){for(const g of GAUGES)state.pen.fuels[g.id].value=Math.round(currentGauge(g.id));state.watch=null;persist()}if(show){showFuels();plan()}}
 function commitPen(){state.pen.name=$('penName').value;state.pen.count=n('penCount');persist()}
 $('penName').onchange=commitPen;$('penCount').onchange=()=>{if(n('penCount')>10||n('penCount')<0)return alert('Un enclos contient au maximum 10 montures.');commitPen();plan()};
-$('startWatch').onclick=()=>{stopWatch(false);commitPen();state.watch={startedAt:Date.now()};persist();plan();};
+$('startWatch').onclick=()=>{stopWatch(false);commitPen();state.watch={startedAt:Date.now(),alertedTiers:{}};persist();$('alarmMessage').textContent='Suivi démarré. La page doit rester ouverte pour que le carillon se déclenche.';plan();};
 $('stopWatch').onclick=()=>stopWatch(true);
 $('syncReadings').onclick=()=>{stopWatch(true);alert('Suivi arrêté : entre les valeurs réellement affichées en jeu, puis relance le suivi.')};
 function required(g,s){if(g==='foudroyeur')return s<0;if(g==='abreuvoir')return s>=-2000&&s<=2000;if(g==='dragofesse')return s>0;return true}
@@ -210,7 +210,7 @@ function plan(){
   const f=state.pen.fuels[g.id],value=currentGauge(g.id);
   if(f.active&&value>0){
    const lower=gaugeTier(value)?CAPS[gaugeTier(value)-1]:0,secs=depletedTime(value,lower);
-   timeList.push({sec:secs,name:g.name,lower});
+   timeList.push({sec:secs,id:g.id,name:g.name,lower,tier:gaugeTier(value)});
    const tier=gaugeTier(value),fuelType=FUELS[tier],max=CAPS[tier],fill=Math.max(0,max-value);
    const count=Math.max(1,Math.ceil(fill/10000));
    add('Surveiller '+g.name,'Dans environ '+displayDuration(secs)+', tu atteindras le palier inférieur. Pour maintenir le palier '+(tier+1)+', prévois '+count+' × Gigantesque '+fuelType+' de '+g.name+' (10 000 chacun), puis vérifie en jeu la quantité réellement acceptée. Enclos : '+fmt(value)+' / 200 000.');
@@ -224,7 +224,25 @@ function plan(){
  $('xpNeeded').textContent=m.goal==='xp'&&xpTarget!==null?fmt(Math.max(0,xpTarget-xp))+' XP':m.goal==='xp'?'Niveau intermédiaire : XP exacte à saisir':'—';
  if(m.goal==='xp'&&xpTarget===null)add('Cible XP à vérifier','Le palier XP exact pour ce niveau intermédiaire n’est pas disponible dans le guide. Ne pas utiliser une progression linéaire fictive.');
  $('plan').innerHTML=steps.map((x,i)=>'<article><strong>'+ (i+1)+'. '+esc(x.name)+'</strong><p style="margin:5px 0">'+esc(x.detail)+'</p>'+(x.ids?.length?'<span class="badge">Jauges : '+x.ids.map(g=>GAUGES.find(x=>x.id===g)?.name).join(' + ')+'</span>':'')+'</article>').join('');
- if(state.watch&&soon&&soon.sec<5&&!state.watch.alerted){state.watch.alerted=true;persist();alert('ÉlevageRadar : contrôle la jauge '+soon.name+' dans DOFUS !')}
+ if(state.watch && timeList.length){
+   // Une alerte par jauge et par palier de cette session, jamais à chaque seconde.
+   const leadSeconds=Math.max(0,Math.min(120,Number($('alarmLead').value)||0))*60;
+   state.watch.alertedTiers=state.watch.alertedTiers||{};
+   for(const x of timeList){
+     const signature=x.id+'-'+x.tier;
+     if(x.sec<=leadSeconds && !state.watch.alertedTiers[signature]){
+       state.watch.alertedTiers[signature]=Date.now();persist();
+       const msg='🔔 '+x.name+' : contrôle dans '+displayDuration(x.sec)+' (passage de palier). Vérifie la jauge dans DOFUS.';
+       $('alarmMessage').textContent=msg;
+       if(alarmEnabled){
+         const played=playBreedingChime();
+         if(!played)$('alarmMessage').textContent=msg+' Son bloqué : clique sur « Activer le son ».';
+       }
+       if(navigator.vibrate)navigator.vibrate([90,75,90,75,170]);
+       $('alarmState').textContent='Contrôle conseillé';
+     }
+   }
+ }
 }
 $('updatePlan').onclick=plan;
 function findItems(){const q=norm($('itemSearch').value.trim());const hits=q.length<2?[]:items.filter(x=>norm(x.name).includes(q)).slice(0,25);
