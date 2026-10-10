@@ -17,7 +17,8 @@ button:hover{filter:brightness(1.12)}button:disabled{opacity:.55;cursor:not-allo
 table{width:100%;border-collapse:collapse;min-width:650px}th,td{border-bottom:1px solid #385360;padding:9px;text-align:left}th{color:#b0cbd4;font-size:12px}.tablewrap{overflow:auto}
 a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e222a;border:1px solid #376067;border-radius:12px;padding:13px}
 @media(max-width:900px){.fuelgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:17px 11px}.grid,.three,.fuelgrid{grid-template-columns:1fr}}
-.cross-card{background:#102631;border:1px solid #416d73;border-radius:12px;padding:12px;margin:8px 0}.cross-card strong{color:#bbfff5}.cross-parent{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cross-card button{width:100%;text-align:left}.cross-tree-entry{border-left:2px solid #44cdbb;padding:8px 10px;margin:7px 0;background:#132d32;border-radius:4px}.cross-list-button{display:block;width:100%;text-align:left;margin:5px 0;background:#122b35}.cross-list-button:hover{background:#214750}#alarmMessage{font-size:12px}#alarmState{font-variant-numeric:tabular-nums}@media(max-width:720px){.cross-parent{grid-template-columns:1fr}}.mount-detail-link{display:inline-block;background:#26514c;border:1px solid #4bb9a7;padding:8px 12px;border-radius:10px;color:#d4fff7;text-decoration:none;font-weight:700}.mount-name-link{color:#8df4e3;text-decoration:underline}</style></head><body><main>
+.cross-card{background:#102631;border:1px solid #416d73;border-radius:12px;padding:12px;margin:8px 0}.cross-card strong{color:#bbfff5}.cross-parent{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cross-card button{width:100%;text-align:left}.cross-tree-entry{border-left:2px solid #44cdbb;padding:8px 10px;margin:7px 0;background:#132d32;border-radius:4px}.cross-list-button{display:block;width:100%;text-align:left;margin:5px 0;background:#122b35}.cross-list-button:hover{background:#214750}#alarmMessage{font-size:12px}#alarmState{font-variant-numeric:tabular-nums}@media(max-width:720px){.cross-parent{grid-template-columns:1fr}}.mount-detail-link{display:inline-block;background:#26514c;border:1px solid #4bb9a7;padding:8px 12px;border-radius:10px;color:#d4fff7;text-decoration:none;font-weight:700}.mount-name-link{color:#8df4e3;text-decoration:underline}.elevage-volume{flex:1;min-width:180px;max-width:360px}.elevage-volume input[type=range]{padding:0;border:none;background:transparent;accent-color:#4ee1d1;cursor:pointer;height:28px}.elevage-volume strong{font-variant-numeric:tabular-nums}
+</style></head><body><main>
 <div class="eyebrow">DOFUS Unity 3.7 · Dakal</div><h1>🐣 ÉlevageRadar</h1>
 <p>Assistant de montures, jauges d'enclos, carburants et planification pour viser la fécondité ou le niveau souhaité. Sans automatiser le client DOFUS.</p>
 <div class="note"><strong>Mécaniques 3.7 :</strong> montures Dragodinde, Muldo, Volkorne ; six jauges, deux actives maximum ; jauge enclos jusqu'à 200 000, jauges amour/maturité/endurance à 20 000. Les montures n'ont plus de fatigue, de jauge d'énergie ni de gestation. <a href="https://www.dofuspourlesnoobs.com/guide-de-l-eleveur.html" target="_blank" rel="noopener noreferrer">Guide 2026 ↗</a></div>
@@ -56,7 +57,9 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 <div class="row" style="justify-content:space-between"><strong>🔔 Alertes sonores d'ÉlevageRadar</strong><span class="badge" id="alarmState">Désactivées</span></div>
 <p style="margin:7px 0">Mélodie turquoise en <b>trois notes ascendantes</b>, distincte du simple avertissement de FarmRadar. Autorise le son avec le bouton ci-dessous. Aucune notification push et aucun son si le navigateur est fermé.</p>
 <div class="row"><button class="primary" id="enableSound" type="button">Activer le son</button><button id="testSound" type="button">🔊 Tester l'alerte</button><button id="muteSound" type="button">Couper</button>
-<label class="field" style="min-width:145px">Avertir avant (min)<input id="alarmLead" type="number" min="0" max="120" step="1" value="2"></label></div>
+<label class="field" style="min-width:145px">Avertir avant (min)<input id="alarmLead" type="number" min="0" max="120" step="1" value="2"></label>
+<label class="field elevage-volume" for="elevageVolume">Volume : <strong id="elevageVolumeValue">70 %</strong>
+<input id="elevageVolume" type="range" min="0" max="100" step="5" value="70" aria-label="Volume des alertes d'ÉlevageRadar"></label></div>
 <div id="alarmMessage" class="muted" role="status" aria-live="polite" style="margin-top:7px"></div>
 </div>
 <small id="watchStatus">Aucun suivi lancé. Les alertes sonores nécessitent un clic préalable et une page ouverte ; aucune action dans le jeu.</small>
@@ -361,11 +364,19 @@ $('crossingGuide').addEventListener('click',event=>{
 });
 
 /* Alerte sonore d'enclos : carillon aigu 3 notes, WebAudio déclenché par interaction réelle. */
-let audioContext=null,alarmEnabled=false,alertSignature=null;
-try{alarmEnabled=localStorage.getItem('elevageRadar_audio_enabled')==='yes'}catch(e){}
+let audioContext=null,alarmEnabled=false,alertSignature=null,alarmVolume=70;
+const ELEVAGE_VOLUME_KEY='elevageRadar_alarm_volume_v1';
+try{
+ alarmEnabled=localStorage.getItem('elevageRadar_audio_enabled')==='yes';
+ const remembered=localStorage.getItem(ELEVAGE_VOLUME_KEY);
+ if(remembered!==null&&Number.isFinite(Number(remembered)))alarmVolume=Math.max(0,Math.min(100,Number(remembered)));
+}catch(e){}
+$('elevageVolume').value=String(alarmVolume);
 function soundState(message=''){
- $('alarmState').textContent=alarmEnabled?'Activées':'Désactivées';
- $('alarmMessage').textContent=message||(alarmEnabled?'Clique sur Tester si ton navigateur a besoin d’autoriser l’audio.':'Clique sur Activer le son.');
+ $('elevageVolumeValue').textContent=alarmVolume+' %';
+ $('muteSound').textContent=alarmEnabled?'🔇 Couper le son':'🔊 Réactiver le son';
+ $('alarmState').textContent=!alarmEnabled||alarmVolume===0?'Muet':audioContext?.state==='running'?'Son activé':'Son à autoriser';
+ if(message)$('alarmMessage').textContent=message;
 }
 async function unlockSound(){
  const Ctx=window.AudioContext||window.webkitAudioContext;
@@ -373,38 +384,54 @@ async function unlockSound(){
  try{
   audioContext=audioContext||new Ctx();
   if(audioContext.state==='suspended')await audioContext.resume();
+  soundState();
   return audioContext.state==='running';
  }catch(e){soundState('Audio bloqué par le navigateur : '+e.message);return false}
 }
 function playBreedingChime(){
- if(!alarmEnabled||!audioContext||audioContext.state!=='running')return false;
- const now=audioContext.currentTime;
- // Notes cristallines ascendantes : motif volontairement distinct de l'alerte FarmRadar.
+ if(!alarmEnabled||alarmVolume===0||!audioContext||audioContext.state!=='running')return false;
+ const now=audioContext.currentTime+0.012;
+ const peak=Math.min(.24,Math.max(.0001,alarmVolume/100*.24));
+ // Trois notes aiguës et cristallines, distinctes des trois bips graves de FarmRadar.
  [784,988,1319].forEach((hz,i)=>{
-  const t=now+i*0.19;
+  const t=now+i*0.2;
   const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();
   oscillator.type='sine';oscillator.frequency.setValueAtTime(hz,t);
-  gain.gain.setValueAtTime(0.0001,t);gain.gain.exponentialRampToValueAtTime(0.11,t+0.02);
-  gain.gain.exponentialRampToValueAtTime(0.0001,t+0.35);
+  gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(peak,t+.02);
+  gain.gain.exponentialRampToValueAtTime(.0001,t+.36);
   oscillator.connect(gain);gain.connect(audioContext.destination);
-  oscillator.start(t);oscillator.stop(t+0.38);
+  oscillator.start(t);oscillator.stop(t+.38);
  });
  return true;
 }
 $('enableSound').addEventListener('click',async()=>{
- if(await unlockSound()){alarmEnabled=true;try{localStorage.setItem('elevageRadar_audio_enabled','yes')}catch(e){}
-  soundState('Carillon activé sur cet appareil. Les alertes fonctionnent tant que la page est ouverte.');playBreedingChime();
+ if(await unlockSound()){
+  alarmEnabled=true;try{localStorage.setItem('elevageRadar_audio_enabled','yes')}catch(e){}
+  playBreedingChime();soundState('Carillon activé et testé. Les alertes fonctionnent lorsque cette page reste ouverte.');
  }else soundState('Le navigateur empêche la lecture. Autorise le son pour ce site.');
 });
 $('testSound').addEventListener('click',async()=>{
- if(await unlockSound()){alarmEnabled=true;try{localStorage.setItem('elevageRadar_audio_enabled','yes')}catch(e){}
-  playBreedingChime();soundState('Test du carillon turquoise : trois notes ascendantes.');
- }else soundState('Le navigateur n’a pas autorisé le son.');
+ if(!alarmEnabled){soundState('Le son est coupé. Clique sur « Réactiver le son » puis teste à nouveau.');return}
+ if(!await unlockSound())return;
+ if(alarmVolume===0){soundState('Le volume est à 0 %. Augmente le curseur pour entendre le carillon.');return}
+ playBreedingChime();soundState('Test sonore : trois notes cristallines du carillon turquoise.');
 });
-$('muteSound').addEventListener('click',()=>{alarmEnabled=false;try{localStorage.setItem('elevageRadar_audio_enabled','no')}catch(e){}soundState('Alertes sonores coupées.')});
+$('muteSound').addEventListener('click',async()=>{
+ alarmEnabled=!alarmEnabled;
+ try{localStorage.setItem('elevageRadar_audio_enabled',alarmEnabled?'yes':'no')}catch(e){}
+ if(alarmEnabled)await unlockSound();
+ soundState(alarmEnabled?'Son ÉlevageRadar réactivé.':'Alertes sonores coupées, volume conservé.');
+});
+$('elevageVolume').addEventListener('input',e=>{
+ alarmVolume=Math.max(0,Math.min(100,Number(e.target.value)||0));
+ try{localStorage.setItem(ELEVAGE_VOLUME_KEY,String(alarmVolume))}catch(e){}
+ soundState();
+});
 $('alarmLead').addEventListener('change',()=>{let x=Math.max(0,Math.min(120,Number($('alarmLead').value)||0));$('alarmLead').value=x;try{localStorage.setItem('elevageRadar_alarm_lead',String(x))}catch(e){}alertSignature=null;});
 try{const minutes=localStorage.getItem('elevageRadar_alarm_lead');if(minutes!==null)$('alarmLead').value=Math.max(0,Math.min(120,Number(minutes)||0))}catch(e){}
 soundState();
+/* Un clic sur le suivi autorise également le carillon avant l'échéance. */
+$('startWatch').addEventListener('click',()=>{if(alarmEnabled&&alarmVolume>0)unlockSound()});
 
 function renderBreeding(){let a=state.mounts.find(x=>x.id===$('parentA').value),b=state.mounts.find(x=>x.id===$('parentB').value),el=$('breedingPlan');if(!a||!b){el.textContent='Sélectionne deux montures enregistrées pour vérifier leurs prérequis.';return}
  const checks=[['Deux montures distinctes',a.id!==b.id],['Même espèce',a.species===b.species],['Sexes opposés',a.sex!==b.sex],['Parents féconds (20 000 dans les trois jauges)',readiness(a)&&readiness(b)]];
