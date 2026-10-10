@@ -1,0 +1,213 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BrisageRadar — Radar Dakal</title>
+<style>
+:root{color-scheme:dark;--bg:#0e1017;--panel:#1a202a;--border:#3c4150;--txt:#f7f0f0;--muted:#aaaeba;--accent:#ff7587;--accent2:#ce5467}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 60% -5%,#3b1e2b,transparent 47%),var(--bg);font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--txt)}main{max-width:1250px;padding:29px 22px 80px;margin:0 auto}
+h1{font-size:clamp(27px,4vw,39px);letter-spacing:-1px;margin:0}h2{font-size:19px;margin:0 0 11px}h3{font-size:16px;margin:10px 0}p,small{color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:800;color:var(--accent)}
+.panel{padding:19px;background:var(--panel);border:1px solid var(--border);border-radius:17px;margin:15px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#dac1c6;font-weight:700}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+input,select{font:inherit;color:#fef8f8;background:#121926;border:1px solid #575263;border-radius:10px;padding:10px 11px;min-width:0;width:100%}
+input:focus,select:focus{outline:2px solid #ff758777;border-color:#ff8fa2}input[type=checkbox]{width:auto;accent-color:#ff7587}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid #835263;background:#432a35;color:#ffd9e0;padding:9px 13px}button:hover{background:#5b3445}button.primary{background:var(--accent);border-color:var(--accent);color:#311923;font-weight:800}button:disabled{opacity:.55;cursor:not-allowed}button.danger{background:#392331}
+.note{padding:12px 14px;background:#35252d;border:1px solid #74515e;border-radius:11px;color:#efd1d7;font-size:13px;margin:12px 0}
+#results{max-height:260px;overflow:auto}.candidate{width:100%;text-align:left;display:flex;justify-content:space-between;gap:10px;background:#141b27;border-color:#3c4151;margin:5px 0}.candidate small{font-size:11px}
+.metric{background:#121a26;border:1px solid #423d4b;border-radius:13px;padding:14px}.metric span{display:block;font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:clamp(18px,2.5vw,29px);font-variant-numeric:tabular-nums}
+.good{color:#8fe6b0}.bad{color:#ff9ca6}.tag{background:#402b36;border:1px solid #805465;color:#ffced8;font-size:11px;padding:4px 8px;border-radius:8px;display:inline-block}
+.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:780px}th{text-align:left;background:#242732;color:#c8b7c0;font-size:11px;padding:10px}td{padding:9px;border-top:1px solid #3d404b}td input{padding:8px}
+.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px}.pills{display:flex;gap:7px;flex-wrap:wrap}
+.statrow{display:grid;grid-template-columns:1.55fr .6fr 1fr .8fr .85fr 1fr 1fr auto;gap:7px;align-items:end;margin:9px 0;padding:11px;border:1px solid #38404f;border-radius:12px;background:#141b26}
+.statrow label{font-size:11px;color:#b8afbc;display:flex;flex-direction:column;gap:5px}.statrow .exoflags{display:flex;flex-direction:column;gap:5px;font-size:11px}
+.statrow .exoflags label{display:flex;flex-direction:row;align-items:center}.breakdown{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:1050px){.statrow{grid-template-columns:repeat(4,minmax(0,1fr))}.statrow .exoflags{flex-direction:row}}
+@media(max-width:700px){main{padding:18px 12px}.grid,.three,.breakdown{grid-template-columns:1fr}.statrow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body><main>
+<div class="eyebrow">DOFUS Unity · serveur Dakal · outil expérimental</div>
+<h1>💎 BrisageRadar</h1>
+<p>Compare le coût de craft, l'achat HDV et la valeur des runes. Ajuste les jets, les exos/overs, les prix et le coefficient de brisage. Les prix partagent le stockage local de CraftRadar.</p>
+<div class="note">Le moteur de rendement est <b>une simulation à paramètres manuels</b>, pas une copie de la formule propriétaire de DoFocus. Tu saisis les <b>runes de référence à 100 %</b> pour chaque ligne, puis l'outil applique ton coefficient. Sans rendement de référence, aucun bénéfice fictif n'est calculé. Les résultats réels peuvent différer.</div>
+<section class="panel">
+<h2>1 · Choisir un équipement</h2>
+<div class="row"><label class="field" style="flex:1;min-width:200px">Nom ou identifiant<input id="search" type="search" placeholder="Ex. Anneau, cape, chapeau, #1234"></label><button id="refresh" style="align-self:end">Actualiser CraftRadar</button></div>
+<div id="results"></div><div id="chosen" class="note">Aucun équipement sélectionné. Charge le catalogue depuis CraftRadar si besoin.</div>
+<div class="three">
+<label class="field">Coût de craft (kamas)<input id="craftCost" type="number" min="0" step="any" placeholder="Prix des ingrédients requis"></label>
+<label class="field">Prix de l'item en HDV (kamas)<input id="hdvPrice" type="number" min="0" step="any" placeholder="À renseigner"></label>
+<label class="field">Coût utilisé pour la rentabilité<select id="costMode"><option value="craft">Fabriquer l'objet</option><option value="buy">Acheter l'objet HDV</option><option value="best">Le moins cher des deux</option></select></label>
+</div>
+<div class="actions"><button id="saveItemPrice">Enregistrer le prix HDV dans CraftRadar</button><small id="craftStatus">Les prix manquants ne sont jamais considérés comme nuls.</small></div>
+</section>
+<section class="panel">
+<h2>2 · Coefficient et prix des runes</h2>
+<div class="three">
+<label class="field">Coefficient de brisage (%)<input id="coef" type="number" min="0" max="4000" step="0.01" value="100"></label>
+<label class="field">Frais de vente des runes (%)<input id="tax" type="number" min="0" max="100" step="0.01" value="2"></label>
+<label class="field">Quantité d'objets brisés<input id="units" type="number" min="1" max="100000" step="1" value="1"></label>
+</div>
+<div class="note">Saisis le coefficient observé en jeu. Il est sauvegardé localement pour cet objet et tu peux le modifier à tout moment. Aucun accès au coefficient « temps réel » des serveurs n'est actuellement disponible.</div>
+<h3>Caractéristiques du jet obtenu</h3>
+<p>Chaque ligne correspond à une caractéristique positive (ou un exo/over). Indique le type de rune, son prix HDV, le jet réel et <b>le rendement de référence en runes basiques pour ce jet à 100 %</b>. Tu peux également enregistrer les runes effectivement obtenues après concassage.</p>
+<div id="stats"></div>
+<div class="actions"><button class="primary" id="addStat">+ Ajouter une caractéristique</button><button id="addExo">+ Ajouter un exo</button><button id="addOver">+ Ajouter un over</button><button id="resetStats">Réinitialiser le jet</button></div>
+</section>
+<section class="panel">
+<h2>3 · Rentabilité estimée</h2>
+<div class="three">
+<div class="metric"><span>Valeur estimée des runes</span><strong id="gross">—</strong><span>kamas, avant frais</span></div>
+<div class="metric"><span>Coût des équipements</span><strong id="cost">—</strong><span>kamas</span></div>
+<div class="metric"><span>Bénéfice estimé</span><strong id="profit">—</strong><span>kamas</span></div>
+</div>
+<div class="three" style="margin-top:11px">
+<div class="metric"><span>Rentabilité</span><strong id="roi">—</strong><span>% de retour sur coût</span></div>
+<div class="metric"><span>Coefficient d'équilibre approximatif</span><strong id="breakeven">—</strong><span>si le modèle linéaire s'applique</span></div>
+<div class="metric"><span>Résultat réel après brisage</span><strong id="realProfit">—</strong><span>si les quantités réelles sont saisies</span></div>
+</div>
+<p class="note" id="profitNotice">Sélectionne un objet, renseigne son coût et une ou plusieurs runes avec leur rendement de référence et leur prix.</p>
+<div class="tablewrap"><table><thead><tr><th>Rune</th><th>Jet</th><th>Référence à 100 %</th><th>Quantité estimée</th><th>Prix / rune</th><th>Valeur estimée</th><th>Réel</th></tr></thead><tbody id="breakdown"></tbody></table></div>
+<div class="actions"><button id="export">Exporter ma simulation JSON</button><button id="exportCsv">Exporter bilan CSV</button><button id="clear">Effacer le projet de cet équipement</button></div>
+<p><small>La comparaison « achat » ou « craft » est faite avant valeur du temps, concurrence HDV et évolutions de prix. Pour les vrais résultats, reporte les runes reçues et leurs quantités.</small></p>
+</section>
+<section class="panel"><h2>Documentation et fiabilité</h2><p>Pour mieux comprendre le brisage, les coefficients, les runes basiques/Pa/Ra et le focus : <a href="https://www.dofocus.fr/guide/" rel="noopener noreferrer" target="_blank" style="color:#ffb3c1">guide du brisage DoFocus ↗</a>. Le fonctionnement précis de DoFocus n'est ni récupéré ni reproduit. Les prix et coefficients de cette page sont uniquement les tiens.</p></section>
+</main><script>
+"use strict";
+const $=id=>document.getElementById(id),fmt=n=>Number(n).toLocaleString('fr-FR',{maximumFractionDigits:2}),norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='craftRadar_live_v2',WORK_KEY='brisageRadar_work_v1',DB='CraftRadar_Catalogue_3';
+const runeSamples=['Vi','Pa Vi','Ra Vi','Fo','Pa Fo','Ra Fo','Ine','Pa Ine','Ra Ine','Cha','Pa Cha','Ra Cha','Age','Pa Age','Ra Age','Sa','Pa Sa','Ra Sa','Prospe','Pui','Po','Ga Pa','Ga Pme','Do','Do Cri','Ré Terre','Ré Feu','Ré Eau','Ré Air','Cri','Invo','So','Ini','Pod','Tac','Fui'];
+let catalog=[],byId=new Map(),craft={prices:{}},selected=null,projects={},stats=[],runePrices={},channel=typeof BroadcastChannel==='function'?new BroadcastChannel('radar-dakal-prices'):null;
+try{const o=JSON.parse(localStorage.getItem(WORK_KEY));if(o&&typeof o==='object'){projects=o.projects||{};runePrices=o.runePrices||{}}}catch(e){}
+let renderTimer=0;
+const debounce=fn=>{clearTimeout(renderTimer);renderTimer=setTimeout(fn,100)};
+function saveLocal(){try{localStorage.setItem(WORK_KEY,JSON.stringify({projects,runePrices}));return true}catch(e){$('craftStatus').textContent='Sauvegarde locale impossible : mémoire pleine.';return false}}
+function craftPrices(){return craft?.prices?.Dakal||{}}
+function numberPrice(id){const raw=craftPrices()[id];return raw&&Number.isFinite(Number(raw.value))?Number(raw.value):null}
+function syncCraft(){try{craft=JSON.parse(localStorage.getItem(KEY))||{prices:{}}}catch(e){craft={prices:{}}}
+ $('tax').value=Number.isFinite(Number(craft.tax))?Number(craft.tax):2;
+ if(selected){if(!projects[selected.id]?.manualHdv) $('hdvPrice').value=numberPrice(selected.id)??'';computeCraft();refreshCalc()}
+}
+function writeCraftPrice(id,value){
+ try{
+  const d=JSON.parse(localStorage.getItem(KEY))||{prices:{}};
+  d.prices=d.prices||{};d.prices.Dakal=d.prices.Dakal||{};
+  if(value==='')delete d.prices.Dakal[id];
+  else d.prices.Dakal[id]={value:Number(value),at:new Date().toISOString()};
+  localStorage.setItem(KEY,JSON.stringify(d));craft=d;channel?.postMessage({source:'brisage',server:'Dakal'});return true;
+ }catch(e){$('craftStatus').textContent='Impossible d’écrire dans les prix CraftRadar.';return false}
+}
+function normalizeItem(x){const id=Number(x.id??x.ankama_id),name=String(x.name||'');return {id,name,level:Number(x.level)||0,category:x.category||'unknown',recipe:Array.isArray(x.recipe)?x.recipe:[]}}
+async function loadCatalog(){
+ $('results').textContent='Chargement du catalogue partagé…';
+ try{
+  const database=await new Promise((resolve,reject)=>{const r=indexedDB.open(DB,1);r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('cache'))r.result.createObjectStore('cache')}});
+  const saved=await new Promise((resolve,reject)=>{const r=database.transaction('cache','readonly').objectStore('cache').get('catalogue');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});
+  database.close();catalog=(saved?.items||[]).map(normalizeItem).filter(x=>x.id>0&&x.name);byId=new Map(catalog.map(x=>[x.id,x]));
+  $('results').textContent=catalog.length?catalog.length+' objets chargés depuis CraftRadar. Recherche un équipement.':'Catalogue absent. Ouvre CraftRadar et lance « Synchroniser DOFUS ».';
+  searchItems();if(selected){selected=byId.get(selected.id)||selected;computeCraft();refreshCalc()}
+ }catch(e){$('results').textContent='Impossible de lire le catalogue : ouvre CraftRadar, synchronise les objets puis réessaie. '+e.message}
+}
+function searchItems(){
+ const query=norm($('search').value.trim().replace(/^#/,''));
+ if(query.length<2&&!/^\d+$/.test(query))return;
+ const found=catalog.filter(x=>(x.category==='equipment'||x.category==='unknown')&&(norm(x.name).includes(query)||String(x.id)===query)).sort((a,b)=>{let na=norm(a.name),nb=norm(b.name);return (na===query?-2:na.startsWith(query)?-1:0)-(nb===query?-2:nb.startsWith(query)?-1:0)||na.localeCompare(nb,'fr')}).slice(0,35);
+ $('results').innerHTML=found.map(x=>'<button class="candidate" data-item="'+x.id+'"><span>'+esc(x.name)+'</span><small>Niv. '+x.level+' · #'+x.id+'</small></button>').join('')||'<p>Aucun équipement trouvé. Vérifie sa catégorie ou synchronise CraftRadar.</p>';
+}
+function prepareItem(id){
+ selected=byId.get(Number(id));if(!selected)return;
+ const project=projects[id]||{};
+ stats=Array.isArray(project.stats)?project.stats.map(x=>({...x})):[];
+ $('chosen').textContent='✓ '+selected.name+' · niveau '+selected.level+' · objet #'+selected.id;
+ $('coef').value=project.coef??100;$('units').value=project.units??1;$('costMode').value=project.costMode||'craft';
+ $('hdvPrice').value=project.manualHdv??numberPrice(selected.id)??'';
+ $('craftCost').value=project.manualCraft??'';
+ $('tax').value=project.tax??craft.tax??2;
+ $('results').innerHTML='';
+ renderStats();computeCraft();refreshCalc();
+}
+function computeCraft(){
+ if(!selected)return;
+ const ing=selected.recipe;
+ if(!Array.isArray(ing)||!ing.length){$('craftStatus').textContent='Recette absente dans le catalogue CraftRadar : prix de craft à saisir manuellement.';return}
+ let cost=0,missing=[];
+ for(const pair of ing){
+  const id=Number(Array.isArray(pair)?pair[0]:pair.item_ankama_id??pair.id),qty=Number(Array.isArray(pair)?pair[1]:pair.quantity);
+  const p=numberPrice(id);if(p===null||!Number.isFinite(qty)||qty<=0)missing.push(byId.get(id)?.name||'#'+id);else cost+=p*qty;
+ }
+ const project=projects[selected.id]||{};
+ if(project.manualCraft===undefined)$('craftCost').value=missing.length?'':cost;
+ $('craftStatus').textContent=missing.length?'Recette incomplète : '+missing.slice(0,5).join(', ')+' ; indique leur prix dans CraftRadar.':'Coût de craft calculé depuis les '+ing.length+' ingrédients et leurs prix Dakal.';
+}
+function ensureStat(opts={}){
+ return {id:crypto.randomUUID?.()||String(Date.now()+Math.random()),name:opts.name||'',rune:opts.rune||'',jet:opts.jet??'',base:opts.base??'',price:opts.price??'',real:opts.real??'',exo:!!opts.exo,over:!!opts.over};
+}
+function renderStats(){
+ const holder=$('stats');holder.replaceChildren();
+ if(!stats.length){holder.innerHTML='<p>Aucune caractéristique ajoutée. Ajoute les lignes du jet réel de ton item.</p>';return}
+ stats.forEach((v,i)=>{
+  const div=document.createElement('div');div.className='statrow';
+  div.innerHTML='<label>Caractéristique<input data-field="name" placeholder="Ex. Vitalité" value="'+esc(v.name)+'"></label>'+
+    '<label>Jet réel<input data-field="jet" type="number" min="0" step="any" value="'+esc(v.jet)+'"></label>'+
+    '<label>Rune<select data-field="rune">'+['',...new Set([...runeSamples,...Object.keys(runePrices),v.rune].filter(Boolean))].map(x=>'<option value="'+esc(x)+'" '+(x===v.rune?'selected':'')+'>'+esc(x||'Choisir')+'</option>').join('')+'</select></label>'+
+    '<label>Prix rune (kamas)<input data-field="price" type="number" min="0" step="any" placeholder="HDV" value="'+esc(v.price!==''?v.price:(runePrices[v.rune]??''))+'"></label>'+
+    '<label>Runes à 100 %<input data-field="base" type="number" min="0" step="any" placeholder="À saisir" value="'+esc(v.base)+'"></label>'+
+    '<label>Runes réellement obtenues<input data-field="real" type="number" min="0" step="any" placeholder="Facultatif" value="'+esc(v.real)+'"></label>'+
+    '<div class="exoflags"><label><input type="checkbox" data-field="exo" '+(v.exo?'checked':'')+'> Exo</label><label><input type="checkbox" data-field="over" '+(v.over?'checked':'')+'> Over</label></div>'+
+    '<button class="danger" data-remove="'+i+'" aria-label="Supprimer caractéristique">×</button>';
+  div.dataset.index=i;holder.appendChild(div);
+ });
+}
+function validate(v){return v!==''&&v!==null&&v!==undefined&&Number.isFinite(Number(v))&&Number(v)>=0}
+function persistProject(){
+ if(!selected)return;
+ projects[selected.id]={stats:stats.map(x=>({...x})),coef:$('coef').value,units:$('units').value,
+  costMode:$('costMode').value,tax:$('tax').value,manualHdv:$('hdvPrice').value,
+  manualCraft:$('craftCost').value};
+ saveLocal();
+}
+function priceOfStat(s){return validate(s.price)?Number(s.price):validate(runePrices[s.rune])?Number(runePrices[s.rune]):null}
+function calcData(){
+ const count=Math.max(1,Math.floor(Number($('units').value)||1)),coef=Number($('coef').value),tax=Number($('tax').value)/100;
+ const craftCost=validate($('craftCost').value)?Number($('craftCost').value):null, buyCost=validate($('hdvPrice').value)?Number($('hdvPrice').value):null;
+ let mode=$('costMode').value,unitCost=mode==='craft'?craftCost:mode==='buy'?buyCost:craftCost===null?buyCost:buyCost===null?craftCost:Math.min(craftCost,buyCost);
+ let estimated=0,real=0,hasReference=false,hasUnknown=false,hasReal=false;
+ const details=stats.map(s=>{
+  const p=priceOfStat(s),base=validate(s.base)?Number(s.base):null,actual=validate(s.real)?Number(s.real):null;
+  if(s.rune && base!==null && p!==null){hasReference=true;estimated+=base*(coef/100)*p}
+  else if(s.rune && (base!==null || p!==null))hasUnknown=true;
+  if(s.rune && actual!==null && p!==null){hasReal=true;real+=actual*p}else if(s.rune&&actual!==null)hasUnknown=true;
+  return {s,p,base,actual,expected:base===null?null:base*coef/100};
+ });
+ return {count,unitCost,estimated,real,hasReference,hasUnknown,hasReal,details,tax,coef};
+}
+function refreshCalc(){
+ const d=calcData(),fmtK=x=>fmt(x)+' kamas',hasCost=d.unitCost!==null;
+ const valid=hasCost&&d.hasReference&&!d.hasUnknown&&Number.isFinite(d.coef)&&d.coef>=0&&Number.isFinite(d.tax)&&d.tax>=0&&d.tax<=1;
+ const val=d.estimated*d.count,spent=d.unitCost*d.count,net=val*(1-d.tax)-spent;
+ $('gross').textContent=d.hasReference&&!d.hasUnknown?fmtK(val):'—';$('cost').textContent=hasCost?fmtK(spent):'—';
+ $('profit').textContent=valid?fmtK(net):'—';$('profit').className=valid?(net>=0?'good':'bad'):'';
+ $('roi').textContent=valid&&spent>0?fmt(net/spent*100)+' %':'—';
+ const at100=d.coef>0?d.estimated/(d.coef/100):stats.reduce((sum,s)=>sum+(validate(s.base)&&priceOfStat(s)!==null?Number(s.base)*priceOfStat(s):0),0);
+ $('breakeven').textContent=hasCost&&at100>0&&d.tax<1?fmt(100*d.unitCost/(at100*(1-d.tax)))+' %':'—';
+ const realKnown=d.hasReal&&!d.details.some(x=>x.s.rune&&x.actual===null);
+ $('realProfit').textContent=hasCost&&realKnown?fmtK((d.real*(1-d.tax)-d.unitCost)*d.count):'—';
+ $('profitNotice').textContent=!selected?'Sélectionne un équipement.':!hasCost?'Coût de craft ou prix HDV manquant pour le mode choisi.':!d.hasReference?'Renseigne les runes de référence à 100 % et les prix unitaires pour simuler.':d.hasUnknown?'Certaines runes ont un rendement ou un prix manquant ; résultat volontairement masqué.':'Estimation théorique linéaire, non validée sur DOFUS. Vérifie les résultats réels avant d’investir.';
+ $('breakdown').innerHTML=d.details.map(x=>'<tr><td>'+esc(x.s.rune||x.s.name||'—')+(x.s.exo?' <span class="tag">exo</span>':'')+(x.s.over?' <span class="tag">over</span>':'')+'</td><td>'+esc(x.s.jet||'—')+'</td><td>'+(x.base===null?'—':fmt(x.base))+'</td><td>'+(x.expected===null?'—':fmt(x.expected*d.count))+'</td><td>'+(x.p===null?'—':fmtK(x.p))+'</td><td>'+(x.expected===null||x.p===null?'—':fmtK(x.expected*x.p*d.count))+'</td><td>'+(x.actual===null?'—':fmt(x.actual*d.count))+'</td></tr>').join('')||'<tr><td colspan="7">Aucune rune renseignée.</td></tr>';
+}
+function download(name,text,mime){const u=URL.createObjectURL(new Blob([text],{type:mime})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),3500)}
+$('search').oninput=searchItems;$('results').onclick=e=>{const t=e.target.closest('[data-item]');if(t)prepareItem(t.dataset.item)};
+$('refresh').onclick=()=>{syncCraft();loadCatalog()};
+$('addStat').onclick=()=>{if(!selected)return alert('Choisis d’abord un équipement.');stats.push(ensureStat());renderStats();persistProject()};
+$('addExo').onclick=()=>{if(!selected)return alert('Choisis d’abord un équipement.');stats.push(ensureStat({exo:true}));renderStats();persistProject()};
+$('addOver').onclick=()=>{if(!selected)return alert('Choisis d’abord un équipement.');stats.push(ensureStat({over:true}));renderStats();persistProject()};
+$('resetStats').onclick=()=>{if(!selected)return;if(!confirm('Effacer les caractéristiques de cet équipement ?'))return;stats=[];renderStats();persistProject();refreshCalc()};
+$('stats').addEventListener('input',e=>{let parent=e.target.closest('[data-index]');if(!parent)return;let item=stats[Number(parent.dataset.index)],key=e.target.dataset.field;if(!item||!key)return;item[key]=e.target.type==='checkbox'?e.target.checked:e.target.value;
+ if(key==='price'&&item.rune&&validate(item.price)){runePrices[item.rune]=Number(item.price)}
+ if(key==='rune'&&validate(runePrices[item.rune]))item.price=Number(runePrices[item.rune]);
+ persistProject();refreshCalc()});
+$('stats').addEventListener('change',e=>{if(e.target.dataset.field==='rune'){renderStats();refreshCalc()}});
+$('stats').addEventListener('click',e=>{const b=e.target.closest('[data-remove]');if(!b)return;stats.splice(Number(b.dataset.remove),1);renderStats();persistProject();refreshCalc()});
+for(const id of ['coef','tax','units','craftCost','hdvPrice','costMode']){$(id).addEventListener('input',()=>{persistProject();refreshCalc()});$(id).addEventListener('change',()=>{persistProject();refreshCalc()})}
+$('saveItemPrice').onclick=()=>{if(!selected)return alert('Choisis un équipement.');const value=$('hdvPrice').value;if(!validate(value))return alert('Renseigne un prix HDV valide en kamas.');if(writeCraftPrice(selected.id,value)){$('craftStatus').textContent='Prix HDV partagé avec CraftRadar.';persistProject()}};
+$('export').onclick=()=>{if(!selected)return alert('Choisis un équipement.');download('BrisageRadar-'+selected.id+'.json',JSON.stringify({server:'Dakal',item:selected,project:projects[selected.id],runePrices,model:'manuel-linéaire',exportedAt:new Date().toISOString()},null,2),'application/json')};
+$('exportCsv').onclick=()=>{if(!selected)return alert('Choisis un équipement.');const d=calcData();const rows=[['Rune','Jet','Runes à 100%','Quantité prévue','Prix unitaire kamas','Réel']];for(const a of d.details)rows.push([a.s.rune,a.s.jet,a.base??'',a.expected??'',a.p??'',a.actual??'']);rows.push(['Coût retenu','','','','',d.unitCost??'']);download('BrisageRadar-'+selected.id+'.csv','\uFEFF'+rows.map(r=>r.join(';')).join('\r\n'),'text/csv;charset=utf-8')};
+$('clear').onclick=()=>{if(!selected||!confirm('Effacer les estimations de cet équipement ?'))return;delete projects[selected.id];saveLocal();prepareItem(selected.id)};
+window.addEventListener('storage',e=>{if(e.key===KEY){syncCraft();refreshCalc()}});
+channel?.addEventListener('message',e=>{if(e.data?.source!=='brisage')syncCraft()});
+syncCraft();loadCatalog();renderStats();refreshCalc();
+</script></body></html>
