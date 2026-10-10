@@ -2,7 +2,7 @@
 // Contrôle de navigation : GitHub Pages reste un hébergement public.
 // Les données sensibles sont protégées par Supabase RLS.
 (async () => {
-  const login = new URL("./connexion-admin.html", location.href).href;
+  const login = new URL("./index.html", location.href).href;
   const toLogin = () => { if (window.top !== window.self) window.top.location.replace(login); else window.location.replace(login); };
   try {
     const community = window.RadarCommunity;
