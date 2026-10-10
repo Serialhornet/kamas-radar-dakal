@@ -21,9 +21,10 @@ $('form').onsubmit=async event=>{
   if(error)throw new Error('Supabase refuse la connexion : '+(error.message||error.code||'erreur inconnue'));
   const {data:{user}}=await client.auth.getUser();
   if(!user)throw new Error('Session Supabase introuvable après connexion.');
-  const {data:profile,error:profileError}=await client.from('radar_profiles').select('pseudo,role,active').eq('id',user.id).single();
+  const {data:profile,error:profileError}=await client.from('radar_profiles').select('pseudo,role,active,banned_until').eq('id',user.id).single();
   if(profileError||!profile)throw new Error('Connexion réussie, mais profil Radar Dakal introuvable : vérifie la table radar_profiles.');
   if(!profile.active)throw new Error('Ce profil est désactivé.');
+  if(profile.banned_until&&new Date(profile.banned_until).getTime()>Date.now())throw new Error('Compte banni temporairement, accès refusé jusqu’au '+new Date(profile.banned_until).toLocaleString('fr-FR')+'.');
   status.className='ok';status.textContent='Connexion réussie : '+profile.pseudo+'. Ouverture de Radar Dakal…';
   window.location.assign('./index.html');
  }catch(error){status.className='error';status.textContent=error.message||String(error)}
