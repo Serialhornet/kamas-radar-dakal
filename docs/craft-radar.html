@@ -386,16 +386,19 @@ async function hdvRecognizeLots(worker,file){
   img.onerror=()=>{URL.revokeObjectURL(url);reject(Error('Capture illisible'))};
   img.src=url;
  });
- const bounds=[[0.56,0.59,0.17,0.094],[0.56,0.71,0.17,0.094],[0.56,0.83,0.17,0.094]];
- // Positions relatives connues pour la fenêtre d'hôtel des ventes DOFUS du modèle fourni.
- // Si la capture contient des bordures ou une interface différente, laisser corriger manuellement.
- const found=[];
- for(const rect of bounds){
-   const canvas=hdvCrop(source,rect,4);
-   const data=await worker.recognize(canvas,{}, {text: "0"});
-   found.push(hdvReadNumber(data.data.text));
+ // Fenêtre HDV cadrée : colonne des quantités à gauche, prix à droite.
+ // Quatre lignes de lots, puis prix moyen indépendant au-dessus du tableau.
+ const rows=[{lot:1,y:.528},{lot:10,y:.640},{lot:100,y:.752},{lot:1000,y:.864}];
+ const values={1:'',10:'',100:'',1000:''},checks=[];
+ for(const row of rows){
+  const priceText=(await worker.recognize(hdvCrop(source,[.54,row.y,.165,.097],4))).data.text||'';
+  const lotText=(await worker.recognize(hdvCrop(source,[.15,row.y,.14,.097],4))).data.text||'';
+  const detectedLot=hdvReadNumber(lotText);
+  if(detectedLot&&Number(detectedLot)!==row.lot){checks.push('lot ×'+row.lot+' non confirmé');continue}
+  values[row.lot]=hdvReadNumber(priceText);
  }
- return found;
+ const avgText=(await worker.recognize(hdvCrop(source,[.35,.225,.17,.105],4))).data.text||'';
+ return {values,average:hdvReadNumber(avgText),checks};
 }
 
 function hdvFmt(n){return Number(n).toLocaleString('fr-FR',{maximumFractionDigits:2})+' kamas'}
