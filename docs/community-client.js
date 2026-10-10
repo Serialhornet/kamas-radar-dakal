@@ -5,13 +5,6 @@ const cfg=window.RADAR_COMMUNITY_CONFIG||{};
 const ready=Boolean(cfg.enabled&&/^https:\/\//.test(cfg.url)&&cfg.anonKey&&window.supabase?.createClient);
 const client=ready?window.supabase.createClient(cfg.url,cfg.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}}):null;
 let member=null;
-const keyEmail=(key)=>{
- // Ne jamais modifier la casse ni les espaces internes du mot de passe.
- const input=String(key||"").trim();
- const parts=input.match(/^RD-(ADMIN|[A-Fa-f0-9]{16})-(.+)$/i);
- if(!parts||!parts[2])throw Error("Format attendu : RD-ADMIN-mot-de-passe (ou clé personnelle RD-IDENTIFIANT-SECRET).");
- return {email:"radar-"+parts[1].toLowerCase()+"@radar-dakal.example.com",password:parts[2]};
-};
 async function current(){
  if(!client)return null;
  const {data:{user},error}=await client.auth.getUser();
@@ -20,14 +13,21 @@ async function current(){
  if(profileError||!p?.active){member=null;return null}
  member=p;return p;
 }
-async function login(key){
- if(!client)throw Error("Espace communautaire non activé. Configure d'abord Supabase.");
- const creds=keyEmail(key);
- const {error}=await client.auth.signInWithPassword(creds);
- if(error)throw Error("Authentification refusée par Supabase ("+(error.code||error.status||"identifiants")+"). Vérifie l’adresse du compte et son mot de passe, ou les réglages Auth du projet.");
+async function login(email,password){
+ if(!client)throw Error("Espace communautaire non activé.");
+ const normalized=String(email||"").trim().toLowerCase();
+ if(!normalized||!password)throw Error("Renseigne ton e-mail et ton mot de passe.");
+ const {error}=await client.auth.signInWithPassword({email:normalized,password});
+ if(error)throw Error("Supabase refuse la connexion : "+(error.message||error.code||"identifiants invalides"));
  const profile=await current();
- if(!profile){await client.auth.signOut();throw Error("Profil inactif ou non enregistré.")}
+ if(!profile){await client.auth.signOut();throw Error("Compte sans profil Radar Dakal actif.")}
  return profile;
+}
+async function changePassword(password){
+ if(!client||!await current())throw Error("Connexion requise.");
+ if(typeof password!=="string"||password.length<12)throw Error("Choisis au moins 12 caractères.");
+ const {error}=await client.auth.updateUser({password});
+ if(error)throw Error(error.message||"Changement impossible");
 }
 async function logout(){await client?.auth.signOut();member=null}
 async function admin(action,params={}){
@@ -86,5 +86,5 @@ async function saveState(tool,state){
  const {error}=await client.from("radar_personal_state").upsert({user_id:p.id,tool,state,updated_at:new Date().toISOString()},{onConflict:"user_id,tool"});
  if(error)throw error;
 }
-window.RadarCommunity={ready,client,keyEmail,current,login,logout,admin,getPrices,savePrice,getVotes,vote,getComments,comment,getState,saveState,get member(){return member}};
+window.RadarCommunity={ready,client,current,login,changePassword,logout,admin,getPrices,savePrice,getVotes,vote,getComments,comment,getState,saveState,get member(){return member}};
 })();
