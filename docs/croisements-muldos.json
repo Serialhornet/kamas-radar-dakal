@@ -1,0 +1,1492 @@
+{
+  "version": 1,
+  "species": "Muldo",
+  "source": "https://github.com/Bastien-Blando/elevage-tracker",
+  "comparison": "https://dofuselevage.fr/tools/reproduction/muldo/genealogie",
+  "notes": "Données communautaires du projet elevage-tracker; quelques décomptes diffèrent du guide DofusElevage, notamment Amande et Roux. Toute recette reste non garantie.",
+  "recipes": [
+    {
+      "name": "Ebène",
+      "generation": 1,
+      "options": [],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Indigo",
+      "generation": 1,
+      "options": [],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Pourpre",
+      "generation": 1,
+      "options": [],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Orchidée",
+      "generation": 1,
+      "options": [],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Doré",
+      "generation": 1,
+      "options": [],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Doré-Pourpre",
+      "generation": 2,
+      "options": [
+        [
+          "Doré",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Indigo-Pourpre",
+      "generation": 2,
+      "options": [
+        [
+          "Indigo",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ebène-Pourpre",
+      "generation": 2,
+      "options": [
+        [
+          "Ebène",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Orchidée-Pourpre",
+      "generation": 2,
+      "options": [
+        [
+          "Orchidée",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Doré-Orchidée",
+      "generation": 2,
+      "options": [
+        [
+          "Doré",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Indigo-Orchidée",
+      "generation": 2,
+      "options": [
+        [
+          "Indigo",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ebène-Orchidée",
+      "generation": 2,
+      "options": [
+        [
+          "Ebène",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Doré-Ebène",
+      "generation": 2,
+      "options": [
+        [
+          "Doré",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Doré-Indigo",
+      "generation": 2,
+      "options": [
+        [
+          "Doré",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ebène-Indigo",
+      "generation": 2,
+      "options": [
+        [
+          "Ebène",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux",
+      "generation": 3,
+      "options": [
+        [
+          "Doré-Pourpre",
+          "Doré-Indigo"
+        ],
+        [
+          "Doré-Pourpre",
+          "Doré-Ebène"
+        ],
+        [
+          "Doré-Pourpre",
+          "Doré-Orchidée"
+        ],
+        [
+          "Doré-Orchidée",
+          "Doré-Indigo"
+        ],
+        [
+          "Doré-Orchidée",
+          "Doré-Ebène"
+        ],
+        [
+          "Doré-Ebène",
+          "Doré-Indigo"
+        ]
+      ],
+      "trust": "divergence"
+    },
+    {
+      "name": "Amande",
+      "generation": 3,
+      "options": [
+        [
+          "Indigo-Pourpre",
+          "Ebène-Orchidée"
+        ],
+        [
+          "Ebène-Pourpre",
+          "Indigo-Orchidée"
+        ],
+        [
+          "Orchidée-Pourpre",
+          "Ebène-Indigo"
+        ]
+      ],
+      "trust": "divergence"
+    },
+    {
+      "name": "Doré-Amande",
+      "generation": 4,
+      "options": [
+        [
+          "Doré",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ebène-Amande",
+      "generation": 4,
+      "options": [
+        [
+          "Ebène",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Indigo-Amande",
+      "generation": 4,
+      "options": [
+        [
+          "Indigo",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Orchidée-Amande",
+      "generation": 4,
+      "options": [
+        [
+          "Orchidée",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Pourpre-Amande",
+      "generation": 4,
+      "options": [
+        [
+          "Pourpre",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Amande",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Doré",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Doré"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Ebène",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Indigo",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Orchidée",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Pourpre",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ivoire",
+      "generation": 5,
+      "options": [
+        [
+          "Roux-Doré",
+          "Ebène-Amande"
+        ],
+        [
+          "Roux-Doré",
+          "Indigo-Amande"
+        ],
+        [
+          "Roux-Doré",
+          "Orchidée-Amande"
+        ],
+        [
+          "Roux-Doré",
+          "Pourpre-Amande"
+        ],
+        [
+          "Roux-Amande",
+          "Ebène-Amande"
+        ],
+        [
+          "Roux-Amande",
+          "Pourpre-Amande"
+        ],
+        [
+          "Roux-Amande",
+          "Indigo-Amande"
+        ],
+        [
+          "Roux-Amande",
+          "Orchidée-Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise",
+      "generation": 5,
+      "options": [
+        [
+          "Doré-Amande",
+          "Roux-Ebène"
+        ],
+        [
+          "Doré-Amande",
+          "Roux-Orchidée"
+        ],
+        [
+          "Doré-Amande",
+          "Roux-Pourpre"
+        ],
+        [
+          "Doré-Amande",
+          "Roux-Indigo"
+        ],
+        [
+          "Roux-Amande",
+          "Roux-Ebène"
+        ],
+        [
+          "Roux-Amande",
+          "Roux-Indigo"
+        ],
+        [
+          "Roux-Amande",
+          "Roux-Orchidée"
+        ],
+        [
+          "Roux-Amande",
+          "Roux-Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Pourpre-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Pourpre",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Orchidée-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Orchidée",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Indigo-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Indigo",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ebène-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Ebène",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Doré-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Doré",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Roux",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Amande-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Amande",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Pourpre",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Orchidée",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Indigo",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Ebène",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Roux",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Roux"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Amande",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Doré",
+      "generation": 6,
+      "options": [
+        [
+          "Turquoise",
+          "Doré"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune",
+      "generation": 7,
+      "options": [
+        [
+          "Ebène-Ivoire",
+          "Turquoise-Pourpre"
+        ],
+        [
+          "Indigo-Ivoire",
+          "Turquoise-Orchidée"
+        ],
+        [
+          "Orchidée-Ivoire",
+          "Turquoise-Indigo"
+        ],
+        [
+          "Pourpre-Ivoire",
+          "Turquoise-Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Emeraude",
+      "generation": 7,
+      "options": [
+        [
+          "Turquoise-Ivoire",
+          "Turquoise-Doré"
+        ],
+        [
+          "Turquoise-Ivoire",
+          "Turquoise-Roux"
+        ],
+        [
+          "Turquoise-Ivoire",
+          "Amande-Ivoire"
+        ],
+        [
+          "Turquoise-Ivoire",
+          "Doré-Ivoire"
+        ],
+        [
+          "Turquoise-Ivoire",
+          "Turquoise-Amande"
+        ],
+        [
+          "Turquoise-Amande",
+          "Roux-Ivoire"
+        ],
+        [
+          "Turquoise-Amande",
+          "Doré-Ivoire"
+        ],
+        [
+          "Doré-Ivoire",
+          "Turquoise-Roux"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Pourpre",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Orchidée",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Indigo",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Ebène",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Doré",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Doré"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Roux",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Roux"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Amande",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Ivoire",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Turquoise",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Turquoise"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Prune-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Prune",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Pourpre-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Pourpre",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Orchidée-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Orchidée",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Indigo-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Indigo",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ebène-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Ebène",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Doré-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Doré",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Roux-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Roux",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Amande-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Amande",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ivoire-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Ivoire",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Turquoise-Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Turquoise",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre",
+      "generation": 9,
+      "options": [
+        [
+          "Pourpre-Emeraude",
+          "Roux-Emeraude"
+        ],
+        [
+          "Orchidée-Emeraude",
+          "Amande-Emeraude"
+        ],
+        [
+          "Indigo-Emeraude",
+          "Ivoire-Emeraude"
+        ],
+        [
+          "Ebène-Emeraude",
+          "Turquoise-Emeraude"
+        ],
+        [
+          "Doré-Emeraude",
+          "Prune-Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail",
+      "generation": 9,
+      "options": [
+        [
+          "Prune-Pourpre",
+          "Prune-Roux"
+        ],
+        [
+          "Prune-Orchidée",
+          "Prune-Amande"
+        ],
+        [
+          "Prune-Indigo",
+          "Prune-Ivoire"
+        ],
+        [
+          "Prune-Ebène",
+          "Prune-Turquoise"
+        ],
+        [
+          "Prune-Doré",
+          "Prune-Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur",
+      "generation": 9,
+      "options": [
+        [
+          "Pourpre-Emeraude",
+          "Prune-Roux"
+        ],
+        [
+          "Orchidée-Emeraude",
+          "Prune-Amande"
+        ],
+        [
+          "Indigo-Emeraude",
+          "Prune-Ivoire"
+        ],
+        [
+          "Ebène-Emeraude",
+          "Prune-Turquoise"
+        ],
+        [
+          "Doré-Emeraude",
+          "Prune-Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine",
+      "generation": 9,
+      "options": [
+        [
+          "Prune-Pourpre",
+          "Roux-Emeraude"
+        ],
+        [
+          "Prune-Orchidée",
+          "Amande-Emeraude"
+        ],
+        [
+          "Prune-Indigo",
+          "Ivoire-Emeraude"
+        ],
+        [
+          "Prune-Ebène",
+          "Turquoise-Emeraude"
+        ],
+        [
+          "Prune-Doré",
+          "Turquoise-Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Doré",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Doré"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Ebène",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Orchidée",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Roux"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Turquoise"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Prune"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Corail",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Corail"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Azur",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Azur"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Ambre-Aigue-marine",
+      "generation": 10,
+      "options": [
+        [
+          "Ambre",
+          "Aigue-marine"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Doré",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Doré"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Ebène",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Orchidée",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Roux"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Turquoise"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Prune"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Azur",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Azur"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Corail-Aigue-marine",
+      "generation": 10,
+      "options": [
+        [
+          "Corail",
+          "Aigue-marine"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Doré",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Doré"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Ebène",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Orchidée",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Roux"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Turquoise"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Prune"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Azur-Aigue-marine",
+      "generation": 10,
+      "options": [
+        [
+          "Azur",
+          "Aigue-marine"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Doré",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Doré"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Ebène",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Ebène"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Indigo"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Pourpre"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Orchidée",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Orchidée"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Amande"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Roux"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Ivoire"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Turquoise"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Emeraude"
+        ]
+      ],
+      "trust": "communautaire"
+    },
+    {
+      "name": "Aigue-marine-Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Aigue-marine",
+          "Prune"
+        ]
+      ],
+      "trust": "communautaire"
+    }
+  ]
+}
