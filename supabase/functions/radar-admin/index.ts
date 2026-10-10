@@ -31,11 +31,20 @@ Deno.serve(async request => {
     // Un mot de passe provisoire est émis une seule fois au créateur. Le joueur peut le changer.
     const password = secret() + secret();
     const created = await db.auth.admin.createUser({ email, password, email_confirm: true });
-    if (!created.data.user) return send(400, { error: "Impossible de créer ce compte : adresse déjà utilisée ou refus Supabase" });
+    if (created.error || !created.data.user) {
+      // Visible uniquement pour un administrateur authentifié. Jamais de mot de passe dans les logs.
+      console.error("radar-admin createUser error", { status: created.error?.status, code: created.error?.code, message: created.error?.message });
+      return send(400, {
+        error: "Création du compte refusée par Supabase : " + (created.error?.message || "erreur inconnue"),
+        code: created.error?.code || "unknown",
+        status: created.error?.status || 400
+      });
+    }
     const profile = await db.from("radar_profiles").insert({ id: created.data.user.id, pseudo, role: "player", active: true });
     if (profile.error) {
       await db.auth.admin.deleteUser(created.data.user.id);
-      return send(400, { error: "Pseudo déjà utilisé ou création échouée" });
+      console.error("radar-admin profile insert error", { code: profile.error.code, message: profile.error.message });
+      return send(400, { error: "Échec de création du profil Radar : " + profile.error.message, code: profile.error.code });
     }
     return send(200, { email, password, pseudo });
   }
