@@ -1,0 +1,1264 @@
+{
+  "version": 1,
+  "species": "Volkorne",
+  "source": "https://dofuselevage.fr/tools/reproduction/volkorne/genealogie",
+  "notes": "Les variétés paires ont leurs croisements directement publiés; les générations impaires ont parfois plusieurs recettes dont les parents exacts ne sont pas intégralement importés. Consulter la généalogie liée; ne pas inventer.",
+  "recipes": [
+    {
+      "name": "Ebene",
+      "generation": 1,
+      "options": [],
+      "trust": "source"
+    },
+    {
+      "name": "Indigo",
+      "generation": 1,
+      "options": [],
+      "trust": "source"
+    },
+    {
+      "name": "Orchidee",
+      "generation": 1,
+      "options": [],
+      "trust": "source"
+    },
+    {
+      "name": "Pourpre",
+      "generation": 1,
+      "options": [],
+      "trust": "source"
+    },
+    {
+      "name": "Indigo et Ebene",
+      "generation": 2,
+      "options": [
+        [
+          "Indigo",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Orchidee et Ebene",
+      "generation": 2,
+      "options": [
+        [
+          "Orchidee",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Orchidee et Indigo",
+      "generation": 2,
+      "options": [
+        [
+          "Orchidee",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Pourpre et Ebene",
+      "generation": 2,
+      "options": [
+        [
+          "Pourpre",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Pourpre et Indigo",
+      "generation": 2,
+      "options": [
+        [
+          "Pourpre",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Pourpre et Orchidee",
+      "generation": 2,
+      "options": [
+        [
+          "Pourpre",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amande",
+      "generation": 3,
+      "options": null,
+      "expectedCount": 3,
+      "trust": "partiel"
+    },
+    {
+      "name": "Roux",
+      "generation": 3,
+      "options": null,
+      "expectedCount": 3,
+      "trust": "partiel"
+    },
+    {
+      "name": "Amande et Ebene",
+      "generation": 4,
+      "options": [
+        [
+          "Amande",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amande et Indigo",
+      "generation": 4,
+      "options": [
+        [
+          "Amande",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amande et Ivoire",
+      "generation": 4,
+      "options": [
+        [
+          "Amande",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amande et Orchidee",
+      "generation": 4,
+      "options": [
+        [
+          "Amande",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amande et Pourpre",
+      "generation": 4,
+      "options": [
+        [
+          "Amande",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amande et Roux",
+      "generation": 4,
+      "options": [
+        [
+          "Amande",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amande et Turquoise",
+      "generation": 4,
+      "options": [
+        [
+          "Amande",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Ivoire et Ebene",
+      "generation": 4,
+      "options": [
+        [
+          "Ivoire",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Ivoire et Indigo",
+      "generation": 4,
+      "options": [
+        [
+          "Ivoire",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Ivoire et Orchidee",
+      "generation": 4,
+      "options": [
+        [
+          "Ivoire",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Ivoire et Pourpre",
+      "generation": 4,
+      "options": [
+        [
+          "Ivoire",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Ivoire et Turquoise",
+      "generation": 4,
+      "options": [
+        [
+          "Ivoire",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Roux et Ebene",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Roux et Indigo",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Roux et Ivoire",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Roux et Orchidee",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Roux et Pourpre",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Roux et Turquoise",
+      "generation": 4,
+      "options": [
+        [
+          "Roux",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Turquoise et Ebene",
+      "generation": 4,
+      "options": [
+        [
+          "Turquoise",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Turquoise et Indigo",
+      "generation": 4,
+      "options": [
+        [
+          "Turquoise",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Turquoise et Orchidee",
+      "generation": 4,
+      "options": [
+        [
+          "Turquoise",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Turquoise et Pourpre",
+      "generation": 4,
+      "options": [
+        [
+          "Turquoise",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Ivoire",
+      "generation": 5,
+      "options": null,
+      "expectedCount": 3,
+      "trust": "partiel"
+    },
+    {
+      "name": "Turquoise",
+      "generation": 5,
+      "options": null,
+      "expectedCount": 3,
+      "trust": "partiel"
+    },
+    {
+      "name": "Emeraude et Amande",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Amande"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Emeraude et Ebene",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Emeraude et Indigo",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Emeraude et Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Emeraude et Orchidee",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Emeraude et Pourpre",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Emeraude et Roux",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Emeraude et Turquoise",
+      "generation": 6,
+      "options": [
+        [
+          "Emeraude",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Amande",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Amande"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Ebene",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Emeraude",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Emeraude"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Indigo",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Ivoire",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Orchidee",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Pourpre",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Roux",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Prune et Turquoise",
+      "generation": 6,
+      "options": [
+        [
+          "Prune",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore",
+      "generation": 7,
+      "options": null,
+      "expectedCount": 8,
+      "trust": "partiel"
+    },
+    {
+      "name": "Emeraude",
+      "generation": 7,
+      "options": null,
+      "expectedCount": 12,
+      "trust": "partiel"
+    },
+    {
+      "name": "Prune",
+      "generation": 7,
+      "options": null,
+      "expectedCount": 12,
+      "trust": "partiel"
+    },
+    {
+      "name": "Dore et Amande",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Amande"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Ebene",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Emeraude",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Emeraude"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Indigo",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Ivoire",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Orchidee",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Pourpre",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Prune",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Prune"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Roux",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Dore et Turquoise",
+      "generation": 8,
+      "options": [
+        [
+          "Dore",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste",
+      "generation": 9,
+      "options": null,
+      "expectedCount": 2,
+      "trust": "partiel"
+    },
+    {
+      "name": "Jade",
+      "generation": 9,
+      "options": null,
+      "expectedCount": 2,
+      "trust": "partiel"
+    },
+    {
+      "name": "Rubis",
+      "generation": 9,
+      "options": null,
+      "expectedCount": 2,
+      "trust": "partiel"
+    },
+    {
+      "name": "Saphir",
+      "generation": 9,
+      "options": null,
+      "expectedCount": 2,
+      "trust": "partiel"
+    },
+    {
+      "name": "Amethyste et Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Amande"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Dore",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Dore"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Ebene",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Emeraude"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Orchidee",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Prune"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Amethyste et Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Amethyste",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Amande"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Amethyste",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Amethyste"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Dore",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Dore"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Ebene",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Emeraude"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Orchidee",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Prune"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Rubis",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Rubis"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Saphir",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Saphir"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Jade et Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Jade",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Amande"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Amethyste",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Amethyste"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Dore",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Dore"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Ebene",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Emeraude"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Orchidee",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Prune"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Saphir",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Saphir"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Rubis et Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Rubis",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Amande",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Amande"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Amethyste",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Amethyste"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Dore",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Dore"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Ebene",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Ebene"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Emeraude",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Emeraude"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Indigo",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Indigo"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Ivoire",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Ivoire"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Orchidee",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Orchidee"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Pourpre",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Pourpre"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Prune",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Prune"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Roux",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Roux"
+        ]
+      ],
+      "trust": "source"
+    },
+    {
+      "name": "Saphir et Turquoise",
+      "generation": 10,
+      "options": [
+        [
+          "Saphir",
+          "Turquoise"
+        ]
+      ],
+      "trust": "source"
+    }
+  ]
+}
