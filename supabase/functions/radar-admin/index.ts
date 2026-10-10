@@ -17,7 +17,7 @@ Deno.serve(async request => {
   const actor = check.data.user.id;
   const { data: owner } = await db.from("radar_profiles").select("role,active").eq("id", actor).single();
   if (!owner?.active || owner.role !== "admin") return send(403, { error: "Administrateur requis" });
-  let command: { action?: string; pseudo?: string; id?: string };
+  let command: { action?: string; pseudo?: string; email?: string; id?: string };
   try { command = await request.json() } catch { return send(400, { error: "JSON requis" }) }
   if (command.action === "list") {
     const { data, error } = await db.from("radar_profiles").select("id,pseudo,role,active,created_at").order("created_at");
@@ -25,18 +25,19 @@ Deno.serve(async request => {
   }
   if (command.action === "create") {
     const pseudo = String(command.pseudo || "").trim();
-    if (pseudo.length < 2 || pseudo.length > 30 || !/^[\p{L}\p{N} _.'-]+$/u.test(pseudo)) return send(400, { error: "Pseudo invalide" });
-    const identifier = secret().slice(0, 16);
+    const email = String(command.email || "").trim().toLowerCase();
+    if (pseudo.length < 2 || pseudo.length > 30 || !/^[\\p{L}\\p{N} _.'-]+$/u.test(pseudo)) return send(400, { error: "Pseudo invalide" });
+    if (email.length > 254 || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) return send(400, { error: "Adresse e-mail invalide" });
+    // Un mot de passe provisoire est émis une seule fois au créateur. Le joueur peut le changer.
     const password = secret() + secret();
-    const email = "radar-" + identifier.toLowerCase() + "@radar-dakal.example.com";
     const created = await db.auth.admin.createUser({ email, password, email_confirm: true });
-    if (!created.data.user) return send(400, { error: "Création impossible" });
+    if (!created.data.user) return send(400, { error: "Impossible de créer ce compte : adresse déjà utilisée ou refus Supabase" });
     const profile = await db.from("radar_profiles").insert({ id: created.data.user.id, pseudo, role: "player", active: true });
     if (profile.error) {
       await db.auth.admin.deleteUser(created.data.user.id);
       return send(400, { error: "Pseudo déjà utilisé ou création échouée" });
     }
-    return send(200, { key: "RD-" + identifier + "-" + password, pseudo });
+    return send(200, { email, password, pseudo });
   }
   const id = String(command.id || "");
   if (!/^[0-9a-f-]{36}$/i.test(id) || id === actor) return send(400, { error: "Joueur invalide" });
@@ -48,14 +49,11 @@ Deno.serve(async request => {
     return send(200, { ok: true });
   }
   if (command.action === "reset") {
-    const userResult = await db.auth.admin.getUserById(id);
-    const idPart = userResult.data.user?.email?.match(/^radar-([0-9a-f]{16})@radar-dakal\.example\.com$/)?.[1];
-    if (!idPart) return send(400, { error: "Identifiant incompatible" });
     const password = secret() + secret();
     const updated = await db.auth.admin.updateUserById(id, { password });
     if (updated.error) return send(500, { error: "Renouvellement impossible" });
-    // Une ancienne session peut rester valide jusqu’à expiration ; informer le titulaire.
-    return send(200, { key: "RD-" + idPart.toUpperCase() + "-" + password });
+    // Les JWT existants peuvent rester valides jusqu'à expiration : blocage immédiat via RLS si besoin.
+    return send(200, { password });
   }
   return send(400, { error: "Action inconnue" });
 });
