@@ -58,8 +58,8 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 <p style="margin:7px 0">Mélodie turquoise en <b>trois notes ascendantes</b>, distincte du simple avertissement de FarmRadar. Autorise le son avec le bouton ci-dessous. Aucune notification push et aucun son si le navigateur est fermé.</p>
 <div class="row"><button class="primary" id="enableSound" type="button">Activer le son</button><button id="testSound" type="button">🔊 Tester l'alerte</button><button id="muteSound" type="button">Couper</button>
 <label class="field" style="min-width:145px">Avertir avant (min)<input id="alarmLead" type="number" min="0" max="120" step="1" value="2"></label>
-<label class="field elevage-volume" for="elevageVolume">Volume : <strong id="elevageVolumeValue">70 %</strong>
-<input id="elevageVolume" type="range" min="0" max="100" step="5" value="70" aria-label="Volume des alertes d'ÉlevageRadar"></label></div>
+<label class="field elevage-volume" for="elevageVolume">Volume : <strong id="elevageVolumeValue">90 %</strong>
+<input id="elevageVolume" type="range" min="0" max="100" step="5" value="90" aria-label="Volume des alertes d'ÉlevageRadar"></label></div>
 <div id="alarmMessage" class="muted" role="status" aria-live="polite" style="margin-top:7px"></div>
 </div>
 <small id="watchStatus">Aucun suivi lancé. Les alertes sonores nécessitent un clic préalable et une page ouverte ; aucune action dans le jeu.</small>
@@ -364,7 +364,7 @@ $('crossingGuide').addEventListener('click',event=>{
 });
 
 /* Alerte sonore d'enclos : carillon aigu 3 notes, WebAudio déclenché par interaction réelle. */
-let audioContext=null,alarmEnabled=false,alertSignature=null,alarmVolume=70;
+let audioContext=null,alarmEnabled=false,alertSignature=null,alarmVolume=90;
 const ELEVAGE_VOLUME_KEY='elevageRadar_alarm_volume_v1';
 try{
  alarmEnabled=localStorage.getItem('elevageRadar_audio_enabled')==='yes';
@@ -391,16 +391,21 @@ async function unlockSound(){
 function playBreedingChime(){
  if(!alarmEnabled||alarmVolume===0||!audioContext||audioContext.state!=='running')return false;
  const now=audioContext.currentTime+0.012;
- const peak=Math.min(.24,Math.max(.0001,alarmVolume/100*.24));
- // Trois notes aiguës et cristallines, distinctes des trois bips graves de FarmRadar.
- [784,988,1319].forEach((hz,i)=>{
-  const t=now+i*0.2;
-  const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();
-  oscillator.type='sine';oscillator.frequency.setValueAtTime(hz,t);
-  gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(peak,t+.02);
-  gain.gain.exponentialRampToValueAtTime(.0001,t+.36);
-  oscillator.connect(gain);gain.connect(audioContext.destination);
-  oscillator.start(t);oscillator.stop(t+.38);
+ // Mélodie aiguë enrichie par une harmonique discrète, distincte des bips FarmRadar.
+ // Deux oscillateurs par note, chacun avec un gain propre : limite les crêtes.
+ const peak=Math.min(.30,Math.max(.0001,alarmVolume/100*.30));
+ [880,1100,1480].forEach((hz,i)=>{
+  const t=now+i*.21;
+  for(const [type,mult,level] of [['triangle',1,.72],['sine',2,.28]]){
+   const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();
+   oscillator.type=type;oscillator.frequency.setValueAtTime(hz*mult,t);
+   gain.gain.setValueAtTime(.0001,t);
+   gain.gain.exponentialRampToValueAtTime(Math.max(.0002,peak*level),t+.018);
+   gain.gain.setValueAtTime(Math.max(.0002,peak*level),t+.105);
+   gain.gain.exponentialRampToValueAtTime(.0001,t+.36);
+   oscillator.connect(gain);gain.connect(audioContext.destination);
+   oscillator.start(t);oscillator.stop(t+.38);
+  }
  });
  return true;
 }
