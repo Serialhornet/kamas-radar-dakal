@@ -1,34 +1,41 @@
 "use strict";
-// Contrôle de navigation : GitHub Pages reste un hébergement public.
-// Les données sensibles sont protégées par Supabase RLS.
-(async () => {
-  const login = new URL("./index.html", location.href).href;
-  const toLogin = () => { if (window.top !== window.self) window.top.location.replace(login); else window.location.replace(login); };
-  try {
-    const community = window.RadarCommunity;
-    if (!community?.ready) throw Error("Service de connexion indisponible");
-    const profile = await community.current();
-    if (!profile) {
-      toLogin();
-      return;
-    }
-    document.documentElement.classList.add("members-authorized");
-    const heartbeat = () => { if (!document.hidden) void community.heartbeat?.().catch(() => {}); };
-    heartbeat();
-    setInterval(heartbeat, 45000);
-    document.addEventListener("visibilitychange", async () => {
-      if (document.hidden) return;
-      try {
-        if (!await community.current()) toLogin();
-        else heartbeat();
-      } catch { toLogin(); }
-    });
-    setInterval(async () => {
-      if (document.hidden) return;
-      try { if (!await community.current()) toLogin(); }
-      catch { toLogin(); }
-    }, 45000);
-  } catch {
-    toLogin();
+// Un outil imbriqué réutilise l'accès validé par la page principale.
+// Seule une page ouverte directement vérifie indépendamment son compte.
+(async()=>{
+ const home=new URL("./index.html",location.href).href;
+ const embedded=window.parent!==window;
+ if(embedded){
+  try{
+   const host=window.parent;
+   if(host.location.origin!==location.origin)throw Error("Origine différente");
+   const update=()=>{
+    const allowed=host.document.getElementById("communityLock")?.hidden===true
+      && !host.document.documentElement.classList.contains("community-locked");
+    document.documentElement.classList.toggle("members-authorized",allowed);
+   };
+   update();
+   host.addEventListener("pageshow",update);
+   document.addEventListener("visibilitychange",update);
+   setInterval(update,15000);
+  }catch{
+   // Ne jamais naviguer dans la page parente depuis un outil : cela dupliquait le site.
+   document.documentElement.classList.remove("members-authorized");
   }
+  return;
+ }
+ const redirect=()=>window.location.replace(home);
+ try{
+  const community=window.RadarCommunity;
+  if(!community?.ready||!await community.current()){redirect();return}
+  document.documentElement.classList.add("members-authorized");
+  const refresh=async()=>{
+   try{
+    if(!await community.current()){redirect();return}
+    if(!document.hidden)await community.heartbeat?.();
+   }catch{redirect()}
+  };
+  void community.heartbeat?.().catch(()=>{});
+  setInterval(()=>{if(!document.hidden)void refresh()},45000);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)void refresh()});
+ }catch{redirect()}
 })();
