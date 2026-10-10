@@ -137,14 +137,14 @@ function openTab(name,updateHash=true){
  document.getElementById('tab-kamas').setAttribute('aria-selected',String(!craft&&!recolte&&!farm&&!quete&&!brisage&&!elevage));
  document.getElementById('tab-craft').setAttribute('aria-selected',String(craft));
  if(craft&&!craftFrameLoaded){
-  document.getElementById('craftFrame').src='./craft-radar.html?v=single-session-20261010';
+  document.getElementById('craftFrame').src='./craft-radar.html?v=inline-login-20261010';
   craftFrameLoaded=true;
  }
- if(recolte&&!recolteFrameLoaded){document.getElementById('recolteFrame').src='./recolte-radar.html?v=single-session-20261010';recolteFrameLoaded=true;}
- if(farm&&!farmFrameLoaded){document.getElementById('farmFrame').src='./farm-radar.html?v=single-session-20261010';farmFrameLoaded=true;}
- if(quete&&!queteFrameLoaded){document.getElementById('queteFrame').src='./quete-radar.html?v=single-session-20261010';queteFrameLoaded=true;}
- if(brisage&&!brisageFrameLoaded){document.getElementById('brisageFrame').src='./brisage-radar.html?v=single-session-20261010';brisageFrameLoaded=true;}
- if(elevage&&!elevageFrameLoaded){document.getElementById('elevageFrame').src='./elevage-radar.html?v=single-session-20261010';elevageFrameLoaded=true;}
+ if(recolte&&!recolteFrameLoaded){document.getElementById('recolteFrame').src='./recolte-radar.html?v=inline-login-20261010';recolteFrameLoaded=true;}
+ if(farm&&!farmFrameLoaded){document.getElementById('farmFrame').src='./farm-radar.html?v=inline-login-20261010';farmFrameLoaded=true;}
+ if(quete&&!queteFrameLoaded){document.getElementById('queteFrame').src='./quete-radar.html?v=inline-login-20261010';queteFrameLoaded=true;}
+ if(brisage&&!brisageFrameLoaded){document.getElementById('brisageFrame').src='./brisage-radar.html?v=inline-login-20261010';brisageFrameLoaded=true;}
+ if(elevage&&!elevageFrameLoaded){document.getElementById('elevageFrame').src='./elevage-radar.html?v=inline-login-20261010';elevageFrameLoaded=true;}
  if(updateHash){
   const next=elevage?'#elevage-radar':brisage?'#brisage-radar':quete?'#quete-radar':farm?'#farm-radar':recolte?'#recolte-radar':craft?'#craft-radar':'#kamas-radar';
   if(window.location.hash!==next)window.history.replaceState(null,'',next);
