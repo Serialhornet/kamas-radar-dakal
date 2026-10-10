@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-10T02:34:27.944462+00:00",
+  "updated_at": "2026-10-10T05:52:20.639099+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -9,10 +9,13 @@
       "channel": "Capitemflam",
       "date": "2026-10-08T15:00:22Z",
       "url": "https://www.youtube.com/watch?v=f9OWtSXEoxc",
-      "views": 638,
-      "source": "YouTube officiel",
+      "views": 660,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
       "source_type": "video",
       "langue": "fr",
+      "duration_seconds": 39,
       "detail": {
         "categorie": "Farm / drop",
         "resume_source": "Extrait de ma série ECAFLIP DO CRIT lvl 130 à 160 en monocompte sur Dofus 3. La vidéo complète ...",
@@ -45,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 108.1,
+      "score": 116.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -56,9 +59,12 @@
       "date": "2026-09-18T12:30:32Z",
       "url": "https://www.youtube.com/watch?v=ySDInNhL5cA",
       "views": 134,
-      "source": "YouTube officiel",
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
       "source_type": "video",
       "langue": "fr",
+      "duration_seconds": 89,
       "detail": {
         "categorie": "Farm / drop",
         "resume_source": "Tu as terminé Incarnam et tu as besoin de Kamas à Astrub ? Découvre les 3 meilleures zones d'Astrub pour farmer efficacement, ...",
@@ -91,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 89.5,
+      "score": 98.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -101,10 +107,13 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-09-18T12:30:35Z",
       "url": "https://www.youtube.com/watch?v=sCxUSGKvlAk",
-      "views": 225,
-      "source": "YouTube officiel",
+      "views": 226,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
       "source_type": "video",
       "langue": "fr",
+      "duration_seconds": 114,
       "detail": {
         "categorie": "Farm / drop",
         "resume_source": "Quels sont les meilleurs spots de farm d'Incarnam ? On passe en revue les 3 meilleures zones pour accumuler ressources et ...",
@@ -137,7 +146,158 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 89.4,
+      "score": 98.2,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "link:https://www.reddit.com/r/DOFUS_FRANCE/comments/1w139ph/je_viens_de_me_faire_de_11_millions_de_k_en/",
+      "title": "Je viens de me faire + de 11 millions de k en brisage",
+      "description": "Témoignage DOFUS Unity sur du brisage d'équipement avec gros coefficient. Les prix et coefficients montrés ne garantissent aucune rentabilité sur Dakal.",
+      "channel": "Reddit · r/DOFUS_FRANCE",
+      "date": "2026-08-28T00:00:00Z",
+      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1w139ph/je_viens_de_me_faire_de_11_millions_de_k_en/",
+      "views": null,
+      "source": "Lien sélectionné",
+      "source_platform": "site",
+      "source_format": "article",
+      "source_type": "article",
+      "langue": "Non vérifiée",
+      "detail": {
+        "categorie": "Brisage / runes",
+        "resume_source": "Témoignage DOFUS Unity sur du brisage d'équipement avec gros coefficient. Les prix et coefficients montrés ne garantissent aucune rentabilité sur Dakal.",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "Non verifiee",
+        "compatibilite_mono": "À vérifier dans la source"
+      },
+      "fiche_fr": "Lien sélectionné : contenu non transcrit.",
+      "monocompte": true,
+      "commentaires": {
+        "status": "non_analyses",
+        "analysed": 0,
+        "signals": {},
+        "examples": []
+      },
+      "score": 69
+    },
+    {
+      "id": "link:https://www.reddit.com/r/DOFUS_FRANCE/comments/1wdd2ez/routine_kamas/",
+      "title": "Routine kamas",
+      "description": "Discussion communautaire sur DOFUS Unity : quêtes quotidiennes, craft, forgemagie, revente et élevage. Gains évoqués par les joueurs non vérifiés sur Dakal.",
+      "channel": "Reddit · r/DOFUS_FRANCE",
+      "date": "2026-09-11T00:00:00Z",
+      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1wdd2ez/routine_kamas/",
+      "views": null,
+      "source": "Lien sélectionné",
+      "source_platform": "site",
+      "source_format": "article",
+      "source_type": "article",
+      "langue": "Non vérifiée",
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Discussion communautaire sur DOFUS Unity : quêtes quotidiennes, craft, forgemagie, revente et élevage. Gains évoqués par les joueurs non vérifiés sur Dakal.",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "Non verifiee",
+        "compatibilite_mono": "À vérifier dans la source"
+      },
+      "fiche_fr": "Lien sélectionné : contenu non transcrit.",
+      "monocompte": true,
+      "commentaires": {
+        "status": "non_analyses",
+        "analysed": 0,
+        "signals": {},
+        "examples": []
+      },
+      "score": 57
+    },
+    {
+      "id": "link:https://www.reddit.com/r/DOFUS_FRANCE/comments/1vx9j8d/astuces_xp_et_kamas/",
+      "title": "Astuces XP et Kamas",
+      "description": "Discussion de farm en solo DOFUS Unity : métiers Mineur et Chasseur, drops de ressources et captures de boss. Conseils communautaires à tester selon le serveur.",
+      "channel": "Reddit · r/DOFUS_FRANCE",
+      "date": "2026-08-24T00:00:00Z",
+      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1vx9j8d/astuces_xp_et_kamas/",
+      "views": null,
+      "source": "Lien sélectionné",
+      "source_platform": "site",
+      "source_format": "article",
+      "source_type": "article",
+      "langue": "Non vérifiée",
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Discussion de farm en solo DOFUS Unity : métiers Mineur et Chasseur, drops de ressources et captures de boss. Conseils communautaires à tester selon le serveur.",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "Non verifiee",
+        "compatibilite_mono": "À vérifier dans la source"
+      },
+      "fiche_fr": "Lien sélectionné : contenu non transcrit.",
+      "monocompte": true,
+      "commentaires": {
+        "status": "non_analyses",
+        "analysed": 0,
+        "signals": {},
+        "examples": []
+      },
+      "score": 57
+    },
+    {
+      "id": "RATCxwso0vI",
+      "title": "Faire ses PREMIERS KAMAS à Incarnam | Dofus Unity ! #shorts",
+      "description": "Voici un moyen de commencer à faire ses premiers Kamas à Incarnam dès les premiers niveaux ! Voir le Guide Complet ...",
+      "channel": "Spotlight-q8d ● Dofus",
+      "date": "2026-09-21T09:00:11Z",
+      "url": "https://www.youtube.com/shorts/RATCxwso0vI",
+      "views": 54,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "short",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 97,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Voici un moyen de commencer à faire ses premiers Kamas à Incarnam dès les premiers niveaux ! Voir le Guide Complet ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 55.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
