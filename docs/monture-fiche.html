@@ -1,0 +1,49 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fiche monture — ÉlevageRadar</title><style>
+:root{color-scheme:dark;font:15px/1.6 system-ui,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;color:#eafffa;background:radial-gradient(circle at 55% 0%,#164341,transparent 60%),#0b151c}main{max-width:900px;padding:25px 18px 80px;margin:auto}.card{background:#162831;border:1px solid #3b6970;border-radius:18px;padding:22px;margin-top:15px}.eyebrow{color:#71e8d7;font-size:12px;letter-spacing:2px;font-weight:850}h1{font-size:clamp(25px,5vw,39px);line-height:1.2;margin:8px 0}h2{font-size:18px;color:#b7fff0}p{color:#bed0d2}.hero{display:grid;grid-template-columns:260px 1fr;gap:25px;align-items:center}#visual{background:#0e202a;border-radius:16px;min-height:265px;display:flex;align-items:center;justify-content:center}img{max-width:240px;max-height:245px;object-fit:contain}.muted{color:#b4c4c8}a{color:#7ef0dd}a.btn{display:inline-block;background:#23534e;border-radius:10px;text-decoration:none;padding:9px 12px;margin:4px 8px 4px 0}a.btn:hover{background:#326b61}ul{padding-left:21px}.stat{padding:8px 10px;margin:7px 0;background:#10232e;border-radius:8px}small{color:#9eafb7}code{color:#b8ffed}@media(max-width:650px){.hero{grid-template-columns:1fr}#visual{min-height:210px}img{max-height:200px}}
+</style></head><body><main><div class="eyebrow">RADAR DAKAL · ÉLEVAGERADAR</div><div class="card hero"><div id="visual"><span class="muted">Chargement du visuel…</span></div><div><small id="family">Monture DOFUS Unity</small><h1 id="title">Chargement de la fiche…</h1><p id="status">Recherche des informations dans l'encyclopédie DofusDude.</p><div id="metadata"></div></div></div><section class="card"><h2>📊 Caractéristiques de la monture</h2><div id="effects">Chargement des bonus…</div><p><small>Les bonus affichés proviennent de la fiche de l’API DofusDude, pas d’un calcul d’ÉlevageRadar. Leur présentation peut varier selon les données disponibles et le niveau de la monture.</small></p></section><section class="card"><h2>🧬 Élevage et croisements</h2><p>Consulte les parents, les générations et les autres croisements possibles. Les recettes ne garantissent pas le résultat d’un accouplement.</p><div id="links"></div><p><small>Les images restent hébergées par leur fournisseur : aucune illustration officielle n’est recopiée dans ce projet. Leur affichage dépend de la disponibilité et des conditions d’accès de la source.</small></p></section></main><script>
+"use strict";
+const p=new URLSearchParams(location.search),name=(p.get('nom')||'').trim(),family=(p.get('espece')||'Dragodinde').trim();
+const site={Dragodinde:'dragodinde',Muldo:'muldo',Volkorne:'volkorne'}[family]||'dragodinde';
+const $=id=>document.getElementById(id),norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('fr').replace(/^(dragodinde|muldo|volkorne)\s+(?:de?\s+)?/,'').replace(/\s+et\s+/g,' ').replace(/[^a-z0-9]/g,'');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const BASE='https://api.dofusdu.de/dofus3/v1/fr/mounts';
+const familyGuide='https://dofuselevage.fr/tools/reproduction/'+site+'/genealogie';
+$('family').textContent=family;$('title').textContent=name||'Monture inconnue';
+$('links').innerHTML='<a class="btn" href="'+familyGuide+'" target="_blank" rel="noopener noreferrer">🧬 Voir la généalogie sur DofusÉlevage ↗</a><a class="btn" href="./elevage-radar.html" target="_blank" rel="noopener noreferrer">🐣 Retour à ÉlevageRadar ↗</a>';
+function imageUrl(obj){if(!obj||typeof obj!=='object')return null;for(const key of ['hd','high','medium','large','sd','small','icon']){const v=obj[key];if(typeof v==='string'&&v.startsWith('https://'))return v}return Object.values(obj).find(v=>typeof v==='string'&&v.startsWith('https://'))||null}
+function familyMatch(x){const f=String(typeof x.family==='string'?x.family:x.family?.name||'').toLowerCase();if(f)return f.includes(site);return norm(x.name).includes(norm(name))||true}
+function renderEffects(effects){
+ if(!Array.isArray(effects)||!effects.length){$('effects').innerHTML='<p>Les statistiques détaillées ne sont pas renseignées dans cette source pour cette monture.</p>';return}
+ $('effects').replaceChildren();
+ for(const effect of effects){
+  const div=document.createElement('div');div.className='stat';
+  const text=typeof effect==='string'?effect:effect.formatted||effect.description||effect.name||effect.type?.name||'Effet';
+  div.textContent=typeof text==='string'?text:JSON.stringify(text);
+  if(typeof effect?.int_min==='number'||typeof effect?.int_max==='number'){div.textContent+=' · '+(effect.int_min??'?')+(effect.int_max!==undefined?' à '+effect.int_max:'')}
+  $('effects').appendChild(div)
+ }
+}
+async function load(){
+ if(!name){$('status').textContent='Aucune monture précisée dans le lien.';return}
+ try{
+  const res=await fetch(BASE+'/all');if(!res.ok)throw Error('Service indisponible ('+res.status+')');
+  const data=await res.json(),items=Array.isArray(data)?data:Array.isArray(data.items)?data.items:Array.isArray(data.mounts)?data.mounts:Array.isArray(data.results)?data.results:Array.isArray(data.data)?data.data:[];
+  const same=items.filter(x=>norm(x.name)===norm(name));const match=same.find(x=>{const f=String(x.family?.name||x.family_name||x.family||'').toLowerCase();return f.includes(site)})||same[0];
+  if(!match){$('status').textContent='Aucune fiche exacte trouvée dans DofusDude pour cette variété. Utilise le lien de généalogie ci-dessous.';$('visual').textContent='Image non disponible';$('effects').textContent='Effets indisponibles dans cette source.';return}
+  $('status').textContent='Monture trouvée dans la base DofusDude.';
+  $('title').textContent=match.name||name;
+  let detail=match;
+  if(Number.isInteger(Number(match.ankama_id??match.id))&&Number(match.ankama_id??match.id)>0){
+   const id=Number(match.ankama_id??match.id);$('metadata').textContent='Identifiant DOFUS : '+id;
+   $('links').insertAdjacentHTML('beforeend','<a class="btn" href="'+BASE+'/'+id+'" target="_blank" rel="noopener noreferrer">📖 Source de la fiche et des effets ↗</a>');
+   try{const answer=await fetch(BASE+'/'+id);if(answer.ok)detail=await answer.json()}catch(e){}
+  }
+  const uri=imageUrl(detail.image_urls)||imageUrl(match.image_urls);
+  $('visual').replaceChildren();
+  if(uri){const img=document.createElement('img');img.alt='Visuel de la monture '+(match.name||name);img.referrerPolicy='no-referrer';img.src=uri;img.onerror=()=>{$('visual').textContent='Visuel actuellement indisponible dans la source.'};$('visual').appendChild(img)}
+  else $('visual').textContent='Aucune image disponible pour cette monture.';
+  renderEffects(detail.effects||match.effects);
+ }catch(e){$('status').textContent='Impossible de récupérer la fiche en ligne : '+e.message;$('visual').textContent='Image indisponible';$('effects').textContent='La source ne répond pas. Le guide des croisements reste accessible ci-dessous.'}
+}
+load();
+</script></body></html>
