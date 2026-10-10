@@ -1,0 +1,32 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connexion administrateur — Radar Dakal</title>
+<style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#26435b,transparent 65%),#101723;color:#eaf5ff;font:16px/1.55 system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:18px}.card{max-width:490px;width:100%;padding:26px;background:#192a3b;border:1px solid #597895;border-radius:20px;box-shadow:0 18px 55px #0004}h1{font-size:27px;margin:0 0 10px}p{color:#aec7dc}label{font-weight:700;font-size:13px;display:block;margin:12px 0 5px}input{padding:12px;border-radius:10px;background:#101b2c;color:#fff;border:1px solid #647e95;font:inherit;width:100%;box-sizing:border-box}button{cursor:pointer;background:#387da1;border:1px solid #7eabc6;border-radius:10px;color:white;padding:12px 16px;font:inherit;font-weight:750;margin-top:18px;width:100%}button:disabled{opacity:.6}small{color:#adc4d7}a{color:#ace0ff}#status{min-height:25px;overflow-wrap:anywhere}#status.error{color:#ffb4af}#status.ok{color:#a9ffd8}</style>
+<script src="./community-config.js?v=20261010-login3"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+</head><body><main class="card"><small>🐉 RADAR DAKAL · CONNEXION DIRECTE</small><h1>👑 Connexion administrateur</h1><p>Cette page utilise directement ton e-mail et ton mot de passe Supabase, sans transformer le mot de passe ni analyser le format d’une clé.</p>
+<form id="form"><label for="email">Adresse e-mail du compte admin</label><input id="email" type="email" autocomplete="username" value="radar-admin@radar-dakal.example.com" required><label for="password">Mot de passe Supabase</label><input id="password" type="password" autocomplete="current-password" required><button id="submit" type="submit">Me connecter</button></form>
+<p id="status" role="status" aria-live="polite"></p><p><small>Ne transmets jamais ton mot de passe. Une fois connecté, tu seras redirigé vers notre panneau communautaire.</small></p><p><a href="./index.html">← Retour aux sept outils Radar Dakal</a></p></main>
+<script>
+const $=id=>document.getElementById(id);
+const config=window.RADAR_COMMUNITY_CONFIG;
+$('form').onsubmit=async event=>{
+ event.preventDefault();
+ const button=$('submit');button.disabled=true;
+ const status=$('status');status.className='';status.textContent='Connexion en cours…';
+ try{
+  if(!config?.enabled||!config.url||!config.anonKey)throw new Error('Configuration Supabase manquante.');
+  if(!window.supabase?.createClient)throw new Error('Bibliothèque Supabase non chargée : connexion Internet ou bloqueur de scripts.');
+  const client=window.supabase.createClient(config.url,config.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+  const email=$('email').value.trim(),password=$('password').value;
+  const {error}=await client.auth.signInWithPassword({email,password});
+  if(error)throw new Error('Supabase refuse la connexion : '+(error.message||error.code||'erreur inconnue'));
+  const {data:{user}}=await client.auth.getUser();
+  if(!user)throw new Error('Session Supabase introuvable après connexion.');
+  const {data:profile,error:profileError}=await client.from('radar_profiles').select('pseudo,role,active').eq('id',user.id).single();
+  if(profileError||!profile)throw new Error('Connexion réussie, mais profil Radar Dakal introuvable : vérifie la table radar_profiles.');
+  if(!profile.active)throw new Error('Ce profil est désactivé.');
+  status.className='ok';status.textContent='Connexion réussie : '+profile.pseudo+'. Ouverture du panneau…';
+  window.location.assign('./communaute.html?connected=1&v=20261010-login3');
+ }catch(error){status.className='error';status.textContent=error.message||String(error)}
+ finally{button.disabled=false}
+};
+</script></body></html>
