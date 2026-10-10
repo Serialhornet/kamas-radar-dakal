@@ -1,0 +1,594 @@
+{
+  "version": 1,
+  "source": "https://dofuselevage.fr/tools/reproduction/dragodinde/genealogie",
+  "reference": "Table des 66 croisements Dragodindes affichée par DofusElevage, vérification manuelle du 10 octobre 2026",
+  "notes": "Combinaisons de parents possibles, non des taux de naissance garantis. Les probabilités dépendent des parents, niveaux et généalogie. Pour Muldo et Volkorne, utiliser l'interface génétique en jeu.",
+  "species": "Dragodinde",
+  "recipes": [
+    {
+      "name": "Amande",
+      "generation": 1,
+      "parents": null,
+      "origin": "capture sauvage"
+    },
+    {
+      "name": "Dorée",
+      "generation": 1,
+      "parents": null,
+      "origin": "capture sauvage"
+    },
+    {
+      "name": "Rousse",
+      "generation": 1,
+      "parents": null,
+      "origin": "capture sauvage"
+    },
+    {
+      "name": "Amande et Dorée",
+      "generation": 2,
+      "parents": [
+        "Amande",
+        "Dorée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Rousse",
+      "generation": 2,
+      "parents": [
+        "Amande",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Rousse",
+      "generation": 2,
+      "parents": [
+        "Dorée",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène",
+      "generation": 3,
+      "parents": [
+        "Amande et Dorée",
+        "Dorée et Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Indigo",
+      "generation": 3,
+      "parents": [
+        "Amande et Dorée",
+        "Amande et Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Ébène",
+      "generation": 4,
+      "parents": [
+        "Amande",
+        "Ébène"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Indigo",
+      "generation": 4,
+      "parents": [
+        "Amande",
+        "Indigo"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Ébène",
+      "generation": 4,
+      "parents": [
+        "Dorée",
+        "Ébène"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Indigo",
+      "generation": 4,
+      "parents": [
+        "Dorée",
+        "Indigo"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène et Indigo",
+      "generation": 4,
+      "parents": [
+        "Ébène",
+        "Indigo"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène et Rousse",
+      "generation": 4,
+      "parents": [
+        "Ébène",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Indigo et Rousse",
+      "generation": 4,
+      "parents": [
+        "Indigo",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Orchidée",
+      "generation": 5,
+      "parents": [
+        "Ébène et Indigo",
+        "Dorée et Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Pourpre",
+      "generation": 5,
+      "parents": [
+        "Ébène et Indigo",
+        "Amande et Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Orchidée",
+      "generation": 6,
+      "parents": [
+        "Amande",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Pourpre",
+      "generation": 6,
+      "parents": [
+        "Amande",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Orchidée",
+      "generation": 6,
+      "parents": [
+        "Dorée",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Pourpre",
+      "generation": 6,
+      "parents": [
+        "Dorée",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène et Orchidée",
+      "generation": 6,
+      "parents": [
+        "Ébène",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène et Pourpre",
+      "generation": 6,
+      "parents": [
+        "Ébène",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Indigo et Orchidée",
+      "generation": 6,
+      "parents": [
+        "Indigo",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Indigo et Pourpre",
+      "generation": 6,
+      "parents": [
+        "Indigo",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Orchidée et Pourpre",
+      "generation": 6,
+      "parents": [
+        "Orchidée",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Orchidée et Rousse",
+      "generation": 6,
+      "parents": [
+        "Orchidée",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Pourpre et Rousse",
+      "generation": 6,
+      "parents": [
+        "Pourpre",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ivoire",
+      "generation": 7,
+      "parents": [
+        "Orchidée et Pourpre",
+        "Indigo et Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Turquoise",
+      "generation": 7,
+      "parents": [
+        "Orchidée et Pourpre",
+        "Ébène et Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Ivoire",
+      "generation": 8,
+      "parents": [
+        "Amande",
+        "Ivoire"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Turquoise",
+      "generation": 8,
+      "parents": [
+        "Amande",
+        "Turquoise"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Ivoire",
+      "generation": 8,
+      "parents": [
+        "Dorée",
+        "Ivoire"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Turquoise",
+      "generation": 8,
+      "parents": [
+        "Dorée",
+        "Turquoise"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène et Ivoire",
+      "generation": 8,
+      "parents": [
+        "Ébène",
+        "Ivoire"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène et Turquoise",
+      "generation": 8,
+      "parents": [
+        "Ébène",
+        "Turquoise"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Indigo et Ivoire",
+      "generation": 8,
+      "parents": [
+        "Indigo",
+        "Ivoire"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Indigo et Turquoise",
+      "generation": 8,
+      "parents": [
+        "Indigo",
+        "Turquoise"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ivoire et Orchidée",
+      "generation": 8,
+      "parents": [
+        "Ivoire",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ivoire et Pourpre",
+      "generation": 8,
+      "parents": [
+        "Ivoire",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ivoire et Rousse",
+      "generation": 8,
+      "parents": [
+        "Ivoire",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ivoire et Turquoise",
+      "generation": 8,
+      "parents": [
+        "Ivoire",
+        "Turquoise"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Turquoise et Orchidée",
+      "generation": 8,
+      "parents": [
+        "Turquoise",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Turquoise et Pourpre",
+      "generation": 8,
+      "parents": [
+        "Turquoise",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Turquoise et Rousse",
+      "generation": 8,
+      "parents": [
+        "Turquoise",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Émeraude",
+      "generation": 9,
+      "parents": [
+        "Ivoire et Turquoise",
+        "Ivoire et Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune",
+      "generation": 9,
+      "parents": [
+        "Ivoire et Turquoise",
+        "Turquoise et Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Amande et Émeraude",
+      "generation": 10,
+      "parents": [
+        "Amande",
+        "Émeraude"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Dorée et Émeraude",
+      "generation": 10,
+      "parents": [
+        "Dorée",
+        "Émeraude"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Ébène et Émeraude",
+      "generation": 10,
+      "parents": [
+        "Ébène",
+        "Émeraude"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Émeraude et Indigo",
+      "generation": 10,
+      "parents": [
+        "Émeraude",
+        "Indigo"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Émeraude et Ivoire",
+      "generation": 10,
+      "parents": [
+        "Émeraude",
+        "Ivoire"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Émeraude et Orchidée",
+      "generation": 10,
+      "parents": [
+        "Émeraude",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Émeraude et Pourpre",
+      "generation": 10,
+      "parents": [
+        "Émeraude",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Émeraude et Rousse",
+      "generation": 10,
+      "parents": [
+        "Émeraude",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Émeraude et Turquoise",
+      "generation": 10,
+      "parents": [
+        "Émeraude",
+        "Turquoise"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Amande",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Amande"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Dorée",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Dorée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Ébène",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Ébène"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Émeraude",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Émeraude"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Indigo",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Indigo"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Ivoire",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Ivoire"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Orchidée",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Orchidée"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Pourpre",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Pourpre"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Rousse",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Rousse"
+      ],
+      "origin": "croisement"
+    },
+    {
+      "name": "Prune et Turquoise",
+      "generation": 10,
+      "parents": [
+        "Prune",
+        "Turquoise"
+      ],
+      "origin": "croisement"
+    }
+  ]
+}
