@@ -77,7 +77,7 @@ let renderTimer=0;
 const debounce=fn=>{clearTimeout(renderTimer);renderTimer=setTimeout(fn,100)};
 function saveLocal(){try{localStorage.setItem(WORK_KEY,JSON.stringify({projects,runePrices}));return true}catch(e){$('craftStatus').textContent='Sauvegarde locale impossible : mémoire pleine.';return false}}
 function craftPrices(){return craft?.prices?.Dakal||{}}
-function numberPrice(id){const raw=craftPrices()[id];return raw&&Number.isFinite(Number(raw.value))?Number(raw.value):null}
+function numberPrice(id){const raw=window.RadarPriceSync?.get(id)||craftPrices()[id];return raw&&Number.isFinite(Number(raw.value))?Number(raw.value):null}
 function syncCraft(){try{craft=JSON.parse(localStorage.getItem(KEY))||{prices:{}}}catch(e){craft={prices:{}}}
  $('tax').value=Number.isFinite(Number(craft.tax))?Number(craft.tax):2;
  if(selected){if(projects[selected.id]?.manualHdv===undefined) $('hdvPrice').value=numberPrice(selected.id)??'';computeCraft();refreshCalc()}
@@ -88,7 +88,7 @@ function writeCraftPrice(id,value){
   d.prices=d.prices||{};d.prices.Dakal=d.prices.Dakal||{};
   if(value==='')delete d.prices.Dakal[id];
   else d.prices.Dakal[id]={value:Number(value),at:new Date().toISOString()};
-  localStorage.setItem(KEY,JSON.stringify(d));craft=d;channel?.postMessage({source:'brisage',server:'Dakal'});return true;
+  localStorage.setItem(KEY,JSON.stringify(d));craft=d;channel?.postMessage({source:'brisage',server:'Dakal'});if(value!==''&&Number.isSafeInteger(Number(value)))void window.RadarPriceSync?.save(Number(id),Number(value));return true;
  }catch(e){$('craftStatus').textContent='Impossible d’écrire dans les prix CraftRadar.';return false}
 }
 function normalizeItem(x){const id=Number(x.id??x.ankama_id),name=String(x.name||'');return {id,name,level:Number(x.level)||0,category:x.category||'unknown',recipe:Array.isArray(x.recipe)?x.recipe:[]}}
@@ -212,4 +212,5 @@ $('clear').onclick=()=>{if(!selected||!confirm('Effacer les estimations de cet �
 window.addEventListener('storage',e=>{if(e.key===KEY){syncCraft();refreshCalc()}});
 channel?.addEventListener('message',e=>{if(e.data?.source!=='brisage')syncCraft()});
 syncCraft();loadCatalog();renderStats();refreshCalc();
+window.RadarPriceSync?.onChange(()=>{syncCraft();renderStats();refreshCalc()});void window.RadarPriceSync?.refresh();
 </script></body></html>
