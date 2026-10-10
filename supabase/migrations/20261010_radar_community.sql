@@ -64,8 +64,10 @@ alter table public.radar_shared_prices enable row level security;
 alter table public.radar_votes enable row level security;
 alter table public.radar_comments enable row level security;
 
-create policy "profiles own or admin read" on public.radar_profiles for select to authenticated
- using (public.radar_is_active() and (id=(select auth.uid()) or public.radar_is_admin()));
+-- Pseudos publics entre membres actifs pour afficher les auteurs des commentaires.
+-- Aucune adresse e-mail ni clé secrète n'est enregistrée dans radar_profiles.
+create policy "profiles active members read" on public.radar_profiles for select to authenticated
+ using (public.radar_is_active());
 -- Profile writes are ADMIN edge function only, using server-side service role.
 
 create policy "personal read" on public.radar_personal_state for select to authenticated
