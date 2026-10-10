@@ -1,0 +1,209 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ÉlevageRadar — Dakal</title><style>
+:root{color-scheme:dark;--bg:#0b1219;--panel:#142530;--line:#305362;--accent:#4ee1d1;--text:#eafffb;--muted:#a8c5cb}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 65% 0%,#153b3a,transparent 42%),var(--bg);color:var(--text);font:14px/1.55 system-ui,"Segoe UI",sans-serif}
+main{max-width:1300px;margin:auto;padding:27px 20px 70px}h1{font-size:clamp(28px,4vw,41px);letter-spacing:-1px;margin:0}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:12px 0}p{color:var(--muted)}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--accent)}.panel{padding:19px;background:var(--panel);border:1px solid var(--line);border-radius:17px;margin:15px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.field{display:grid;gap:5px;color:#b7d4d6;font-size:12px;font-weight:700}input,select{background:#0b1c26;color:#eefffb;border:1px solid #45707a;border-radius:10px;padding:10px;font:inherit;width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid #4ee1d166}input[type=checkbox]{width:auto;accent-color:var(--accent)}
+button{font:inherit;cursor:pointer;background:#1f4146;color:#b7fff0;border:1px solid #417b77;padding:9px 13px;border-radius:10px}button.primary{background:var(--accent);color:#082a2a;font-weight:850;border-color:var(--accent)}button.danger{background:#3c2735;color:#ffb0c6;border-color:#815365}
+button:hover{filter:brightness(1.12)}button:disabled{opacity:.55;cursor:not-allowed}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.note{background:#1b343a;border:1px solid #447f81;border-radius:12px;padding:13px;color:#c8e7e7;margin:12px 0}.warn{color:#ffca96}.ok{color:#8effc1}.muted,small{color:var(--muted)}
+.badge{display:inline-block;color:#a4f6e3;background:#21403c;border:1px solid #468377;border-radius:99px;padding:4px 9px;font-size:12px}.metric{background:#102029;border:1px solid #3b6065;padding:13px;border-radius:13px}.metric b{display:block;font-size:22px}.metric span{font-size:12px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}.fuelgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.fuel{background:#0f202a;border:1px solid #355966;padding:12px;border-radius:12px}.fuel h3{margin:0 0 7px}.fuel.active{border-color:#43d4bf;background:#173937}
+.fuel .field{margin-bottom:7px}.fuel strong{color:#97f9e6}.recommend{background:#102a2b;border:1px solid #40948b;border-radius:13px;padding:15px;margin:8px 0}
+.results{max-height:210px;overflow:auto}.candidate{width:100%;text-align:left;margin:3px 0}
+table{width:100%;border-collapse:collapse;min-width:650px}th,td{border-bottom:1px solid #385360;padding:9px;text-align:left}th{color:#b0cbd4;font-size:12px}.tablewrap{overflow:auto}
+a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e222a;border:1px solid #376067;border-radius:12px;padding:13px}
+@media(max-width:900px){.fuelgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:17px 11px}.grid,.three,.fuelgrid{grid-template-columns:1fr}}
+</style></head><body><main>
+<div class="eyebrow">DOFUS Unity 3.7 · Dakal</div><h1>🐣 ÉlevageRadar</h1>
+<p>Assistant de montures, jauges d'enclos, carburants et planification pour viser la fécondité ou le niveau souhaité. Sans automatiser le client DOFUS.</p>
+<div class="note"><strong>Mécaniques 3.7 :</strong> montures Dragodinde, Muldo, Volkorne ; six jauges, deux actives maximum ; jauge enclos jusqu'à 200 000, jauges amour/maturité/endurance à 20 000. Les montures n'ont plus de fatigue, de jauge d'énergie ni de gestation. <a href="https://www.dofuspourlesnoobs.com/guide-de-l-eleveur.html" target="_blank" rel="noopener noreferrer">Guide 2026 ↗</a></div>
+<section class="panel"><h2>1 · Mes montures</h2>
+<div class="grid">
+<label class="field">Monture suivie<select id="mountList"><option value="">Nouvelle monture</option></select></label>
+<label class="field">Nom personnel<input id="mountName" placeholder="Ex. Muldo du futur bébé"></label>
+</div>
+<div class="three" style="margin-top:12px">
+<label class="field">Espèce<select id="species"><option>Dragodinde</option><option>Muldo</option><option>Volkorne</option></select></label>
+<label class="field">Variété / couleur (recherche ou saisie)<input id="variant" list="variants" placeholder="Ex. Ébène et Pourpre"><datalist id="variants"></datalist></label>
+<label class="field">Sexe<select id="sex"><option value="F">Femelle</option><option value="M">Mâle</option></select></label>
+<label class="field">Niveau actuel<input id="level" type="number" min="1" max="200" value="1"></label>
+<label class="field">XP totale de la monture<input id="xp" type="number" min="0" max="867582" value="0"></label>
+<label class="field">Objectif<select id="goal"><option value="breed">Prête à l'accouplement</option><option value="xp">Monter en niveau</option></select></label>
+<label class="field">Niveau cible<input id="targetLevel" type="number" min="1" max="200" value="100"></label>
+<label class="field">Statut<select id="fertility"><option value="fertile">Fertile</option><option value="feconde">Féconde</option><option value="sterile">Stérile</option><option value="senile">Sénile</option></select></label>
+<label class="field">Capacité<select id="trait"><option value="none">Aucune</option><option value="amour">Amoureuse ×2</option><option value="endurance">Endurante ×2</option><option value="maturite">Précoce ×2</option><option value="xp">Sage ×2</option><option value="repro">Reproducteur</option><option value="cameleon">Caméléone</option></select></label>
+</div>
+<h3>Jauges de la monture</h3>
+<div class="three">
+<label class="field">Sérénité (−5 000 à +5 000)<input id="serenite" type="number" min="-5000" max="5000" value="0"></label>
+<label class="field">Endurance / 20 000<input id="endurance" type="number" min="0" max="20000" value="0"></label>
+<label class="field">Maturité / 20 000<input id="maturite" type="number" min="0" max="20000" value="0"></label>
+<label class="field">Amour / 20 000<input id="amour" type="number" min="0" max="20000" value="0"></label>
+</div>
+<div class="actions"><button class="primary" id="saveMount">Enregistrer cette monture</button><button class="danger" id="deleteMount">Supprimer</button><button id="updatePlan">Recalculer le plan</button></div>
+<small>Un enclos travaille sur toutes les montures présentes, pas seulement celle sélectionnée. Vérifie les valeurs en jeu avant d'appliquer le plan.</small>
+</section>
+<section class="panel"><h2>2 · Mon enclos (carburants 3.7)</h2>
+<div class="grid"><label class="field">Nom de l'enclos<input id="penName" value="Enclos Dakal"></label><label class="field">Nombre de montures dedans (max. 10)<input id="penCount" type="number" min="0" max="10" value="1"></label></div>
+<p>Renseigne les jauges de carburant et coche les jauges actuellement actives. <strong>Deux maximum.</strong> Pour chaque jauge, l'outil calcule le temps théorique avant de changer de palier ou d'atteindre le seuil de recharge.</p>
+<div class="fuelgrid" id="fuels"></div>
+<div class="actions"><button class="primary" id="startWatch">Démarrer le suivi de l'enclos</button><button id="stopWatch">Arrêter / mettre à jour les jauges</button><button id="syncReadings">Confirmer les valeurs lues en jeu</button></div>
+<small id="watchStatus">Aucun suivi lancé. Les alertes ne fonctionnent que tant que la page reste ouverte ; aucune action n'est effectuée dans le jeu.</small>
+</section>
+<section class="panel"><h2>3 · Plan conseillé et prochains contrôles</h2>
+<div id="plan" class="timeline"></div>
+<div class="three">
+<div class="metric"><span>Prochain contrôle suggéré</span><b id="nextCheck">—</b></div>
+<div class="metric"><span>Échéance / rappel en cours</span><b id="countdown">—</b></div>
+<div class="metric"><span>XP restante vers la cible</span><b id="xpNeeded">—</b></div>
+</div>
+<div class="note">Les temps utilisent les débits connus par palier (10/20/30/40 points toutes les 10 s). Ils sont <strong>théoriques</strong> : ils supposent une monture éligible présente et la jauge active. Pour les changements de sérénité, vérifie la jauge plus souvent et actualise les mesures. Le timer ne lit pas DOFUS en temps réel.</div>
+</section>
+<section class="panel"><h2>4 · Quel carburant acheter ou fabriquer ?</h2>
+<div class="three">
+<label class="field">Jauge / type<select id="costGauge"></select></label>
+<label class="field">Qualité<select id="fuelTier"><option value="1">Extrait · palier 1, jusqu'à 80 000</option><option value="2">Philtre · palier 2, jusqu'à 140 000</option><option value="3">Potion · palier 3, jusqu'à 180 000</option><option value="4">Élixir · palier 4, jusqu'à 200 000</option></select></label>
+<label class="field">Taille<select id="fuelSize"><option value="2000">Minuscule · 2 000</option><option value="4000">Petit · 4 000</option><option value="6000">Normal · 6 000</option><option value="8000">Grand · 8 000</option><option value="10000">Gigantesque · 10 000</option></select></label>
+</div>
+<div class="row" style="margin-top:12px"><label class="field" style="flex:1">Chercher l'objet d'élevage 3.7 dans CraftRadar<input id="itemSearch" placeholder="Ex. Elixir de Foudroyeur…"></label><button id="loadPrices" style="align-self:end">Actualiser les prix</button></div>
+<div id="itemResults" class="results"></div><div id="costChoice" class="note">Choisis un consommable correspondant au type et à la taille souhaités. Aucun objet d'ancienne génération ne sera ajouté avec un ID fictif.</div>
+<div class="three">
+<label class="field">Coût de fabrication (kamas)<input id="makeCost" type="number" min="0" step="any" placeholder="Selon recette"></label>
+<label class="field">Prix HDV (kamas)<input id="buyCost" type="number" min="0" step="any" placeholder="Prix par objet"></label>
+<label class="field">Quantité à utiliser<input id="buyQty" type="number" min="1" step="1" value="1"></label>
+</div>
+<div class="actions"><button id="savePrice">Partager le prix HDV avec CraftRadar</button><button id="saveCustom">Sauvegarder les prix de ce carburant</button></div>
+<div id="costSummary" class="recommend"></div>
+<p><small>Les recettes et prix sont repris du catalogue CraftRadar si présents, sans recette inventée. Si un carburant récent est absent de l'API, tu peux créer une fiche de prix manuel. Les montures et consommables ne constituent pas automatiquement des objets craftables.</small></p>
+</section>
+<section class="panel"><h2>5 · Préparer un accouplement</h2>
+<p>Les deux parents doivent être <b>féconds</b>, de la même espèce, de sexes opposés, et placés dans l'étable. Ils deviennent stériles après l'accouplement et le bébé naît immédiatement.</p>
+<div class="three"><label class="field">Parent A<select id="parentA"></select></label><label class="field">Parent B<select id="parentB"></select></label><label class="field">Bonus Optimakina<select id="makina"><option value="0">Aucune</option><option value="20">Optimakina compatible · +20 points (3.7)</option></select></label></div>
+<div id="breedingPlan" class="note">Ajoute deux montures pour préparer ton accouplement.</div>
+<p><small>La probabilité exacte de chaque couleur dépend de la généalogie ; elle apparaît dans l'interface d'accouplement DOFUS. L'outil peut indiquer les prérequis et la borne théorique de génération cible, mais n'invente pas la distribution des croisements.</small></p>
+</section>
+<div class="panel"><a href="https://www.dofuspourlesnoobs.com/guide-de-l-eleveur.html" rel="noopener noreferrer" target="_blank">Guide de l'éleveur 3.7 — Dofus pour les Noobs ↗</a> · <a href="https://www.dofuspourlesnoobs.com/mise-a-jour-307.html" target="_blank" rel="noopener noreferrer">Changements 3.7 ↗</a></div>
+</main><script>
+"use strict";
+const $=x=>document.getElementById(x),fmt=n=>Number(n).toLocaleString('fr-FR',{maximumFractionDigits:1}),norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='elevageRadar_v1',CRAFT_KEY='craftRadar_live_v2',DB='CraftRadar_Catalogue_3',CHANNEL='radar-dakal-prices';
+const GAUGES=[{id:'caresseur',name:'Caresseur',target:'Sérénité +'}, {id:'baffeur',name:'Baffeur',target:'Sérénité −'}, {id:'foudroyeur',name:'Foudroyeur',target:'Endurance'}, {id:'abreuvoir',name:'Abreuvoir',target:'Maturité'}, {id:'dragofesse',name:'Dragofesse',target:'Amour'}, {id:'mangeoire',name:'Expérience de monture',target:'XP'}];
+const CAPS=[80000,140000,180000,200000],SPEED=[10,20,30,40],FUELS=['Extrait','Philtre','Potion','Élixir'],SIZES=[2000,4000,6000,8000,10000],FLATXP={100:172668,200:867582};
+const empty=()=>({mounts:[],pen:{name:'Enclos Dakal',count:1,fuels:Object.fromEntries(GAUGES.map(x=>[x.id,{value:0,active:false}]))},watch:null,custom:{},choice:null});
+let state=empty(),activeMount=null,items=[],itemById=new Map(),priceState={},selectedItem=null,lastUpdate=0;
+try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&typeof x==='object'){state={...empty(),...x};state.pen={...empty().pen,...x.pen,fuels:{...empty().pen.fuels,...x.pen?.fuels}}}}catch(e){}
+const channel=typeof BroadcastChannel==='function'?new BroadcastChannel(CHANNEL):null;
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch(e){$('watchStatus').textContent='Enregistrement local indisponible.';return false}}
+function priceLoad(){try{priceState=JSON.parse(localStorage.getItem(CRAFT_KEY))||{prices:{}}}catch(e){priceState={prices:{}}}}
+function itemPrice(id){const p=priceState.prices?.Dakal?.[id];return p&&Number.isFinite(Number(p.value))?Number(p.value):null}
+function writePrice(id,value){if(!id||!Number.isFinite(value)||value<0)return false;try{const d=JSON.parse(localStorage.getItem(CRAFT_KEY))||{prices:{}};d.prices=d.prices||{};d.prices.Dakal=d.prices.Dakal||{};d.prices.Dakal[id]={value,at:new Date().toISOString()};localStorage.setItem(CRAFT_KEY,JSON.stringify(d));priceLoad();channel?.postMessage({source:'elevage',server:'Dakal'});return true}catch(e){return false}}
+function recipeCost(item){if(!item||!Array.isArray(item.recipe)||!item.recipe.length)return null;let sum=0;for(const p of item.recipe){const id=Number(Array.isArray(p)?p[0]:p.item_ankama_id??p.id),qty=Number(Array.isArray(p)?p[1]:p.quantity);const price=itemPrice(id);if(price===null||qty<=0||!Number.isFinite(qty))return null;sum+=price*qty}return sum}
+async function readCatalog(){try{const db=await new Promise((res,rej)=>{const q=indexedDB.open(DB,1);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error);q.onupgradeneeded=()=>q.result.createObjectStore('cache')});
+ const data=await new Promise((res,rej)=>{const q=db.transaction('cache','readonly').objectStore('cache').get('catalogue');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)});db.close();items=(data?.items||[]).map(x=>({id:Number(x.id??x.ankama_id),name:String(x.name||''),recipe:x.recipe||[],category:x.category||'unknown',level:x.level||0})).filter(x=>x.id>0&&x.name);itemById=new Map(items.map(x=>[x.id,x]));$('costChoice').textContent=items.length+' objets du catalogue CraftRadar accessibles. La recherche inclut les carburants 3.7 présents dans les données.';refreshVariants();findItems()}catch(e){$('costChoice').textContent='Catalogue CraftRadar absent. Ouvre CraftRadar > Synchroniser DOFUS ; sinon utilise les prix manuels.'}}
+function refreshVariants(){const options=items.filter(x=>/dragodinde|muldo|volkorne/i.test(x.name)).slice(0,1100);$('variants').innerHTML=options.map(x=>'<option value="'+esc(x.name)+'"></option>').join('')}
+function n(id){return Number($(id).value)}
+function loadMountFields(x){for(const id of ['mountName','species','variant','sex','level','xp','goal','targetLevel','fertility','trait','serenite','endurance','maturite','amour']){if(x?.[id]!==undefined)$(id).value=x[id]}}
+function mountFromFields(){const m={};for(const id of ['mountName','species','variant','sex','level','xp','goal','targetLevel','fertility','trait','serenite','endurance','maturite','amour'])m[id]=$(id).value;for(const id of ['level','xp','targetLevel','serenite','endurance','maturite','amour'])m[id]=n(id);return m}
+function renderMountList(){const list=$('mountList');list.innerHTML='<option value="">Nouvelle monture</option>'+state.mounts.map(x=>'<option value="'+esc(x.id)+'">'+esc(x.mountName||x.species+' '+x.variant)+' ('+esc(x.species)+')</option>').join('');list.value=activeMount||'';for(const id of ['parentA','parentB']){$(id).innerHTML='<option value="">Choisir une monture</option>'+state.mounts.map(m=>'<option value="'+esc(m.id)+'">'+esc(m.mountName||m.species+' '+m.variant)+'</option>').join('')}}
+$('mountList').onchange=()=>{activeMount=$('mountList').value||null;const x=state.mounts.find(m=>m.id===activeMount);if(x)loadMountFields(x);plan()};
+$('saveMount').onclick=()=>{const x=mountFromFields();if(!x.mountName.trim())return alert('Donne un nom à cette monture.');if(!x.variant.trim())return alert('Précise la variété/couleur (nom libre possible).');if(x.serenite< -5000||x.serenite>5000||['endurance','maturite','amour'].some(k=>x[k]<0||x[k]>20000))return alert('Une jauge est hors limites.');
+ if(activeMount){const i=state.mounts.findIndex(m=>m.id===activeMount);if(i>=0)state.mounts[i]={...x,id:activeMount}}
+ else{activeMount='mount-'+Date.now();state.mounts.push({...x,id:activeMount})}
+ persist();renderMountList();plan();};
+$('deleteMount').onclick=()=>{if(!activeMount||!confirm('Supprimer cette monture du suivi ?'))return;state.mounts=state.mounts.filter(m=>m.id!==activeMount);activeMount=null;$('mountList').value='';persist();renderMountList();plan()};
+const colors={'caresseur':'#bd98ed','baffeur':'#ba8de7','foudroyeur':'#f3d36f','abreuvoir':'#6cbff3','dragofesse':'#f17791','mangeoire':'#e5d9b8'};
+function gaugeTier(v){if(v>180000)return 3;if(v>140000)return 2;if(v>80000)return 1;return 0}
+function depletedTime(v,threshold=0){let seconds=0;let level=Math.max(0,Math.min(200000,Number(v)||0));for(let steps=0;steps<5&&level>threshold;steps++){const tier=gaugeTier(level);const lower=Math.max(threshold,tier?CAPS[tier-1]:0);seconds+=Math.max(0,level-lower)/SPEED[tier]*10;level=lower}return seconds}
+function displayDuration(sec){if(!Number.isFinite(sec))return '—';let n=Math.max(0,Math.ceil(sec));let h=Math.floor(n/3600),m=Math.ceil(n%3600/60);return h?h+' h '+m+' min':m+' min'}
+function currentGauge(g){const old=state.pen.fuels[g]||{value:0,active:false};if(!state.watch?.startedAt||!old.active)return Number(old.value)||0;const elapsed=Math.max(0,(Date.now()-state.watch.startedAt)/1000);let remain=Math.max(0,Number(old.value)||0),time=elapsed;for(let i=0;i<8&&remain>0&&time>0;i++){const tier=gaugeTier(remain),lower=tier?CAPS[tier-1]:0,speed=SPEED[tier]/10,duration=(remain-lower)/speed;if(time<duration)return remain-time*speed;remain=lower;time-=duration}return remain}
+function showFuels(){const container=$('fuels');container.innerHTML=GAUGES.map(g=>{const item=state.pen.fuels[g.id],value=currentGauge(g.id);return '<div class="fuel '+(item.active?'active':'')+'"><h3 style="color:'+colors[g.id]+'">'+esc(g.name)+'</h3><small>'+esc(g.target)+'</small><label class="field">Carburant actuel / 200 000<input type="number" min="0" max="200000" step="10" data-gauge="'+g.id+'" value="'+Math.round(value)+'"></label><label style="display:flex;gap:7px;align-items:center"><input type="checkbox" data-active="'+g.id+'" '+(item.active?'checked':'')+'> Active</label><small>Palier '+(gaugeTier(value)+1)+' · avant palier inférieur : '+displayDuration(depletedTime(value,gaugeTier(value)?CAPS[gaugeTier(value)-1]:0))+'</small></div>'}).join('')}
+$('fuels').addEventListener('change',e=>{let g=e.target.dataset.gauge,a=e.target.dataset.active;if(g){if(state.watch)stopWatch(false);state.pen.fuels[g].value=Math.max(0,Math.min(200000,Number(e.target.value)||0))}
+ if(a){const selected=GAUGES.filter(x=>state.pen.fuels[x.id].active).length;const flag=e.target.checked;if(flag&&selected>=2){e.target.checked=false;return alert('Deux jauges actives maximum.')}if(flag&&((a==='caresseur'&&state.pen.fuels.baffeur.active)||(a==='baffeur'&&state.pen.fuels.caresseur.active))){e.target.checked=false;return alert('Baffeur et Caresseur ne peuvent pas fonctionner ensemble.')}state.pen.fuels[a].active=flag}
+ persist();showFuels();plan()});
+function stopWatch(show=true){if(state.watch){for(const g of GAUGES)state.pen.fuels[g.id].value=Math.round(currentGauge(g.id));state.watch=null;persist()}if(show){showFuels();plan()}}
+function commitPen(){state.pen.name=$('penName').value;state.pen.count=n('penCount');persist()}
+$('penName').onchange=commitPen;$('penCount').onchange=()=>{if(n('penCount')>10||n('penCount')<0)return alert('Un enclos contient au maximum 10 montures.');commitPen();plan()};
+$('startWatch').onclick=()=>{stopWatch(false);commitPen();state.watch={startedAt:Date.now()};persist();plan();};
+$('stopWatch').onclick=()=>stopWatch(true);
+$('syncReadings').onclick=()=>{stopWatch(true);alert('Suivi arrêté : entre les valeurs réellement affichées en jeu, puis relance le suivi.')};
+function required(g,s){if(g==='foudroyeur')return s<0;if(g==='abreuvoir')return s>=-2000&&s<=2000;if(g==='dragofesse')return s>0;return true}
+function plan(){
+ const m=activeMount?state.mounts.find(x=>x.id===activeMount):mountFromFields();
+ const s=Number(m.serenite||0),missing=['endurance','maturite','amour'].filter(x=>Number(m[x]||0)<20000);
+ const steps=[];
+ const add=(name,detail,ids=[])=>steps.push({name,detail,ids});
+ if(m.goal==='xp'){
+  add('Mangeoire','Active la jauge d’expérience et remplis-la au palier compatible avec ton budget. Seules les montures présentes gagnent de l’XP.',['mangeoire']);
+ }else if(m.fertility==='sterile'||m.fertility==='senile'){
+  add('Reproduction impossible','Monture stérile ou sénile. Elle peut encore gagner de l’XP ; la stérilité ne se retire pas par des carburants.');
+ }else if(!missing.length){
+  add('Monture féconde','Amour, maturité et endurance sont à 20 000. Vérifie le statut Féconde puis prépare un parent compatible.');
+ }else{
+  if(missing.includes('endurance')&&s>=0)add('Baffeur','Fais descendre la sérénité vers −1 000 pour travailler endurance et maturité. Vérifie souvent le seuil et désactive le baffeur avant de dépasser la fenêtre.', ['baffeur']);
+  if(missing.includes('amour')&&s<=0)add('Caresseur','Fais remonter la sérénité vers +1 000 pour travailler amour et maturité. Vérifie souvent le seuil.', ['caresseur']);
+  if(s<0&&missing.includes('endurance'))add('Foudroyeur'+(s>=-2000&&missing.includes('maturite')?' + Abreuvoir':''),'Sérénité négative. Fais monter l’endurance ; entre −2 000 et −1, tu peux aussi faire monter la maturité.',[...['foudroyeur'],...(s>=-2000&&missing.includes('maturite')?['abreuvoir']:[])]);
+  if(s>0&&missing.includes('amour'))add('Dragofesse'+(s<=2000&&missing.includes('maturite')?' + Abreuvoir':''),'Sérénité positive. Fais monter l’amour ; entre +1 et 2 000, tu peux aussi faire monter la maturité.',[...['dragofesse'],...(s<=2000&&missing.includes('maturite')?['abreuvoir']:[])]);
+  if(s===0&&missing.includes('maturite'))add('Abreuvoir','La maturité peut progresser à sérénité 0 ; pour travailler en parallèle, bascule légèrement en négatif (endurance) ou positif (amour).',['abreuvoir']);
+  if(!missing.includes('endurance')&&missing.includes('maturite')&&!missing.includes('amour'))add('Terminer la maturité','Maintiens la sérénité entre −2 000 et +2 000.', ['abreuvoir']);
+  if(!steps.length)add('Ajuster la sérénité','Amène la sérénité vers zéro, puis active les jauges pertinentes pour les caractéristiques restantes.');
+ }
+ let timeList=[];
+ for(const g of GAUGES){
+  const f=state.pen.fuels[g.id],value=currentGauge(g.id);
+  if(f.active&&value>0){
+   const lower=gaugeTier(value)?CAPS[gaugeTier(value)-1]:0,secs=depletedTime(value,lower);
+   timeList.push({sec:secs,name:g.name,lower});
+   add('Surveiller '+g.name,'La jauge active passe sous le palier '+(gaugeTier(value)+1)+' dans environ '+displayDuration(secs)+'. Ajouter le carburant compatible pour maintenir le débit.');
+  }
+ }
+ let soon=timeList.length?timeList.sort((a,b)=>a.sec-b.sec)[0]:null;
+ $('nextCheck').textContent=soon?displayDuration(soon.sec):'Après mise en route';
+ $('countdown').textContent=state.watch&&soon?new Date(Date.now()+soon.sec*1000).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):'En attente';
+ $('watchStatus').textContent=state.watch?'Suivi théorique en cours depuis '+new Date(state.watch.startedAt).toLocaleTimeString('fr-FR')+' · la page doit rester ouverte pour le rappel visuel.':'Suivi arrêté · mets les carburants mesurés puis lance le chrono.';
+ const xp=Number(m.xp||0),target=Number(m.targetLevel||100);const xpTarget=target===200?867582:target===100?172668:null;
+ $('xpNeeded').textContent=m.goal==='xp'&&xpTarget!==null?fmt(Math.max(0,xpTarget-xp))+' XP':m.goal==='xp'?'Niveau intermédiaire : XP exacte à saisir':'—';
+ if(m.goal==='xp'&&xpTarget===null)add('Cible XP à vérifier','Le palier XP exact pour ce niveau intermédiaire n’est pas disponible dans le guide. Ne pas utiliser une progression linéaire fictive.');
+ $('plan').innerHTML=steps.map((x,i)=>'<article><strong>'+ (i+1)+'. '+esc(x.name)+'</strong><p style="margin:5px 0">'+esc(x.detail)+'</p>'+(x.ids?.length?'<span class="badge">Jauges : '+x.ids.map(g=>GAUGES.find(x=>x.id===g)?.name).join(' + ')+'</span>':'')+'</article>').join('');
+ if(state.watch&&soon&&soon.sec<5&&!state.watch.alerted){state.watch.alerted=true;persist();alert('ÉlevageRadar : contrôle la jauge '+soon.name+' dans DOFUS !')}
+}
+$('updatePlan').onclick=plan;
+function findItems(){const q=norm($('itemSearch').value.trim());const hits=q.length<2?[]:items.filter(x=>norm(x.name).includes(q)).slice(0,25);
+ $('itemResults').innerHTML=hits.map(x=>'<button class="candidate" data-item="'+x.id+'">'+esc(x.name)+' · #'+x.id+' · niv. '+x.level+'</button>').join('')||'<p class="muted">Recherche un nom du catalogue ; certaines variantes 3.7 peuvent manquer.</p>';
+}
+$('itemSearch').oninput=findItems;
+$('itemResults').onclick=e=>{const b=e.target.closest('[data-item]');if(!b)return;selectedItem=itemById.get(Number(b.dataset.item));$('itemSearch').value=selectedItem.name;$('itemResults').innerHTML='';$('makeCost').value=recipeCost(selectedItem)??'';$('buyCost').value=itemPrice(selectedItem.id)??'';renderPrices()};
+function findFuelName(){const g=GAUGES.find(x=>x.id===$('costGauge').value),tier=FUELS[Number($('fuelTier').value)-1],qty=SIZES.indexOf(Number($('fuelSize').value));const size=['Minuscule','Petit','Normal','Grand','Gigantesque'][qty];const expected=size+' '+tier+' de '+g.name;return expected}
+function matchFuel(){const q=norm(findFuelName());const parts=q.split(' ');let match=items.find(x=>norm(x.name)===q);if(!match){match=items.find(x=>parts.every(p=>norm(x.name).includes(p)))}
+ if(match){selectedItem=match;$('itemSearch').value=match.name;$('makeCost').value=recipeCost(match)??'';$('buyCost').value=itemPrice(match.id)??''}
+ else{selectedItem=null;$('itemSearch').value=findFuelName();const cached=state.custom[findFuelName()]||{};$('makeCost').value=cached.make??'';$('buyCost').value=cached.buy??''}
+ renderPrices();}
+function renderPrices(){const make=$('makeCost').value.trim()===''?null:Number($('makeCost').value),buy=$('buyCost').value.trim()===''?null:Number($('buyCost').value),qty=Math.max(1,n('buyQty')||1);let best=make===null?buy:buy===null?make:Math.min(make,buy),origin=make!==null&&(buy===null||make<=buy)?'Craft':'HDV';
+ $('costChoice').textContent=selectedItem?'Objet exact : '+selectedItem.name+' (#'+selectedItem.id+')':'Variante non trouvée dans CraftRadar : prix manuels seulement, recette non inventée.';
+ $('costSummary').textContent=best===null?'Aucun prix disponible. Renseigne les prix craft / HDV en kamas.':'Le plus économique : '+origin+' · '+fmt(best)+' kamas/unité · '+fmt(best*qty)+' kamas pour '+qty+' carburant(s).'}
+for(const id of ['costGauge','fuelTier','fuelSize'])$(id).onchange=matchFuel;
+for(const id of ['makeCost','buyCost','buyQty'])$(id).oninput=renderPrices;
+$('loadPrices').onclick=()=>{priceLoad();readCatalog();if(selectedItem){$('makeCost').value=recipeCost(selectedItem)??'';$('buyCost').value=itemPrice(selectedItem.id)??'';}renderPrices()};
+$('savePrice').onclick=()=>{if(!selectedItem)return alert('Objet absent du catalogue : enregistre tes prix manuels, sans créer d’ID fictif.');let v=$('buyCost').value;if(v===''||Number(v)<0||!Number.isFinite(Number(v)))return alert('Prix HDV invalide.');if(writePrice(selectedItem.id,Number(v)))alert('Prix HDV partagé avec CraftRadar pour Dakal.')};
+$('saveCustom').onclick=()=>{state.custom[$('itemSearch').value||findFuelName()]={make:$('makeCost').value,buy:$('buyCost').value};persist();alert('Prix manuels enregistrés dans ÉlevageRadar.')};
+function readiness(m){return m&&m.fertility!=='sterile'&&m.fertility!=='senile'&&['endurance','maturite','amour'].every(k=>Number(m[k])>=20000)}
+function renderBreeding(){let a=state.mounts.find(x=>x.id===$('parentA').value),b=state.mounts.find(x=>x.id===$('parentB').value),el=$('breedingPlan');if(!a||!b){el.textContent='Sélectionne deux montures enregistrées pour vérifier leurs prérequis.';return}
+ const checks=[['Deux montures distinctes',a.id!==b.id],['Même espèce',a.species===b.species],['Sexes opposés',a.sex!==b.sex],['Parents féconds (20 000 dans les trois jauges)',readiness(a)&&readiness(b)]];
+ const possible=checks.every(x=>x[1]);const base=30+0.15*(Number(a.level)+Number(b.level));const boosted=Math.min(100,base+Number($('makina').value));
+ el.innerHTML=checks.map(x=>'<p style="margin:3px 0">'+(x[1]?'✅':'❌')+' '+esc(x[0])+'</p>').join('')+
+ '<p><strong>'+ (possible?'Accouplement potentiellement disponible après transfert dans l’étable.':'Corrige les prérequis avant l’accouplement.')+'</strong></p>'+
+ '<p>Repère théorique génération cible : '+fmt(boosted)+' % (base 30 % + 0,15 point par niveau des parents + bonus Makina), <strong>à vérifier dans l’interface de jeu</strong>. Ce n’est pas la probabilité d’obtenir une couleur particulière : la généalogie peut répartir les chances.</p>'+
+ '<p>Un seul bébé par accouplement (deux si capacité Reproducteur) ; parents stériles ensuite. Aucun temps de gestation.</p>';
+}
+for(const id of ['parentA','parentB','makina'])$(id).onchange=renderBreeding;
+function render(){renderMountList();showFuels();plan();renderBreeding();renderPrices()}
+$('costGauge').innerHTML=GAUGES.map(x=>'<option value="'+x.id+'">'+esc(x.name)+'</option>').join('');
+$('penName').value=state.pen.name;$('penCount').value=state.pen.count;
+priceLoad();render();readCatalog().then(matchFuel);
+setInterval(()=>{if(state.watch){plan();const active=GAUGES.filter(x=>state.pen.fuels[x.id].active);if(active.length)for(const g of active){if(currentGauge(g.id)<0)stopWatch(true)}}},1000);
+window.addEventListener('storage',e=>{if(e.key===CRAFT_KEY){priceLoad();renderPrices()}});
+channel?.addEventListener('message',e=>{if(e.data?.source!=='elevage'){priceLoad();renderPrices()}});
+</script></body></html>
