@@ -83,8 +83,12 @@ footer{padding-top:20px;border-top:1px solid #233640}
 @media(max-width:720px){#panel-elevage{height:calc(100dvh - 164px);min-height:450px}}
 .community-access{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:10px max(16px,calc((100% - 1050px)/2));background:#192a3b;border-bottom:1px solid #374d65;font-size:13px;color:#b8d5f0}.community-access a{color:#d2edff;text-decoration:none;border:1px solid #63839a;background:#2c4864;padding:7px 12px;border-radius:9px;font-weight:700}.community-access a:hover{background:#365979}
 .community-social{padding:11px 0 0;margin-top:12px;border-top:1px solid #40576b}.community-social .vote-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.community-social button{font-size:13px;padding:7px 10px}.social-dialog{margin-top:12px;padding:12px;background:#16293a;border:1px solid #405975;border-radius:11px}.social-message{color:#b9deef;margin:7px 0;font-size:13px}.social-comment{border-bottom:1px solid #365064;padding:9px 0}.social-comment strong{font-size:13px;color:#d5e8fc}.social-comment p{margin:4px 0;white-space:pre-wrap;overflow-wrap:anywhere}.social-dialog textarea{width:100%;min-height:62px;background:#112332;border:1px solid #506d86;border-radius:8px;color:white;padding:10px}
-</style><script src="./community-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./community-client.js"></script></head><body>
-<div class="community-access"><span>🐉 Radar Dakal · espace des joueurs</span><a href="./communaute.html" title="Connexion et gestion des profils">🔐 Connexion / Profils ↗</a></div><nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button><button class="app-tab" type="button" id="tab-recolte" role="tab" aria-selected="false" aria-controls="panel-recolte">🧭 RécolteRadar</button><button class="app-tab" type="button" id="tab-farm" role="tab" aria-selected="false" aria-controls="panel-farm">⏱️ FarmRadar</button><button class="app-tab" type="button" id="tab-quete" role="tab" aria-selected="false" aria-controls="panel-quete">📜 QuêteRadar</button><button class="app-tab" type="button" id="tab-brisage" role="tab" aria-selected="false" aria-controls="panel-brisage">💎 BrisageRadar</button><button class="app-tab" type="button" id="tab-elevage" role="tab" aria-selected="false" aria-controls="panel-elevage">🐣 ÉlevageRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
+html.community-locked body > :not(#communityLock){display:none!important}
+#communityLock{position:fixed;inset:0;z-index:9999;background:#0e1420;color:#e9f2fb;display:grid;place-items:center;padding:20px;font-family:system-ui,sans-serif}
+#communityLock .lock-card{max-width:440px;border:1px solid #56778f;background:#1b2b3a;border-radius:18px;padding:25px;text-align:center}
+#communityLock a{display:inline-block;margin-top:9px;background:#31536f;border:1px solid #7899b8;padding:10px 16px;border-radius:11px;text-decoration:none;color:white}
+</style><script src="./community-config.js"></script><script>if(window.RADAR_COMMUNITY_CONFIG?.enabled)document.documentElement.classList.add('community-locked')</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./community-client.js"></script></head><body>
+<div id="communityLock" hidden><div class="lock-card"><h2>🔐 Radar Dakal — espace privé</h2><p id="lockReason">Vérification de ton profil…</p><a href="./communaute.html">Se connecter avec ma clé ↗</a></div></div><div class="community-access"><span>🐉 Radar Dakal · espace des joueurs</span><a href="./communaute.html" title="Connexion et gestion des profils">🔐 Connexion / Profils ↗</a></div><nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button><button class="app-tab" type="button" id="tab-recolte" role="tab" aria-selected="false" aria-controls="panel-recolte">🧭 RécolteRadar</button><button class="app-tab" type="button" id="tab-farm" role="tab" aria-selected="false" aria-controls="panel-farm">⏱️ FarmRadar</button><button class="app-tab" type="button" id="tab-quete" role="tab" aria-selected="false" aria-controls="panel-quete">📜 QuêteRadar</button><button class="app-tab" type="button" id="tab-brisage" role="tab" aria-selected="false" aria-controls="panel-brisage">💎 BrisageRadar</button><button class="app-tab" type="button" id="tab-elevage" role="tab" aria-selected="false" aria-controls="panel-elevage">🐣 ÉlevageRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
 <main>
 <p id="updated">Chargement de la veille…</p>
 <div class="controls">
@@ -226,6 +230,22 @@ async function radarSocialAction(event){
 }
 document.getElementById('list').addEventListener('click',radarSocialAction);
 
+async function checkCommunityAccess(){
+ if(!window.RADAR_COMMUNITY_CONFIG?.enabled)return;
+ const lock=document.getElementById('communityLock');
+ lock.hidden=false;
+ let profile=null;
+ try{profile=await window.RadarCommunity?.current()}catch(e){}
+ if(profile){
+  document.documentElement.classList.remove('community-locked');
+  lock.hidden=true;
+  const top=document.querySelector('.community-access span');
+  if(top)top.textContent='👤 Profil : '+profile.pseudo+(profile.role==='admin'?' 👑':'')+' · Données communes Dakal';
+  return;
+ }
+ document.getElementById('lockReason').textContent='Connecte-toi avec la clé nominative que ton administrateur t’a remise.';
+}
+checkCommunityAccess();
 function render(){
  const q=document.getElementById('q').value.toLocaleLowerCase('fr');
  const sort=document.getElementById('sort').value;
