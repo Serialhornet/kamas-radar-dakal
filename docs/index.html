@@ -82,7 +82,8 @@ footer{padding-top:20px;border-top:1px solid #233640}
 #elevageFrame{display:block;width:100%;height:100%;border:0;background:#0b1219}
 @media(max-width:720px){#panel-elevage{height:calc(100dvh - 164px);min-height:450px}}
 .community-access{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:10px max(16px,calc((100% - 1050px)/2));background:#192a3b;border-bottom:1px solid #374d65;font-size:13px;color:#b8d5f0}.community-access a{color:#d2edff;text-decoration:none;border:1px solid #63839a;background:#2c4864;padding:7px 12px;border-radius:9px;font-weight:700}.community-access a:hover{background:#365979}
-</style></head><body>
+.community-social{padding:11px 0 0;margin-top:12px;border-top:1px solid #40576b}.community-social .vote-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.community-social button{font-size:13px;padding:7px 10px}.social-dialog{margin-top:12px;padding:12px;background:#16293a;border:1px solid #405975;border-radius:11px}.social-message{color:#b9deef;margin:7px 0;font-size:13px}.social-comment{border-bottom:1px solid #365064;padding:9px 0}.social-comment strong{font-size:13px;color:#d5e8fc}.social-comment p{margin:4px 0;white-space:pre-wrap;overflow-wrap:anywhere}.social-dialog textarea{width:100%;min-height:62px;background:#112332;border:1px solid #506d86;border-radius:8px;color:white;padding:10px}
+</style><script src="./community-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./community-client.js"></script></head><body>
 <div class="community-access"><span>🐉 Radar Dakal · espace des joueurs</span><a href="./communaute.html" title="Connexion et gestion des profils">🔐 Connexion / Profils ↗</a></div><nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button><button class="app-tab" type="button" id="tab-recolte" role="tab" aria-selected="false" aria-controls="panel-recolte">🧭 RécolteRadar</button><button class="app-tab" type="button" id="tab-farm" role="tab" aria-selected="false" aria-controls="panel-farm">⏱️ FarmRadar</button><button class="app-tab" type="button" id="tab-quete" role="tab" aria-selected="false" aria-controls="panel-quete">📜 QuêteRadar</button><button class="app-tab" type="button" id="tab-brisage" role="tab" aria-selected="false" aria-controls="panel-brisage">💎 BrisageRadar</button><button class="app-tab" type="button" id="tab-elevage" role="tab" aria-selected="false" aria-controls="panel-elevage">🐣 ÉlevageRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
 <main>
 <p id="updated">Chargement de la veille…</p>
@@ -181,8 +182,50 @@ function card(item){
  (cm.status==='echantillon'?'<p class="subtle">'+txt(cm.analysed)+' commentaires publics examinés. Analyse de mots-clés, sans traduction automatique.</p><div class="grid">'+signalsHtml+'</div>':
  '<p class="subtle">Commentaires non analysés ou indisponibles pour cette vidéo.</p>')+
  '<p><a href="'+txt(item.url)+'" target="_blank" rel="noopener noreferrer">Ouvrir la source originale ↗</a></p>'+
- '</details></article>';
+ '</details>'+
+ (window.RadarCommunity?.ready?'<div class="community-social" data-trick="'+esc(String(item.url||item.title||'').slice(0,240))+'"><div class="vote-line"><button type="button" data-vote="1">👍 Utile</button><button type="button" data-vote="-1">👎 À revoir</button><button type="button" data-social-open="1">💬 Avis des amis</button><small data-social-count>Connecte-toi pour voter</small></div><div class="social-dialog" hidden></div></div>':'')+
+ '</article>';
 }
+async function radarSocialAction(event){
+ const target=event.target.closest('[data-vote],[data-social-open],[data-social-submit]');
+ if(!target)return;
+ const parent=target.closest('.community-social');if(!parent)return;
+ const api=window.RadarCommunity,id=parent.dataset.trick;
+ let profile;
+ try{profile=await api.current()}catch(e){profile=null}
+ if(!profile){parent.querySelector('[data-social-count]').textContent='Connexion nécessaire';return}
+ const dialog=parent.querySelector('.social-dialog'),label=parent.querySelector('[data-social-count]');
+ target.disabled=true;
+ try{
+  if(target.hasAttribute('data-vote')){
+   const val=Number(target.dataset.vote);
+   const current=await api.getVotes(id);
+   const prev=current.find(v=>v.user_id===profile.id)?.value;
+   await api.vote(id,prev===val?0:val);
+  }
+  if(target.hasAttribute('data-social-submit')){
+   const text=dialog.querySelector('textarea')?.value?.trim();
+   if(!text)throw Error('Écris un commentaire avant de publier.');
+   await api.comment(id,text);
+  }
+  const votes=await api.getVotes(id);
+  const pos=votes.filter(x=>x.value===1).length,neg=votes.filter(x=>x.value===-1).length;
+  label.textContent='👍 '+pos+' · 👎 '+neg;
+  if(target.hasAttribute('data-social-open')||target.hasAttribute('data-social-submit')||!dialog.hidden){
+   dialog.hidden=false;
+   const [comments,profilesResult]=await Promise.all([
+    api.getComments(id),api.client.from('radar_profiles').select('id,pseudo').limit(1000)
+   ]);
+   const pseudos=new Map((profilesResult.data||[]).map(p=>[p.id,p.pseudo]));
+   dialog.innerHTML='<strong>💬 Commentaires des joueurs</strong>'+
+    (comments.length?comments.map(c=>'<div class="social-comment"><strong>'+esc(pseudos.get(c.user_id)||'Joueur')+'</strong> <small>'+esc(new Date(c.created_at).toLocaleString('fr-FR'))+'</small><p>'+esc(c.body)+'</p></div>').join(''):'<p class="social-message">Aucun commentaire pour le moment.</p>')+
+    '<textarea maxlength="1200" placeholder="Ton avis pour les copains…"></textarea><div style="margin-top:7px"><button data-social-submit="1" type="button">Publier mon commentaire</button></div>';
+  }
+ }catch(e){label.textContent='Erreur : '+(e?.message||'réessaie')}
+ finally{target.disabled=false}
+}
+document.getElementById('list').addEventListener('click',radarSocialAction);
+
 function render(){
  const q=document.getElementById('q').value.toLocaleLowerCase('fr');
  const sort=document.getElementById('sort').value;
