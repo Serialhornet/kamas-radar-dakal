@@ -33,8 +33,8 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
  <div class="farm-sound-controls">
   <button id="testFarmSound" type="button" class="primary">🔊 Tester le son</button>
   <button id="toggleFarmMute" type="button">🔇 Couper le son</button>
-  <label class="field farm-volume" for="farmVolume">Volume : <strong id="farmVolumeValue">70 %</strong>
-   <input id="farmVolume" type="range" min="0" max="100" step="5" value="70" aria-label="Volume de l'alerte sonore FarmRadar">
+  <label class="field farm-volume" for="farmVolume">Volume : <strong id="farmVolumeValue">90 %</strong>
+   <input id="farmVolume" type="range" min="0" max="100" step="5" value="90" aria-label="Volume de l'alerte sonore FarmRadar">
   </label>
  </div>
  <small id="farmSoundMessage">Deux bips graves et distincts du carillon d'ÉlevageRadar. Volume mémorisé ; la première utilisation peut nécessiter un clic.</small>
@@ -152,7 +152,7 @@ function update(){
 
 /* Audio FarmRadar : double bip carré grave, différent du carillon aigu de l'élevage. */
 const FARM_VOLUME_KEY='farmRadar_alarm_volume_v1',FARM_MUTE_KEY='farmRadar_alarm_muted_v1';
-let farmAudio=null,farmMuted=false,farmVolume=70;
+let farmAudio=null,farmMuted=false,farmVolume=90;
 try{
  const v=localStorage.getItem(FARM_VOLUME_KEY);
  if(v!==null && Number.isFinite(Number(v)))farmVolume=Math.max(0,Math.min(100,Number(v)));
@@ -181,18 +181,19 @@ async function unlockFarmAudio(){
 function beepFarm(){
  if(farmMuted||farmVolume===0||!farmAudio||farmAudio.state!=='running')return false;
  const start=farmAudio.currentTime+0.015;
- // 70% = audible sans saturation ; le niveau suit directement le curseur.
- const amplitude=Math.min(.22,Math.max(.0001,farmVolume/100*.22));
- for(const [i,hz] of [440,370,440].entries()){
-  const t=start+i*.25;
+ // Signal de trois bips graves plus nets pour ressortir sur l'audio du jeu.
+ // Amplitude plafonnée pour limiter les risques de saturation.
+ const amplitude=Math.min(.32,Math.max(.0001,farmVolume/100*.32));
+ for(const [i,hz] of [520,420,520].entries()){
+  const t=start+i*.27;
   const osc=farmAudio.createOscillator(),gain=farmAudio.createGain();
   osc.type='square';osc.frequency.setValueAtTime(hz,t);
   gain.gain.setValueAtTime(.0001,t);
-  gain.gain.exponentialRampToValueAtTime(amplitude,t+.012);
-  gain.gain.setValueAtTime(amplitude,t+.13);
-  gain.gain.exponentialRampToValueAtTime(.0001,t+.19);
+  gain.gain.exponentialRampToValueAtTime(amplitude,t+.014);
+  gain.gain.setValueAtTime(amplitude,t+.17);
+  gain.gain.exponentialRampToValueAtTime(.0001,t+.245);
   osc.connect(gain);gain.connect(farmAudio.destination);
-  osc.start(t);osc.stop(t+.205);
+  osc.start(t);osc.stop(t+.26);
  }
  return true;
 }
