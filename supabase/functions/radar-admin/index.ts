@@ -26,8 +26,8 @@ Deno.serve(async request => {
   if (command.action === "create") {
     const pseudo = String(command.pseudo || "").trim();
     const email = String(command.email || "").trim().toLowerCase();
-    if (pseudo.length < 2 || pseudo.length > 30 || !/^[\\p{L}\\p{N} _.'-]+$/u.test(pseudo)) return send(400, { error: "Pseudo invalide" });
-    if (email.length > 254 || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) return send(400, { error: "Adresse e-mail invalide" });
+    if (pseudo.length < 2 || pseudo.length > 30 || !/^[\p{L}\p{N} _.'-]+$/u.test(pseudo)) return send(400, { error: "Pseudo invalide" });
+    if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return send(400, { error: "Adresse e-mail invalide" });
     // Un mot de passe provisoire est émis une seule fois au créateur. Le joueur peut le changer.
     const password = secret() + secret();
     const created = await db.auth.admin.createUser({ email, password, email_confirm: true });
