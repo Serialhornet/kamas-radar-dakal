@@ -15,6 +15,7 @@
    };
    update();
    host.addEventListener("pageshow",update);
+   host.addEventListener("radar-auth-changed",update);
    document.addEventListener("visibilitychange",update);
    setInterval(update,15000);
   }catch{
