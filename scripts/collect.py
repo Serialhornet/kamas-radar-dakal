@@ -92,7 +92,7 @@ def community_feed_items():
                     date=rawdate if re.match(r"^\d{4}-\d\d-\d\d",rawdate) else NOW.isoformat()
                 item={"id":"rss:"+urlpost,"title":title,"description":description[:500],
                     "channel":feed.get("name","Communauté"),"date":date,"url":urlpost,
-                    "views":None,"source":"Flux RSS public autorisé","source_type":"article","langue":"Non vérifiée"}
+                    "views":None,"source":"Sites / communautés","source_platform":"site","source_format":"article","source_type":"article","langue":"Non vérifiée"}
                 found.append(item)
         except Exception as exc:print("Flux communautaire indisponible",feed.get("name",url),str(exc)[:180])
     return found
@@ -119,11 +119,11 @@ def main():
             collected[vid]={"id":vid,"title":title,"description":description[:500],
                "channel":snippet.get("channelTitle",""),"date":snippet.get("publishedAt",""),
                "url":"https://www.youtube.com/watch?v="+vid,
-               "views":None,"source":"YouTube officiel","source_type":"video"}
+               "views":None,"source":"YouTube","source_platform":"youtube","source_format":"video","source_type":"video"}
     videos=list(collected)
     for start in range(0,len(videos),50):
         try:
-            result=request("videos", {"part":"statistics,snippet","id":",".join(videos[start:start+50])})
+            result=request("videos", {"part":"statistics,snippet,contentDetails","id":",".join(videos[start:start+50])})
             for v in result.get("items",[]):
                 item=collected.get(v.get("id"))
                 if not item:continue
@@ -131,12 +131,22 @@ def main():
                 item["views"]=int(count) if count is not None else None
                 info=v.get("snippet",{})
                 item["langue"]=info.get("defaultAudioLanguage") or info.get("defaultLanguage") or "Non verifiee"
+                duration=v.get("contentDetails",{}).get("duration","")
+                dm=re.fullmatch(r"P(?:\\d+D)?T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+)S)?",duration)
+                seconds=(int(dm.group(1) or 0)*3600+int(dm.group(2) or 0)*60+int(dm.group(3) or 0)) if dm else None
+                item["duration_seconds"]=seconds
+                item["source_platform"]="youtube"
+                short_tag=bool(re.search(r"(?:#shorts?\\b|\\bshorts?\\b)",item["title"]+" "+item["description"],re.I))
+                item["source_format"]="short" if short_tag and seconds is not None and seconds<=180 else "court" if seconds is not None and seconds<=180 else "video"
+                if item["source_format"]=="short":item["url"]="https://www.youtube.com/shorts/"+item["id"]
         except Exception as exc:print("Statistiques indisponibles",str(exc)[:200])
     # Limiter strictement le nombre d'appels pour conserver le budget gratuit.
     top_limit=min(12,int(CFG.get("max_videos_comments",12)))
     recent=sorted(collected.values(),key=lambda x:x.get("date",""),reverse=True)
     for idx,item in enumerate(recent):
         item["detail"]=detail_for(item)
+        item["source_platform"]="youtube"
+        item["source_format"]=item.get("source_format","video")
         title=item["title"]
         item["monocompte"]=bool(MONO.search(title+" "+item["description"]))
         item["detail"]["compatibilite_mono"]="Mention monocompte / solo / Dakal dans la source" if item["monocompte"] else "A verifier : pas de mention explicite du monocompte"
@@ -152,7 +162,7 @@ def main():
                  (14 if PREFERRED.search(title) else 5 if PREFERRED.search(item["description"]) else 0),1)
         if item["commentaires"]["signals"].get("attention",{}).get("count",0):
             item["score"]=max(0,item["score"]-8)
-        item["fiche_fr"]="Resume descriptif en francais; aucune transcription verifiee."
+        item["fiche_fr"]="Resume descriptif en francais; aucune transcription verifiee."\n        if item.get("source_format") in ("short","court"):item["score"]+=9
     for community in community_feed_items():
         community["detail"]=detail_for(community)
         community["detail"]["compatibilite_mono"]="À vérifier dans la publication"
@@ -160,6 +170,38 @@ def main():
         community["commentaires"]={"status":"non_analyses","analysed":0,"signals":{},"examples":[]}
         community["score"]=52+(12 if PREFERRED.search(community["title"]) else 0)+(10 if community["monocompte"] else 0)
         collected[community["id"]]=community
+    # Liens TikTok et articles sélectionnés explicitement et vérifiables dans le dépôt.
+    curated_file=ROOT/"config"/"liens-communautaires.json"
+    try:curated=json.loads(curated_file.read_text(encoding="utf-8")).get("items",[])
+    except Exception as exc:print("Liens communautaires indisponibles:",exc);curated=[]
+    for entry in curated[:150]:
+        try:
+            url=entry["url"].strip()
+            target=urllib.parse.urlparse(url)
+            domain=(target.hostname or "").lower()
+            if target.scheme!="https" or not domain or target.username or target.password:continue
+            if domain=="tiktok.com" or domain.endswith(".tiktok.com"):
+                platform,form="tiktok","courte"
+            elif domain in ("youtube.com","www.youtube.com","youtu.be","m.youtube.com"):
+                platform,form="youtube","short" if "/shorts/" in target.path else "video"
+            else:platform,form="site","article"
+            title=clean(str(entry.get("title","")))
+            desc=clean(str(entry.get("description","")))
+            if not title or RETRO.search(title+" "+desc) or EXCLUDE_TITLE.search(title) or EXCLUDE_DESCRIPTION.search(desc):continue
+            if not UNITY.search(title+" "+desc) or not KAMAS.search(title+" "+desc):continue
+            item={"id":"link:"+url,"title":title,"description":desc[:500],
+                  "channel":clean(str(entry.get("author","Communauté"))),
+                  "date":str(entry.get("date",NOW.isoformat())),"url":url,"views":None,
+                  "source":"Lien sélectionné","source_platform":platform,"source_format":form,
+                  "source_type":"video" if platform in ("youtube","tiktok") else "article",
+                  "langue":"Non vérifiée","detail":None,"fiche_fr":"Lien sélectionné : contenu non transcrit."}
+            item["detail"]=detail_for(item)
+            item["detail"]["compatibilite_mono"]="À vérifier dans la source"
+            item["monocompte"]=bool(MONO.search(title+" "+desc))
+            item["commentaires"]={"status":"non_analyses","analysed":0,"signals":{},"examples":[]}
+            item["score"]=47+(12 if PREFERRED.search(title) else 0)+(10 if item["monocompte"] else 0)
+            collected[item["id"]]=item
+        except Exception as exc:print("Lien ignoré",str(exc)[:140])
     ordered=sorted(collected.values(),key=lambda x:x["score"],reverse=True)[:250]
     OUT.write_text(json.dumps({"server":"Dakal","updated_at":NOW.isoformat(),"items":ordered,
       "notice":"DOFUS Unity/Dakal; commentaires publics indicatifs; aucune transcription ni verification de prix."},
