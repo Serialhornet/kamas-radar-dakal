@@ -6,9 +6,10 @@ const ready=Boolean(cfg.enabled&&/^https:\/\//.test(cfg.url)&&cfg.anonKey&&windo
 const client=ready?window.supabase.createClient(cfg.url,cfg.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}}):null;
 let member=null;
 const keyEmail=(key)=>{
- const cleaned=String(key||"").trim().toUpperCase().replace(/\s/g,"");
- const parts=cleaned.match(/^RD-([A-F0-9]{16}|ADMIN)-([A-F0-9]{24,100})$/);
- if(!parts)throw Error("Clé invalide. Format RD-IDENTIFIANT-SECRET.");
+ // Ne jamais modifier la casse ni les espaces internes du mot de passe.
+ const input=String(key||"").trim();
+ const parts=input.match(/^RD-(ADMIN|[A-Fa-f0-9]{16})-(.+)$/i);
+ if(!parts||!parts[2])throw Error("Format attendu : RD-ADMIN-mot-de-passe (ou clé personnelle RD-IDENTIFIANT-SECRET).");
  return {email:"radar-"+parts[1].toLowerCase()+"@radar-dakal.example.com",password:parts[2]};
 };
 async function current(){
@@ -23,7 +24,7 @@ async function login(key){
  if(!client)throw Error("Espace communautaire non activé. Configure d'abord Supabase.");
  const creds=keyEmail(key);
  const {error}=await client.auth.signInWithPassword(creds);
- if(error)throw Error("Clé incorrecte ou compte indisponible.");
+ if(error)throw Error("Authentification refusée par Supabase ("+(error.code||error.status||"identifiants")+"). Vérifie l’adresse du compte et son mot de passe, ou les réglages Auth du projet.");
  const profile=await current();
  if(!profile){await client.auth.signOut();throw Error("Profil inactif ou non enregistré.")}
  return profile;
