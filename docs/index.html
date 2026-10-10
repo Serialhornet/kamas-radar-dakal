@@ -152,7 +152,7 @@ function card(item){
  '<h2>'+txt(item.title)+'</h2><small>'+txt(item.channel)+' · '+txt((item.date||'').slice(0,10))+'</small>'+
  '<p class="description">'+txt(item.description||'Description indisponible.')+'</p>'+
  '<details><summary>📖 Ouvrir la fiche détaillée</summary>'+
- '<div class="warning">Informations tirées des métadonnées, pas d’une transcription de la vidéo. Ne pas considérer les retours comme des preuves.</div>'+
+ '<div class="warning">'+(platformOf(item)==='youtube'?'Informations issues des métadonnées, sans transcription intégrale.':'Lien communautaire ou personnel : aucune analyse intégrale ni vérification automatique du contenu.')+' Les témoignages ne garantissent pas les gains.</div>'+
  '<div class="grid">'+info+'</div>'+
  '<h3>💬 Analyse des commentaires</h3>'+
  (cm.status==='echantillon'?'<p class="subtle">'+txt(cm.analysed)+' commentaires publics examinés. Analyse de mots-clés, sans traduction automatique.</p><div class="grid">'+signalsHtml+'</div>':
@@ -166,7 +166,7 @@ function render(){
  const source=document.getElementById('sourceFilter').value;
  const result=[...communityLinks,...items].filter(x=>source==='all'||source==='shorts'&&(platformOf(x)==='youtube'&&['short','court'].includes(kindOf(x)))||platformOf(x)===source).filter(x=>((x.title||'')+' '+(x.description||'')+' '+(x.channel||'')).toLocaleLowerCase('fr').includes(q));
  result.sort((a,b)=>sort==='date'?String(b.date||'').localeCompare(String(a.date||'')):sort==='views'?(a.views??Infinity)-(b.views??Infinity):(b.score||0)-(a.score||0));
- document.getElementById('list').innerHTML=result.length?result.map(card).join(''):'<div class="card">Aucune piste Unity/Dakal trouvée pour cette recherche. Les résultats arriveront à la prochaine collecte.</div>';
+ document.getElementById('list').innerHTML=result.length?result.map(card).join(''):'<div class="card">Aucune piste pour cette source. Les TikTok sont ajoutés manuellement ; les Shorts apparaîtront après la prochaine collecte.</div>';
 }
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('sort').addEventListener('change',render);
@@ -199,7 +199,7 @@ document.getElementById('communityExport').addEventListener('click',()=>{
 fetch('./data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
  items=d.items||[];
  const date=d.updated_at?new Date(d.updated_at).toLocaleString('fr-FR',{timeZone:'Europe/Paris'}):'Aucune collecte';
- document.getElementById('updated').textContent=items.length+' pistes · Dernière collecte : '+date;
+ document.getElementById('updated').textContent=(items.length+communityLinks.length)+' pistes, dont '+communityLinks.length+' lien(s) personnel(s) · Dernière collecte : '+date;
  render();
 }).catch(()=>document.getElementById('updated').textContent='Impossible de charger data.json : vérifier GitHub Pages.');
 </script></body></html>
