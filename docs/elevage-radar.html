@@ -17,7 +17,7 @@ button:hover{filter:brightness(1.12)}button:disabled{opacity:.55;cursor:not-allo
 table{width:100%;border-collapse:collapse;min-width:650px}th,td{border-bottom:1px solid #385360;padding:9px;text-align:left}th{color:#b0cbd4;font-size:12px}.tablewrap{overflow:auto}
 a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e222a;border:1px solid #376067;border-radius:12px;padding:13px}
 @media(max-width:900px){.fuelgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:17px 11px}.grid,.three,.fuelgrid{grid-template-columns:1fr}}
-</style></head><body><main>
+.cross-card{background:#102631;border:1px solid #416d73;border-radius:12px;padding:12px;margin:8px 0}.cross-card strong{color:#bbfff5}.cross-parent{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cross-card button{width:100%;text-align:left}.cross-tree-entry{border-left:2px solid #44cdbb;padding:8px 10px;margin:7px 0;background:#132d32;border-radius:4px}.cross-list-button{display:block;width:100%;text-align:left;margin:5px 0;background:#122b35}.cross-list-button:hover{background:#214750}#alarmMessage{font-size:12px}#alarmState{font-variant-numeric:tabular-nums}@media(max-width:720px){.cross-parent{grid-template-columns:1fr}}</style></head><body><main>
 <div class="eyebrow">DOFUS Unity 3.7 · Dakal</div><h1>🐣 ÉlevageRadar</h1>
 <p>Assistant de montures, jauges d'enclos, carburants et planification pour viser la fécondité ou le niveau souhaité. Sans automatiser le client DOFUS.</p>
 <div class="note"><strong>Mécaniques 3.7 :</strong> montures Dragodinde, Muldo, Volkorne ; six jauges, deux actives maximum ; jauge enclos jusqu'à 200 000, jauges amour/maturité/endurance à 20 000. Les montures n'ont plus de fatigue, de jauge d'énergie ni de gestation. <a href="https://www.dofuspourlesnoobs.com/guide-de-l-eleveur.html" target="_blank" rel="noopener noreferrer">Guide 2026 ↗</a></div>
@@ -52,7 +52,14 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 <p>Renseigne les jauges de carburant et coche les jauges actuellement actives. <strong>Deux maximum.</strong> Pour chaque jauge, l'outil calcule le temps théorique avant de changer de palier ou d'atteindre le seuil de recharge.</p>
 <div class="fuelgrid" id="fuels"></div>
 <div class="actions"><button class="primary" id="startWatch">Démarrer le suivi de l'enclos</button><button id="stopWatch">Arrêter / mettre à jour les jauges</button><button id="syncReadings">Confirmer les valeurs lues en jeu</button></div>
-<small id="watchStatus">Aucun suivi lancé. Les alertes ne fonctionnent que tant que la page reste ouverte ; aucune action n'est effectuée dans le jeu.</small>
+<div class="note" style="margin-top:13px">
+<div class="row" style="justify-content:space-between"><strong>🔔 Alertes sonores d'ÉlevageRadar</strong><span class="badge" id="alarmState">Désactivées</span></div>
+<p style="margin:7px 0">Mélodie turquoise en <b>trois notes ascendantes</b>, distincte du simple avertissement de FarmRadar. Autorise le son avec le bouton ci-dessous. Aucune notification push et aucun son si le navigateur est fermé.</p>
+<div class="row"><button class="primary" id="enableSound" type="button">Activer le son</button><button id="testSound" type="button">🔊 Tester l'alerte</button><button id="muteSound" type="button">Couper</button>
+<label class="field" style="min-width:145px">Avertir avant (min)<input id="alarmLead" type="number" min="0" max="120" step="1" value="2"></label></div>
+<div id="alarmMessage" class="muted" role="status" aria-live="polite" style="margin-top:7px"></div>
+</div>
+<small id="watchStatus">Aucun suivi lancé. Les alertes sonores nécessitent un clic préalable et une page ouverte ; aucune action dans le jeu.</small>
 </section>
 <section class="panel"><h2>3 · Plan conseillé et prochains contrôles</h2>
 <div id="plan" class="timeline"></div>
@@ -79,6 +86,24 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 <div class="actions"><button id="savePrice">Partager le prix HDV avec CraftRadar</button><button id="saveCustom">Sauvegarder les prix de ce carburant</button></div>
 <div id="costSummary" class="recommend"></div>
 <p><small>Les recettes et prix sont repris du catalogue CraftRadar si présents, sans recette inventée. Si un carburant récent est absent de l'API, tu peux créer une fiche de prix manuel. Les montures et consommables ne constituent pas automatiquement des objets craftables.</small></p>
+</section>
+<section class="panel" id="crossingGuide">
+<h2>🧬 Guide de croisements — quelle monture obtenir ?</h2>
+<p>Recherche une variété cible pour afficher les parents à accoupler, puis les croisements nécessaires pour obtenir ces parents. Le tableau indique des <strong>recettes généalogiques possibles, pas des probabilités garanties</strong>.</p>
+<div class="three">
+<label class="field">Espèce<select id="crossSpecies"><option>Dragodinde</option><option>Muldo</option><option>Volkorne</option></select></label>
+<label class="field">Monture cible<select id="crossTarget"><option value="">Chargement du catalogue…</option></select></label>
+<label class="field">Filtrer les croisements<input id="crossSearch" type="search" placeholder="Ébène, Indigo, Pourpre…"></label>
+</div>
+<div id="crossInfo" class="recommend" style="margin-top:14px">Chargement des combinaisons…</div>
+<div class="grid">
+<div><h3>Parents directs</h3><div id="crossParents"></div></div>
+<div><h3>Étapes pour obtenir la monture</h3><div id="crossTree"></div></div>
+</div>
+<details style="margin-top:14px"><summary style="cursor:pointer;color:#9bffee;font-weight:800">Afficher toutes les combinaisons de Dragodindes</summary>
+<div class="row" style="margin-top:10px"><label class="field" style="min-width:160px">Génération<select id="crossGeneration"><option value="all">Toutes (1 à 10)</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></label><span class="badge" id="crossCount">66 variétés répertoriées</span></div>
+<div id="crossCatalog" class="results" style="max-height:350px;margin-top:10px"></div></details>
+<p><small>Référence communautaire : <a href="https://dofuselevage.fr/tools/reproduction/dragodinde/genealogie" target="_blank" rel="noopener noreferrer">DofusÉlevage — généalogie des Dragodindes ↗</a>. Pour les Muldos et Volkornes, les croisements peuvent être multiples : consulte l'interface génétique du jeu avant d'investir.</small></p>
 </section>
 <section class="panel"><h2>5 · Préparer un accouplement</h2>
 <p>Les deux parents doivent être <b>féconds</b>, de la même espèce, de sexes opposés, et placés dans l'étable. Ils deviennent stériles après l'accouplement et le bébé naît immédiatement.</p>
@@ -221,6 +246,128 @@ $('loadPrices').onclick=()=>{priceLoad();readCatalog();if(selectedItem){$('makeC
 $('savePrice').onclick=()=>{if(!selectedItem)return alert('Objet absent du catalogue : enregistre tes prix manuels, sans créer d’ID fictif.');let v=$('buyCost').value;if(v===''||Number(v)<0||!Number.isFinite(Number(v)))return alert('Prix HDV invalide.');if(writePrice(selectedItem.id,Number(v)))alert('Prix HDV partagé avec CraftRadar pour Dakal.')};
 $('saveCustom').onclick=()=>{state.custom[$('itemSearch').value||findFuelName()]={make:$('makeCost').value,buy:$('buyCost').value};persist();alert('Prix manuels enregistrés dans ÉlevageRadar.')};
 function readiness(m){return m&&m.fertility!=='sterile'&&m.fertility!=='senile'&&['endurance','maturite','amour'].every(k=>Number(m[k])>=20000)}
+
+/* Guide de croisements : recettes communautaires documentées, sans taux de naissance inventé. */
+let crosses=[],crossByName=new Map();
+function crossName(name){return norm(name).replace(/\s+/g,' ').trim()}
+function renderCrossCatalog(){
+ const q=crossName($('crossSearch').value),gen=$('crossGeneration').value;
+ const list=crosses.filter(x=>(gen==='all'||String(x.generation)===gen)&&(!q||crossName(x.name).includes(q)||x.parents?.some(y=>crossName(y).includes(q)))).sort((a,b)=>a.generation-b.generation||a.name.localeCompare(b.name,'fr'));
+ $('crossCount').textContent=list.length+' combinaison(s) affichée(s)';
+ $('crossCatalog').innerHTML=list.map(x=>'<button class="cross-list-button" type="button" data-cross="'+esc(x.name)+'"><b>G'+x.generation+' · '+esc(x.name)+'</b><small style="display:block">'+(x.parents?x.parents.map(esc).join(' × '):'Capture sauvage (aucun croisement de base)')+'</small></button>').join('')||'<p class="muted">Aucun résultat pour cette recherche.</p>';
+}
+function renderCrossGuide(){
+ const spec=$('crossSpecies').value;
+ const name=$('crossTarget').value;
+ const info=$('crossInfo'),parents=$('crossParents'),tree=$('crossTree');
+ if(spec!=='Dragodinde'){
+  $('crossTarget').innerHTML='<option value="">Croisements non documentés dans cette version</option>';
+  info.innerHTML='<strong>'+esc(spec)+'</strong> : les variantes ont des combinaisons parfois multiples. Aucun croisement non vérifié n’est proposé. Consulte la génétique en jeu.';
+  parents.innerHTML='<p>À renseigner après vérification des parents dans le jeu.</p>';
+  tree.innerHTML='<p>Arbre non disponible pour cette espèce.</p>';
+  return;
+ }
+ if(!crosses.length){info.textContent='Catalogue des croisements indisponible. Réessaie ultérieurement.';parents.replaceChildren();tree.replaceChildren();return}
+ const c=crossByName.get(crossName(name));
+ if(!c){info.textContent='Sélectionne une Dragodinde cible dans la liste.';parents.replaceChildren();tree.replaceChildren();return}
+ info.innerHTML='<strong>Objectif : '+esc(c.name)+'</strong> · génération '+c.generation+'. '+(c.parents?'Accouple les deux variétés parentes ci-dessous, avec des sexes opposés et des montures fécondes.':'Variété de départ : capture sauvage, pas de croisement à effectuer.');
+ if(c.parents){
+  parents.innerHTML='<div class="cross-parent">'+c.parents.map(p=>'<div class="cross-card"><strong>'+esc(p)+'</strong><p>Parent nécessaire</p><button data-cross="'+esc(p)+'" type="button">Voir comment l’obtenir ↗</button></div>').join('')+'</div>';
+ }else parents.innerHTML='<div class="cross-card">🌿 À capturer dans la nature selon le guide.</div>';
+ const lines=[];
+ function walk(x,depth,seen){
+  if(depth>11){lines.push({depth,label:'Profondeur maximale atteinte'});return}
+  const node=crossByName.get(crossName(x));
+  if(!node){lines.push({depth,label:x+' — fiche manquante'});return}
+  if(seen.has(crossName(x))){lines.push({depth,label:node.name+' — déjà dans cet arbre'});return}
+  lines.push({depth,label:node.name+' (G'+node.generation+')'+(!node.parents?' — capture':'')});
+  if(node.parents)for(const p of node.parents)walk(p,depth+1,new Set([...seen,crossName(x)]));
+ }
+ walk(c.name,0,new Set());
+ tree.innerHTML=lines.map(x=>'<div class="cross-tree-entry" style="margin-left:'+Math.min(50,x.depth*13)+'px">'+(x.depth?'↳ ':'🎯 ')+esc(x.label)+'</div>').join('');
+}
+function renderCrossOptions(){
+ if($('crossSpecies').value!=='Dragodinde'){renderCrossGuide();return}
+ const previous=$('crossTarget').value;
+ $('crossTarget').innerHTML='<option value="">Sélectionne une variété</option>'+crosses.slice().sort((a,b)=>a.name.localeCompare(b.name,'fr')).map(x=>'<option value="'+esc(x.name)+'">'+esc(x.name)+' · G'+x.generation+'</option>').join('');
+ if(crossByName.has(crossName(previous)))$('crossTarget').value=previous;
+ else $('crossTarget').value='';
+ renderCrossGuide();
+}
+async function loadCrosses(){
+ try{
+  const response=await fetch('./croisements-dragodindes.json?v=1',{cache:'no-store'});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  const payload=await response.json();
+  if(!Array.isArray(payload.recipes)||payload.recipes.length!==66)throw Error('Table incomplète');
+  crosses=payload.recipes;
+  crossByName=new Map(crosses.map(x=>[crossName(x.name),x]));
+  renderCrossOptions();renderCrossCatalog();
+ }catch(e){
+  $('crossInfo').textContent='Impossible de charger les croisements : '+e.message;
+  $('crossTarget').innerHTML='<option value="">Indisponible</option>';
+ }
+}
+$('crossSpecies').addEventListener('change',renderCrossOptions);
+$('crossTarget').addEventListener('change',renderCrossGuide);
+$('crossSearch').addEventListener('input',renderCrossCatalog);
+$('crossGeneration').addEventListener('change',renderCrossCatalog);
+$('crossingGuide').addEventListener('click',event=>{
+ const button=event.target.closest('[data-cross]');
+ if(!button)return;
+ $('crossSpecies').value='Dragodinde';
+ renderCrossOptions();
+ $('crossTarget').value=button.dataset.cross;
+ renderCrossGuide();
+ $('crossingGuide').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+/* Alerte sonore d'enclos : carillon aigu 3 notes, WebAudio déclenché par interaction réelle. */
+let audioContext=null,alarmEnabled=false,alertSignature=null;
+try{alarmEnabled=localStorage.getItem('elevageRadar_audio_enabled')==='yes'}catch(e){}
+function soundState(message=''){
+ $('alarmState').textContent=alarmEnabled?'Activées':'Désactivées';
+ $('alarmMessage').textContent=message||(alarmEnabled?'Clique sur Tester si ton navigateur a besoin d’autoriser l’audio.':'Clique sur Activer le son.');
+}
+async function unlockSound(){
+ const Ctx=window.AudioContext||window.webkitAudioContext;
+ if(!Ctx){soundState('Ton navigateur ne prend pas en charge cette alerte sonore.');return false}
+ try{
+  audioContext=audioContext||new Ctx();
+  if(audioContext.state==='suspended')await audioContext.resume();
+  return audioContext.state==='running';
+ }catch(e){soundState('Audio bloqué par le navigateur : '+e.message);return false}
+}
+function playBreedingChime(){
+ if(!alarmEnabled||!audioContext||audioContext.state!=='running')return false;
+ const now=audioContext.currentTime;
+ // Notes cristallines ascendantes : motif volontairement distinct de l'alerte FarmRadar.
+ [784,988,1319].forEach((hz,i)=>{
+  const t=now+i*0.19;
+  const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();
+  oscillator.type='sine';oscillator.frequency.setValueAtTime(hz,t);
+  gain.gain.setValueAtTime(0.0001,t);gain.gain.exponentialRampToValueAtTime(0.11,t+0.02);
+  gain.gain.exponentialRampToValueAtTime(0.0001,t+0.35);
+  oscillator.connect(gain);gain.connect(audioContext.destination);
+  oscillator.start(t);oscillator.stop(t+0.38);
+ });
+ return true;
+}
+$('enableSound').addEventListener('click',async()=>{
+ if(await unlockSound()){alarmEnabled=true;try{localStorage.setItem('elevageRadar_audio_enabled','yes')}catch(e){}
+  soundState('Carillon activé sur cet appareil. Les alertes fonctionnent tant que la page est ouverte.');playBreedingChime();
+ }else soundState('Le navigateur empêche la lecture. Autorise le son pour ce site.');
+});
+$('testSound').addEventListener('click',async()=>{
+ if(await unlockSound()){alarmEnabled=true;try{localStorage.setItem('elevageRadar_audio_enabled','yes')}catch(e){}
+  playBreedingChime();soundState('Test du carillon turquoise : trois notes ascendantes.');
+ }else soundState('Le navigateur n’a pas autorisé le son.');
+});
+$('muteSound').addEventListener('click',()=>{alarmEnabled=false;try{localStorage.setItem('elevageRadar_audio_enabled','no')}catch(e){}soundState('Alertes sonores coupées.')});
+$('alarmLead').addEventListener('change',()=>{let x=Math.max(0,Math.min(120,Number($('alarmLead').value)||0));$('alarmLead').value=x;try{localStorage.setItem('elevageRadar_alarm_lead',String(x))}catch(e){}alertSignature=null;});
+try{const minutes=localStorage.getItem('elevageRadar_alarm_lead');if(minutes!==null)$('alarmLead').value=Math.max(0,Math.min(120,Number(minutes)||0))}catch(e){}
+soundState();
+
 function renderBreeding(){let a=state.mounts.find(x=>x.id===$('parentA').value),b=state.mounts.find(x=>x.id===$('parentB').value),el=$('breedingPlan');if(!a||!b){el.textContent='Sélectionne deux montures enregistrées pour vérifier leurs prérequis.';return}
  const checks=[['Deux montures distinctes',a.id!==b.id],['Même espèce',a.species===b.species],['Sexes opposés',a.sex!==b.sex],['Parents féconds (20 000 dans les trois jauges)',readiness(a)&&readiness(b)]];
  const possible=checks.every(x=>x[1]);const base=30+0.15*(Number(a.level)+Number(b.level));const boosted=Math.min(100,base+Number($('makina').value));
@@ -233,7 +380,7 @@ for(const id of ['parentA','parentB','makina'])$(id).onchange=renderBreeding;
 function render(){renderMountList();showFuels();plan();renderBreeding();renderPrices()}
 $('costGauge').innerHTML=GAUGES.map(x=>'<option value="'+x.id+'">'+esc(x.name)+'</option>').join('');
 $('penName').value=state.pen.name;$('penCount').value=state.pen.count;
-priceLoad();render();readCatalog().then(matchFuel);refreshVariants();
+priceLoad();render();readCatalog().then(matchFuel);refreshVariants();loadCrosses();
 setInterval(()=>{if(state.watch){plan();const active=GAUGES.filter(x=>state.pen.fuels[x.id].active);if(active.length)for(const g of active){if(currentGauge(g.id)<0)stopWatch(true)}}},1000);
 window.addEventListener('storage',e=>{if(e.key===CRAFT_KEY){priceLoad();renderPrices()}});
 channel?.addEventListener('message',e=>{if(e.data?.source!=='elevage'){priceLoad();renderPrices()}});
