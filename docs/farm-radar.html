@@ -19,7 +19,7 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
 .farm-volume{flex:1;min-width:180px;max-width:360px}.farm-volume input{padding:0;border:none;background:transparent;accent-color:#b29cff;cursor:pointer;height:27px}
 #farmSoundMessage{display:block;margin-top:9px}.farm-sound-panel .pill{font-size:11px}
 @media(max-width:800px){main{padding:18px 12px}.grid,.three{grid-template-columns:1fr}}
-.price-age{display:block;margin-top:5px;font-size:11px;line-height:1.5;color:#c4d3ec;max-width:230px}.price-age:not(:empty){padding:5px 7px;border-left:2px solid #a998ff;background:#23273c;border-radius:4px}</style><script src="./member-gate.js?v=members-gate-1"></script><style>html:not(.members-authorized) body{visibility:hidden!important}</style></head><body><main>
+.price-age{display:block;margin-top:5px;font-size:11px;line-height:1.5;color:#c4d3ec;max-width:230px}.price-age:not(:empty){padding:5px 7px;border-left:2px solid #a998ff;background:#23273c;border-radius:4px}</style><script src="./member-gate.js?v=sessionfix-20261010"></script><style>html:not(.members-authorized) body{visibility:hidden!important}</style></head><body><main>
 <div class="eyebrow">DOFUS Unity · monocompte · Dakal</div><h1>⏱️ FarmRadar</h1>
 <p>Chronomètre de farm, inventaire récolté et valeur en kamas, avec les <strong>prix HDV partagés avec CraftRadar</strong> sur cet appareil.</p>
 <div class="note" id="status">Les prix proviennent de CraftRadar, serveur Dakal. Aucune estimation n'est inventée pour un objet sans prix.</div>
@@ -97,7 +97,7 @@ button:disabled{opacity:.5;cursor:not-allowed}.row{display:flex;flex-wrap:wrap;a
 <div class="note">Calcul <strong>indicatif, non officiel</strong> : taux de base × PP / 100 (plafond 100 %), puis essais indépendants. Les variations selon les monstres, conditions de drop, challenges, bonus et restrictions ne sont pas modélisées. Le résultat ne garantit aucun drop.</div>
 <p class="muted" style="font-size:12px">Noms de monstres : <a href="https://www.frigost.dev/API/Dofus%203.0/Data/Monsters.json" target="_blank" rel="noopener noreferrer">frigost.dev — DOFUS 3</a>. Cette source ne fournit pas les taux. Aucun drop inventé ou taux présenté comme officiel.</p>
 </section>
-</main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./community-config.js?v=shared1"></script><script src="./community-client.js?v=shared1"></script><script src="./price-sync.js?v=farm-dates-2"></script><script>
+</main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./community-config.js?v=shared1"></script><script src="./community-client.js?v=sessionfix-20261010"></script><script src="./price-sync.js?v=farm-dates-2"></script><script>
 "use strict";
 const $=id=>document.getElementById(id);
 const fmt=n=>Number(n).toLocaleString('fr-FR',{maximumFractionDigits:2});
