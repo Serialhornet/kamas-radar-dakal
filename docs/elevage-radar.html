@@ -88,8 +88,8 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 <p><small>Les recettes et prix sont repris du catalogue CraftRadar si présents, sans recette inventée. Si un carburant récent est absent de l'API, tu peux créer une fiche de prix manuel. Les montures et consommables ne constituent pas automatiquement des objets craftables.</small></p>
 </section>
 <section class="panel" id="crossingGuide">
-<h2>🧬 Guide de croisements — quelle monture obtenir ?</h2>
-<p>Recherche une variété cible pour afficher les parents à accoupler, puis les croisements nécessaires pour obtenir ces parents. Le tableau indique des <strong>recettes généalogiques possibles, pas des probabilités garanties</strong>.</p>
+<h2>🧬 Guide des croisements — Dragodindes, Muldos et Volkornes</h2>
+<p>Choisis une variété cible : toutes les paires de parents connues sont affichées séparément. <strong>Une paire = une possibilité d’obtenir cette variété, et non une naissance garantie.</strong> Les informations manquantes ou divergentes sont signalées.</p>
 <div class="three">
 <label class="field">Espèce<select id="crossSpecies"><option>Dragodinde</option><option>Muldo</option><option>Volkorne</option></select></label>
 <label class="field">Monture cible<select id="crossTarget"><option value="">Chargement du catalogue…</option></select></label>
@@ -100,10 +100,10 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 <div><h3>Parents directs</h3><div id="crossParents"></div></div>
 <div><h3>Étapes pour obtenir la monture</h3><div id="crossTree"></div></div>
 </div>
-<details style="margin-top:14px"><summary style="cursor:pointer;color:#9bffee;font-weight:800">Afficher toutes les combinaisons de Dragodindes</summary>
-<div class="row" style="margin-top:10px"><label class="field" style="min-width:160px">Génération<select id="crossGeneration"><option value="all">Toutes (1 à 10)</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></label><span class="badge" id="crossCount">66 variétés répertoriées</span></div>
+<details style="margin-top:14px"><summary style="cursor:pointer;color:#9bffee;font-weight:800">Afficher le catalogue des combinaisons de cette espèce</summary>
+<div class="row" style="margin-top:10px"><label class="field" style="min-width:160px">Génération<select id="crossGeneration"><option value="all">Toutes (1 à 10)</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></label><span class="badge" id="crossCount">Chargement des variétés</span></div>
 <div id="crossCatalog" class="results" style="max-height:350px;margin-top:10px"></div></details>
-<p><small>Référence communautaire : <a href="https://dofuselevage.fr/tools/reproduction/dragodinde/genealogie" target="_blank" rel="noopener noreferrer">DofusÉlevage — généalogie des Dragodindes ↗</a>. Pour les Muldos et Volkornes, les croisements peuvent être multiples : consulte l'interface génétique du jeu avant d'investir.</small></p>
+<p><small>Sources communautaires : <a id="crossSource" href="https://dofuselevage.fr/tools/reproduction/dragodinde/genealogie" target="_blank" rel="noopener noreferrer">Consulter la généalogie détaillée ↗</a>. Les variantes avec plusieurs recettes peuvent donner divers résultats selon les généalogies et règles de reproduction : aucun taux de naissance n’est promis.</small></p>
 </section>
 <section class="panel"><h2>5 · Préparer un accouplement</h2>
 <p>Les deux parents doivent être <b>féconds</b>, de la même espèce, de sexes opposés, et placés dans l'étable. Ils deviennent stériles après l'accouplement et le bébé naît immédiatement.</p>
@@ -266,77 +266,92 @@ $('saveCustom').onclick=()=>{state.custom[$('itemSearch').value||findFuelName()]
 function readiness(m){return m&&m.fertility!=='sterile'&&m.fertility!=='senile'&&['endurance','maturite','amour'].every(k=>Number(m[k])>=20000)}
 
 /* Guide de croisements : recettes communautaires documentées, sans taux de naissance inventé. */
-let crosses=[],crossByName=new Map();
+const CROSS_SOURCES={
+ Dragodinde:{file:'croisements-dragodindes.json',url:'https://dofuselevage.fr/tools/reproduction/dragodinde/genealogie'},
+ Muldo:{file:'croisements-muldos.json',url:'https://dofuselevage.fr/tools/reproduction/muldo/genealogie'},
+ Volkorne:{file:'croisements-volkornes.json',url:'https://dofuselevage.fr/tools/reproduction/volkorne/genealogie'}
+};
+let crossingData={Dragodinde:[],Muldo:[],Volkorne:[]},crossByName=new Map(),crosses=[];
 function crossName(name){return norm(name).replace(/\s+/g,' ').trim()}
+function optionsOf(x){if(!x)return [];return Array.isArray(x.options)?x.options:(Array.isArray(x.parents)?[x.parents]:[])}
+function crossStatus(x){
+ if(x.trust==='divergence')return '⚠️ Données divergentes entre sources — à vérifier en jeu';
+ if(x.trust==='partiel'||x.options===null)return '⚠️ Recettes multiples connues, parents exacts non tous vérifiés';
+ if(x.trust==='communautaire')return 'ⓘ Recettes communautaires — à vérifier dans l’interface génétique';
+ return 'ⓘ Liste de croisements communautaire — résultat non garanti';
+}
 function renderCrossCatalog(){
  const q=crossName($('crossSearch').value),gen=$('crossGeneration').value;
- const list=crosses.filter(x=>(gen==='all'||String(x.generation)===gen)&&(!q||crossName(x.name).includes(q)||x.parents?.some(y=>crossName(y).includes(q)))).sort((a,b)=>a.generation-b.generation||a.name.localeCompare(b.name,'fr'));
- $('crossCount').textContent=list.length+' combinaison(s) affichée(s)';
- $('crossCatalog').innerHTML=list.map(x=>'<button class="cross-list-button" type="button" data-cross="'+esc(x.name)+'"><b>G'+x.generation+' · '+esc(x.name)+'</b><small style="display:block">'+(x.parents?x.parents.map(esc).join(' × '):'Capture sauvage (aucun croisement de base)')+'</small></button>').join('')||'<p class="muted">Aucun résultat pour cette recherche.</p>';
+ const list=crosses.filter(x=>(gen==='all'||String(x.generation)===gen)&&(!q||crossName(x.name).includes(q)||optionsOf(x).some(pair=>pair.some(y=>crossName(y).includes(q))))).sort((a,b)=>a.generation-b.generation||a.name.localeCompare(b.name,'fr'));
+ $('crossCount').textContent=list.length+' / '+crosses.length+' variétés';
+ $('crossCatalog').innerHTML=list.map(x=>'<button class="cross-list-button" type="button" data-cross="'+esc(x.name)+'"><b>G'+x.generation+' · '+esc(x.name)+'</b><small style="display:block">'+(optionsOf(x).length?optionsOf(x).map(pair=>pair.map(esc).join(' + ')).join(' OU '):x.options===null?('⚠️ '+(x.expectedCount||'Plusieurs')+' combinaisons possibles — voir source'):'Capture sauvage (pas de croisement)')+'</small></button>').join('')||'<p class="muted">Aucune combinaison correspondante.</p>';
 }
 function renderCrossGuide(){
- const spec=$('crossSpecies').value;
- const name=$('crossTarget').value;
+ const species=$('crossSpecies').value,choice=$('crossTarget').value;
  const info=$('crossInfo'),parents=$('crossParents'),tree=$('crossTree');
- if(spec!=='Dragodinde'){
-  $('crossTarget').innerHTML='<option value="">Croisements non documentés dans cette version</option>';
-  info.innerHTML='<strong>'+esc(spec)+'</strong> : les variantes ont des combinaisons parfois multiples. Aucun croisement non vérifié n’est proposé. Consulte la génétique en jeu.';
-  parents.innerHTML='<p>À renseigner après vérification des parents dans le jeu.</p>';
-  tree.innerHTML='<p>Arbre non disponible pour cette espèce.</p>';
+ const entry=crossByName.get(crossName(choice));
+ if(!entry){info.textContent=crosses.length?'Choisis une monture cible.':'Données non disponibles pour cette espèce.';parents.replaceChildren();tree.replaceChildren();return}
+ const alternatives=optionsOf(entry);
+ const missing=entry.options===null;
+ const confidence=crossStatus(entry);
+ info.innerHTML='<strong>'+esc(entry.name)+'</strong> · génération '+entry.generation+' · '+(missing?(entry.expectedCount||'Plusieurs')+' combinaisons recensées':alternatives.length?alternatives.length+' combinaison(s) répertoriée(s)':'Capture sauvage')+'<p style="margin:5px 0" class="'+(entry.trust==='divergence'||missing?'warn':'muted')+'">'+esc(confidence)+'</p>';
+ if(missing){
+  parents.innerHTML='<div class="cross-card"><p>La généalogie mentionne <strong>'+esc(entry.expectedCount||'plusieurs')+' recettes possibles</strong> pour cette variété, mais leurs paires exactes ne sont pas toutes importées ici.</p><p>Consulte la source ci-dessous ou l’interface génétique DOFUS avant de réunir les parents.</p><a href="'+CROSS_SOURCES[species].url+'" target="_blank" rel="noopener noreferrer">Voir les croisements complets ↗</a></div>';
+  tree.innerHTML='<div class="cross-card">Arbre de parenté indisponible pour cette variété : aucune paire inventée.</div>';
   return;
  }
- if(!crosses.length){info.textContent='Catalogue des croisements indisponible. Réessaie ultérieurement.';parents.replaceChildren();tree.replaceChildren();return}
- const c=crossByName.get(crossName(name));
- if(!c){info.textContent='Sélectionne une Dragodinde cible dans la liste.';parents.replaceChildren();tree.replaceChildren();return}
- info.innerHTML='<strong>Objectif : '+esc(c.name)+'</strong> · génération '+c.generation+'. '+(c.parents?'Accouple les deux variétés parentes ci-dessous, avec des sexes opposés et des montures fécondes.':'Variété de départ : capture sauvage, pas de croisement à effectuer.');
- if(c.parents){
-  parents.innerHTML='<div class="cross-parent">'+c.parents.map(p=>'<div class="cross-card"><strong>'+esc(p)+'</strong><p>Parent nécessaire</p><button data-cross="'+esc(p)+'" type="button">Voir comment l’obtenir ↗</button></div>').join('')+'</div>';
- }else parents.innerHTML='<div class="cross-card">🌿 À capturer dans la nature selon le guide.</div>';
- const lines=[];
- function walk(x,depth,seen){
-  if(depth>11){lines.push({depth,label:'Profondeur maximale atteinte'});return}
-  const node=crossByName.get(crossName(x));
-  if(!node){lines.push({depth,label:x+' — fiche manquante'});return}
-  if(seen.has(crossName(x))){lines.push({depth,label:node.name+' — déjà dans cet arbre'});return}
-  lines.push({depth,label:node.name+' (G'+node.generation+')'+(!node.parents?' — capture':'')});
-  if(node.parents)for(const p of node.parents)walk(p,depth+1,new Set([...seen,crossName(x)]));
+ if(!alternatives.length){
+  parents.innerHTML='<div class="cross-card">🌿 Monture de départ à capturer dans la nature.</div>';
+  tree.innerHTML='<div class="cross-tree-entry">'+esc(entry.name)+' — génération '+entry.generation+' — capture</div>';
+  return;
  }
- walk(c.name,0,new Set());
- tree.innerHTML=lines.map(x=>'<div class="cross-tree-entry" style="margin-left:'+Math.min(50,x.depth*13)+'px">'+(x.depth?'↳ ':'🎯 ')+esc(x.label)+'</div>').join('');
+ parents.innerHTML=alternatives.map((pair,i)=>'<div class="cross-card"><strong>'+ (alternatives.length>1?'Option '+(i+1)+' : ': 'Parents : ')+esc(pair[0])+' + '+esc(pair[1])+'</strong><p>'+ (alternatives.length>1?'Choisis cette paire <b>ou</b> une autre option listée : toutes visent la même variété cible.':'Croisement recensé pour cette variété.')+'</p><div class="cross-parent">'+pair.map(p=>'<button type="button" data-cross="'+esc(p)+'">↳ Voir '+esc(p)+'</button>').join('')+'</div></div>').join('');
+ if(alternatives.length>1)parents.innerHTML='<div class="note">⚠️ <b>« Soit l’une, soit l’autre » désigne les paires de parents possibles</b>, pas le fait que la couleur cible est forcément obtenue. Une même paire peut produire d’autres variétés.</div>'+parents.innerHTML;
+ const lines=[];
+ function walk(name,depth,visited){
+  if(depth>8||lines.length>65)return;
+  const e=crossByName.get(crossName(name));
+  if(!e){lines.push({depth,label:name+' · fiche non retrouvée'});return}
+  if(visited.has(crossName(name)))return;
+  const opts=optionsOf(e);
+  lines.push({depth,label:e.name+' (G'+e.generation+')'+(e.options===null?' · combinaisons à vérifier':opts.length>1?' · '+opts.length+' options (première branche illustrée)':!opts.length?' · capture':'')});
+  if(opts.length)for(const p of opts[0])walk(p,depth+1,new Set([...visited,crossName(name)]));
+ }
+ walk(entry.name,0,new Set());
+ tree.innerHTML='<p class="muted">Arbre indicatif : pour les variétés à recettes multiples, seule la <b>première option</b> est développée ici ; toutes figurent à gauche.</p>'+lines.map(x=>'<div class="cross-tree-entry" style="margin-left:'+Math.min(55,x.depth*12)+'px">'+(x.depth?'↳ ':'🎯 ')+esc(x.label)+'</div>').join('');
 }
 function renderCrossOptions(){
- if($('crossSpecies').value!=='Dragodinde'){renderCrossGuide();return}
- const previous=$('crossTarget').value;
- $('crossTarget').innerHTML='<option value="">Sélectionne une variété</option>'+crosses.slice().sort((a,b)=>a.name.localeCompare(b.name,'fr')).map(x=>'<option value="'+esc(x.name)+'">'+esc(x.name)+' · G'+x.generation+'</option>').join('');
+ const species=$('crossSpecies').value,previous=$('crossTarget').value;
+ crosses=crossingData[species]||[];
+ crossByName=new Map(crosses.map(x=>[crossName(x.name),x]));
+ $('crossSource').href=CROSS_SOURCES[species].url;
+ $('crossSource').textContent='Source et généalogie détaillée '+species+' ↗';
+ $('crossTarget').innerHTML='<option value="">Choisir une variété</option>'+crosses.slice().sort((a,b)=>a.name.localeCompare(b.name,'fr')).map(x=>'<option value="'+esc(x.name)+'">'+esc(x.name)+' · G'+x.generation+'</option>').join('');
  if(crossByName.has(crossName(previous)))$('crossTarget').value=previous;
- else $('crossTarget').value='';
- renderCrossGuide();
+ renderCrossGuide();renderCrossCatalog();
 }
 async function loadCrosses(){
- try{
-  const response=await fetch('./croisements-dragodindes.json?v=1',{cache:'no-store'});
-  if(!response.ok)throw Error('HTTP '+response.status);
-  const payload=await response.json();
-  if(!Array.isArray(payload.recipes)||payload.recipes.length!==66)throw Error('Table incomplète');
-  crosses=payload.recipes;
-  crossByName=new Map(crosses.map(x=>[crossName(x.name),x]));
-  renderCrossOptions();renderCrossCatalog();
- }catch(e){
-  $('crossInfo').textContent='Impossible de charger les croisements : '+e.message;
-  $('crossTarget').innerHTML='<option value="">Indisponible</option>';
- }
+ const specs=Object.entries(CROSS_SOURCES);
+ const results=await Promise.all(specs.map(async([species,meta])=>{
+  try{
+   const r=await fetch('./'+meta.file+'?v=20261010-mv1',{cache:'no-store'});
+   if(!r.ok)throw Error('HTTP '+r.status);
+   const j=await r.json();if(!Array.isArray(j.recipes)||!j.recipes.length)throw Error('Catalogue vide');
+   return [species,j.recipes];
+  }catch(e){return [species,[]]}
+ }));
+ for(const [species,recipes] of results)crossingData[species]=recipes;
+ renderCrossOptions();
 }
 $('crossSpecies').addEventListener('change',renderCrossOptions);
 $('crossTarget').addEventListener('change',renderCrossGuide);
 $('crossSearch').addEventListener('input',renderCrossCatalog);
 $('crossGeneration').addEventListener('change',renderCrossCatalog);
 $('crossingGuide').addEventListener('click',event=>{
- const button=event.target.closest('[data-cross]');
- if(!button)return;
- $('crossSpecies').value='Dragodinde';
- renderCrossOptions();
- $('crossTarget').value=button.dataset.cross;
- renderCrossGuide();
+ const button=event.target.closest('[data-cross]');if(!button)return;
+ const desired=button.dataset.cross;
+ if(!crossByName.has(crossName(desired)))return;
+ $('crossTarget').value=desired;renderCrossGuide();
  $('crossingGuide').scrollIntoView({behavior:'smooth',block:'start'});
 });
 
