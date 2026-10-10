@@ -3,7 +3,7 @@
 (() => {
 const cfg=window.RADAR_COMMUNITY_CONFIG||{};
 const ready=Boolean(cfg.enabled&&/^https:\/\//.test(cfg.url)&&cfg.anonKey&&window.supabase?.createClient);
-const client=ready?window.supabase.createClient(cfg.url,cfg.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}}):null;
+const client=ready?window.supabase.createClient(cfg.url,cfg.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false,storage:window.sessionStorage}}):null;
 let member=null;
 async function current(){
  if(!client)return null;
