@@ -1,3 +1,13 @@
+## Mise à jour du 10 octobre 2026 : connexion par e-mail + mot de passe
+
+**La connexion par clé `RD-...` a été abandonnée.** Les joueurs se connectent désormais avec une adresse e-mail et un mot de passe. Le compte administrateur existant `radar-admin@radar-dakal.example.com` continue de fonctionner avec son mot de passe Supabase ; une adresse réelle est recommandée pour les nouveaux joueurs afin de faciliter la récupération de compte.
+
+- Le panneau `docs/communaute.html` accepte l'e-mail et le mot de passe, permet un changement de mot de passe et affiche un formulaire de création (pseudo + e-mail).
+- `supabase/functions/radar-admin/index.ts` génère un mot de passe provisoire à la création et à la réinitialisation, à transmettre **en privé**.
+- **IMPORTANT : après les modifications GitHub, redéployer manuellement la fonction `radar-admin` depuis l'éditeur Supabase.** Le commit GitHub ne met pas à jour automatiquement une fonction déjà déployée.
+- Tester un seul compte d'essai avant d'inviter les amis ; l'affichage des profils, les politiques RLS et les quotas Supabase restent à vérifier.
+- La synchronisation réelle des prix CraftRadar et des états personnels des sept outils reste à développer et à tester. `requireLogin: false` doit rester en place tant que cette migration n'est pas prête.
+
 # Radar Dakal — installation de l'espace communautaire
 
 > **État du projet : socle créé, non activé.** Le site actuel et ses sept outils continuent de fonctionner tant qu'aucune connexion Supabase opérationnelle n'est configurée. Ne pas annoncer un espace privé actif avant validation de toutes les étapes.
