@@ -9,7 +9,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const BASE='https://api.dofusdu.de/dofus3/v1/fr/mounts';
 const familyGuide='https://dofuselevage.fr/tools/reproduction/'+site+'/genealogie';
 $('family').textContent=family;$('title').textContent=name||'Monture inconnue';
-$('links').innerHTML='<a class="btn" href="'+familyGuide+'" target="_blank" rel="noopener noreferrer">🧬 Voir la généalogie sur DofusÉlevage ↗</a><a class="btn" href="./elevage-radar.html" target="_blank" rel="noopener noreferrer">🐣 Retour à ÉlevageRadar ↗</a>';
+$('links').innerHTML='<a class="btn" href="'+familyGuide+'" target="_blank" rel="noopener noreferrer">🧬 Voir la généalogie sur DofusÉlevage ↗</a><a class="btn" href="./index.html#elevage-radar">🐣 Retour à ÉlevageRadar ←</a>';
 function imageUrl(obj){if(!obj||typeof obj!=='object')return null;for(const key of ['hd','hq','high','medium','large','sd','small','icon']){const v=obj[key];if(typeof v==='string'&&v.startsWith('https://'))return v}return Object.values(obj).find(v=>typeof v==='string'&&v.startsWith('https://'))||null}
 function renderEffects(effects){
  if(!Array.isArray(effects)||!effects.length){$('effects').innerHTML='<p>Les statistiques détaillées ne sont pas renseignées dans cette source pour cette monture.</p>';return}
