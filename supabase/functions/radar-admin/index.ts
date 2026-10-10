@@ -17,10 +17,10 @@ Deno.serve(async request => {
   const actor = check.data.user.id;
   const { data: owner } = await db.from("radar_profiles").select("role,active").eq("id", actor).single();
   if (!owner?.active || owner.role !== "admin") return send(403, { error: "Administrateur requis" });
-  let command: { action?: string; pseudo?: string; email?: string; id?: string };
+  let command: { action?: string; pseudo?: string; email?: string; id?: string; minutes?: number };
   try { command = await request.json() } catch { return send(400, { error: "JSON requis" }) }
   if (command.action === "list") {
-    const { data, error } = await db.from("radar_profiles").select("id,pseudo,role,active,created_at").order("created_at");
+    const { data, error } = await db.from("radar_profiles").select("id,pseudo,role,active,created_at,banned_until,last_seen_at,online_since").order("created_at");
     return error ? send(500, { error: "Lecture impossible" }) : send(200, { profiles: data });
   }
   if (command.action === "create") {
@@ -50,8 +50,26 @@ Deno.serve(async request => {
   }
   const id = String(command.id || "");
   if (!/^[0-9a-f-]{36}$/i.test(id) || id === actor) return send(400, { error: "Joueur invalide" });
-  const { data: target } = await db.from("radar_profiles").select("id,role").eq("id", id).single();
+  const { data: target } = await db.from("radar_profiles").select("id,role,active,banned_until").eq("id", id).single();
   if (!target || target.role !== "player") return send(404, { error: "Joueur non trouvé" });
+  if (command.action === "ban") {
+    const minutes=Number(command.minutes);
+    if(!Number.isSafeInteger(minutes)||minutes<1||minutes>525600) return send(400,{error:"Durée du ban invalide (1 minute à 365 jours)."});
+    const end=new Date(Date.now()+minutes*60000).toISOString();
+    const {error}=await db.from("radar_profiles").update({banned_until:end,online_since:null}).eq("id",id);
+    if(error)return send(500,{error:"Ban non enregistré"});
+    return send(200,{ok:true,banned_until:end});
+  }
+  if (command.action === "unban") {
+    const {error}=await db.from("radar_profiles").update({banned_until:null}).eq("id",id);
+    return error?send(500,{error:"Débannissement impossible"}):send(200,{ok:true});
+  }
+  if (command.action === "delete") {
+    const removed=await db.auth.admin.deleteUser(id);
+    if(removed.error)return send(500,{error:"Suppression impossible : "+removed.error.message});
+    // radar_profiles et états personnels sont supprimés en cascade par auth.users.
+    return send(200,{ok:true,deleted:true});
+  }
   if (command.action === "disable" || command.action === "enable") {
     await db.from("radar_profiles").update({ active: command.action === "enable" }).eq("id", id);
     // Les politiques RLS refusent immédiatement les opérations aux profils suspendus.
