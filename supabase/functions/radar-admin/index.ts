@@ -29,7 +29,7 @@ Deno.serve(async request => {
     if (pseudo.length < 2 || pseudo.length > 30 || !/^[\p{L}\p{N} _.'-]+$/u.test(pseudo)) return send(400, { error: "Pseudo invalide" });
     if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return send(400, { error: "Adresse e-mail invalide" });
     // Un mot de passe provisoire est émis une seule fois au créateur. Le joueur peut le changer.
-    const password = secret() + secret();
+    const password = secret();
     const created = await db.auth.admin.createUser({ email, password, email_confirm: true });
     if (created.error || !created.data.user) {
       // Visible uniquement pour un administrateur authentifié. Jamais de mot de passe dans les logs.
@@ -58,7 +58,7 @@ Deno.serve(async request => {
     return send(200, { ok: true });
   }
   if (command.action === "reset") {
-    const password = secret() + secret();
+    const password = secret();
     const updated = await db.auth.admin.updateUserById(id, { password });
     if (updated.error) return send(500, { error: "Renouvellement impossible" });
     // Les JWT existants peuvent rester valides jusqu'à expiration : blocage immédiat via RLS si besoin.
