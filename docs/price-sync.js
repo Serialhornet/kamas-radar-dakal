@@ -2,7 +2,7 @@
 /* Dakal: prix HDV communautaires. Le cache local reste intact. */
 (()=>{
  const api=()=>window.RadarCommunity;
- const records=new Map();
+ const records=new Map(),authors=new Map();
  const listeners=new Set();
  let active=false,loading=null,lastError="",lastRefresh=0;
  const channel=typeof BroadcastChannel==="function"?new BroadcastChannel("radar-dakal-prices"):null;
@@ -35,9 +35,10 @@
   }catch(e){lastError=e?.message||String(e);emit();return {shared:false,reason:lastError}}
  }
  function get(id){return active?records.get(Number(id))||null:null}
+ function author(id){return authors.get(id)||'Membre Radar'}
  channel?.addEventListener("message",e=>{if(e.data?.source==="shared-cloud")void refresh()});
  window.addEventListener("focus",()=>{if(Date.now()-lastRefresh>10000)void refresh()});
  document.addEventListener("visibilitychange",()=>{if(!document.hidden&&Date.now()-lastRefresh>10000)void refresh()});
  setInterval(()=>{if(!document.hidden&&active)void refresh()},60000);
- window.RadarPriceSync={refresh,save,get,onChange:fn=>{listeners.add(fn);return()=>listeners.delete(fn)},get active(){return active},get error(){return lastError},get count(){return records.size}};
+ window.RadarPriceSync={refresh,save,get,author,onChange:fn=>{listeners.add(fn);return()=>listeners.delete(fn)},get active(){return active},get error(){return lastError},get count(){return records.size}};
 })();
