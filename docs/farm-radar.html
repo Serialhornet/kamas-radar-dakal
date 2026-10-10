@@ -112,6 +112,7 @@ function save(){try{localStorage.setItem(SESSION_KEY,JSON.stringify(session))}ca
 function elapsed(){return Math.max(0,Number(session.accumulated)||0)+(session.running&&session.startedAt?Math.max(0,Date.now()-Number(session.startedAt)):0)}
 function formatTime(ms){const s=Math.floor(Math.max(0,ms)/1000);return [Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':')}
 function priceFor(id){const p=window.RadarPriceSync?.get(id)||prices[id];return p&&Number.isFinite(Number(p.value))&&Number(p.value)>=0?Number(p.value):null}
+function farmPriceStamp(id){const remote=window.RadarPriceSync?.get(id);const p=remote||prices[id];if(!p)return '⚪ Prix inconnu';const ms=Date.parse(p.at||'');const age=Number.isFinite(ms)?(Date.now()-ms)/86400000:999;const state=age<=1?'🟢 Récent':age<=3?'🟠 À vérifier':'🔴 Ancien';const when=Number.isFinite(ms)?new Date(ms).toLocaleString('fr-FR'):'Date inconnue';const who=remote?'☁ Partagé · '+(window.RadarPriceSync?.author?.(remote.by)||'Membre Radar'):'📱 Local';return when+' · '+who+' · '+state}
 function loadPrices(){
  try{const data=JSON.parse(localStorage.getItem(PRICE_KEY))||{};prices=data.prices?.Dakal||{};priceServer='Dakal';$('status').textContent='Prix partagés avec CraftRadar · serveur Dakal · '+Object.keys(prices).length+' objets tarifés. Les objets sans prix sont exclus du total connu.'}
  catch(e){prices={};$('status').textContent='Aucun prix CraftRadar disponible dans ce navigateur. Saisis des prix dans l’onglet CraftRadar puis reviens.'}
