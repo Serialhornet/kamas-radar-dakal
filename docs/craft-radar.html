@@ -133,7 +133,7 @@ async function loadSharedPrices(){
   const [rows,profiles]=await Promise.all([api.getPrices(),api.client.from('radar_profiles').select('id,pseudo')]);
   if(profiles.error)throw profiles.error;
   for(const p of profiles.data||[])sharedNames.set(p.id,p.pseudo);
-  for(const p of rows)sharedPrices.set(Number(p.item_id),{value:Number(p.unit_price),at:p.updated_at,by:p.updated_by});
+  sharedPrices.clear();for(const p of rows)sharedPrices.set(Number(p.item_id),{value:Number(p.unit_price),at:p.updated_at,by:p.updated_by});
   sharedLoaded=true;
   banner.textContent='☁ Prix communautaires Dakal actifs · '+sharedMember.pseudo+' · '+sharedPrices.size+' prix partagés. Prix locaux conservés.';
   renderAll();
@@ -145,6 +145,7 @@ async function pushSharedPrice(id,value){
   await window.RadarCommunity.savePrice(id,value);
   sharedPrices.set(Number(id),{value,at:new Date().toISOString(),by:sharedMember.id});
   sharedNames.set(sharedMember.id,sharedMember.pseudo);
+  priceChannel?.postMessage({source:'shared-cloud',server:'Dakal'});
   renderAll();
  }catch(e){toast('Prix sauvegardé localement, partage échoué : '+(e.message||e))}
 }
@@ -471,4 +472,8 @@ priceChannel?.addEventListener('message',event=>{
   if(incoming?.prices?.Dakal){settings.prices.Dakal=incoming.prices.Dakal;renderAll();}
  }catch(err){}
 });
+priceChannel?.addEventListener('message',e=>{if(e.data?.source==='shared-cloud')void loadSharedPrices()});
+window.addEventListener('focus',()=>{if(sharedMember)void loadSharedPrices()});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&sharedMember)void loadSharedPrices()});
+setInterval(()=>{if(!document.hidden&&sharedMember)void loadSharedPrices()},60000);
 init();void loadSharedPrices();</script></body></html>
