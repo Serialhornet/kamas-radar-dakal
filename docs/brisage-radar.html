@@ -80,7 +80,7 @@ function craftPrices(){return craft?.prices?.Dakal||{}}
 function numberPrice(id){const raw=craftPrices()[id];return raw&&Number.isFinite(Number(raw.value))?Number(raw.value):null}
 function syncCraft(){try{craft=JSON.parse(localStorage.getItem(KEY))||{prices:{}}}catch(e){craft={prices:{}}}
  $('tax').value=Number.isFinite(Number(craft.tax))?Number(craft.tax):2;
- if(selected){if(!projects[selected.id]?.manualHdv) $('hdvPrice').value=numberPrice(selected.id)??'';computeCraft();refreshCalc()}
+ if(selected){if(projects[selected.id]?.manualHdv===undefined) $('hdvPrice').value=numberPrice(selected.id)??'';computeCraft();refreshCalc()}
 }
 function writeCraftPrice(id,value){
  try{
@@ -153,11 +153,13 @@ function renderStats(){
  });
 }
 function validate(v){return v!==''&&v!==null&&v!==undefined&&Number.isFinite(Number(v))&&Number(v)>=0}
-function persistProject(){
+function persistProject(changedField=''){
  if(!selected)return;
- projects[selected.id]={stats:stats.map(x=>({...x})),coef:$('coef').value,units:$('units').value,
-  costMode:$('costMode').value,tax:$('tax').value,manualHdv:$('hdvPrice').value,
-  manualCraft:$('craftCost').value};
+ const previous=projects[selected.id]||{};
+ projects[selected.id]={...previous,stats:stats.map(x=>({...x})),coef:$('coef').value,units:$('units').value,
+  costMode:$('costMode').value,tax:$('tax').value};
+ if(changedField==='hdvPrice')projects[selected.id].manualHdv=$('hdvPrice').value;
+ if(changedField==='craftCost')projects[selected.id].manualCraft=$('craftCost').value;
  saveLocal();
 }
 function priceOfStat(s){return validate(s.price)?Number(s.price):validate(runePrices[s.rune])?Number(runePrices[s.rune]):null}
@@ -202,7 +204,7 @@ $('stats').addEventListener('input',e=>{let parent=e.target.closest('[data-index
  persistProject();refreshCalc()});
 $('stats').addEventListener('change',e=>{if(e.target.dataset.field==='rune'){renderStats();refreshCalc()}});
 $('stats').addEventListener('click',e=>{const b=e.target.closest('[data-remove]');if(!b)return;stats.splice(Number(b.dataset.remove),1);renderStats();persistProject();refreshCalc()});
-for(const id of ['coef','tax','units','craftCost','hdvPrice','costMode']){$(id).addEventListener('input',()=>{persistProject();refreshCalc()});$(id).addEventListener('change',()=>{persistProject();refreshCalc()})}
+for(const id of ['coef','tax','units','craftCost','hdvPrice','costMode']){$(id).addEventListener('input',()=>{persistProject(id);refreshCalc()});$(id).addEventListener('change',()=>{persistProject(id);refreshCalc()})}
 $('saveItemPrice').onclick=()=>{if(!selected)return alert('Choisis un équipement.');const value=$('hdvPrice').value;if(!validate(value))return alert('Renseigne un prix HDV valide en kamas.');if(writeCraftPrice(selected.id,value)){$('craftStatus').textContent='Prix HDV partagé avec CraftRadar.';persistProject()}};
 $('export').onclick=()=>{if(!selected)return alert('Choisis un équipement.');download('BrisageRadar-'+selected.id+'.json',JSON.stringify({server:'Dakal',item:selected,project:projects[selected.id],runePrices,model:'manuel-linéaire',exportedAt:new Date().toISOString()},null,2),'application/json')};
 $('exportCsv').onclick=()=>{if(!selected)return alert('Choisis un équipement.');const d=calcData();const rows=[['Rune','Jet','Runes à 100%','Quantité prévue','Prix unitaire kamas','Réel']];for(const a of d.details)rows.push([a.s.rune,a.s.jet,a.base??'',a.expected??'',a.p??'',a.actual??'']);rows.push(['Coût retenu','','','','',d.unitCost??'']);download('BrisageRadar-'+selected.id+'.csv','\uFEFF'+rows.map(r=>r.join(';')).join('\r\n'),'text/csv;charset=utf-8')};
