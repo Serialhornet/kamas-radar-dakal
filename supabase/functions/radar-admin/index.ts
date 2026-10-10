@@ -44,7 +44,7 @@ Deno.serve(async request => {
   if (!target || target.role !== "player") return send(404, { error: "Joueur non trouvé" });
   if (command.action === "disable" || command.action === "enable") {
     await db.from("radar_profiles").update({ active: command.action === "enable" }).eq("id", id);
-    if (command.action === "disable") await db.auth.admin.signOut(id, "global");
+    // Les politiques RLS refusent immédiatement les opérations aux profils suspendus.
     return send(200, { ok: true });
   }
   if (command.action === "reset") {
@@ -54,7 +54,7 @@ Deno.serve(async request => {
     const password = secret() + secret();
     const updated = await db.auth.admin.updateUserById(id, { password });
     if (updated.error) return send(500, { error: "Renouvellement impossible" });
-    await db.auth.admin.signOut(id, "global");
+    // Une ancienne session peut rester valide jusqu’à expiration ; informer le titulaire.
     return send(200, { key: "RD-" + idPart.toUpperCase() + "-" + password });
   }
   return send(400, { error: "Action inconnue" });
