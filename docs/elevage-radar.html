@@ -17,7 +17,7 @@ button:hover{filter:brightness(1.12)}button:disabled{opacity:.55;cursor:not-allo
 table{width:100%;border-collapse:collapse;min-width:650px}th,td{border-bottom:1px solid #385360;padding:9px;text-align:left}th{color:#b0cbd4;font-size:12px}.tablewrap{overflow:auto}
 a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e222a;border:1px solid #376067;border-radius:12px;padding:13px}
 @media(max-width:900px){.fuelgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){main{padding:17px 11px}.grid,.three,.fuelgrid{grid-template-columns:1fr}}
-.cross-card{background:#102631;border:1px solid #416d73;border-radius:12px;padding:12px;margin:8px 0}.cross-card strong{color:#bbfff5}.cross-parent{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cross-card button{width:100%;text-align:left}.cross-tree-entry{border-left:2px solid #44cdbb;padding:8px 10px;margin:7px 0;background:#132d32;border-radius:4px}.cross-list-button{display:block;width:100%;text-align:left;margin:5px 0;background:#122b35}.cross-list-button:hover{background:#214750}#alarmMessage{font-size:12px}#alarmState{font-variant-numeric:tabular-nums}@media(max-width:720px){.cross-parent{grid-template-columns:1fr}}</style></head><body><main>
+.cross-card{background:#102631;border:1px solid #416d73;border-radius:12px;padding:12px;margin:8px 0}.cross-card strong{color:#bbfff5}.cross-parent{display:grid;grid-template-columns:1fr 1fr;gap:10px}.cross-card button{width:100%;text-align:left}.cross-tree-entry{border-left:2px solid #44cdbb;padding:8px 10px;margin:7px 0;background:#132d32;border-radius:4px}.cross-list-button{display:block;width:100%;text-align:left;margin:5px 0;background:#122b35}.cross-list-button:hover{background:#214750}#alarmMessage{font-size:12px}#alarmState{font-variant-numeric:tabular-nums}@media(max-width:720px){.cross-parent{grid-template-columns:1fr}}.mount-detail-link{display:inline-block;background:#26514c;border:1px solid #4bb9a7;padding:8px 12px;border-radius:10px;color:#d4fff7;text-decoration:none;font-weight:700}.mount-name-link{color:#8df4e3;text-decoration:underline}</style></head><body><main>
 <div class="eyebrow">DOFUS Unity 3.7 · Dakal</div><h1>🐣 ÉlevageRadar</h1>
 <p>Assistant de montures, jauges d'enclos, carburants et planification pour viser la fécondité ou le niveau souhaité. Sans automatiser le client DOFUS.</p>
 <div class="note"><strong>Mécaniques 3.7 :</strong> montures Dragodinde, Muldo, Volkorne ; six jauges, deux actives maximum ; jauge enclos jusqu'à 200 000, jauges amour/maturité/endurance à 20 000. Les montures n'ont plus de fatigue, de jauge d'énergie ni de gestation. <a href="https://www.dofuspourlesnoobs.com/guide-de-l-eleveur.html" target="_blank" rel="noopener noreferrer">Guide 2026 ↗</a></div>
@@ -95,6 +95,7 @@ a{color:#7ff6e4}.timeline{display:grid;gap:9px}.timeline article{background:#0e2
 <label class="field">Monture cible<select id="crossTarget"><option value="">Chargement du catalogue…</option></select></label>
 <label class="field">Filtrer les croisements<input id="crossSearch" type="search" placeholder="Ébène, Indigo, Pourpre…"></label>
 </div>
+<div class="row" style="margin:12px 0"><a id="mountDetailLink" class="mount-detail-link" href="./monture-fiche.html" target="_blank" rel="noopener noreferrer" hidden>🖼️ Voir la fiche et l’image de cette monture ↗</a></div>
 <div id="crossInfo" class="recommend" style="margin-top:14px">Chargement des combinaisons…</div>
 <div class="grid">
 <div><h3>Parents directs</h3><div id="crossParents"></div></div>
@@ -273,6 +274,9 @@ const CROSS_SOURCES={
 };
 let crossingData={Dragodinde:[],Muldo:[],Volkorne:[]},crossByName=new Map(),crosses=[];
 function crossName(name){return norm(name).replace(/\s+/g,' ').trim()}
+function mountDetailURL(name,species){return './monture-fiche.html?espece='+encodeURIComponent(species||$('crossSpecies').value)+'&nom='+encodeURIComponent(name)}
+function nameLink(name,species){return '<a class="mount-name-link" target="_blank" rel="noopener noreferrer" href="'+esc(mountDetailURL(name,species))+'">'+esc(name)+' ↗</a>'}
+
 function optionsOf(x){if(!x)return [];return Array.isArray(x.options)?x.options:(Array.isArray(x.parents)?[x.parents]:[])}
 function crossStatus(x){
  if(x.trust==='divergence')return '⚠️ Données divergentes entre sources — à vérifier en jeu';
@@ -290,11 +294,12 @@ function renderCrossGuide(){
  const species=$('crossSpecies').value,choice=$('crossTarget').value;
  const info=$('crossInfo'),parents=$('crossParents'),tree=$('crossTree');
  const entry=crossByName.get(crossName(choice));
+ const fiche=$('mountDetailLink');fiche.hidden=!entry;if(entry)fiche.href=mountDetailURL(entry.name,species);
  if(!entry){info.textContent=crosses.length?'Choisis une monture cible.':'Données non disponibles pour cette espèce.';parents.replaceChildren();tree.replaceChildren();return}
  const alternatives=optionsOf(entry);
  const missing=entry.options===null;
  const confidence=crossStatus(entry);
- info.innerHTML='<strong>'+esc(entry.name)+'</strong> · génération '+entry.generation+' · '+(missing?(entry.expectedCount||'Plusieurs')+' combinaisons recensées':alternatives.length?alternatives.length+' combinaison(s) répertoriée(s)':'Capture sauvage')+'<p style="margin:5px 0" class="'+(entry.trust==='divergence'||missing?'warn':'muted')+'">'+esc(confidence)+'</p>';
+ info.innerHTML='<strong>'+nameLink(entry.name,species)+'</strong> · génération '+entry.generation+' · '+(missing?(entry.expectedCount||'Plusieurs')+' combinaisons recensées':alternatives.length?alternatives.length+' combinaison(s) répertoriée(s)':'Capture sauvage')+'<p style="margin:5px 0" class="'+(entry.trust==='divergence'||missing?'warn':'muted')+'">'+esc(confidence)+'</p>';
  if(missing){
   parents.innerHTML='<div class="cross-card"><p>La généalogie mentionne <strong>'+esc(entry.expectedCount||'plusieurs')+' recettes possibles</strong> pour cette variété, mais leurs paires exactes ne sont pas toutes importées ici.</p><p>Consulte la source ci-dessous ou l’interface génétique DOFUS avant de réunir les parents.</p><a href="'+CROSS_SOURCES[species].url+'" target="_blank" rel="noopener noreferrer">Voir les croisements complets ↗</a></div>';
   tree.innerHTML='<div class="cross-card">Arbre de parenté indisponible pour cette variété : aucune paire inventée.</div>';
@@ -305,7 +310,7 @@ function renderCrossGuide(){
   tree.innerHTML='<div class="cross-tree-entry">'+esc(entry.name)+' — génération '+entry.generation+' — capture</div>';
   return;
  }
- parents.innerHTML=alternatives.map((pair,i)=>'<div class="cross-card"><strong>'+ (alternatives.length>1?'Option '+(i+1)+' : ': 'Parents : ')+esc(pair[0])+' + '+esc(pair[1])+'</strong><p>'+ (alternatives.length>1?'Choisis cette paire <b>ou</b> une autre option listée : toutes visent la même variété cible.':'Croisement recensé pour cette variété.')+'</p><div class="cross-parent">'+pair.map(p=>'<button type="button" data-cross="'+esc(p)+'">↳ Voir '+esc(p)+'</button>').join('')+'</div></div>').join('');
+ parents.innerHTML=alternatives.map((pair,i)=>'<div class="cross-card"><strong>'+ (alternatives.length>1?'Option '+(i+1)+' : ': 'Parents : ')+nameLink(pair[0],species)+' + '+nameLink(pair[1],species)+'</strong><p>'+ (alternatives.length>1?'Choisis cette paire <b>ou</b> une autre option listée : toutes visent la même variété cible.':'Croisement recensé pour cette variété.')+'</p><div class="cross-parent">'+pair.map(p=>'<button type="button" data-cross="'+esc(p)+'">↳ Voir '+esc(p)+'</button>').join('')+'</div></div>').join('');
  if(alternatives.length>1)parents.innerHTML='<div class="note">⚠️ <b>« Soit l’une, soit l’autre » désigne les paires de parents possibles</b>, pas le fait que la couleur cible est forcément obtenue. Une même paire peut produire d’autres variétés.</div>'+parents.innerHTML;
  const lines=[];
  function walk(name,depth,visited){
