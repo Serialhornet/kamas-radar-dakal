@@ -66,7 +66,7 @@ button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid #835263;b
 <p><small>La comparaison « achat » ou « craft » est faite avant valeur du temps, concurrence HDV et évolutions de prix. Pour les vrais résultats, reporte les runes reçues et leurs quantités.</small></p>
 </section>
 <section class="panel"><h2>Documentation et fiabilité</h2><p>Pour mieux comprendre le brisage, les coefficients, les runes basiques/Pa/Ra et le focus : <a href="https://www.dofocus.fr/guide/" rel="noopener noreferrer" target="_blank" style="color:#ffb3c1">guide du brisage DoFocus ↗</a>. Le fonctionnement précis de DoFocus n'est ni récupéré ni reproduit. Les prix et coefficients de cette page sont uniquement les tiens.</p></section>
-</main><script>
+</main><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./community-config.js?v=shared1"></script><script src="./community-client.js?v=shared1"></script><script src="./price-sync.js?v=shared1"></script><script>
 "use strict";
 const $=id=>document.getElementById(id),fmt=n=>Number(n).toLocaleString('fr-FR',{maximumFractionDigits:2}),norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const KEY='craftRadar_live_v2',WORK_KEY='brisageRadar_work_v1',DB='CraftRadar_Catalogue_3';
