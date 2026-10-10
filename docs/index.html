@@ -73,8 +73,12 @@ footer{padding-top:20px;border-top:1px solid #233640}
 #panel-quete{height:calc(100dvh - 65px);min-height:550px;width:100%;overflow:hidden}
 #queteFrame{display:block;width:100%;height:100%;border:0;background:#0d111b}
 @media(max-width:720px){#panel-quete{height:calc(100dvh - 164px);min-height:450px}}
-.add-source{background:#14252a;border:1px solid #305851;border-radius:15px;padding:16px;margin:20px 0}.add-source label{display:grid;gap:5px;margin:10px 0;color:#afc8c7}.add-source input,.add-source textarea{background:#0e1924;border:1px solid #335152;color:#eef8f3;border-radius:10px;padding:10px;width:100%;font:inherit}.add-source summary{cursor:pointer;font-weight:750;color:#7ce4ba}.row-add{display:flex;gap:10px;flex-wrap:wrap}.source-pill{background:#254039;color:#92ead2;border:1px solid #39635b;border-radius:8px;padding:3px 8px;font-size:12px}#sourceFilter{min-width:160px}@media(max-width:640px){#sourceFilter{width:100%}}</style></head><body>
-<nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button><button class="app-tab" type="button" id="tab-recolte" role="tab" aria-selected="false" aria-controls="panel-recolte">🧭 RécolteRadar</button><button class="app-tab" type="button" id="tab-farm" role="tab" aria-selected="false" aria-controls="panel-farm">⏱️ FarmRadar</button><button class="app-tab" type="button" id="tab-quete" role="tab" aria-selected="false" aria-controls="panel-quete">📜 QuêteRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
+.add-source{background:#14252a;border:1px solid #305851;border-radius:15px;padding:16px;margin:20px 0}.add-source label{display:grid;gap:5px;margin:10px 0;color:#afc8c7}.add-source input,.add-source textarea{background:#0e1924;border:1px solid #335152;color:#eef8f3;border-radius:10px;padding:10px;width:100%;font:inherit}.add-source summary{cursor:pointer;font-weight:750;color:#7ce4ba}.row-add{display:flex;gap:10px;flex-wrap:wrap}.source-pill{background:#254039;color:#92ead2;border:1px solid #39635b;border-radius:8px;padding:3px 8px;font-size:12px}#sourceFilter{min-width:160px}@media(max-width:640px){#sourceFilter{width:100%}}#tab-brisage[aria-selected="true"]{background:#452633;border:1px solid #d26780;color:#ffb6c7}
+#panel-brisage{height:calc(100dvh - 65px);min-height:550px;width:100%;overflow:hidden}
+#brisageFrame{display:block;width:100%;height:100%;border:0;background:#0e1017}
+@media(max-width:720px){#panel-brisage{height:calc(100dvh - 164px);min-height:450px}}
+</style></head><body>
+<nav class="app-tabs" role="tablist" aria-label="Changer d’outil"><button class="app-tab" type="button" id="tab-kamas" role="tab" aria-selected="true" aria-controls="panel-kamas">🪙 Kamas Radar</button><button class="app-tab" type="button" id="tab-craft" role="tab" aria-selected="false" aria-controls="panel-craft">⚒ CraftRadar</button><button class="app-tab" type="button" id="tab-recolte" role="tab" aria-selected="false" aria-controls="panel-recolte">🧭 RécolteRadar</button><button class="app-tab" type="button" id="tab-farm" role="tab" aria-selected="false" aria-controls="panel-farm">⏱️ FarmRadar</button><button class="app-tab" type="button" id="tab-quete" role="tab" aria-selected="false" aria-controls="panel-quete">📜 QuêteRadar</button><button class="app-tab" type="button" id="tab-brisage" role="tab" aria-selected="false" aria-controls="panel-brisage">💎 BrisageRadar</button></nav><section id="panel-kamas" class="tab-panel" role="tabpanel" aria-labelledby="tab-kamas"><header><h1>🪙 Kamas Radar — Dakal</h1><p>DOFUS Unity · priorité monocompte, brisage, lurk, craft et farm rapide · sans Songes</p></header>
 <main>
 <p id="updated">Chargement de la veille…</p>
 <div class="controls">
@@ -90,26 +94,31 @@ footer{padding-top:20px;border-top:1px solid #233640}
 <section id="panel-recolte" class="tab-panel" role="tabpanel" aria-labelledby="tab-recolte" hidden><iframe id="recolteFrame" title="RécolteRadar — circuits de métiers" loading="lazy" src="about:blank"></iframe></section>
 <section id="panel-farm" class="tab-panel" role="tabpanel" aria-labelledby="tab-farm" hidden><iframe id="farmFrame" title="FarmRadar — chronomètre et bilan de farm" loading="lazy" src="about:blank"></iframe></section>
 <section id="panel-quete" class="tab-panel" role="tabpanel" aria-labelledby="tab-quete" hidden><iframe id="queteFrame" title="QuêteRadar — suivi quotidien et hebdomadaire" loading="lazy" src="about:blank"></iframe></section>
+<section id="panel-brisage" class="tab-panel" role="tabpanel" aria-labelledby="tab-brisage" hidden><iframe id="brisageFrame" title="BrisageRadar — rentabilité du brisage" loading="lazy" src="about:blank"></iframe></section>
 <script>
 let items=[];let communityLinks=[];const PERSONAL_LINK_KEY='kamasRadar_personal_links_v1';try{const saved=JSON.parse(localStorage.getItem(PERSONAL_LINK_KEY));if(Array.isArray(saved))communityLinks=saved}catch(e){}
 let craftFrameLoaded=false;
 let recolteFrameLoaded=false;
 let farmFrameLoaded=false;
 let queteFrameLoaded=false;
+let brisageFrameLoaded=false;
 function openTab(name,updateHash=true){
  const craft=name==='craft';
  const recolte=name==='recolte';
  const farm=name==='farm';
  const quete=name==='quete';
- document.getElementById('panel-kamas').hidden=craft||recolte||farm||quete;
+ const brisage=name==='brisage';
+ document.getElementById('panel-kamas').hidden=craft||recolte||farm||quete||brisage;
  document.getElementById('panel-craft').hidden=!craft;
  document.getElementById('panel-recolte').hidden=!recolte;
  document.getElementById('panel-farm').hidden=!farm;
  document.getElementById('panel-quete').hidden=!quete;
+ document.getElementById('panel-brisage').hidden=!brisage;
+ document.getElementById('tab-brisage').setAttribute('aria-selected',String(brisage));
  document.getElementById('tab-quete').setAttribute('aria-selected',String(quete));
  document.getElementById('tab-farm').setAttribute('aria-selected',String(farm));
  document.getElementById('tab-recolte').setAttribute('aria-selected',String(recolte));
- document.getElementById('tab-kamas').setAttribute('aria-selected',String(!craft&&!recolte&&!farm&&!quete));
+ document.getElementById('tab-kamas').setAttribute('aria-selected',String(!craft&&!recolte&&!farm&&!quete&&!brisage));
  document.getElementById('tab-craft').setAttribute('aria-selected',String(craft));
  if(craft&&!craftFrameLoaded){
   document.getElementById('craftFrame').src='./craft-radar.html';
@@ -118,8 +127,9 @@ function openTab(name,updateHash=true){
  if(recolte&&!recolteFrameLoaded){document.getElementById('recolteFrame').src='./recolte-radar.html?v=zaaps-ui-v3';recolteFrameLoaded=true;}
  if(farm&&!farmFrameLoaded){document.getElementById('farmFrame').src='./farm-radar.html';farmFrameLoaded=true;}
  if(quete&&!queteFrameLoaded){document.getElementById('queteFrame').src='./quete-radar.html?v=20261009';queteFrameLoaded=true;}
+ if(brisage&&!brisageFrameLoaded){document.getElementById('brisageFrame').src='./brisage-radar.html';brisageFrameLoaded=true;}
  if(updateHash){
-  const next=quete?'#quete-radar':farm?'#farm-radar':recolte?'#recolte-radar':craft?'#craft-radar':'#kamas-radar';
+  const next=brisage?'#brisage-radar':quete?'#quete-radar':farm?'#farm-radar':recolte?'#recolte-radar':craft?'#craft-radar':'#kamas-radar';
   if(window.location.hash!==next)window.history.replaceState(null,'',next);
  }
 }
@@ -128,8 +138,9 @@ document.getElementById('tab-craft').addEventListener('click',()=>openTab('craft
 document.getElementById('tab-recolte').addEventListener('click',()=>openTab('recolte'));
 document.getElementById('tab-farm').addEventListener('click',()=>openTab('farm'));
 document.getElementById('tab-quete').addEventListener('click',()=>openTab('quete'));
-window.addEventListener('hashchange',()=>openTab(window.location.hash==='#quete-radar'?'quete':window.location.hash==='#farm-radar'?'farm':window.location.hash==='#recolte-radar'?'recolte':window.location.hash==='#craft-radar'?'craft':'kamas',false));
-openTab(window.location.hash==='#quete-radar'?'quete':window.location.hash==='#farm-radar'?'farm':window.location.hash==='#recolte-radar'?'recolte':window.location.hash==='#craft-radar'?'craft':'kamas',false);
+document.getElementById('tab-brisage').addEventListener('click',()=>openTab('brisage'));
+window.addEventListener('hashchange',()=>openTab(window.location.hash==='#brisage-radar'?'brisage':window.location.hash==='#quete-radar'?'quete':window.location.hash==='#farm-radar'?'farm':window.location.hash==='#recolte-radar'?'recolte':window.location.hash==='#craft-radar'?'craft':'kamas',false));
+openTab(window.location.hash==='#brisage-radar'?'brisage':window.location.hash==='#quete-radar'?'quete':window.location.hash==='#farm-radar'?'farm':window.location.hash==='#recolte-radar'?'recolte':window.location.hash==='#craft-radar'?'craft':'kamas',false);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const txt=s=>esc(s??'Non précisé');
 function platformOf(item){if(item.source_platform)return item.source_platform;const u=String(item.url||'');return u.includes('tiktok.com')?'tiktok':u.includes('youtube.com')||u.includes('youtu.be')?'youtube':'site'}
