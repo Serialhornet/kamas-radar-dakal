@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-11T14:33:44.812826+00:00",
+  "updated_at": "2026-10-11T20:33:59.437122+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-08T15:00:22Z",
       "url": "https://www.youtube.com/watch?v=f9OWtSXEoxc",
-      "views": 868,
+      "views": 907,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 114.7,
+      "score": 114.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-09-18T12:30:32Z",
       "url": "https://www.youtube.com/watch?v=ySDInNhL5cA",
-      "views": 137,
+      "views": 139,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 96.2,
+      "score": 95.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-09-18T12:30:35Z",
       "url": "https://www.youtube.com/watch?v=sCxUSGKvlAk",
-      "views": 233,
+      "views": 234,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -146,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 96.1,
+      "score": 95.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -258,7 +258,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-09-21T09:00:11Z",
       "url": "https://www.youtube.com/shorts/RATCxwso0vI",
-      "views": 54,
+      "views": 56,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -297,7 +297,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 53.6,
+      "score": 53.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
