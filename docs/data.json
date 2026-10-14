@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-13T20:52:41.206998+00:00",
+  "updated_at": "2026-10-14T02:48:58.935103+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-08T15:00:22Z",
       "url": "https://www.youtube.com/watch?v=f9OWtSXEoxc",
-      "views": 970,
+      "views": 972,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 111.2,
+      "score": 110.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-09-18T12:30:32Z",
       "url": "https://www.youtube.com/watch?v=ySDInNhL5cA",
-      "views": 149,
+      "views": 150,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 92.8,
+      "score": 92.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-09-18T12:30:35Z",
       "url": "https://www.youtube.com/watch?v=sCxUSGKvlAk",
-      "views": 242,
+      "views": 244,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -146,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 92.7,
+      "score": 92.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -297,7 +297,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 50.2,
+      "score": 49.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
