@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-15T02:50:59.831237+00:00",
+  "updated_at": "2026-10-15T08:54:40.350003+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 109.3,
+      "score": 108.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 91.0,
+      "score": 90.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-09-18T12:30:35Z",
       "url": "https://www.youtube.com/watch?v=sCxUSGKvlAk",
-      "views": 247,
+      "views": 248,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -146,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 90.9,
+      "score": 90.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -297,7 +297,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 48.3,
+      "score": 47.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
