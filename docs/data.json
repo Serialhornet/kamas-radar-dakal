@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-15T08:54:40.350003+00:00",
+  "updated_at": "2026-10-15T14:52:04.856470+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-08T15:00:22Z",
       "url": "https://www.youtube.com/watch?v=f9OWtSXEoxc",
-      "views": 979,
+      "views": 980,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 108.9,
+      "score": 108.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 90.6,
+      "score": 90.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -146,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 90.5,
+      "score": 90.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -297,7 +297,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 47.9,
+      "score": 47.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
