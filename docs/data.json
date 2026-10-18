@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-18T08:47:32.416575+00:00",
+  "updated_at": "2026-10-18T14:45:14.911050+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -48,105 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 104.4,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "ySDInNhL5cA",
-      "title": "Les 3 Meilleures Zones de Farm en Monocompte — Édition Astrub | Dofus Unity",
-      "description": "Tu as terminé Incarnam et tu as besoin de Kamas à Astrub ? Découvre les 3 meilleures zones d'Astrub pour farmer efficacement, ...",
-      "channel": "Spotlight-q8d ● Dofus",
-      "date": "2026-09-18T12:30:32Z",
-      "url": "https://www.youtube.com/watch?v=ySDInNhL5cA",
-      "views": 163,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "court",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 89,
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Tu as terminé Incarnam et tu as besoin de Kamas à Astrub ? Découvre les 3 meilleures zones d'Astrub pour farmer efficacement, ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
-      },
-      "monocompte": true,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 86.1,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "sCxUSGKvlAk",
-      "title": "Les 3 Meilleures Zones de Farm en Monocompte — Édition Incarnam | Dofus Unity",
-      "description": "Quels sont les meilleurs spots de farm d'Incarnam ? On passe en revue les 3 meilleures zones pour accumuler ressources et ...",
-      "channel": "Spotlight-q8d ● Dofus",
-      "date": "2026-09-18T12:30:35Z",
-      "url": "https://www.youtube.com/watch?v=sCxUSGKvlAk",
-      "views": 260,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "court",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 114,
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Quels sont les meilleurs spots de farm d'Incarnam ? On passe en revue les 3 meilleures zones pour accumuler ressources et ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
-      },
-      "monocompte": true,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 86.0,
+      "score": 104.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -297,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 43.5,
+      "score": 43.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
