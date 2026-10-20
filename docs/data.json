@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-19T20:51:02.530777+00:00",
+  "updated_at": "2026-10-20T02:51:38.920488+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 102.1,
+      "score": 101.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -199,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 41.2,
+      "score": 40.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
