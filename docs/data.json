@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-21T08:55:06.414600+00:00",
+  "updated_at": "2026-10-21T14:52:02.965092+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-08T15:00:22Z",
       "url": "https://www.youtube.com/watch?v=f9OWtSXEoxc",
-      "views": 996,
+      "views": 997,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 99.9,
+      "score": 99.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -152,55 +152,6 @@
         "examples": []
       },
       "score": 57
-    },
-    {
-      "id": "RATCxwso0vI",
-      "title": "Faire ses PREMIERS KAMAS à Incarnam | Dofus Unity ! #shorts",
-      "description": "Voici un moyen de commencer à faire ses premiers Kamas à Incarnam dès les premiers niveaux ! Voir le Guide Complet ...",
-      "channel": "Spotlight-q8d ● Dofus",
-      "date": "2026-09-21T09:00:11Z",
-      "url": "https://www.youtube.com/shorts/RATCxwso0vI",
-      "views": 57,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "short",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 97,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Voici un moyen de commencer à faire ses premiers Kamas à Incarnam dès les premiers niveaux ! Voir le Guide Complet ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 38.9,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
   "notice": "DOFUS Unity/Dakal; commentaires publics indicatifs; aucune transcription ni verification de prix."
