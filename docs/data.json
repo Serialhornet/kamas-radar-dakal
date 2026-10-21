@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-20T20:51:50.789662+00:00",
+  "updated_at": "2026-10-21T02:50:32.173487+00:00",
   "items": [
     {
       "id": "f9OWtSXEoxc",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-08T15:00:22Z",
       "url": "https://www.youtube.com/watch?v=f9OWtSXEoxc",
-      "views": 995,
+      "views": 997,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 100.6,
+      "score": 100.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -199,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 39.7,
+      "score": 39.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
