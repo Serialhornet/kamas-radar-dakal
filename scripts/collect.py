@@ -101,6 +101,7 @@ def main():
     if not KEY: raise SystemExit("Secret YOUTUBE_API_KEY absent.")
     after=(NOW-datetime.timedelta(days=int(CFG.get("lookback_days",30)))).isoformat().replace("+00:00","Z")
     collected={}
+    search_successes=0
     for query in CFG.get("queries",[]):
         try:
             response=request("search", {"part":"snippet","type":"video","q":query,
@@ -108,6 +109,8 @@ def main():
               "relevanceLanguage":"fr","regionCode":"FR"})
         except Exception as exc:
             print("Recherche YouTube indisponible",query,str(exc)[:250]);continue
+        search_successes+=1
+        print("Recherche OK:",query,"-",len(response.get("items",[])),"résultats bruts")
         for entry in response.get("items",[]):
             vid=entry.get("id",{}).get("videoId")
             snippet=entry.get("snippet",{})
@@ -120,6 +123,9 @@ def main():
                "channel":snippet.get("channelTitle",""),"date":snippet.get("publishedAt",""),
                "url":"https://www.youtube.com/watch?v="+vid,
                "views":None,"source":"YouTube","source_platform":"youtube","source_format":"video","source_type":"video"}
+    if not search_successes:
+        raise SystemExit("Toutes les recherches YouTube ont échoué : conservation de docs/data.json existant. Vérifier la clé, le quota et les journaux Actions.")
+    print("Vidéos retenues après filtres:",len(collected))
     videos=list(collected)
     for start in range(0,len(videos),50):
         try:
@@ -204,6 +210,8 @@ def main():
             collected[item["id"]]=item
         except Exception as exc:print("Lien ignoré",str(exc)[:140])
     ordered=sorted(collected.values(),key=lambda x:x["score"],reverse=True)[:250]
+    if not ordered:
+        raise SystemExit("Aucune astuce trouvée : docs/data.json conservé pour éviter d'effacer la liste publiée.")
     OUT.write_text(json.dumps({"server":"Dakal","updated_at":NOW.isoformat(),"items":ordered,
       "notice":"DOFUS Unity/Dakal; commentaires publics indicatifs; aucune transcription ni verification de prix."},
       ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
