@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-26T09:02:25.387522+00:00",
+  "updated_at": "2026-10-26T15:45:57.292579+00:00",
   "items": [
     {
       "id": "cxhu7yRrj8E",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 94.0,
+      "score": 93.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 90.1,
+      "score": 89.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 6114,
+      "views": 7164,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -144,14 +144,14 @@
           "confirmation": {
             "count": 1,
             "examples": [
-              "Es más rentable matar a las gotas del lago que también sueltan el agua como recursos con un tema de 8 sin abonar ni nada con grupos de 4 sería 4x8 en peleas de 20 segundos en lugar de esperar la recarga"
+              "¡Gracias de nuevo, amigo, por dar visibilidad a los vídeos en la comunidad hispanohablante! Siempre tan alegre :)"
             ]
           }
         },
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 86.1,
+      "score": 84.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -161,7 +161,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-25T16:00:07Z",
       "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 113,
+      "views": 184,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -200,7 +200,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 73.8,
+      "score": 73.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -210,7 +210,7 @@
       "channel": "Tenmalexis",
       "date": "2026-10-11T16:00:30Z",
       "url": "https://www.youtube.com/watch?v=k80dzhZ8c_s",
-      "views": 8362,
+      "views": 8391,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -253,7 +253,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 73.6,
+      "score": 73.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -263,7 +263,7 @@
       "channel": "Kentin",
       "date": "2026-10-24T16:15:18Z",
       "url": "https://www.youtube.com/watch?v=wjvxV8QWIh0",
-      "views": 89,
+      "views": 145,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -302,7 +302,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 72.4,
+      "score": 71.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -338,55 +338,6 @@
         "examples": []
       },
       "score": 69
-    },
-    {
-      "id": "uYAXs9Bv2gc",
-      "title": "[VOD] \"[Mikhal] On débute l'OCRE ! + XP et KAMAS ! Dofus 3/6 ! !routine\"",
-      "description": "Jeu : Dofus Diffusé en direct le 20/10/2026 sur Twitch Rejoins-moi en live ➜ https://twitch.tv/lilianlebgdu59_ #Twitch #VOD ...",
-      "channel": "Lilianlebgdu59_",
-      "date": "2026-10-21T16:00:13Z",
-      "url": "https://www.youtube.com/watch?v=uYAXs9Bv2gc",
-      "views": 27,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 12107,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Jeu : Dofus Diffusé en direct le 20/10/2026 sur Twitch Rejoins-moi en live ➜ https://twitch.tv/lilianlebgdu59_ #Twitch #VOD ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 67.9,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
       "id": "jmj7v9fqhrw",
@@ -434,7 +385,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.8,
+      "score": 67.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -444,7 +395,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 631,
+      "views": 637,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -483,7 +434,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.2,
+      "score": 66.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -493,7 +444,7 @@
       "channel": "Cokinho",
       "date": "2026-10-14T23:49:22Z",
       "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 327,
+      "views": 330,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -532,7 +483,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 57.6,
+      "score": 57.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
