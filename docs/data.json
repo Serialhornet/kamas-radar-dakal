@@ -1,7 +1,56 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-26T15:45:57.292579+00:00",
+  "updated_at": "2026-10-26T20:53:22.267274+00:00",
   "items": [
+    {
+      "id": "WVzGbja6MBA",
+      "title": "FARMER des KAMAS avec les COFFRES d'ÉNUTROSOR dans Dofus 3",
+      "description": "Extrait de ma série OUGINAK EAU lvl 199 à 200 en monocompte sur Dofus 3. La vidéo complète : https://youtu.be/-lIAeSBiUCo ...",
+      "channel": "Capitemflam",
+      "date": "2026-10-20T15:00:37Z",
+      "url": "https://www.youtube.com/watch?v=WVzGbja6MBA",
+      "views": 438,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 49,
+      "detail": {
+        "categorie": "Farm / drop",
+        "resume_source": "Extrait de ma série OUGINAK EAU lvl 199 à 200 en monocompte sur Dofus 3. La vidéo complète : https://youtu.be/-lIAeSBiUCo ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
+      },
+      "monocompte": true,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 110.2,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
     {
       "id": "cxhu7yRrj8E",
       "title": "DROP LEGENDE 90M !! #dofus #twitch #kamas #gaming #dofusunity #mmorpg #farmdofus #games #dofusguide",
@@ -48,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 93.6,
+      "score": 93.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +107,7 @@
       "channel": "Radgeur",
       "date": "2026-10-18T16:00:23Z",
       "url": "https://www.youtube.com/watch?v=MDff5VeddhQ",
-      "views": 360,
+      "views": 361,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -97,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 89.7,
+      "score": 89.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +156,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 7164,
+      "views": 8096,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -135,10 +184,9 @@
             "examples": []
           },
           "prix": {
-            "count": 3,
+            "count": 1,
             "examples": [
-              "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD",
-              "La verdad que el tema del agua desde siempre lo usé para generar kamas cuando empezaba a jugar y hasta el día de hoy sigo usándola y se que se genera bastante, pero esas cantidades son absurdas. Igual no me dí cuenta como paso todo el video jajajajaj."
+              "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD"
             ]
           },
           "confirmation": {
@@ -151,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 84.7,
+      "score": 83.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -161,7 +209,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-25T16:00:07Z",
       "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 184,
+      "views": 290,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -200,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 73.3,
+      "score": 72.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -210,7 +258,7 @@
       "channel": "Tenmalexis",
       "date": "2026-10-11T16:00:30Z",
       "url": "https://www.youtube.com/watch?v=k80dzhZ8c_s",
-      "views": 8391,
+      "views": 8416,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -253,7 +301,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 73.1,
+      "score": 72.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -263,7 +311,7 @@
       "channel": "Kentin",
       "date": "2026-10-24T16:15:18Z",
       "url": "https://www.youtube.com/watch?v=wjvxV8QWIh0",
-      "views": 145,
+      "views": 171,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -302,7 +350,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.9,
+      "score": 71.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -346,7 +394,7 @@
       "channel": "Radgeur",
       "date": "2026-10-15T14:57:57Z",
       "url": "https://www.youtube.com/watch?v=jmj7v9fqhrw",
-      "views": 25,
+      "views": 27,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -385,7 +433,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.4,
+      "score": 67.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -395,7 +443,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 637,
+      "views": 638,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -434,56 +482,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.8,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "LSpFR6aPZAk",
-      "title": "DOFUS UNITY: 60 DONJONS DAMADRYA EN TEAM SADIDA = 10 MILLIONS DE KAMAS EPISODE 5",
-      "description": "https://www.twitch.tv/cokinho08 -_-_-_-_-_-_- VENEZ SUR TWITCH -_-_-_-_-_-_- Salut tout le monde, j'espère que vous allez bien ...",
-      "channel": "Cokinho",
-      "date": "2026-10-14T23:49:22Z",
-      "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 330,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 260,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "https://www.twitch.tv/cokinho08 -_-_-_-_-_-_- VENEZ SUR TWITCH -_-_-_-_-_-_- Salut tout le monde, j'espère que vous allez bien ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 57.2,
+      "score": 66.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -553,6 +552,110 @@
         "examples": []
       },
       "score": 57
+    },
+    {
+      "id": "LSpFR6aPZAk",
+      "title": "DOFUS UNITY: 60 DONJONS DAMADRYA EN TEAM SADIDA = 10 MILLIONS DE KAMAS EPISODE 5",
+      "description": "https://www.twitch.tv/cokinho08 -_-_-_-_-_-_- VENEZ SUR TWITCH -_-_-_-_-_-_- Salut tout le monde, j'espère que vous allez bien ...",
+      "channel": "Cokinho",
+      "date": "2026-10-14T23:49:22Z",
+      "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
+      "views": 338,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 260,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "https://www.twitch.tv/cokinho08 -_-_-_-_-_-_- VENEZ SUR TWITCH -_-_-_-_-_-_- Salut tout le monde, j'espère que vous allez bien ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 56.8,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "-_pRH7AVaLM",
+      "title": "Otra manera estúpida de ganar KAMAS en DOFUS 3",
+      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-10-09T16:01:15Z",
+      "url": "https://www.youtube.com/watch?v=-_pRH7AVaLM",
+      "views": 12989,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 1048,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 3,
+            "examples": [
+              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias.",
+              "Yo viendo como mi gremio farmea kamas como loco 🤑🤑🤑🤑"
+            ]
+          },
+          "confirmation": {
+            "count": 2,
+            "examples": [
+              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias.",
+              "Gracias por la mención king, me alegra que hayas hecho videito del método 🫶🏼"
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 36.2,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
   "notice": "DOFUS Unity/Dakal; commentaires publics indicatifs; aucune transcription ni verification de prix."
