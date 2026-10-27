@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-27T15:04:34.789400+00:00",
+  "updated_at": "2026-10-27T20:53:35.920146+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-20T15:00:37Z",
       "url": "https://www.youtube.com/watch?v=WVzGbja6MBA",
-      "views": 446,
+      "views": 453,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 109.0,
+      "score": 108.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 92.1,
+      "score": 91.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -146,7 +146,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 88.2,
+      "score": 87.8,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "OmhoxzBOK6w",
+      "title": "Le bon plan kamas du moment sur Dofus 3 (MàJ 3.7) 🦴💰 #shorts",
+      "description": "Depuis la mise à jour 3.7 (6 octobre 2026), le nouveau trophée Mule (+sagesse, +pods) fait grimper le Fémur de Koalak Farouche ...",
+      "channel": "ShyNwo",
+      "date": "2026-10-27T17:00:26Z",
+      "url": "https://www.youtube.com/shorts/OmhoxzBOK6w",
+      "views": 44,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "short",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 31,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Depuis la mise à jour 3.7 (6 octobre 2026), le nouveau trophée Mule (+sagesse, +pods) fait grimper le Fémur de Koalak Farouche ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 83.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -156,7 +205,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 9218,
+      "views": 9576,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -184,9 +233,10 @@
             "examples": []
           },
           "prix": {
-            "count": 1,
+            "count": 2,
             "examples": [
-              "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD"
+              "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD",
+              "La verdad que el tema del agua desde siempre lo usé para generar kamas cuando empezaba a jugar y hasta el día de hoy sigo usándola y se que se genera bastante, pero esas cantidades son absurdas. Igual no me dí cuenta como paso todo el video jajajajaj."
             ]
           },
           "confirmation": {
@@ -199,7 +249,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 81.2,
+      "score": 80.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -209,7 +259,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-25T16:00:07Z",
       "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 416,
+      "views": 471,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -248,7 +298,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.6,
+      "score": 71.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -258,7 +308,7 @@
       "channel": "Tenmalexis",
       "date": "2026-10-11T16:00:30Z",
       "url": "https://www.youtube.com/watch?v=k80dzhZ8c_s",
-      "views": 8450,
+      "views": 8469,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -301,7 +351,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.6,
+      "score": 71.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -311,7 +361,7 @@
       "channel": "Kentin",
       "date": "2026-10-24T16:15:18Z",
       "url": "https://www.youtube.com/watch?v=wjvxV8QWIh0",
-      "views": 209,
+      "views": 230,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -350,7 +400,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.4,
+      "score": 70.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -388,62 +438,13 @@
       "score": 69
     },
     {
-      "id": "uYAXs9Bv2gc",
-      "title": "[VOD] \"[Mikhal] On débute l'OCRE ! + XP et KAMAS ! Dofus 3/6 ! !routine\"",
-      "description": "Jeu : Dofus Diffusé en direct le 20/10/2026 sur Twitch Rejoins-moi en live ➜ https://twitch.tv/lilianlebgdu59_ #Twitch #VOD ...",
-      "channel": "Lilianlebgdu59_",
-      "date": "2026-10-21T16:00:13Z",
-      "url": "https://www.youtube.com/watch?v=uYAXs9Bv2gc",
-      "views": 31,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 12107,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Jeu : Dofus Diffusé en direct le 20/10/2026 sur Twitch Rejoins-moi en live ➜ https://twitch.tv/lilianlebgdu59_ #Twitch #VOD ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 66.0,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
       "id": "jmj7v9fqhrw",
       "title": "Mon astuce kamas en 1 29 ! #dofus #dofusunity",
       "description": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
       "channel": "Radgeur",
       "date": "2026-10-15T14:57:57Z",
       "url": "https://www.youtube.com/watch?v=jmj7v9fqhrw",
-      "views": 28,
+      "views": 29,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -482,7 +483,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.0,
+      "score": 65.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -492,7 +493,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 662,
+      "views": 668,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -531,7 +532,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.3,
+      "score": 65.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -609,7 +610,7 @@
       "channel": "Cokinho",
       "date": "2026-10-14T23:49:22Z",
       "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 340,
+      "views": 341,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -648,7 +649,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 55.7,
+      "score": 55.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -658,7 +659,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-09T16:01:15Z",
       "url": "https://www.youtube.com/watch?v=-_pRH7AVaLM",
-      "views": 13089,
+      "views": 13112,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -703,7 +704,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 35.0,
+      "score": 34.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
