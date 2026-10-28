@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-27T20:53:35.920146+00:00",
+  "updated_at": "2026-10-28T02:59:59.532750+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-20T15:00:37Z",
       "url": "https://www.youtube.com/watch?v=WVzGbja6MBA",
-      "views": 453,
+      "views": 457,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 108.7,
+      "score": 108.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 91.7,
+      "score": 91.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "Radgeur",
       "date": "2026-10-18T16:00:23Z",
       "url": "https://www.youtube.com/watch?v=MDff5VeddhQ",
-      "views": 363,
+      "views": 364,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -146,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 87.8,
+      "score": 87.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -156,7 +156,7 @@
       "channel": "ShyNwo",
       "date": "2026-10-27T17:00:26Z",
       "url": "https://www.youtube.com/shorts/OmhoxzBOK6w",
-      "views": 44,
+      "views": 63,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -195,7 +195,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 83.7,
+      "score": 83.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -205,7 +205,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 9576,
+      "views": 9974,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -249,56 +249,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 80.4,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "iwMG1bc6K9A",
-      "title": "💸 CÓMO HACER KAMAS ROMPIENDO OBJETOS | SUBIENDO OFICIOS EN DOFUS",
-      "description": "En este video te voy a mostrar mi manera de como hacer, conseguir kamas mientras subo oficios en dofus 3. Te enseño paso a ...",
-      "channel": "TwistFizz",
-      "date": "2026-10-25T16:00:07Z",
-      "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 471,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es",
-      "duration_seconds": 1079,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "En este video te voy a mostrar mi manera de como hacer, conseguir kamas mientras subo oficios en dofus 3. Te enseño paso a ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 71.2,
+      "score": 79.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -308,7 +259,7 @@
       "channel": "Tenmalexis",
       "date": "2026-10-11T16:00:30Z",
       "url": "https://www.youtube.com/watch?v=k80dzhZ8c_s",
-      "views": 8469,
+      "views": 8498,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -351,7 +302,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.2,
+      "score": 70.8,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "iwMG1bc6K9A",
+      "title": "💸 CÓMO HACER KAMAS ROMPIENDO OBJETOS | SUBIENDO OFICIOS EN DOFUS",
+      "description": "En este video te voy a mostrar mi manera de como hacer, conseguir kamas mientras subo oficios en dofus 3. Te enseño paso a ...",
+      "channel": "TwistFizz",
+      "date": "2026-10-25T16:00:07Z",
+      "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
+      "views": 570,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es",
+      "duration_seconds": 1079,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "En este video te voy a mostrar mi manera de como hacer, conseguir kamas mientras subo oficios en dofus 3. Te enseño paso a ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 70.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -361,7 +361,7 @@
       "channel": "Kentin",
       "date": "2026-10-24T16:15:18Z",
       "url": "https://www.youtube.com/watch?v=wjvxV8QWIh0",
-      "views": 230,
+      "views": 253,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -400,7 +400,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.0,
+      "score": 69.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -483,7 +483,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.6,
+      "score": 65.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -493,7 +493,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 668,
+      "views": 678,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -532,7 +532,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.0,
+      "score": 64.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -649,7 +649,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 55.3,
+      "score": 55.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -659,7 +659,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-09T16:01:15Z",
       "url": "https://www.youtube.com/watch?v=-_pRH7AVaLM",
-      "views": 13112,
+      "views": 13140,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -694,17 +694,16 @@
             ]
           },
           "confirmation": {
-            "count": 2,
+            "count": 1,
             "examples": [
-              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias.",
-              "Gracias por la mención king, me alegra que hayas hecho videito del método 🫶🏼"
+              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias."
             ]
           }
         },
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 34.6,
+      "score": 34.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
