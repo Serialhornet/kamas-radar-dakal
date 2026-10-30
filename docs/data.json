@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-30T15:09:57.757417+00:00",
+  "updated_at": "2026-10-30T20:56:36.767049+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-20T15:00:37Z",
       "url": "https://www.youtube.com/watch?v=WVzGbja6MBA",
-      "views": 516,
+      "views": 524,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 104.5,
+      "score": 104.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 430,
+      "views": 490,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,56 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 101.4,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "cxhu7yRrj8E",
-      "title": "DROP LEGENDE 90M !! #dofus #twitch #kamas #gaming #dofusunity #mmorpg #farmdofus #games #dofusguide",
-      "description": "",
-      "channel": "ZEK LBERD",
-      "date": "2026-10-13T17:41:30Z",
-      "url": "https://www.youtube.com/watch?v=cxhu7yRrj8E",
-      "views": 70,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "court",
-      "source_type": "video",
-      "langue": "nl",
-      "duration_seconds": 41,
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Description absente.",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "nl",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 1,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 87.6,
+      "score": 100.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -197,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 83.7,
+      "score": 83.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -246,7 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 79.5,
+      "score": 79.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -256,7 +207,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 11245,
+      "views": 11309,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -299,7 +250,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.6,
+      "score": 74.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -343,7 +294,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 5949,
+      "views": 6714,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -387,42 +338,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.9,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "k80dzhZ8c_s",
-      "title": "J'ai CRÉE le MEILLEUR OUTIL de FARM/KAMAS sur DOFUS !",
-      "description": "Comment trouver les MEILLEURES ZONES à FARMER sur DOFUS Unity et gagner un maximum de KAMAS ? J'ai créé un nouvel ...",
-      "channel": "Tenmalexis",
-      "date": "2026-10-11T16:00:30Z",
-      "url": "https://www.youtube.com/watch?v=k80dzhZ8c_s",
-      "views": 8690,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 580,
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Comment trouver les MEILLEURES ZONES à FARMER sur DOFUS Unity et gagner un maximum de KAMAS ? J'ai créé un nouvel ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "non_analyses",
-        "analysed": 0,
-        "signals": {},
-        "examples": []
-      },
-      "score": 66.9,
+      "score": 66.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -432,7 +348,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-25T16:00:07Z",
       "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 721,
+      "views": 733,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -471,7 +387,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.8,
+      "score": 66.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -520,7 +436,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.8,
+      "score": 65.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -569,7 +485,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 61.5,
+      "score": 61.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -579,7 +495,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 707,
+      "views": 710,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -618,7 +534,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 60.8,
+      "score": 60.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -696,7 +612,7 @@
       "channel": "Cokinho",
       "date": "2026-10-14T23:49:22Z",
       "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 352,
+      "views": 359,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -735,7 +651,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 51.2,
+      "score": 50.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -745,7 +661,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-09T16:01:15Z",
       "url": "https://www.youtube.com/watch?v=-_pRH7AVaLM",
-      "views": 13342,
+      "views": 13364,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -765,12 +681,32 @@
       },
       "monocompte": false,
       "commentaires": {
-        "status": "non_analyses",
-        "analysed": 0,
-        "signals": {},
-        "examples": []
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 3,
+            "examples": [
+              "Yo viendo como mi gremio farmea kamas como loco 🤑🤑🤑🤑",
+              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias."
+            ]
+          },
+          "confirmation": {
+            "count": 2,
+            "examples": [
+              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias.",
+              "Gracias por la mención king, me alegra que hayas hecho videito del método 🫶🏼"
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 30.2,
+      "score": 29.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
