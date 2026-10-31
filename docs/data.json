@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-31T14:51:56.369117+00:00",
+  "updated_at": "2026-10-31T20:52:13.254975+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 103.0,
+      "score": 102.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 610,
+      "views": 653,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 99.7,
+      "score": 99.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 82.2,
+      "score": 81.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -197,7 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.1,
+      "score": 77.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -207,7 +207,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 11441,
+      "views": 11497,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -251,7 +251,62 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 72.9,
+      "score": 72.5,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "dUjAZTA57f8",
+      "title": "MASACRE DE BOTS con la nueva DEUDA DE KAMAS en DOFUS 3",
+      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-10-31T17:01:08Z",
+      "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
+      "views": 4757,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 479,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 3,
+            "examples": [
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
+              "Básicamente la existencia de bots es por culpa de los jugadores que compran kamas así que, me parece excelente el cambio 😊"
+            ]
+          },
+          "confirmation": {
+            "count": 2,
+            "examples": [
+              "El capcha podria funcionar pero nose hasta que punto, por ahi jugaba PokeMMO (nada que ver con dofus unity pero ok) que tambien tiene bots y pues ahi existe un sistema de capcha que no estoy muy seguro como funciona pero detecta lo que estas haciendo, si pasaste mas de 2h por ejemplo haciendo la misma ruta y las mismas acciones pues ahi te salta un",
+              "mi vida, pasa el link de como conseguir las croquetas , gracias por tus videos me prende verte en ellos :3"
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 70.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -295,7 +350,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-25T16:00:07Z",
       "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 746,
+      "views": 765,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -334,7 +389,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.3,
+      "score": 64.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -344,7 +399,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 7549,
+      "views": 7829,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -388,56 +443,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 64.8,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "wjvxV8QWIh0",
-      "title": "Le Tour Du Monde : 150 000 KAMAS PAR PERSO SUR LE MERKATOR 💰 - DOFUS 3",
-      "description": "Salut à tous, Nouvelle vidéo ! Aujourd'hui, Un donjon qui rapporte gros puisqu'on repart avec 150 000 kamas par personnage, ...",
-      "channel": "Kentin",
-      "date": "2026-10-24T16:15:18Z",
-      "url": "https://www.youtube.com/watch?v=wjvxV8QWIh0",
-      "views": 272,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 466,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Salut à tous, Nouvelle vidéo ! Aujourd'hui, Un donjon qui rapporte gros puisqu'on repart avec 150 000 kamas par personnage, ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 64.3,
+      "score": 64.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -486,7 +492,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 60.0,
+      "score": 59.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -496,7 +502,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 720,
+      "views": 721,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -535,7 +541,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 59.3,
+      "score": 58.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -613,7 +619,7 @@
       "channel": "Cokinho",
       "date": "2026-10-14T23:49:22Z",
       "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 362,
+      "views": 365,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -652,7 +658,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 49.7,
+      "score": 49.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
