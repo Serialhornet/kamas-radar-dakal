@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-10-31T08:57:20.910118+00:00",
+  "updated_at": "2026-10-31T14:51:56.369117+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 103.4,
+      "score": 103.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 593,
+      "views": 610,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 100.1,
+      "score": 99.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +109,7 @@
       "channel": "Radgeur",
       "date": "2026-10-18T16:00:23Z",
       "url": "https://www.youtube.com/watch?v=MDff5VeddhQ",
-      "views": 373,
+      "views": 374,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 82.6,
+      "score": 82.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -197,7 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.4,
+      "score": 78.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -207,7 +207,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 11406,
+      "views": 11441,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -235,9 +235,10 @@
             "examples": []
           },
           "prix": {
-            "count": 1,
+            "count": 3,
             "examples": [
-              "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD"
+              "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD",
+              "La verdad que el tema del agua desde siempre lo usé para generar kamas cuando empezaba a jugar y hasta el día de hoy sigo usándola y se que se genera bastante, pero esas cantidades son absurdas. Igual no me dí cuenta como paso todo el video jajajajaj."
             ]
           },
           "confirmation": {
@@ -250,7 +251,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 73.3,
+      "score": 72.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -294,7 +295,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-25T16:00:07Z",
       "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 743,
+      "views": 746,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -333,7 +334,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.7,
+      "score": 65.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -343,7 +344,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 7374,
+      "views": 7549,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -387,7 +388,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.4,
+      "score": 64.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -397,7 +398,7 @@
       "channel": "Kentin",
       "date": "2026-10-24T16:15:18Z",
       "url": "https://www.youtube.com/watch?v=wjvxV8QWIh0",
-      "views": 271,
+      "views": 272,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -436,7 +437,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 64.7,
+      "score": 64.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -485,7 +486,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 60.3,
+      "score": 60.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -534,7 +535,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 59.7,
+      "score": 59.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -612,7 +613,7 @@
       "channel": "Cokinho",
       "date": "2026-10-14T23:49:22Z",
       "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 360,
+      "views": 362,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -651,62 +652,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 50.1,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "-_pRH7AVaLM",
-      "title": "Otra manera estúpida de ganar KAMAS en DOFUS 3",
-      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-10-09T16:01:15Z",
-      "url": "https://www.youtube.com/watch?v=-_pRH7AVaLM",
-      "views": 13384,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 1048,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 20,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 3,
-            "examples": [
-              "Yo viendo como mi gremio farmea kamas como loco 🤑🤑🤑🤑",
-              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias."
-            ]
-          },
-          "confirmation": {
-            "count": 2,
-            "examples": [
-              "Gracias Torre por hacer estás guías de kamas. Así distraes a la gente y así nadie se da cuenta de mi super monopolio de Dofawas. Oh espera, ahora lo van a saber. OkGoogleComoBorroUnComentarioEnYoutubePorFavorYGracias.",
-              "Gracias por la mención king, me alegra que hayas hecho videito del método 🫶🏼"
-            ]
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 29.1,
+      "score": 49.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
