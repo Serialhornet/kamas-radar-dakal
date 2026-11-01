@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-01T14:53:07.484840+00:00",
+  "updated_at": "2026-11-01T20:52:31.083529+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-20T15:00:37Z",
       "url": "https://www.youtube.com/watch?v=WVzGbja6MBA",
-      "views": 525,
+      "views": 527,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,58 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 101.5,
+      "score": 101.1,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "NZe1eZcGEWo",
+      "title": "💰 FARMEA MEJOR: TRUCOS PARA CONSEGUIR MÁS OBJETOS | Dofus 3",
+      "description": "Quieres hacer Kamas en DOFUS sin depender únicamente de los oficios? En este video te comparto tips para farmear objetos, ...",
+      "channel": "TwistFizz",
+      "date": "2026-10-29T03:47:34Z",
+      "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
+      "views": 897,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es",
+      "duration_seconds": 413,
+      "detail": {
+        "categorie": "Farm / drop",
+        "resume_source": "Quieres hacer Kamas en DOFUS sin depender únicamente de los oficios? En este video te comparto tips para farmear objetos, ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 2,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 1,
+            "examples": [
+              "Muchas gracias ! Gran video, he pasado días preguntando a la gente que puedo hacer con dos cuentas y la gente me dice que nada que son mínimo 4 cuentas gracias broh !"
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 97.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 80.7,
+      "score": 80.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +158,7 @@
       "channel": "ShyNwo",
       "date": "2026-10-27T17:00:26Z",
       "url": "https://www.youtube.com/shorts/OmhoxzBOK6w",
-      "views": 76,
+      "views": 79,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -146,7 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 76.6,
+      "score": 76.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -156,7 +207,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-25T21:01:24Z",
       "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 11619,
+      "views": 11655,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -184,10 +235,10 @@
             "examples": []
           },
           "prix": {
-            "count": 2,
+            "count": 3,
             "examples": [
               "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD",
-              "La verdad que el tema del agua desde siempre lo usé para generar kamas cuando empezaba a jugar y hasta el día de hoy sigo usándola y se que se genera bastante, pero esas cantidades son absurdas. Igual no me dí cuenta como paso todo el video jajajajaj."
+              "yo venia a ver como generar kamas, y termine con una clase de economía, monopolios y manejo del mercado"
             ]
           },
           "confirmation": {
@@ -200,7 +251,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.3,
+      "score": 70.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -238,62 +289,13 @@
       "score": 69
     },
     {
-      "id": "iwMG1bc6K9A",
-      "title": "💸 CÓMO HACER KAMAS ROMPIENDO OBJETOS | SUBIENDO OFICIOS EN DOFUS",
-      "description": "En este video te voy a mostrar mi manera de como hacer, conseguir kamas mientras subo oficios en dofus 3. Te enseño paso a ...",
-      "channel": "TwistFizz",
-      "date": "2026-10-25T16:00:07Z",
-      "url": "https://www.youtube.com/watch?v=iwMG1bc6K9A",
-      "views": 784,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es",
-      "duration_seconds": 1079,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "En este video te voy a mostrar mi manera de como hacer, conseguir kamas mientras subo oficios en dofus 3. Te enseño paso a ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 63.8,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
       "id": "SPZqiKpzl_c",
       "title": "90 MINUTOS haciendo KAMAS en DOFUS 3... SIN CORTES NI EDICIÓN",
       "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 8482,
+      "views": 8704,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -337,7 +339,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 62.4,
+      "score": 61.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -386,7 +388,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 58.5,
+      "score": 58.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -396,7 +398,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 730,
+      "views": 738,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -435,58 +437,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 57.8,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "dUjAZTA57f8",
-      "title": "MASACRE DE BOTS con la nueva DEUDA DE KAMAS en DOFUS 3",
-      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-10-31T17:01:08Z",
-      "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 16107,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 479,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 20,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 1,
-            "examples": [
-              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja."
-            ]
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 57.5,
+      "score": 57.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -558,13 +509,65 @@
       "score": 57
     },
     {
+      "id": "dUjAZTA57f8",
+      "title": "MASACRE DE BOTS con la nueva DEUDA DE KAMAS en DOFUS 3",
+      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-10-31T17:01:08Z",
+      "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
+      "views": 19302,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 479,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 2,
+            "examples": [
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
+              "Probablemente van a quitar el intercambio, para afectar ademas de los bots a los multicuenta para que no se tenga esa facilidad de \"adjuntar\" o reunir kamas"
+            ]
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 54.0,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
       "id": "LSpFR6aPZAk",
       "title": "DOFUS UNITY: 60 DONJONS DAMADRYA EN TEAM SADIDA = 10 MILLIONS DE KAMAS EPISODE 5",
       "description": "https://www.twitch.tv/cokinho08 -_-_-_-_-_-_- VENEZ SUR TWITCH -_-_-_-_-_-_- Salut tout le monde, j'espère que vous allez bien ...",
       "channel": "Cokinho",
       "date": "2026-10-14T23:49:22Z",
       "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 368,
+      "views": 369,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -603,7 +606,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 48.2,
+      "score": 47.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
