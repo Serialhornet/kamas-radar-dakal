@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-02T09:24:00.263816+00:00",
+  "updated_at": "2026-11-02T15:11:38.692425+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 100.3,
+      "score": 100.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 975,
+      "views": 988,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 96.7,
+      "score": 96.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 79.5,
+      "score": 79.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -197,61 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 75.4,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "C6jh6z6N22A",
-      "title": "10 000 000 Kamas solo con POZOS DE AGUA || VIDEOREACCIÓN DOFUS 3",
-      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-10-25T21:01:24Z",
-      "url": "https://www.youtube.com/watch?v=C6jh6z6N22A",
-      "views": 11720,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 5097,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
-      },
-      "monocompte": true,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 20,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 3,
-            "examples": [
-              "56:50 bienvenidos a la experiencia hispana, donde un random puede bajar a la mitad el precio de algo y el resto de gente en vez de esperar a que suba igual le sigun bajando un kama XD",
-              "yo venia a ver como generar kamas, y termine con una clase de economía, monopolios y manejo del mercado"
-            ]
-          },
-          "confirmation": {
-            "count": 1,
-            "examples": [
-              "¡Gracias de nuevo, amigo, por dar visibilidad a los vídeos en la comunidad hispanohablante! Siempre tan alegre :)"
-            ]
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 70.0,
+      "score": 75.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -295,7 +241,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 9062,
+      "views": 9164,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -339,7 +285,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 60.7,
+      "score": 60.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -388,7 +334,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 57.3,
+      "score": 57.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -505,7 +451,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.6,
+      "score": 56.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -515,7 +461,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 22355,
+      "views": 23078,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -543,10 +489,10 @@
             "examples": []
           },
           "prix": {
-            "count": 2,
+            "count": 3,
             "examples": [
               "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
-              "Le han puesto de nombre deuda de kamas por que llamarlo Hacienda era muy cantoso xd"
+              "Que creo que pueda pasar, que ahora los compradores de kamas lo hagan por medio de mercadillo. Ponen en venta un recurso a 10m kamas (claro que un % se va en impuesto) y el vendedor de kamas va al mercadillo y compra ese recurso"
             ]
           },
           "confirmation": {
@@ -557,56 +503,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 50.1,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "LSpFR6aPZAk",
-      "title": "DOFUS UNITY: 60 DONJONS DAMADRYA EN TEAM SADIDA = 10 MILLIONS DE KAMAS EPISODE 5",
-      "description": "https://www.twitch.tv/cokinho08 -_-_-_-_-_-_- VENEZ SUR TWITCH -_-_-_-_-_-_- Salut tout le monde, j'espère que vous allez bien ...",
-      "channel": "Cokinho",
-      "date": "2026-10-14T23:49:22Z",
-      "url": "https://www.youtube.com/watch?v=LSpFR6aPZAk",
-      "views": 369,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 260,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "https://www.twitch.tv/cokinho08 -_-_-_-_-_-_- VENEZ SUR TWITCH -_-_-_-_-_-_- Salut tout le monde, j'espère que vous allez bien ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 47.0,
+      "score": 49.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
