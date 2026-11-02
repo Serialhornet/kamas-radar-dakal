@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-02T15:11:38.692425+00:00",
+  "updated_at": "2026-11-02T20:58:43.617108+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 100.0,
+      "score": 99.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 988,
+      "views": 1014,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 96.3,
+      "score": 95.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 79.2,
+      "score": 78.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +158,7 @@
       "channel": "ShyNwo",
       "date": "2026-10-27T17:00:26Z",
       "url": "https://www.youtube.com/shorts/OmhoxzBOK6w",
-      "views": 80,
+      "views": 82,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -197,7 +197,59 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 75.0,
+      "score": 74.7,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "Dd8HYAmDigs",
+      "title": "6 000 000 Kamas por semana con esta tontería en DOFUS 3",
+      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-11-02T17:01:09Z",
+      "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
+      "views": 3672,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 795,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 14,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 3,
+            "examples": [
+              "El brother haciendo un video para que baje el precio y poder hacer su silvestre mas barato:",
+              "NOOOOOOOOOO, mi método de farmeo de kamas 😡🤬 (No juego hace 5 años), gran vidio torresín"
+            ]
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 71.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -241,7 +293,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 9164,
+      "views": 9296,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -285,56 +337,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 60.2,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "jmj7v9fqhrw",
-      "title": "Mon astuce kamas en 1 29 ! #dofus #dofusunity",
-      "description": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
-      "channel": "Radgeur",
-      "date": "2026-10-15T14:57:57Z",
-      "url": "https://www.youtube.com/watch?v=jmj7v9fqhrw",
-      "views": 32,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "court",
-      "source_type": "video",
-      "langue": "fr-FR",
-      "duration_seconds": 165,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr-FR",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 57.0,
+      "score": 59.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -406,6 +409,55 @@
       "score": 57
     },
     {
+      "id": "jmj7v9fqhrw",
+      "title": "Mon astuce kamas en 1 29 ! #dofus #dofusunity",
+      "description": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
+      "channel": "Radgeur",
+      "date": "2026-10-15T14:57:57Z",
+      "url": "https://www.youtube.com/watch?v=jmj7v9fqhrw",
+      "views": 32,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
+      "source_type": "video",
+      "langue": "fr-FR",
+      "duration_seconds": 165,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr-FR",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 56.6,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
       "id": "p_mXHvHwYxo",
       "title": "A jornada do HUPPERMAGO #3 - Kamas com Profissão e missões | Dofus 3",
       "description": "Terceiro vídeo da série e a gente trouxe várias dicas interessantes, comentamos vários tópicos legais e conseguimos concluir ...",
@@ -451,7 +503,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.2,
+      "score": 55.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -461,7 +513,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 23078,
+      "views": 24316,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -503,7 +555,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 49.0,
+      "score": 47.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
