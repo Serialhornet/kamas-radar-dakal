@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-02T20:58:43.617108+00:00",
+  "updated_at": "2026-11-03T03:06:38.811745+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -9,7 +9,7 @@
       "channel": "Capitemflam",
       "date": "2026-10-20T15:00:37Z",
       "url": "https://www.youtube.com/watch?v=WVzGbja6MBA",
-      "views": 527,
+      "views": 530,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 99.6,
+      "score": 99.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1014,
+      "views": 1038,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 95.9,
+      "score": 95.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.8,
+      "score": 78.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +158,7 @@
       "channel": "ShyNwo",
       "date": "2026-10-27T17:00:26Z",
       "url": "https://www.youtube.com/shorts/OmhoxzBOK6w",
-      "views": 82,
+      "views": 84,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -197,23 +197,23 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.7,
+      "score": 74.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
-      "id": "Dd8HYAmDigs",
-      "title": "6 000 000 Kamas por semana con esta tontería en DOFUS 3",
+      "id": "0HNgTjm4YKQ",
+      "title": "ASÍ se hacen kamas la COMPRA Y VENTA en el mercadillo en DOFUS 3 | SIN EDICIÓN NI RECORTES",
       "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
       "channel": "Torrente Arcano",
-      "date": "2026-11-02T17:01:09Z",
-      "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 3672,
+      "date": "2026-11-03T01:01:25Z",
+      "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
+      "views": 682,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
       "source_type": "video",
       "langue": "es-ES",
-      "duration_seconds": 795,
+      "duration_seconds": 4110,
       "detail": {
         "categorie": "Astuces kamas",
         "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
@@ -228,17 +228,16 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 14,
+        "analysed": 10,
         "signals": {
           "attention": {
             "count": 0,
             "examples": []
           },
           "prix": {
-            "count": 3,
+            "count": 1,
             "examples": [
-              "El brother haciendo un video para que baje el precio y poder hacer su silvestre mas barato:",
-              "NOOOOOOOOOO, mi método de farmeo de kamas 😡🤬 (No juego hace 5 años), gran vidio torresín"
+              "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov"
             ]
           },
           "confirmation": {
@@ -249,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.1,
+      "score": 74.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -287,13 +286,65 @@
       "score": 69
     },
     {
+      "id": "Dd8HYAmDigs",
+      "title": "6 000 000 Kamas por semana con esta tontería en DOFUS 3",
+      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-11-02T17:01:09Z",
+      "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
+      "views": 9136,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 795,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 18,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 3,
+            "examples": [
+              "El brother haciendo un video para que baje el precio y poder hacer su silvestre mas barato:",
+              "NOOOOOOOOOO, mi método de farmeo de kamas 😡🤬 (No juego hace 5 años), gran vidio torresín"
+            ]
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 65.2,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
       "id": "SPZqiKpzl_c",
       "title": "90 MINUTOS haciendo KAMAS en DOFUS 3... SIN CORTES NI EDICIÓN",
       "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 9296,
+      "views": 9522,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -337,7 +388,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 59.7,
+      "score": 59.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -454,7 +505,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.6,
+      "score": 56.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -464,7 +515,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 747,
+      "views": 749,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -503,7 +554,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 55.9,
+      "score": 55.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -513,7 +564,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 24316,
+      "views": 24963,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -555,7 +606,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 47.4,
+      "score": 46.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
