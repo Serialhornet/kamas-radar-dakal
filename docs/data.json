@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-03T03:06:38.811745+00:00",
+  "updated_at": "2026-11-03T09:08:17.535011+00:00",
   "items": [
     {
       "id": "WVzGbja6MBA",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 99.2,
+      "score": 98.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1038,
+      "views": 1067,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 95.5,
+      "score": 95.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.4,
+      "score": 78.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +158,7 @@
       "channel": "ShyNwo",
       "date": "2026-10-27T17:00:26Z",
       "url": "https://www.youtube.com/shorts/OmhoxzBOK6w",
-      "views": 84,
+      "views": 85,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -197,7 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.3,
+      "score": 73.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -207,7 +207,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 682,
+      "views": 3690,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -228,7 +228,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 10,
+        "analysed": 15,
         "signals": {
           "attention": {
             "count": 0,
@@ -248,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.2,
+      "score": 70.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -292,7 +292,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 9136,
+      "views": 10668,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -313,7 +313,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 18,
+        "analysed": 20,
         "signals": {
           "attention": {
             "count": 0,
@@ -334,7 +334,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.2,
+      "score": 63.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -344,7 +344,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 9522,
+      "views": 9613,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -388,7 +388,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 59.1,
+      "score": 58.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -505,7 +505,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.2,
+      "score": 55.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -515,7 +515,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 749,
+      "views": 751,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -554,7 +554,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 55.5,
+      "score": 55.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -564,7 +564,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 24963,
+      "views": 25330,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -606,7 +606,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 46.4,
+      "score": 46.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
