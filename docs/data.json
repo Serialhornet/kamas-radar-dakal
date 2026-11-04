@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-03T21:02:12.680525+00:00",
+  "updated_at": "2026-11-04T03:06:14.550953+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -9,7 +9,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 323,
+      "views": 401,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 101.0,
+      "score": 100.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 98.1,
+      "score": 97.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1150,
+      "views": 1207,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 94.3,
+      "score": 93.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -197,7 +197,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 77.3,
+      "score": 76.9,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "OmhoxzBOK6w",
+      "title": "Le bon plan kamas du moment sur Dofus 3 (MàJ 3.7) 🦴💰 #shorts",
+      "description": "Depuis la mise à jour 3.7 (6 octobre 2026), le nouveau trophée Mule (+sagesse, +pods) fait grimper le Fémur de Koalak Farouche ...",
+      "channel": "ShyNwo",
+      "date": "2026-10-27T17:00:26Z",
+      "url": "https://www.youtube.com/shorts/OmhoxzBOK6w",
+      "views": 88,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "short",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 31,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Depuis la mise à jour 3.7 (6 octobre 2026), le nouveau trophée Mule (+sagesse, +pods) fait grimper le Fémur de Koalak Farouche ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 72.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -241,7 +290,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 7563,
+      "views": 8266,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -262,7 +311,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 18,
+        "analysed": 19,
         "signals": {
           "attention": {
             "count": 0,
@@ -283,7 +332,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.2,
+      "score": 65.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -293,7 +342,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 12570,
+      "views": 13047,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -335,7 +384,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 60.7,
+      "score": 59.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -345,7 +394,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 9782,
+      "views": 9833,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -389,7 +438,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 57.7,
+      "score": 57.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -467,7 +516,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 753,
+      "views": 754,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -506,7 +555,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 54.4,
+      "score": 54.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -516,7 +565,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 26271,
+      "views": 27025,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -557,7 +606,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 45.2,
+      "score": 44.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
