@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-05T09:19:24.632546+00:00",
+  "updated_at": "2026-11-05T15:15:40.061096+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -9,7 +9,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 571,
+      "views": 585,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 98.5,
+      "score": 98.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 75.0,
+      "score": 74.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 609,
+      "views": 746,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -146,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 72.7,
+      "score": 72.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -190,7 +190,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 9493,
+      "views": 9558,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -232,7 +232,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 62.0,
+      "score": 61.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -310,7 +310,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 14170,
+      "views": 14218,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -352,7 +352,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.8,
+      "score": 56.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -362,7 +362,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 10101,
+      "views": 10116,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -406,7 +406,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 55.1,
+      "score": 54.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -416,7 +416,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 28487,
+      "views": 28663,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -457,7 +457,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 43.0,
+      "score": 42.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
