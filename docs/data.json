@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-04T21:07:18.921880+00:00",
+  "updated_at": "2026-11-05T03:06:58.129357+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -9,7 +9,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 542,
+      "views": 558,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -48,107 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 99.3,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "WVzGbja6MBA",
-      "title": "FARMER des KAMAS avec les COFFRES d'ÉNUTROSOR dans Dofus 3",
-      "description": "Extrait de ma série OUGINAK EAU lvl 199 à 200 en monocompte sur Dofus 3. La vidéo complète : https://youtu.be/-lIAeSBiUCo ...",
-      "channel": "Capitemflam",
-      "date": "2026-10-20T15:00:37Z",
-      "url": "https://www.youtube.com/watch?v=WVzGbja6MBA",
-      "views": 534,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "court",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 49,
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Extrait de ma série OUGINAK EAU lvl 199 à 200 en monocompte sur Dofus 3. La vidéo complète : https://youtu.be/-lIAeSBiUCo ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
-      },
-      "monocompte": true,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 96.6,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "NZe1eZcGEWo",
-      "title": "💰 FARMEA MEJOR: TRUCOS PARA CONSEGUIR MÁS OBJETOS | Dofus 3",
-      "description": "Quieres hacer Kamas en DOFUS sin depender únicamente de los oficios? En este video te comparto tips para farmear objetos, ...",
-      "channel": "TwistFizz",
-      "date": "2026-10-29T03:47:34Z",
-      "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1340,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es",
-      "duration_seconds": 413,
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Quieres hacer Kamas en DOFUS sin depender únicamente de los oficios? En este video te comparto tips para farmear objetos, ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 2,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 1,
-            "examples": [
-              "Muchas gracias ! Gran video, he pasado días preguntando a la gente que puedo hacer con dos cuentas y la gente me dice que nada que son mínimo 4 cuentas gracias broh !"
-            ]
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 92.6,
+      "score": 98.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -197,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 75.8,
+      "score": 75.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -207,7 +107,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 68,
+      "views": 439,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -246,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.0,
+      "score": 73.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -290,7 +190,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 9087,
+      "views": 9342,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -332,7 +232,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 63.2,
+      "score": 62.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -342,7 +242,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 13938,
+      "views": 14064,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -384,7 +284,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 57.8,
+      "score": 57.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -462,7 +362,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 10018,
+      "views": 10066,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -506,7 +406,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.0,
+      "score": 55.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -516,7 +416,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-10-21T15:00:08Z",
       "url": "https://www.youtube.com/watch?v=p_mXHvHwYxo",
-      "views": 758,
+      "views": 760,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -555,7 +455,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 52.9,
+      "score": 52.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -565,7 +465,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 28123,
+      "views": 28305,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -606,7 +506,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 43.7,
+      "score": 43.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
