@@ -1,56 +1,7 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-05T21:05:46.857608+00:00",
+  "updated_at": "2026-11-06T03:06:39.182180+00:00",
   "items": [
-    {
-      "id": "x3DPkp-2Has",
-      "title": "Ce Crâ farme tout seul depuis 1 h… | Bot Dofus 3 ZaapBot #shorts",
-      "description": "Une vraie session de ZaapBot sur Dofus 3, filmée telle quelle (certains passages accélérés) : récolte, un monstre attaque, combat ...",
-      "channel": "ZaapBot",
-      "date": "2026-10-29T22:59:36Z",
-      "url": "https://www.youtube.com/shorts/x3DPkp-2Has",
-      "views": 1482,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "short",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 40,
-      "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Une vraie session de ZaapBot sur Dofus 3, filmée telle quelle (certains passages accélérés) : récolte, un monstre attaque, combat ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 3,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 101.1,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
     {
       "id": "_zWKtw-sfHw",
       "title": "LES QUÊTES RÉPÉTABLES EN MONOCOMPTE : PARTIE 1 | Dofus Unity #shorts #gaming #dofus #astuce",
@@ -97,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 97.7,
+      "score": 97.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -146,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.3,
+      "score": 73.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -156,7 +107,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 810,
+      "views": 867,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -195,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.8,
+      "score": 71.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -239,7 +190,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 9603,
+      "views": 9678,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -281,7 +232,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 61.1,
+      "score": 60.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -359,7 +310,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 14288,
+      "views": 14328,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -401,7 +352,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.0,
+      "score": 55.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -411,7 +362,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-29T21:01:16Z",
       "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 10140,
+      "views": 10166,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -455,7 +406,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 54.4,
+      "score": 54.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -465,7 +416,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 28860,
+      "views": 28918,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -493,10 +444,9 @@
             "examples": []
           },
           "prix": {
-            "count": 2,
+            "count": 1,
             "examples": [
-              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
-              "Probablemente van a quitar el intercambio, para afectar ademas de los bots a los multicuenta para que no se tenga esa facilidad de \"adjuntar\" o reunir kamas"
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja."
             ]
           },
           "confirmation": {
@@ -507,7 +457,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 42.2,
+      "score": 41.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
