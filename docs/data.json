@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-06T15:03:21.648572+00:00",
+  "updated_at": "2026-11-06T20:59:55.040679+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -9,7 +9,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 589,
+      "views": 590,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 96.6,
+      "score": 96.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 73.2,
+      "score": 72.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -107,7 +107,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 905,
+      "views": 923,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -146,7 +146,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.6,
+      "score": 70.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -190,7 +190,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 9766,
+      "views": 9840,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -220,8 +220,8 @@
           "prix": {
             "count": 5,
             "examples": [
-              "disclaimer: hay productos que los manejan bots (los guijarros x ejemplo) que hacen que el precio se actualice todo el tiempo volviendose imposible poder venderlos en minorista, ojo con eso",
-              "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov"
+              "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov",
+              "disclaimer: hay productos que los manejan bots (los guijarros x ejemplo) que hacen que el precio se actualice todo el tiempo volviendose imposible poder venderlos en minorista, ojo con eso"
             ]
           },
           "confirmation": {
@@ -232,7 +232,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 59.9,
+      "score": 59.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -310,7 +310,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 14401,
+      "views": 14492,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -352,61 +352,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 54.7,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "SPZqiKpzl_c",
-      "title": "90 MINUTOS haciendo KAMAS en DOFUS 3... SIN CORTES NI EDICIÓN",
-      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-10-29T21:01:16Z",
-      "url": "https://www.youtube.com/watch?v=SPZqiKpzl_c",
-      "views": 10213,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 5777,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 20,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 1,
-            "examples": [
-              "Estos vídeos piramidales me gustan gracias pondré todas mis kamas en esto"
-            ]
-          },
-          "confirmation": {
-            "count": 2,
-            "examples": [
-              "Yo soy un jugador que disfruta mucho del juego, y lo disfruto a mi manera ya sea recolectando o simplemente avanzando en el juego pero ver tu contenido me genera muchas ganas de seguir jugando y también me da mucha información que me ayuda en mi aventura, a partir de noviembre quiero ser miembro del canal y apoyarte más Gracias por hacer que disfru",
-              "Estos vídeos piramidales me gustan gracias pondré todas mis kamas en esto"
-            ]
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 53.2,
+      "score": 54.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -416,7 +362,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29021,
+      "views": 29091,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -457,7 +403,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 41.1,
+      "score": 40.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
