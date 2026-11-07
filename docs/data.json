@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-07T14:55:40.542310+00:00",
+  "updated_at": "2026-11-07T20:54:11.645641+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -9,7 +9,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 596,
+      "views": 599,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -48,7 +48,58 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 95.1,
+      "score": 94.7,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "IR2EuVjfs8o",
+      "title": "VENDRE RAPIDEMENT et EFFICACEMENT en MONOCOMPTE | Dofus Unity #shorts #gaming #dofus #astuce",
+      "description": "Ma méthode pour gérer mes HDV pour vendre un maximum rapidement et efficacement, sans perdre de temps de jeu. Voir le ...",
+      "channel": "Spotlight-q8d ● Dofus",
+      "date": "2026-11-02T15:00:24Z",
+      "url": "https://www.youtube.com/shorts/IR2EuVjfs8o",
+      "views": 1506,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "short",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 28,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Ma méthode pour gérer mes HDV pour vendre un maximum rapidement et efficacement, sans perdre de temps de jeu. Voir le ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
+      },
+      "monocompte": true,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 1,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 1,
+            "examples": [
+              "Ouai mais tu payes la taxe de mise en vente plein pot au lieu d’une taxe de modification + tu retire et remet des ressources qui étaient potentiellement déjà en premier dans l’hdv mais en cas de flemme je comprends"
+            ]
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 92.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +109,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1539,
+      "views": 1574,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +150,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 88.3,
+      "score": 87.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,56 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 71.7,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "ncqBBKt4ytA",
-      "title": "De 0 à 10 MILLIONS de KAMAS… SANS ÊTRE ABONNÉ ! (DOFUS 3)",
-      "description": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
-      "channel": "Persodax",
-      "date": "2026-11-04T07:00:17Z",
-      "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 972,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 346,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 69.0,
+      "score": 71.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -235,13 +237,62 @@
       "score": 69
     },
     {
+      "id": "ncqBBKt4ytA",
+      "title": "De 0 à 10 MILLIONS de KAMAS… SANS ÊTRE ABONNÉ ! (DOFUS 3)",
+      "description": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
+      "channel": "Persodax",
+      "date": "2026-11-04T07:00:17Z",
+      "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
+      "views": 1004,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 346,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 1,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 68.6,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
       "id": "0HNgTjm4YKQ",
       "title": "ASÍ se hacen kamas la COMPRA Y VENTA en el mercadillo en DOFUS 3 | SIN EDICIÓN NI RECORTES",
       "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 9905,
+      "views": 9929,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -269,7 +320,7 @@
             "examples": []
           },
           "prix": {
-            "count": 4,
+            "count": 5,
             "examples": [
               "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov",
               "Ese método lo utiliza hace muchos años, le invertía una hora al dia y el resto me ponía a hacer otras cosas y es satisfactorio ver como te llega kamas a cada rato mientras peleas o haces otra cosa, ganancias semi pasivas"
@@ -283,7 +334,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 58.2,
+      "score": 57.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -361,7 +412,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 14709,
+      "views": 14825,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -403,7 +454,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 52.9,
+      "score": 52.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -413,7 +464,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29233,
+      "views": 29319,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -454,7 +505,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 39.6,
+      "score": 39.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
