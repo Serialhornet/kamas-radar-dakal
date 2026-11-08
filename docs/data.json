@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-08T03:06:32.639641+00:00",
+  "updated_at": "2026-11-08T09:05:27.759590+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 94.3,
+      "score": 94.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 92.2,
+      "score": 91.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +109,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1587,
+      "views": 1595,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -150,7 +150,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 87.5,
+      "score": 87.1,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "9IapbE8FKWE",
+      "title": "Todo lo que debes CONOCER sobre la DEUDA DE KAMAS #dofus",
+      "description": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
+      "channel": "Undefaul 26  (Unity)  ",
+      "date": "2026-11-08T06:06:12Z",
+      "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
+      "views": 213,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es",
+      "duration_seconds": 1123,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 4,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 74.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -199,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.9,
+      "score": 70.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -243,7 +292,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 1028,
+      "views": 1051,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -282,7 +331,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 68.2,
+      "score": 67.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -292,7 +341,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-03T01:01:25Z",
       "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 9965,
+      "views": 9999,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -320,7 +369,7 @@
             "examples": []
           },
           "prix": {
-            "count": 5,
+            "count": 4,
             "examples": [
               "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov",
               "Ese método lo utiliza hace muchos años, le invertía una hora al dia y el resto me ponía a hacer otras cosas y es satisfactorio ver como te llega kamas a cada rato mientras peleas o haces otra cosa, ganancias semi pasivas"
@@ -334,7 +383,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 57.4,
+      "score": 57.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -412,7 +461,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 14905,
+      "views": 14959,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -454,7 +503,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 52.0,
+      "score": 51.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -464,7 +513,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29419,
+      "views": 29464,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -492,10 +541,9 @@
             "examples": []
           },
           "prix": {
-            "count": 2,
+            "count": 1,
             "examples": [
-              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
-              "Probablemente van a quitar el intercambio, para afectar ademas de los bots a los multicuenta para que no se tenga esa facilidad de \"adjuntar\" o reunir kamas"
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja."
             ]
           },
           "confirmation": {
@@ -506,7 +554,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 38.9,
+      "score": 38.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
