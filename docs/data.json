@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-08T09:05:27.759590+00:00",
+  "updated_at": "2026-11-08T14:54:33.787095+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 94.0,
+      "score": 93.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-02T15:00:24Z",
       "url": "https://www.youtube.com/shorts/IR2EuVjfs8o",
-      "views": 1509,
+      "views": 1511,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 91.9,
+      "score": 91.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +109,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1595,
+      "views": 1601,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -150,7 +150,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 87.1,
+      "score": 86.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -160,7 +160,7 @@
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 213,
+      "views": 901,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -199,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.6,
+      "score": 73.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -248,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.6,
+      "score": 70.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -292,7 +292,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 1051,
+      "views": 1083,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -331,59 +331,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.8,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "0HNgTjm4YKQ",
-      "title": "ASÍ se hacen kamas la COMPRA Y VENTA en el mercadillo en DOFUS 3 | SIN EDICIÓN NI RECORTES",
-      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-11-03T01:01:25Z",
-      "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 9999,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 4110,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 20,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 4,
-            "examples": [
-              "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov",
-              "Ese método lo utiliza hace muchos años, le invertía una hora al dia y el resto me ponía a hacer otras cosas y es satisfactorio ver como te llega kamas a cada rato mientras peleas o haces otra cosa, ganancias semi pasivas"
-            ]
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 57.0,
+      "score": 67.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -455,13 +403,65 @@
       "score": 57
     },
     {
+      "id": "0HNgTjm4YKQ",
+      "title": "ASÍ se hacen kamas la COMPRA Y VENTA en el mercadillo en DOFUS 3 | SIN EDICIÓN NI RECORTES",
+      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-11-03T01:01:25Z",
+      "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
+      "views": 10013,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 4110,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 4,
+            "examples": [
+              "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov",
+              "Ese método lo utiliza hace muchos años, le invertía una hora al dia y el resto me ponía a hacer otras cosas y es satisfactorio ver como te llega kamas a cada rato mientras peleas o haces otra cosa, ganancias semi pasivas"
+            ]
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 56.6,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
       "id": "Dd8HYAmDigs",
       "title": "6 000 000 Kamas por semana con esta tontería en DOFUS 3",
       "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 14959,
+      "views": 14999,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -503,7 +503,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 51.5,
+      "score": 51.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -513,7 +513,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29464,
+      "views": 29481,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -541,9 +541,10 @@
             "examples": []
           },
           "prix": {
-            "count": 1,
+            "count": 2,
             "examples": [
-              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja."
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
+              "Probablemente van a quitar el intercambio, para afectar ademas de los bots a los multicuenta para que no se tenga esa facilidad de \"adjuntar\" o reunir kamas"
             ]
           },
           "confirmation": {
@@ -554,7 +555,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 38.5,
+      "score": 38.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
