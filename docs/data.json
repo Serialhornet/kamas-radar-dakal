@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-09T09:54:06.778809+00:00",
+  "updated_at": "2026-11-09T23:27:43.833894+00:00",
   "items": [
     {
       "id": "_zWKtw-sfHw",
@@ -9,7 +9,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 607,
+      "views": 610,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 92.4,
+      "score": 91.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 90.3,
+      "score": 89.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +109,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1655,
+      "views": 1677,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -150,7 +150,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 85.5,
+      "score": 84.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -160,7 +160,7 @@
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 2938,
+      "views": 3419,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -190,8 +190,8 @@
           "prix": {
             "count": 5,
             "examples": [
-              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, ",
-              "El RMT debería ser legal a ankama no le conviene que se extinga, además ya es suficiente con que ankama cobre abonos y servicios ultra caros a los cuales la gente si accede y me incluyo, no se van a morir por qué no les compren directamente las kamas. Además el mercado negro siempre va a existir en los vídeojuegos online, en lo que tiene que mejora"
+              "El RMT debería ser legal a ankama no le conviene que se extinga, además ya es suficiente con que ankama cobre abonos y servicios ultra caros a los cuales la gente si accede y me incluyo, no se van a morir por qué no les compren directamente las kamas. Además el mercado negro siempre va a existir en los vídeojuegos online, en lo que tiene que mejora",
+              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, "
             ]
           },
           "confirmation": {
@@ -202,8 +202,42 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.3,
+      "score": 69.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "link:https://www.reddit.com/r/DOFUS_FRANCE/comments/1w139ph/je_viens_de_me_faire_de_11_millions_de_k_en/",
+      "title": "Je viens de me faire + de 11 millions de k en brisage",
+      "description": "Témoignage DOFUS Unity sur du brisage d'équipement avec gros coefficient. Les prix et coefficients montrés ne garantissent aucune rentabilité sur Dakal.",
+      "channel": "Reddit · r/DOFUS_FRANCE",
+      "date": "2026-08-28T00:00:00Z",
+      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1w139ph/je_viens_de_me_faire_de_11_millions_de_k_en/",
+      "views": null,
+      "source": "Lien sélectionné",
+      "source_platform": "site",
+      "source_format": "article",
+      "source_type": "article",
+      "langue": "Non vérifiée",
+      "detail": {
+        "categorie": "Brisage / runes",
+        "resume_source": "Témoignage DOFUS Unity sur du brisage d'équipement avec gros coefficient. Les prix et coefficients montrés ne garantissent aucune rentabilité sur Dakal.",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "Non verifiee",
+        "compatibilite_mono": "À vérifier dans la source"
+      },
+      "fiche_fr": "Lien sélectionné : contenu non transcrit.",
+      "monocompte": true,
+      "commentaires": {
+        "status": "non_analyses",
+        "analysed": 0,
+        "signals": {},
+        "examples": []
+      },
+      "score": 69
     },
     {
       "id": "3oS5IVYeYSA",
@@ -212,7 +246,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-08T17:01:35Z",
       "url": "https://www.youtube.com/watch?v=3oS5IVYeYSA",
-      "views": 4075,
+      "views": 4726,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -233,7 +267,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 9,
+        "analysed": 10,
         "signals": {
           "attention": {
             "count": 0,
@@ -253,7 +287,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 69.9,
+      "score": 68.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -302,42 +336,8 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 69.0,
+      "score": 68.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "link:https://www.reddit.com/r/DOFUS_FRANCE/comments/1w139ph/je_viens_de_me_faire_de_11_millions_de_k_en/",
-      "title": "Je viens de me faire + de 11 millions de k en brisage",
-      "description": "Témoignage DOFUS Unity sur du brisage d'équipement avec gros coefficient. Les prix et coefficients montrés ne garantissent aucune rentabilité sur Dakal.",
-      "channel": "Reddit · r/DOFUS_FRANCE",
-      "date": "2026-08-28T00:00:00Z",
-      "url": "https://www.reddit.com/r/DOFUS_FRANCE/comments/1w139ph/je_viens_de_me_faire_de_11_millions_de_k_en/",
-      "views": null,
-      "source": "Lien sélectionné",
-      "source_platform": "site",
-      "source_format": "article",
-      "source_type": "article",
-      "langue": "Non vérifiée",
-      "detail": {
-        "categorie": "Brisage / runes",
-        "resume_source": "Témoignage DOFUS Unity sur du brisage d'équipement avec gros coefficient. Les prix et coefficients montrés ne garantissent aucune rentabilité sur Dakal.",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "Non verifiee",
-        "compatibilite_mono": "À vérifier dans la source"
-      },
-      "fiche_fr": "Lien sélectionné : contenu non transcrit.",
-      "monocompte": true,
-      "commentaires": {
-        "status": "non_analyses",
-        "analysed": 0,
-        "signals": {},
-        "examples": []
-      },
-      "score": 69
     },
     {
       "id": "ncqBBKt4ytA",
@@ -346,7 +346,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 1149,
+      "views": 1173,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -385,7 +385,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.2,
+      "score": 65.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -457,65 +457,13 @@
       "score": 57
     },
     {
-      "id": "0HNgTjm4YKQ",
-      "title": "ASÍ se hacen kamas la COMPRA Y VENTA en el mercadillo en DOFUS 3 | SIN EDICIÓN NI RECORTES",
-      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-11-03T01:01:25Z",
-      "url": "https://www.youtube.com/watch?v=0HNgTjm4YKQ",
-      "views": 10103,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 4110,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 20,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 4,
-            "examples": [
-              "Es un método interesante por si no tienes demasiadas kamas para empezar! pero si ya tienes un capital en mi opinión la mayor ganancia está en craftear y magear items 200. También creo que sería interesante pensar los negocios en Dofus en términos de ROI (Beneficio/Gastos)*100, en mi experiencia el mercado en Dofus es bastante volátil por lo que mov",
-              "Ese método lo utiliza hace muchos años, le invertía una hora al dia y el resto me ponía a hacer otras cosas y es satisfactorio ver como te llega kamas a cada rato mientras peleas o haces otra cosa, ganancias semi pasivas"
-            ]
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 55.3,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
       "id": "k80dzhZ8c_s",
       "title": "J'ai CRÉE le MEILLEUR OUTIL de FARM/KAMAS sur DOFUS !",
       "description": "Comment trouver les MEILLEURES ZONES à FARMER sur DOFUS Unity et gagner un maximum de KAMAS ? J'ai créé un nouvel ...",
       "channel": "Tenmalexis",
       "date": "2026-10-11T16:00:30Z",
       "url": "https://www.youtube.com/watch?v=k80dzhZ8c_s",
-      "views": 9221,
+      "views": 9249,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -558,7 +506,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 51.7,
+      "score": 50.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -568,7 +516,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 15210,
+      "views": 15339,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -610,7 +558,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 49.7,
+      "score": 48.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -620,7 +568,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29673,
+      "views": 29734,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -648,10 +596,9 @@
             "examples": []
           },
           "prix": {
-            "count": 2,
+            "count": 1,
             "examples": [
-              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
-              "Probablemente van a quitar el intercambio, para afectar ademas de los bots a los multicuenta para que no se tenga esa facilidad de \"adjuntar\" o reunir kamas"
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja."
             ]
           },
           "confirmation": {
@@ -662,7 +609,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 36.9,
+      "score": 36.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
