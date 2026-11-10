@@ -1,7 +1,56 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-10T09:58:01.978770+00:00",
+  "updated_at": "2026-11-10T20:53:12.582664+00:00",
   "items": [
+    {
+      "id": "1xp8e_7ROWI",
+      "title": "💰 LAS MEJORES ZONAS PARA FARMEAR KAMAS EN DOFUS 3 | ¡HAZ CRECER TU RIQUEZA!",
+      "description": "En este video vamos a descubrir diferentes zonas de farmeo para conseguir recursos, objetos y generar Kamas aprovechando ...",
+      "channel": "TwistFizz",
+      "date": "2026-11-10T20:15:36Z",
+      "url": "https://www.youtube.com/watch?v=1xp8e_7ROWI",
+      "views": 0,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es",
+      "duration_seconds": 546,
+      "detail": {
+        "categorie": "Farm / drop",
+        "resume_source": "En este video vamos a descubrir diferentes zonas de farmeo para conseguir recursos, objetos y generar Kamas aprovechando ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 104.0,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
     {
       "id": "_zWKtw-sfHw",
       "title": "LES QUÊTES RÉPÉTABLES EN MONOCOMPTE : PARTIE 1 | Dofus Unity #shorts #gaming #dofus #astuce",
@@ -9,7 +58,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 613,
+      "views": 614,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -48,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 90.9,
+      "score": 90.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +107,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-02T15:00:24Z",
       "url": "https://www.youtube.com/shorts/IR2EuVjfs8o",
-      "views": 1522,
+      "views": 1523,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -99,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 88.8,
+      "score": 88.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +158,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1716,
+      "views": 1730,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -150,7 +199,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 83.9,
+      "score": 83.2,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "i6z8CImvcTM",
+      "title": "Cómo HACER MILLONES de KAMAS en DOFUS 2026 | Fragmentos de Anomalía",
+      "description": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
+      "channel": "Obsidiana ",
+      "date": "2026-11-06T22:00:14Z",
+      "url": "https://www.youtube.com/watch?v=i6z8CImvcTM",
+      "views": 74,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-419",
+      "duration_seconds": 353,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-419",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 3,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 69.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -194,7 +292,7 @@
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 3571,
+      "views": 3631,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -224,8 +322,8 @@
           "prix": {
             "count": 5,
             "examples": [
-              "El RMT debería ser legal a ankama no le conviene que se extinga, además ya es suficiente con que ankama cobre abonos y servicios ultra caros a los cuales la gente si accede y me incluyo, no se van a morir por qué no les compren directamente las kamas. Además el mercado negro siempre va a existir en los vídeojuegos online, en lo que tiene que mejora",
-              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, "
+              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, ",
+              "El RMT debería ser legal a ankama no le conviene que se extinga, además ya es suficiente con que ankama cobre abonos y servicios ultra caros a los cuales la gente si accede y me incluyo, no se van a morir por qué no les compren directamente las kamas. Además el mercado negro siempre va a existir en los vídeojuegos online, en lo que tiene que mejora"
             ]
           },
           "confirmation": {
@@ -236,7 +334,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 68.2,
+      "score": 67.4,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "MDff5VeddhQ",
+      "title": "Comment se faire des kamas en mono compte ? #dofus #dofusunity",
+      "description": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
+      "channel": "Radgeur",
+      "date": "2026-10-18T16:00:23Z",
+      "url": "https://www.youtube.com/watch?v=MDff5VeddhQ",
+      "views": 383,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
+      "source_type": "video",
+      "langue": "fr-FR",
+      "duration_seconds": 93,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr-FR",
+        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
+      },
+      "monocompte": true,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 0,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 66.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -246,7 +393,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-08T17:01:35Z",
       "url": "https://www.youtube.com/watch?v=3oS5IVYeYSA",
-      "views": 4927,
+      "views": 5054,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -287,56 +434,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.5,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "MDff5VeddhQ",
-      "title": "Comment se faire des kamas en mono compte ? #dofus #dofusunity",
-      "description": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
-      "channel": "Radgeur",
-      "date": "2026-10-18T16:00:23Z",
-      "url": "https://www.youtube.com/watch?v=MDff5VeddhQ",
-      "views": 381,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "court",
-      "source_type": "video",
-      "langue": "fr-FR",
-      "duration_seconds": 93,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "En live tous les matins à partir de 10h sauf dimanche et jours de maintenances Réseaux sociaux : - Twitch ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr-FR",
-        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
-      },
-      "monocompte": true,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 67.5,
+      "score": 66.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -346,7 +444,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 1177,
+      "views": 1181,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -385,7 +483,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 64.6,
+      "score": 64.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -463,7 +561,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 15384,
+      "views": 15420,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -505,7 +603,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 48.1,
+      "score": 47.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -515,7 +613,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29778,
+      "views": 29790,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -543,9 +641,10 @@
             "examples": []
           },
           "prix": {
-            "count": 1,
+            "count": 2,
             "examples": [
-              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja."
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
+              "Probablemente van a quitar el intercambio, para afectar ademas de los bots a los multicuenta para que no se tenga esa facilidad de \"adjuntar\" o reunir kamas"
             ]
           },
           "confirmation": {
@@ -556,7 +655,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 35.4,
+      "score": 34.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
