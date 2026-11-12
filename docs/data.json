@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-11T21:27:20.802756+00:00",
+  "updated_at": "2026-11-12T09:55:00.336884+00:00",
   "items": [
     {
       "id": "1xp8e_7ROWI",
@@ -9,7 +9,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-10T20:15:36Z",
       "url": "https://www.youtube.com/watch?v=1xp8e_7ROWI",
-      "views": 618,
+      "views": 873,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -48,62 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 101.8,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "9JOCQNkYrFQ",
-      "title": "1 400 000 KAMAS de BENEFICIO en 20 MINUTOS INVIRTIENDO EN MASCOTAS en DOFUS 3 (solo para ricos)",
-      "description": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-11-11T17:01:20Z",
-      "url": "https://www.youtube.com/watch?v=9JOCQNkYrFQ",
-      "views": 3204,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 1150,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
-      },
-      "monocompte": true,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 18,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 2,
-            "examples": [
-              "Torre, frikada para asegurar la rentabilidad más exacta|, lo que buscamos al «ahorrar» es conseguir una mascota nivel 100 por debajo del precio al que se vende actualmente en el mercadillo. Por ejemplo, supongamos que un Lokulto nivel 100 cuesta 5 MK (solo como referencia). Si conseguimos uno nivel 1 por 1 MK, nos quedarían 4 MK para invertir en su",
-              "Una vez me puse a hacer un excel parecido, pero considerando los precios de las mascotas desde el inicio, luego calculé cuánto me costaba subirla con galletas y esa era la meta. Total desmotivada, subir la mascota costaba al rededor de 4-5mk y el precio de las mascotas rondaba lo 2-3mk no hubo tabla de excel que me pusiera a ganar kamas con mascota"
-            ]
-          },
-          "confirmation": {
-            "count": 5,
-            "examples": [
-              "Por fin una guia para subir mascotas de forma eficiente, gracias",
-              "Justo ayer compré una mascota buscando subirla!! Gracias"
-            ]
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 89.5,
+      "score": 100.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -152,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 88.7,
+      "score": 87.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -203,7 +148,62 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 86.6,
+      "score": 85.8,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "9JOCQNkYrFQ",
+      "title": "1 400 000 KAMAS de BENEFICIO en 20 MINUTOS INVIRTIENDO EN MASCOTAS en DOFUS 3 (solo para ricos)",
+      "description": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-11-11T17:01:20Z",
+      "url": "https://www.youtube.com/watch?v=9JOCQNkYrFQ",
+      "views": 6751,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 1150,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
+      },
+      "monocompte": true,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 3,
+            "examples": [
+              "Torre, frikada para asegurar la rentabilidad más exacta|, lo que buscamos al «ahorrar» es conseguir una mascota nivel 100 por debajo del precio al que se vende actualmente en el mercadillo. Por ejemplo, supongamos que un Lokulto nivel 100 cuesta 5 MK (solo como referencia). Si conseguimos uno nivel 1 por 1 MK, nos quedarían 4 MK para invertir en su",
+              "Una vez me puse a hacer un excel parecido, pero considerando los precios de las mascotas desde el inicio, luego calculé cuánto me costaba subirla con galletas y esa era la meta. Total desmotivada, subir la mascota costaba al rededor de 4-5mk y el precio de las mascotas rondaba lo 2-3mk no hubo tabla de excel que me pusiera a ganar kamas con mascota"
+            ]
+          },
+          "confirmation": {
+            "count": 6,
+            "examples": [
+              "Por fin una guia para subir mascotas de forma eficiente, gracias",
+              "Justo ayer compré una mascota buscando subirla!! Gracias"
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 85.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -213,7 +213,7 @@
       "channel": "TwistFizz",
       "date": "2026-10-29T03:47:34Z",
       "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1738,
+      "views": 1749,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -254,7 +254,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 81.7,
+      "score": 80.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -264,7 +264,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-11T15:15:27Z",
       "url": "https://www.youtube.com/watch?v=gF_90oeoSvA",
-      "views": 238,
+      "views": 616,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -285,7 +285,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 4,
+        "analysed": 5,
         "signals": {
           "attention": {
             "count": 0,
@@ -303,7 +303,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.4,
+      "score": 73.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -341,62 +341,13 @@
       "score": 69
     },
     {
-      "id": "i6z8CImvcTM",
-      "title": "Cómo HACER MILLONES de KAMAS en DOFUS 2026 | Fragmentos de Anomalía",
-      "description": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
-      "channel": "Obsidiana ",
-      "date": "2026-11-06T22:00:14Z",
-      "url": "https://www.youtube.com/watch?v=i6z8CImvcTM",
-      "views": 75,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-419",
-      "duration_seconds": 353,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-419",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 3,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 67.5,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
       "id": "9IapbE8FKWE",
       "title": "Todo lo que debes CONOCER sobre la DEUDA DE KAMAS #dofus",
       "description": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 3759,
+      "views": 3784,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -438,7 +389,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.8,
+      "score": 65.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -448,7 +399,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-08T17:01:35Z",
       "url": "https://www.youtube.com/watch?v=3oS5IVYeYSA",
-      "views": 5312,
+      "views": 5445,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -489,7 +440,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 64.9,
+      "score": 64.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -499,7 +450,7 @@
       "channel": "Persodax",
       "date": "2026-11-04T07:00:17Z",
       "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 1191,
+      "views": 1198,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -538,7 +489,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 62.4,
+      "score": 61.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -616,7 +567,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 15501,
+      "views": 15573,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -658,7 +609,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 45.7,
+      "score": 44.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -668,7 +619,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29862,
+      "views": 29889,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -709,7 +660,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 33.2,
+      "score": 32.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
