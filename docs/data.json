@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-13T20:54:57.024768+00:00",
+  "updated_at": "2026-11-14T09:03:28.839338+00:00",
   "items": [
     {
       "id": "1xp8e_7ROWI",
@@ -9,7 +9,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-10T20:15:36Z",
       "url": "https://www.youtube.com/watch?v=1xp8e_7ROWI",
-      "views": 1019,
+      "views": 1025,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 98.4,
+      "score": 97.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -97,7 +97,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 85.7,
+      "score": 84.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 83.6,
+      "score": 82.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +158,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-11T17:01:20Z",
       "url": "https://www.youtube.com/watch?v=9JOCQNkYrFQ",
-      "views": 8285,
+      "views": 8468,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -196,33 +196,33 @@
             "count": 6,
             "examples": [
               "Por fin una guia para subir mascotas de forma eficiente, gracias",
-              "Justo ayer compré una mascota buscando subirla!! Gracias"
+              "gracias bro hace rato queria una guia asi :D"
             ]
           }
         },
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 81.5,
+      "score": 80.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
-      "id": "NZe1eZcGEWo",
-      "title": "💰 FARMEA MEJOR: TRUCOS PARA CONSEGUIR MÁS OBJETOS | Dofus 3",
-      "description": "Quieres hacer Kamas en DOFUS sin depender únicamente de los oficios? En este video te comparto tips para farmear objetos, ...",
+      "id": "hLkM-Lgrx7A",
+      "title": "💰 3 ZONAS PARA HACER KAMAS Y PAGAR TU ABONO EN DOFUS",
+      "description": "Quieres saber cómo hacer Kamas en DOFUS 3 y conseguir tu abono sin gastar dinero real? En este video te voy a mostrar 3 ...",
       "channel": "TwistFizz",
-      "date": "2026-10-29T03:47:34Z",
-      "url": "https://www.youtube.com/watch?v=NZe1eZcGEWo",
-      "views": 1770,
+      "date": "2026-11-14T01:00:23Z",
+      "url": "https://www.youtube.com/watch?v=hLkM-Lgrx7A",
+      "views": 84,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
       "source_type": "video",
       "langue": "es",
-      "duration_seconds": 413,
+      "duration_seconds": 629,
       "detail": {
-        "categorie": "Farm / drop",
-        "resume_source": "Quieres hacer Kamas en DOFUS sin depender únicamente de los oficios? En este video te comparto tips para farmear objetos, ...",
+        "categorie": "Astuces kamas",
+        "resume_source": "Quieres saber cómo hacer Kamas en DOFUS 3 y conseguir tu abono sin gastar dinero real? En este video te voy a mostrar 3 ...",
         "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
         "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
         "budget": "Inconnu; verifier les prix sur Dakal.",
@@ -234,7 +234,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 2,
+        "analysed": 1,
         "signals": {
           "attention": {
             "count": 0,
@@ -247,14 +247,14 @@
           "confirmation": {
             "count": 1,
             "examples": [
-              "Muchas gracias ! Gran video, he pasado días preguntando a la gente que puedo hacer con dos cuentas y la gente me dice que nada que son mínimo 4 cuentas gracias broh !"
+              "yo farmeo full anomalías, pero tambien es bueno saber de estas zonas por si un dia las ocupo muchas gracias :D"
             ]
           }
         },
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.7,
+      "score": 74.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -264,7 +264,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-11T15:15:27Z",
       "url": "https://www.youtube.com/watch?v=gF_90oeoSvA",
-      "views": 1013,
+      "views": 1032,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -303,7 +303,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.6,
+      "score": 69.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -347,7 +347,7 @@
       "channel": "Obsidiana ",
       "date": "2026-11-06T22:00:14Z",
       "url": "https://www.youtube.com/watch?v=i6z8CImvcTM",
-      "views": 91,
+      "views": 108,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -386,7 +386,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 64.5,
+      "score": 63.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -396,7 +396,7 @@
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 3894,
+      "views": 3924,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -427,7 +427,7 @@
             "count": 5,
             "examples": [
               "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, ",
-              "El RMT debería ser legal a ankama no le conviene que se extinga, además ya es suficiente con que ankama cobre abonos y servicios ultra caros a los cuales la gente si accede y me incluyo, no se van a morir por qué no les compren directamente las kamas. Además el mercado negro siempre va a existir en los vídeojuegos online, en lo que tiene que mejora"
+              "si farmeo kamas a mano como en el rush las puedo seguir vendiendo ?"
             ]
           },
           "confirmation": {
@@ -438,7 +438,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 62.7,
+      "score": 61.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -448,7 +448,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-08T17:01:35Z",
       "url": "https://www.youtube.com/watch?v=3oS5IVYeYSA",
-      "views": 5810,
+      "views": 5899,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -489,7 +489,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 61.4,
+      "score": 60.6,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "ncqBBKt4ytA",
+      "title": "De 0 à 10 MILLIONS de KAMAS… SANS ÊTRE ABONNÉ ! (DOFUS 3)",
+      "description": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
+      "channel": "Persodax",
+      "date": "2026-11-04T07:00:17Z",
+      "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
+      "views": 1216,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 346,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 1,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 58.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -567,7 +616,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-02T17:01:09Z",
       "url": "https://www.youtube.com/watch?v=Dd8HYAmDigs",
-      "views": 15693,
+      "views": 15742,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -609,7 +658,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 42.6,
+      "score": 41.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -619,7 +668,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-10-31T17:01:08Z",
       "url": "https://www.youtube.com/watch?v=dUjAZTA57f8",
-      "views": 29942,
+      "views": 29959,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -647,9 +696,10 @@
             "examples": []
           },
           "prix": {
-            "count": 1,
+            "count": 2,
             "examples": [
-              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja."
+              "Los jugadores que compran Kamas de paginas ilegales si son la causa. No hay oferta si no hay demanda. Que se jodan. Ahora, Ankama tambien deberia bajarle un poco a la tienda, porque BIEN caras que son sus ofertas de ogrinas jajajaja.",
+              "Que creo que pueda pasar, que ahora los compradores de kamas lo hagan por medio de mercadillo. Ponen en venta un recurso a 10m kamas (claro que un % se va en impuesto) y el vendedor de kamas va al mercadillo y compra ese recurso"
             ]
           },
           "confirmation": {
@@ -660,7 +710,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 30.3,
+      "score": 29.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
