@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-18T10:17:40.992372+00:00",
+  "updated_at": "2026-11-18T22:03:51.847582+00:00",
   "items": [
     {
       "id": "g6SHjam9Huc",
@@ -9,7 +9,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-15T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=g6SHjam9Huc",
-      "views": 765,
+      "views": 1116,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -50,7 +50,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 99.0,
+      "score": 97.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -99,7 +99,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 91.4,
+      "score": 90.7,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "K3hKxkZXjG8",
+      "title": "Les Rediff du Jour Saison 3 - Ep4 La Coiffe D'Oto Mustam #dofus #twitch #ankama #forgemagie #kamas",
+      "description": "dofus3.7 #exo #forgemagie #ankama #kamas Mes réseau : Discord : Renkynn Tiktok : https://www.tiktok.com/@renkynn_d ...",
+      "channel": "Renkynn",
+      "date": "2026-11-18T17:00:38Z",
+      "url": "https://www.youtube.com/watch?v=K3hKxkZXjG8",
+      "views": 298,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 61,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "dofus3.7 #exo #forgemagie #ankama #kamas Mes réseau : Discord : Renkynn Tiktok : https://www.tiktok.com/@renkynn_d ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 1,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 83.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +158,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-16T10:00:00Z",
       "url": "https://www.youtube.com/shorts/1FVX9fqugxE",
-      "views": 785,
+      "views": 828,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -150,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 80.2,
+      "score": 79.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -160,7 +209,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-03T10:00:31Z",
       "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 628,
+      "views": 629,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -199,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.9,
+      "score": 78.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -209,7 +258,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-02T15:00:24Z",
       "url": "https://www.youtube.com/shorts/IR2EuVjfs8o",
-      "views": 1537,
+      "views": 1540,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -229,69 +278,51 @@
       },
       "monocompte": true,
       "commentaires": {
-        "status": "echantillon",
-        "analysed": 1,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 1,
-            "examples": [
-              "Ouai mais tu payes la taxe de mise en vente plein pot au lieu d’une taxe de modification + tu retire et remet des ressources qui étaient potentiellement déjà en premier dans l’hdv mais en cas de flemme je comprends"
-            ]
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+        "status": "non_analyses",
+        "analysed": 0,
+        "signals": {},
+        "examples": []
       },
-      "score": 76.8,
+      "score": 76.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
-      "id": "Unbew66nBps",
-      "title": "Haciendo KAMAS de CHILL en DOFUS 3 (buenas noches)",
-      "description": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-11-18T03:01:31Z",
-      "url": "https://www.youtube.com/watch?v=Unbew66nBps",
-      "views": 2325,
+      "id": "KINDy8dITH8",
+      "title": "🚨 ¿NECESITAS KAMAS? COMPLETA ESTAS MISIONES Y LOGROS EN DOFUS",
+      "description": "Quieres saber cómo hacer Kamas en DOFUS 3 aprovechando las misiones y los logros del juego? En este video vamos a ...",
+      "channel": "TwistFizz",
+      "date": "2026-11-18T20:30:02Z",
+      "url": "https://www.youtube.com/watch?v=KINDy8dITH8",
+      "views": 0,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
       "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 1174,
+      "langue": "es",
+      "duration_seconds": 460,
       "detail": {
         "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "resume_source": "Quieres saber cómo hacer Kamas en DOFUS 3 aprovechando las misiones y los logros del juego? En este video vamos a ...",
         "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
         "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
         "budget": "Inconnu; verifier les prix sur Dakal.",
         "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
         "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
+        "langue": "es",
         "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
       },
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 11,
+        "analysed": 0,
         "signals": {
           "attention": {
             "count": 0,
             "examples": []
           },
           "prix": {
-            "count": 1,
-            "examples": [
-              "haz una guía para farmear kamas para los que iniciaron a jugar hace menos de una semana (yo) jeje"
-            ]
+            "count": 0,
+            "examples": []
           },
           "confirmation": {
             "count": 0,
@@ -301,7 +332,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 72.2,
+      "score": 74.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -339,13 +370,68 @@
       "score": 69
     },
     {
+      "id": "Unbew66nBps",
+      "title": "Haciendo KAMAS de CHILL en DOFUS 3 (buenas noches)",
+      "description": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-11-18T03:01:31Z",
+      "url": "https://www.youtube.com/watch?v=Unbew66nBps",
+      "views": 4907,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 1174,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 2,
+            "examples": [
+              "ostia que diferencia de precio de dofus con talkasha, el silvestre vale 110mks, pesadila como 26mk jaja, ojo una migración para comprar y volver not bad",
+              "haz una guía para farmear kamas para los que iniciaron a jugar hace menos de una semana (yo) jeje"
+            ]
+          },
+          "confirmation": {
+            "count": 2,
+            "examples": [
+              "Seu conteúdo tem me ajudado muito na minha jornada solo no dofus. Obrigado!",
+              "Hola Torre Podrías hacer un vídeo de cómo funcionan las estadísticas He vuelto al juego después 10 años sin jugar, estoy viendo mazo vídeos de consejos y guías Un vídeo de cómo funciona las estadísticas, el escalado de la potencia, de los daños de los elementos etc (No sé si lo tienes ya, si es así cuál es?) Un saludo!!!!"
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 68.9,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
       "id": "hLkM-Lgrx7A",
       "title": "💰 3 ZONAS PARA HACER KAMAS Y PAGAR TU ABONO EN DOFUS",
       "description": "Quieres saber cómo hacer Kamas en DOFUS 3 y conseguir tu abono sin gastar dinero real? En este video te voy a mostrar 3 ...",
       "channel": "TwistFizz",
       "date": "2026-11-14T01:00:23Z",
       "url": "https://www.youtube.com/watch?v=hLkM-Lgrx7A",
-      "views": 1708,
+      "views": 1736,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -386,7 +472,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.7,
+      "score": 65.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -396,7 +482,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-11T15:15:27Z",
       "url": "https://www.youtube.com/watch?v=gF_90oeoSvA",
-      "views": 1160,
+      "views": 1161,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -435,56 +521,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 63.7,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "i6z8CImvcTM",
-      "title": "Cómo HACER MILLONES de KAMAS en DOFUS 2026 | Fragmentos de Anomalía",
-      "description": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
-      "channel": "Obsidiana ",
-      "date": "2026-11-06T22:00:14Z",
-      "url": "https://www.youtube.com/watch?v=i6z8CImvcTM",
-      "views": 123,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-419",
-      "duration_seconds": 353,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-419",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 3,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 57.6,
+      "score": 62.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -556,13 +593,62 @@
       "score": 57
     },
     {
+      "id": "i6z8CImvcTM",
+      "title": "Cómo HACER MILLONES de KAMAS en DOFUS 2026 | Fragmentos de Anomalía",
+      "description": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
+      "channel": "Obsidiana ",
+      "date": "2026-11-06T22:00:14Z",
+      "url": "https://www.youtube.com/watch?v=i6z8CImvcTM",
+      "views": 126,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-419",
+      "duration_seconds": 353,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "dofuslatino #dofus3 #kamasdofus #dofuskamas #fragmentosdeanomalia NUEVA META: AYUDAME A LLEGAR A MIS 6.000 ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-419",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 3,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 56.9,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
       "id": "9IapbE8FKWE",
       "title": "Todo lo que debes CONOCER sobre la DEUDA DE KAMAS #dofus",
       "description": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 4180,
+      "views": 4183,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -592,8 +678,8 @@
           "prix": {
             "count": 6,
             "examples": [
-              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, ",
-              "A partir de cuando se aplicara eso de la deuda de kamas"
+              "Y como hacen con los que generan kamas con rush/pl y luego las venden por dinero real? Son kamas generadas de forma legal que se usan de forma ilegal 🤔",
+              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, "
             ]
           },
           "confirmation": {
@@ -604,7 +690,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 55.6,
+      "score": 54.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -614,7 +700,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-08T17:01:35Z",
       "url": "https://www.youtube.com/watch?v=3oS5IVYeYSA",
-      "views": 6321,
+      "views": 6337,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -657,56 +743,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 54.1,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "ncqBBKt4ytA",
-      "title": "De 0 à 10 MILLIONS de KAMAS… SANS ÊTRE ABONNÉ ! (DOFUS 3)",
-      "description": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
-      "channel": "Persodax",
-      "date": "2026-11-04T07:00:17Z",
-      "url": "https://www.youtube.com/watch?v=ncqBBKt4ytA",
-      "views": 1255,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 346,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Bonjour à tous ! L'objectif est simple : Faire le plus de kamas possible ! Je commence non abonné parce que finalement il s'agit ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 1,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 52.5,
+      "score": 53.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
