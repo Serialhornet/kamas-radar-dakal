@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-19T10:27:44.532715+00:00",
+  "updated_at": "2026-11-19T22:13:57.266994+00:00",
   "items": [
     {
       "id": "g6SHjam9Huc",
@@ -9,7 +9,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-15T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=g6SHjam9Huc",
-      "views": 1423,
+      "views": 1550,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -50,7 +50,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 96.9,
+      "score": 96.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -60,7 +60,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-10T20:15:36Z",
       "url": "https://www.youtube.com/watch?v=1xp8e_7ROWI",
-      "views": 1244,
+      "views": 1251,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 89.9,
+      "score": 89.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +109,7 @@
       "channel": "Renkynn",
       "date": "2026-11-18T17:00:38Z",
       "url": "https://www.youtube.com/watch?v=K3hKxkZXjG8",
-      "views": 537,
+      "views": 682,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 82.4,
+      "score": 81.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +158,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-16T10:00:00Z",
       "url": "https://www.youtube.com/shorts/1FVX9fqugxE",
-      "views": 850,
+      "views": 863,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -199,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.6,
+      "score": 77.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -248,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 77.3,
+      "score": 76.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -278,12 +278,28 @@
       },
       "monocompte": true,
       "commentaires": {
-        "status": "non_analyses",
-        "analysed": 0,
-        "signals": {},
-        "examples": []
+        "status": "echantillon",
+        "analysed": 1,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 1,
+            "examples": [
+              "Ouai mais tu payes la taxe de mise en vente plein pot au lieu d’une taxe de modification + tu retire et remet des ressources qui étaient potentiellement déjà en premier dans l’hdv mais en cas de flemme je comprends"
+            ]
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 75.2,
+      "score": 74.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -293,7 +309,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-18T20:30:02Z",
       "url": "https://www.youtube.com/watch?v=KINDy8dITH8",
-      "views": 110,
+      "views": 247,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -332,7 +348,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.0,
+      "score": 73.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -376,7 +392,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-18T03:01:31Z",
       "url": "https://www.youtube.com/watch?v=Unbew66nBps",
-      "views": 5646,
+      "views": 5953,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -404,9 +420,8 @@
             "examples": []
           },
           "prix": {
-            "count": 2,
+            "count": 1,
             "examples": [
-              "ostia que diferencia de precio de dofus con talkasha, el silvestre vale 110mks, pesadila como 26mk jaja, ojo una migración para comprar y volver not bad",
               "haz una guía para farmear kamas para los que iniciaron a jugar hace menos de una semana (yo) jeje"
             ]
           },
@@ -421,7 +436,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.4,
+      "score": 66.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -431,7 +446,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-14T01:00:23Z",
       "url": "https://www.youtube.com/watch?v=hLkM-Lgrx7A",
-      "views": 1838,
+      "views": 1886,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -472,7 +487,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.1,
+      "score": 64.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -482,7 +497,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-11T15:15:27Z",
       "url": "https://www.youtube.com/watch?v=gF_90oeoSvA",
-      "views": 1170,
+      "views": 1176,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -521,7 +536,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 62.1,
+      "score": 61.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -599,7 +614,7 @@
       "channel": "Obsidiana ",
       "date": "2026-11-06T22:00:14Z",
       "url": "https://www.youtube.com/watch?v=i6z8CImvcTM",
-      "views": 136,
+      "views": 137,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -638,7 +653,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.1,
+      "score": 55.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -648,7 +663,7 @@
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 4189,
+      "views": 4194,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -678,8 +693,8 @@
           "prix": {
             "count": 6,
             "examples": [
-              "Y como hacen con los que generan kamas con rush/pl y luego las venden por dinero real? Son kamas generadas de forma legal que se usan de forma ilegal 🤔",
-              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, "
+              "El RMT debería ser legal a ankama no le conviene que se extinga, además ya es suficiente con que ankama cobre abonos y servicios ultra caros a los cuales la gente si accede y me incluyo, no se van a morir por qué no les compren directamente las kamas. Además el mercado negro siempre va a existir en los vídeojuegos online, en lo que tiene que mejora",
+              "A partir de cuando se aplicara eso de la deuda de kamas"
             ]
           },
           "confirmation": {
@@ -690,60 +705,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 54.0,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "3oS5IVYeYSA",
-      "title": "Más maneras de invertir tus KAMAS para hacer más KAMAS en DOFUS 3",
-      "description": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-11-08T17:01:35Z",
-      "url": "https://www.youtube.com/watch?v=3oS5IVYeYSA",
-      "views": 6366,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 920,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 11,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 1,
-            "examples": [
-              "Perdería mi sanidad mental intentando vender tantos recursos en talkasha con la gente bajando 1 kama"
-            ]
-          },
-          "confirmation": {
-            "count": 1,
-            "examples": [
-              "Compita gracias a tu contenido volvi a dofus, cual es tu codigo de creador de contenido ?"
-            ]
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 52.5,
+      "score": 53.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
