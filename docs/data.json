@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-18T22:03:51.847582+00:00",
+  "updated_at": "2026-11-19T10:27:44.532715+00:00",
   "items": [
     {
       "id": "g6SHjam9Huc",
@@ -9,7 +9,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-15T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=g6SHjam9Huc",
-      "views": 1116,
+      "views": 1423,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -50,7 +50,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 97.9,
+      "score": 96.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -60,7 +60,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-10T20:15:36Z",
       "url": "https://www.youtube.com/watch?v=1xp8e_7ROWI",
-      "views": 1230,
+      "views": 1244,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 90.7,
+      "score": 89.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +109,7 @@
       "channel": "Renkynn",
       "date": "2026-11-18T17:00:38Z",
       "url": "https://www.youtube.com/watch?v=K3hKxkZXjG8",
-      "views": 298,
+      "views": 537,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -130,7 +130,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 1,
+        "analysed": 2,
         "signals": {
           "attention": {
             "count": 0,
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 83.4,
+      "score": 82.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +158,7 @@
       "channel": "Spotlight-q8d ● Dofus",
       "date": "2026-11-16T10:00:00Z",
       "url": "https://www.youtube.com/shorts/1FVX9fqugxE",
-      "views": 828,
+      "views": 850,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "short",
@@ -199,7 +199,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 79.4,
+      "score": 78.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -248,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.1,
+      "score": 77.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -283,7 +283,7 @@
         "signals": {},
         "examples": []
       },
-      "score": 76.0,
+      "score": 75.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -293,7 +293,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-18T20:30:02Z",
       "url": "https://www.youtube.com/watch?v=KINDy8dITH8",
-      "views": 0,
+      "views": 110,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -332,7 +332,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.9,
+      "score": 74.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -376,7 +376,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-18T03:01:31Z",
       "url": "https://www.youtube.com/watch?v=Unbew66nBps",
-      "views": 4907,
+      "views": 5646,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -421,7 +421,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 68.9,
+      "score": 67.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -431,7 +431,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-14T01:00:23Z",
       "url": "https://www.youtube.com/watch?v=hLkM-Lgrx7A",
-      "views": 1736,
+      "views": 1838,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -472,7 +472,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.9,
+      "score": 65.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -482,7 +482,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-11T15:15:27Z",
       "url": "https://www.youtube.com/watch?v=gF_90oeoSvA",
-      "views": 1161,
+      "views": 1170,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -521,7 +521,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 62.9,
+      "score": 62.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -599,7 +599,7 @@
       "channel": "Obsidiana ",
       "date": "2026-11-06T22:00:14Z",
       "url": "https://www.youtube.com/watch?v=i6z8CImvcTM",
-      "views": 126,
+      "views": 136,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -638,7 +638,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 56.9,
+      "score": 56.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -648,7 +648,7 @@
       "channel": "Undefaul 26  (Unity)  ",
       "date": "2026-11-08T06:06:12Z",
       "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 4183,
+      "views": 4189,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -690,7 +690,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 54.8,
+      "score": 54.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -700,7 +700,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-08T17:01:35Z",
       "url": "https://www.youtube.com/watch?v=3oS5IVYeYSA",
-      "views": 6337,
+      "views": 6366,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -743,7 +743,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 53.3,
+      "score": 52.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
