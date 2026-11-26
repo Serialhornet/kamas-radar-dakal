@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-26T11:00:06.368034+00:00",
+  "updated_at": "2026-11-26T23:03:16.555422+00:00",
   "items": [
     {
       "id": "iCac7MB9nrc",
@@ -9,7 +9,7 @@
       "channel": "Pilougah",
       "date": "2026-11-22T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=iCac7MB9nrc",
-      "views": 948,
+      "views": 956,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 115.3,
+      "score": 114.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-15T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=g6SHjam9Huc",
-      "views": 1818,
+      "views": 1834,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 85.9,
+      "score": 85.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 82.9,
+      "score": 82.2,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +158,7 @@
       "channel": "Radgeur",
       "date": "2026-11-23T16:00:21Z",
       "url": "https://www.youtube.com/watch?v=Y-iu78tP0jQ",
-      "views": 1501,
+      "views": 1528,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -197,56 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.3,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "K3hKxkZXjG8",
-      "title": "Les Rediff du Jour Saison 3 - Ep4 La Coiffe D'Oto Mustam #dofus #twitch #ankama #forgemagie #kamas",
-      "description": "dofus3.7 #exo #forgemagie #ankama #kamas Mes réseau : Discord : Renkynn Tiktok : https://www.tiktok.com/@renkynn_d ...",
-      "channel": "Renkynn",
-      "date": "2026-11-18T17:00:38Z",
-      "url": "https://www.youtube.com/watch?v=K3hKxkZXjG8",
-      "views": 1130,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "court",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 61,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "dofus3.7 #exo #forgemagie #ankama #kamas Mes réseau : Discord : Renkynn Tiktok : https://www.tiktok.com/@renkynn_d ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 2,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 71.2,
+      "score": 77.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -256,7 +207,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-23T15:00:20Z",
       "url": "https://www.youtube.com/watch?v=iHswaIQumSo",
-      "views": 478,
+      "views": 493,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -295,7 +246,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 70.3,
+      "score": 69.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -380,7 +331,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 68.1,
+      "score": 67.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -390,7 +341,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-24T03:01:12Z",
       "url": "https://www.youtube.com/watch?v=afZ6bASDvBs",
-      "views": 3637,
+      "views": 3706,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -434,7 +385,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 67.9,
+      "score": 67.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -483,56 +434,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.8,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "KINDy8dITH8",
-      "title": "🚨 ¿NECESITAS KAMAS? COMPLETA ESTAS MISIONES Y LOGROS EN DOFUS",
-      "description": "Quieres saber cómo hacer Kamas en DOFUS 3 aprovechando las misiones y los logros del juego? En este video vamos a ...",
-      "channel": "TwistFizz",
-      "date": "2026-11-18T20:30:02Z",
-      "url": "https://www.youtube.com/watch?v=KINDy8dITH8",
-      "views": 538,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es",
-      "duration_seconds": 460,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Quieres saber cómo hacer Kamas en DOFUS 3 aprovechando las misiones y los logros del juego? En este video vamos a ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 63.1,
+      "score": 66.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -602,58 +504,6 @@
         "examples": []
       },
       "score": 57
-    },
-    {
-      "id": "9IapbE8FKWE",
-      "title": "Todo lo que debes CONOCER sobre la DEUDA DE KAMAS #dofus",
-      "description": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
-      "channel": "Undefaul 26  (Unity)  ",
-      "date": "2026-11-08T06:06:12Z",
-      "url": "https://www.youtube.com/watch?v=9IapbE8FKWE",
-      "views": 4265,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es",
-      "duration_seconds": 1123,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Bienvenidos a Undefaul 26! En este canal encontrarás contenido exclusivo sobre Dofus Unity, donde exploramos las novedades, ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 16,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 6,
-            "examples": [
-              "si farmeo kamas a mano como en el rush las puedo seguir vendiendo ?",
-              "la pregunta del millón. tengo el team con 4 o 8 en el mismo gremio , obligado tengo que esperar 7 dias para intercambiar las kamas generada. entonces cuando utilizare el bonus de xp si cada uno esta en diferentes gremio? ya que por cada salida de un gremio para intercambiar kamas tengo que esperar 7 dias. Claro todo esto es para los nuevos server, "
-            ]
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 43.4,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     }
   ],
   "notice": "DOFUS Unity/Dakal; commentaires publics indicatifs; aucune transcription ni verification de prix."
