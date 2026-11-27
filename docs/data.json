@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-27T10:58:27.486859+00:00",
+  "updated_at": "2026-11-27T22:44:55.373468+00:00",
   "items": [
     {
       "id": "iCac7MB9nrc",
@@ -9,7 +9,7 @@
       "channel": "Pilougah",
       "date": "2026-11-22T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=iCac7MB9nrc",
-      "views": 960,
+      "views": 969,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 113.8,
+      "score": 113.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-15T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=g6SHjam9Huc",
-      "views": 1838,
+      "views": 1839,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,56 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 84.4,
+      "score": 83.7,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "k06RH-3Gfv0",
+      "title": "Cuantas KAMAS se gastan en subir MANITAS del nivel 1 al 200? 💰 #dofus3 #gaming",
+      "description": "Que oficio les gustaría ver con este mismo formato? REDES SOCIALES ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ Twitch ...",
+      "channel": "Layy",
+      "date": "2026-11-27T16:35:48Z",
+      "url": "https://www.youtube.com/watch?v=k06RH-3Gfv0",
+      "views": 1300,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "court",
+      "source_type": "video",
+      "langue": "es-419",
+      "duration_seconds": 180,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Que oficio les gustaría ver con este mismo formato? REDES SOCIALES ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ Twitch ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-419",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 7,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 0,
+            "examples": []
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 82.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -148,7 +197,58 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 81.4,
+      "score": 80.7,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "7IDWyARMV18",
+      "title": "Les MEILLEURS ALMANAX en DÉCEMBRE sur DOFUS ?!",
+      "description": "Quels sont les MEILLEURS ALMANAX en décembre 2026 sur DOFUS Unity ? Entre les économies sur les crafts, les bonus ...",
+      "channel": "Tenmalexis",
+      "date": "2026-11-27T17:00:16Z",
+      "url": "https://www.youtube.com/watch?v=7IDWyARMV18",
+      "views": 908,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "fr",
+      "duration_seconds": 515,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Quels sont les MEILLEURS ALMANAX en décembre 2026 sur DOFUS Unity ? Entre les économies sur les crafts, les bonus ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "fr",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 2,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 1,
+            "examples": [
+              "📅 Quel ALMANAX comptes-tu rentabiliser en décembre ? Entre les bonus métiers, les économies sur les crafts et les opportunités à plusieurs millions de kamas, il y a de quoi bien terminer l'année ! Dis-moi en commentaire quels investissements tu comptes faire et sur quel serveur tu joues ! 👇 Soutiens mon contenu avec le code créateur TENMA sur la bo"
+            ]
+          },
+          "confirmation": {
+            "count": 0,
+            "examples": []
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 78.7,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -158,7 +258,7 @@
       "channel": "Radgeur",
       "date": "2026-11-23T16:00:21Z",
       "url": "https://www.youtube.com/watch?v=Y-iu78tP0jQ",
-      "views": 1539,
+      "views": 1556,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -197,7 +297,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 76.8,
+      "score": 76.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -207,7 +307,7 @@
       "channel": "tem-pe",
       "date": "2026-11-27T01:30:39Z",
       "url": "https://www.youtube.com/watch?v=lh-XNOwZdOM",
-      "views": 2,
+      "views": 4,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -246,7 +346,61 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 74.4,
+      "score": 73.7,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "-QAQe5YQwC8",
+      "title": "Aprovecha ESTA OFERTA para ganar KAMAS durante TODO EL AÑO en DOFUS 3",
+      "description": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-11-27T17:01:27Z",
+      "url": "https://www.youtube.com/watch?v=-QAQe5YQwC8",
+      "views": 4123,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 963,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 4,
+            "examples": [
+              "Ahora las ogrinas van a subir de precio gracias a este video jajaja. Estas cosas no son tan fáciles como las pintas bro. Al final la gente va a terminar pagando prácticamente lo mismo que cuesta un emplazamiento a precio normal.",
+              "Segui tu consejo la ultima vez que subiste video de esto y me compre 17 cuentas, esto del almanax se me hace muy tedioso por que primero los recursos suben y bajan bastante de precio, y tienes que comprarlos por adelantado, y no pueds jugar todos los dias a la misma hora habra dias que pierdas esos kamas que compraste en recursos. Pero lo que si me"
+            ]
+          },
+          "confirmation": {
+            "count": 1,
+            "examples": [
+              "Ahora las ogrinas van a subir de precio gracias a este video jajaja. Estas cosas no son tan fáciles como las pintas bro. Al final la gente va a terminar pagando prácticamente lo mismo que cuesta un emplazamiento a precio normal."
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 70.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -290,7 +444,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-23T15:00:20Z",
       "url": "https://www.youtube.com/watch?v=iHswaIQumSo",
-      "views": 510,
+      "views": 519,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -329,7 +483,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 68.7,
+      "score": 68.0,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -380,7 +534,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.6,
+      "score": 65.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -390,7 +544,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-24T03:01:12Z",
       "url": "https://www.youtube.com/watch?v=afZ6bASDvBs",
-      "views": 3821,
+      "views": 3912,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -434,7 +588,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 66.2,
+      "score": 65.4,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -483,7 +637,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.3,
+      "score": 64.6,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
