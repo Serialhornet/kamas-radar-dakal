@@ -1,6 +1,6 @@
 {
   "server": "Dakal",
-  "updated_at": "2026-11-27T22:44:55.373468+00:00",
+  "updated_at": "2026-11-28T10:35:06.203369+00:00",
   "items": [
     {
       "id": "iCac7MB9nrc",
@@ -9,7 +9,7 @@
       "channel": "Pilougah",
       "date": "2026-11-22T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=iCac7MB9nrc",
-      "views": 969,
+      "views": 974,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -48,7 +48,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 113.0,
+      "score": 112.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -58,7 +58,7 @@
       "channel": "TwistFizz",
       "date": "2026-11-15T15:00:07Z",
       "url": "https://www.youtube.com/watch?v=g6SHjam9Huc",
-      "views": 1839,
+      "views": 1849,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -99,7 +99,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 83.7,
+      "score": 82.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -109,7 +109,7 @@
       "channel": "Layy",
       "date": "2026-11-27T16:35:48Z",
       "url": "https://www.youtube.com/watch?v=k06RH-3Gfv0",
-      "views": 1300,
+      "views": 2548,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -130,7 +130,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 7,
+        "analysed": 9,
         "signals": {
           "attention": {
             "count": 0,
@@ -148,7 +148,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 82.3,
+      "score": 80.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -197,7 +197,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 80.7,
+      "score": 79.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -207,7 +207,7 @@
       "channel": "Tenmalexis",
       "date": "2026-11-27T17:00:16Z",
       "url": "https://www.youtube.com/watch?v=7IDWyARMV18",
-      "views": 908,
+      "views": 2127,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -228,7 +228,7 @@
       "monocompte": false,
       "commentaires": {
         "status": "echantillon",
-        "analysed": 2,
+        "analysed": 3,
         "signals": {
           "attention": {
             "count": 0,
@@ -248,7 +248,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 78.7,
+      "score": 76.8,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -258,7 +258,7 @@
       "channel": "Radgeur",
       "date": "2026-11-23T16:00:21Z",
       "url": "https://www.youtube.com/watch?v=Y-iu78tP0jQ",
-      "views": 1556,
+      "views": 1557,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "court",
@@ -297,7 +297,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 76.0,
+      "score": 75.3,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -307,7 +307,7 @@
       "channel": "tem-pe",
       "date": "2026-11-27T01:30:39Z",
       "url": "https://www.youtube.com/watch?v=lh-XNOwZdOM",
-      "views": 4,
+      "views": 7,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -346,61 +346,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 73.7,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "-QAQe5YQwC8",
-      "title": "Aprovecha ESTA OFERTA para ganar KAMAS durante TODO EL AÑO en DOFUS 3",
-      "description": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-      "channel": "Torrente Arcano",
-      "date": "2026-11-27T17:01:27Z",
-      "url": "https://www.youtube.com/watch?v=-QAQe5YQwC8",
-      "views": 4123,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "video",
-      "source_type": "video",
-      "langue": "es-ES",
-      "duration_seconds": 963,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "es-ES",
-        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
-      },
-      "monocompte": false,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 20,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 4,
-            "examples": [
-              "Ahora las ogrinas van a subir de precio gracias a este video jajaja. Estas cosas no son tan fáciles como las pintas bro. Al final la gente va a terminar pagando prácticamente lo mismo que cuesta un emplazamiento a precio normal.",
-              "Segui tu consejo la ultima vez que subiste video de esto y me compre 17 cuentas, esto del almanax se me hace muy tedioso por que primero los recursos suben y bajan bastante de precio, y tienes que comprarlos por adelantado, y no pueds jugar todos los dias a la misma hora habra dias que pierdas esos kamas que compraste en recursos. Pero lo que si me"
-            ]
-          },
-          "confirmation": {
-            "count": 1,
-            "examples": [
-              "Ahora las ogrinas van a subir de precio gracias a este video jajaja. Estas cosas no son tan fáciles como las pintas bro. Al final la gente va a terminar pagando prácticamente lo mismo que cuesta un emplazamiento a precio normal."
-            ]
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 70.5,
+      "score": 72.9,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -444,7 +390,7 @@
       "channel": "Alexandrecarvm",
       "date": "2026-11-23T15:00:20Z",
       "url": "https://www.youtube.com/watch?v=iHswaIQumSo",
-      "views": 519,
+      "views": 527,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -483,7 +429,61 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 68.0,
+      "score": 67.2,
+      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
+    },
+    {
+      "id": "-QAQe5YQwC8",
+      "title": "Aprovecha ESTA OFERTA para ganar KAMAS durante TODO EL AÑO en DOFUS 3",
+      "description": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+      "channel": "Torrente Arcano",
+      "date": "2026-11-27T17:01:27Z",
+      "url": "https://www.youtube.com/watch?v=-QAQe5YQwC8",
+      "views": 7433,
+      "source": "YouTube",
+      "source_platform": "youtube",
+      "source_format": "video",
+      "source_type": "video",
+      "langue": "es-ES",
+      "duration_seconds": 963,
+      "detail": {
+        "categorie": "Astuces kamas",
+        "resume_source": "Suscríbete para más vídeos mi rey! PÁGINA WEB: https://www.torrentearcano.com/ YOUTUBE: ...",
+        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
+        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
+        "budget": "Inconnu; verifier les prix sur Dakal.",
+        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
+        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
+        "langue": "es-ES",
+        "compatibilite_mono": "A verifier : pas de mention explicite du monocompte"
+      },
+      "monocompte": false,
+      "commentaires": {
+        "status": "echantillon",
+        "analysed": 20,
+        "signals": {
+          "attention": {
+            "count": 0,
+            "examples": []
+          },
+          "prix": {
+            "count": 4,
+            "examples": [
+              "Ahora las ogrinas van a subir de precio gracias a este video jajaja. Estas cosas no son tan fáciles como las pintas bro. Al final la gente va a terminar pagando prácticamente lo mismo que cuesta un emplazamiento a precio normal.",
+              "Segui tu consejo la ultima vez que subiste video de esto y me compre 17 cuentas, esto del almanax se me hace muy tedioso por que primero los recursos suben y bajan bastante de precio, y tienes que comprarlos por adelantado, y no pueds jugar todos los dias a la misma hora habra dias que pierdas esos kamas que compraste en recursos. Pero lo que si me"
+            ]
+          },
+          "confirmation": {
+            "count": 1,
+            "examples": [
+              "Ahora las ogrinas van a subir de precio gracias a este video jajaja. Estas cosas no son tan fáciles como las pintas bro. Al final la gente va a terminar pagando prácticamente lo mismo que cuesta un emplazamiento a precio normal."
+            ]
+          }
+        },
+        "examples": [],
+        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
+      },
+      "score": 66.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -534,7 +534,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.8,
+      "score": 65.1,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
@@ -544,7 +544,7 @@
       "channel": "Torrente Arcano",
       "date": "2026-11-24T03:01:12Z",
       "url": "https://www.youtube.com/watch?v=afZ6bASDvBs",
-      "views": 3912,
+      "views": 3982,
       "source": "YouTube",
       "source_platform": "youtube",
       "source_format": "video",
@@ -588,56 +588,7 @@
         "examples": [],
         "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
       },
-      "score": 65.4,
-      "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
-    },
-    {
-      "id": "_zWKtw-sfHw",
-      "title": "LES QUÊTES RÉPÉTABLES EN MONOCOMPTE : PARTIE 1 | Dofus Unity #shorts #gaming #dofus #astuce",
-      "description": "Les quêtes répétables sont une source quotidienne de kamas. Aujourd'hui, c'est au tour de l'Almanax et des quêtes de Kerubim ...",
-      "channel": "Spotlight-q8d ● Dofus",
-      "date": "2026-11-03T10:00:31Z",
-      "url": "https://www.youtube.com/shorts/_zWKtw-sfHw",
-      "views": 633,
-      "source": "YouTube",
-      "source_platform": "youtube",
-      "source_format": "short",
-      "source_type": "video",
-      "langue": "fr",
-      "duration_seconds": 76,
-      "detail": {
-        "categorie": "Astuces kamas",
-        "resume_source": "Les quêtes répétables sont une source quotidienne de kamas. Aujourd'hui, c'est au tour de l'Almanax et des quêtes de Kerubim ...",
-        "methode": "Non verifiee : la transcription de la video n'est pas disponible par cette API.",
-        "prerequis": "A verifier : niveau, metiers, materiel et acces a la zone.",
-        "budget": "Inconnu; verifier les prix sur Dakal.",
-        "rentabilite": "Non calculee; donnees du marche Dakal manquantes.",
-        "fiabilite": "Fiche descriptive basee sur les metadonnees; pas une analyse du contenu integral.",
-        "langue": "fr",
-        "compatibilite_mono": "Mention monocompte / solo / Dakal dans la source"
-      },
-      "monocompte": true,
-      "commentaires": {
-        "status": "echantillon",
-        "analysed": 0,
-        "signals": {
-          "attention": {
-            "count": 0,
-            "examples": []
-          },
-          "prix": {
-            "count": 0,
-            "examples": []
-          },
-          "confirmation": {
-            "count": 0,
-            "examples": []
-          }
-        },
-        "examples": [],
-        "notice": "Commentaires publics non verifies; echantillon limite. Pas de traduction automatique."
-      },
-      "score": 64.6,
+      "score": 64.5,
       "fiche_fr": "Resume descriptif en francais; aucune transcription verifiee."
     },
     {
